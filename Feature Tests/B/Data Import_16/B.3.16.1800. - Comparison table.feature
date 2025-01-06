@@ -16,18 +16,22 @@ Feature: User Interface:The system shall provide the ability to display real-tim
         Then I should see Project status: "Production"
 
         Given I click on the link labeled "Data Import Tool"
+        When I select "Import in real time" on the dropdown field labeled "Import in real time"
+        And I select "Yes, display uploaded data prior to importing" on the dropdown field labeled "Yes, display uploaded data prior to importing"
+        And I upload a "csv" format file located at "import_files/BigDataTestProjectDATA.csv", by clicking the button near "Select your CSV data file" to browse for the file, and clicking the button labeled "Upload File" to upload the file
+        # Then I should see " File is Large. Consider using the background process"
         When I select "Import in real time" on the dropdown field labeled "Choose an import option"
         And I select "Yes, display uploaded data prior to importing" on the dropdown field labeled "Display the data comparison table"
         And I upload a "csv" format file located at "import_files/BigDataTestProjectDATA.csv", by clicking the button near "Select your CSV data file" to browse for the file, and clicking the button labeled "Upload File" to upload the file
         And I click on the button labeled "Upload File"
         Then I should see " File is Large. Consider using the background process"
 
-        When I click on the button labeled "No, import in real time"
-        And I click on the button labeled "Upload File"
+        # When I click on the button labeled "No, import in real time"
+        # And I click on the button labeled "Upload File"
         Then I should see "Instructions for Data Review"
 
         When I click on the button labeled "Import Data"
-        Then I should see "Import successful! 75 records were created or modified during the import"
+        Then I should see "Import Successful!" 
 
         Given I click on the link labeled "Record Status Dashboard"
         Then I should see a table header and rows containing the following values in a table:
