@@ -229,10 +229,13 @@ Feature: User Interface: The system shall support text validation for text field
         And I click on the button labeled "Close" in the dialog box
 
         When I clear field and enter "" into the data entry form field labeled "Time HH:MM:SS"
-        # And I enter "TEST" into the data entry form field labeled "Email"
-        # And I should see a dialog containing the following text: "This field must be a valid email address (like joe@user.com). Please re-enter it now."
-        # And I click on the button labeled "Close" in the dialog box
-        # When I clear field and enter "" into the data entry form field labeled "Email"
+        And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
+        
+        When I click on the link labeled "Text Validation"
+        And I enter "TEST" into the data entry form field labeled "Email"
+        And I should see a dialog containing the following text: "This field must be a valid email address (like joe@user.com). Please re-enter it now."
+        And I click on the button labeled "Close" in the dialog box
+        When I clear field and enter "" into the data entry form field labeled "Email"
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
