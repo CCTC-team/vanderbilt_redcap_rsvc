@@ -102,7 +102,7 @@ Feature: User Interface: The system shall support validating the unique event na
 #         Then I should see a table header and rows containing the following values in a table:
 #             | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) |
 #             | 4      | Integer   | [integer]='1'                            |
-#         #M: refresh browser page
+#         #Manual: refresh browser page
 
 #         #VERIFY
 #         And I click on the link labeled "Data Quality"
@@ -115,7 +115,7 @@ Feature: User Interface: The system shall support validating the unique event na
 
 #         ##ACTION: delete rule
 #         When I click on the Delete icon for Data Quality Rule # "4"
-#         #MANUAL: confirmation windows are automatically accepted on automated side
+#         #Manual: confirmation windows are automatically accepted on automated side
 #         #And I click on the button labeled "OK" in the dialog box
 #         Then I should see a table header and rows containing the following values in a table:
 #             | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) | Total Discrepancies |

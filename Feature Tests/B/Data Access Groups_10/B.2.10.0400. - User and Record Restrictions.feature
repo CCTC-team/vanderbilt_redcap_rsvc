@@ -179,7 +179,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         Then I should see "You may now close this tab/window"
 
         Given I return to the REDCap page I opened the survey from
-        #Manual Only: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
+        #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
         #And I click on the button labeled "Leave without saving changes" in the dialog box
         ##VERIFY_LOG:
         And I click on the link labeled "Logging"

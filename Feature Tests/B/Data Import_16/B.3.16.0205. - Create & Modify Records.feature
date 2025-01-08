@@ -18,17 +18,19 @@ Feature: User Interface: The system shall allow data to be uploaded in real-time
         When I click on the link labeled "Record Status Dashboard"
         Then I should see "No records exist yet"
 
-        When I click on the link labeled "Data Import Tool"
-        Then I should see "Download your Data Import Template (with records in rows)"
+       # When I click on the link labeled "Data Import Tool"
+        #Then I should see "Download your Data Import Template"
 
         # #FUNCTIONAL REQUIREMENT
         # ##ACTION - Cancel import
         # #B.3.16.0100 CROSSFUNCTIONAL
-        When I upload a "csv" format file located at "import_files/B316200100_ImportTemplate_ImportRecord.csv", by clicking the button near "Choose File" to browse for the file, and clicking the button labeled "Upload to upload the file"
-        And I click on the button labeled "Upload File"
-        Then I should see "Your document was uploaded successfully and is ready for review"
-        And I click on the link labeled "Cancel"
-
+          ##ACTION: Import data
+        When I click on the link labeled "Data Import Tool"
+        And I upload a "csv" format file located at "import_files/B.3.16.400_DataImport_Rows Corrected.csv", by clicking the button near "Select your CSV data file" to browse for the file, and clicking the button labeled "Upload File" to upload the file
+        Then I should see "DATA DISPLAY TABLE"
+        When I click on the link labeled "Cancel"
+        Then I should see "Data Import Tool"
+    
         #VERIFY_RSD: no records imported
         When I click on the link labeled "Record Status Dashboard"
         Then I should see "No records exist yet"
@@ -39,11 +41,9 @@ Feature: User Interface: The system shall allow data to be uploaded in real-time
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION - Import (with records in rows)
-        Given I click on the link labeled "Data Import Tool"
-        When I upload a "csv" format file located at "import_files/B316200100_ImportTemplate_ImportRecord.csv", by clicking the button near "Choose File" to browse for the file, and clicking the button labeled "Upload" to upload the file
-        And I click on the button labeled "Upload File"
-        Then I should see "Your document was uploaded successfully and is ready for review"
-
+        When I click on the link labeled "Data Import Tool"
+        And I upload a "csv" format file located at "import_files/B.3.16.400_DataImport_Rows Corrected.csv", by clicking the button near "Select your CSV data file" to browse for the file, and clicking the button labeled "Upload File" to upload the file
+        Then I should see "DATA DISPLAY TABLE"
         When I click on the button labeled "Import Data"
         Then I should see "Import Successful!"
 
@@ -60,10 +60,10 @@ Feature: User Interface: The system shall allow data to be uploaded in real-time
         #FUNCTIONAL REQUIREMENT
         ##ACTION - Import (with records in columns)
         When I click on the link labeled "Data Import Tool"
-        And I select "Columns" on the dropdown field labeled "Record in file are formatted as"
-        When I upload a "csv" format file located at "import_files/B316200100_ImportTemplate_ImportRecord_Column.csv", by clicking the button near "Choose File" to browse for the file, and clicking the button labeled "Upload" to upload the file
-        Then I should see "Your document was uploaded successfully and is ready for review"
-        And I click on the button labeled "Import Data"
+        And I select "Columns" on the dropdown field labeled "Records in file are formatted as"
+        And I upload a "csv" format file located at "import_files/B316200100_ImportTemplate_ImportRecord_Column.csv", by clicking the button near "Select your CSV data file" to browse for the file, and clicking the button labeled "Upload File" to upload the file
+        Then I should see "DATA DISPLAY TABLE"
+        When I click on the button labeled "Import Data"
         Then I should see "Import Successful!"
 
         #VERIFY_RSD: 2 records

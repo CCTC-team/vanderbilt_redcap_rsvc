@@ -165,11 +165,11 @@ Feature: User Interface: The system shall support the ability to assign the User
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION
-        When I click on the radio button labeled "Custom user access" for the field labeled "View Access"
-        And I select "test_user1" from the dropdown field labeled "Selected users"
-        And I select "test_user2" from the dropdown field labeled "Selected users"
-        And I click on the radio labeled "Custom user access" for the field labeled "Edit Access"
-        And I select "test_user1" from the dropdown field labeled "Selected users"
+        When I select the radio option "Custom user access" for the field labeled "View Access"
+        And I select "test_user1" on the dropdown field labeled "Selected users"
+        And I select "test_user2" on the dropdown field labeled "Selected users"
+        And I select the radio option "Custom user access" for the field labeled "Edit Access"
+        And I select "test_user1" on the dropdown field labeled "Selected users"
         And I click on the button labeled "Save Report"
         Then I should see "Your report has been saved!" in the dialog box
         And I click on the button labeled "Return to My Reports & Exports"

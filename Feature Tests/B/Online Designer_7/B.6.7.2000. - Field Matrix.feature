@@ -8,7 +8,11 @@ Feature: Field Creation: The system shall support the creation and spliting matr
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
         #Manual: Append project name with the current version (i.e. "X.X.X.XXX.XXX - LTS X.X.X")
-        And I create a new project named "B.6.7.1600.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing "Empty project", and clicking the "Create Project" button
+        When I click on the link labeled "New Project"
+        And I enter "B.6.7.2000.100" into the input field labeled "Project title"
+        And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"
+        And I click on the radio labeled "Empty project (blank slate)"
+        And I click on the button labeled "Create Project"
 
         ##SETUP_PRODUCTION
         When I click on the link labeled "My Projects"
@@ -19,25 +23,29 @@ Feature: Field Creation: The system shall support the creation and spliting matr
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: matrix fields creation
         When I click on the instrument labeled "Form 1"
-        And I click on the button labeled "Add matrix of Fields"
-        And add "Vanilla" into the box labeled "Field Label"
-        And I add "flavor1" into the box labeled "Variable Name"
+        And I click on the button labeled "Add Matrix of Fields"
+        And I enter "Vanilla" into the input field labeled "Field Label"
+        And I enter "flavor1" into the input field labeled "Variable Name"
         And I click on the button labeled "Add another row"
-        And I add "Chocolate" into the box labeled "Field Label"
-        And I add "flavor2" into the box labeled "Variable Name"
+        And I enter "Chocolate" into the input field labeled "Field Label"
+        And I enter "flavor2" into the input field labeled "Variable Name"
         And I click on the button labeled "Add another row"
-        And I add "Strawberry" into the box labeled "Field Label"
-        And I add "flavor3" into the box labeled "Variable Name"
+        And I enter "Strawberry" into the input field labeled "Field Label"
+        And I enter "flavor3" into the input field labeled "Variable Name"
         And I click on the button labeled "Add another row"
 
-        And I add a new Matrix Column Choices
-        And I enter "1, Dislike" on the first row of the input field labeled "Choices (one choice per line)"
-        And I enter "2, Neutral" on the second row of the input field labeled "Choices (one choice per line)"
-        And I enter "3, Love" on the third row of the input field labeled "Choices (one choice per line)"
-        And I enter "ice_cream" in the box labeled "Matrix group name"
+        And I click on the first button labeled "Add Matrix of Fields"
+        And I enter Choices of "1, Checkbox1" into the open "Add New Field" dialog box
+        And I enter Choices of "2, Checkbox2" into the open "Add New Field" dialog box
+        And I enter Choices of "3, Checkbox3" into the open "Add New Field" dialog box
+        And I enter Choices of "1, Dislike" into the open "Add New Field" dialog box
+        And I enter Choices of "2, Neutral" into the open "Add New Field" dialog box
+        And I enter Choices of "3, Love" into the open "Add New Field" dialog box
+        And I enter "ice_cream" into the input field labeled "Matrix group name"
         And I click on the button labeled "Save"
         Then I should see the field labeled "Matrix Group: ice_cream"
-        And I should see the radio button options "Dislike","Neutral "Love"
+        And I should see a table header and rows containing the following values in the browse users table:
+            | Dislike | Neutral | Love |
 
         ##VERIFY_LOGGING
         When I click on the link labeled "Logging"
@@ -49,9 +57,9 @@ Feature: Field Creation: The system shall support the creation and spliting matr
         When I click on the icon labeled "Edit Matrix" on the field labeled "Matrix Group: ice_cream"
         And I click on the button labeled "Save & split into separate fields"
         And I click on the button labeled "Split matrix"
-        Then I should see a field name  with the variable name " flavor1"
-        And I should see a field name  with the variable name " flavor2"
-        And I should see a field name  with the variable name " flavor2"
+        Then I should see the field labeled "Vanilla"
+        And I should see the field labeled "Chocolate"
+        And I should see the field labeled "Strawberry"
 
         ##VERIFY_LOGGING
         When I click on the link labeled "Logging"

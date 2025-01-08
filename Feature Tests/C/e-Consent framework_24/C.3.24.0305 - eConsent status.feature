@@ -10,7 +10,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         And I create a new project named "C.3.24.0305.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
-        When I click on the button labeled "Project Setup"
+        When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
@@ -20,7 +20,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
     Scenario: #SETUP_eConsent to allow for edit by users
         ##SETUP Allow e-Consent responses to be edited by users?
         When I click on the button labeled "Designer"
-        And I click on the button labeled "e-Consent and PDF Snapshots"
+        And I click on the button labeled "e-Consent"
         And I click on the button labeled "+Enable the e-Consent Framework for a survey"
         And I select "Participant Consent" from the dialogue box labeled "Enable e-Consent for a Survey"
         Then I should see a dialogue box labeled "Enable e-Consent"
@@ -32,7 +32,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         And I select "participant_file" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "select a File Upload field" in the dialog box
         And I click on the button labeled "Save settings"
         Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
-        Then I should see a table header and rows containing the following values in a table::
+        Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot | Custom tag/category | Notes |
             | Active            | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
 
@@ -68,9 +68,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         And I should see the button labeled "Submit" is disabled
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
-        Then I should see the button labeled "Submit" is enabled
-
-        When I click on the button labeled "Submit"
+        And I click on the button labeled "Submit"
         Then I should see "Thank you for taking the survey."
 
         When I click on the button labeled "Close survey"
@@ -130,8 +128,6 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         And I click on the button labeled "Leave without saving changes" in the dialog box
         Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
 
-        Then I should see the button labeled "Submit" is enabled
-
         When I click on the button labeled "Submit"
         Then I should see "Thank you for taking the survey."
 
@@ -173,9 +169,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         And I should see the button labeled "Submit" is disabled
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
-        Then I should see the button labeled "Submit" is enabled
-
-        When I click on the button labeled "Submit"
+        And I click on the button labeled "Submit"
         Then I should see "Thank you for taking the survey."
 
         When I click on the button labeled "Close survey"
@@ -197,7 +191,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         When I click on the file link for record "2" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
         Then I should have a pdf file with the following values in the signature field "signature"
-        #M: Close document
+        #Manual: Close document
 
 
         ##VERIFY_Logging

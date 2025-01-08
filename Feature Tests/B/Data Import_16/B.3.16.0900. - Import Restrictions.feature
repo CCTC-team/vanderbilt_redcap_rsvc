@@ -47,7 +47,7 @@ Feature: User Interface: The system shall not allow data to be changed on locked
     #VERIFY_LOG
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
-      #M: should not see anything was imported after record was locked
+      #Manual: should not see anything was imported after record was locked
       | Username   | Action               | List of Data Changes      |
       | test_admin | Lock/Unlock Record 1 | Action Lock entire record |
 #End

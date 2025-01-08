@@ -46,8 +46,8 @@ Feature: Field Creation: The system shall support the creation of Signature (dra
         ##VERIFY_CODEBOOK
         When I click on the link labeled "Codebook"
         Then I should see a table header and rows containing the following values in the codebook table:
-            | # | Variable / Field Name | Field Label | Field Attributes |
-            | 2 | [signature]           | Signature   | file (signature) |
+            | Variable / Field Name | Field Label | Field Attributes |
+            | [signature]           | Signature   | file (signature) |
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"
@@ -78,6 +78,6 @@ Feature: Field Creation: The system shall support the creation of Signature (dra
         ##VERIFY_CODEBOOK
         When I click on the link labeled "Codebook"
         Then I should see a table header and rows containing the following values in the codebook table:
-            | # | Variable / Field Name | Field Label | Field Attributes |
-            | 2 | [signature]           | Signature   | file (signature) |
+            | Variable / Field Name | Field Label | Field Attributes |
+            | [signature]           | Signature   | file (signature) |
 #END

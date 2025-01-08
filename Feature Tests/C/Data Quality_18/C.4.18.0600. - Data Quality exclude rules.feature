@@ -49,7 +49,7 @@ Feature: User Interface: The system shall support excluding discrepancies found 
             | 5 (#1) | integer = 1111111111                | Out of range | remove exclusion |
 
         And I click on the button labeled "Close" in the dialog box
-        #M: refresh the page
+        #Manual: refresh the page
 
         ##VERIFY
         Then I click on the button labeled "Clear"
@@ -84,7 +84,7 @@ Feature: User Interface: The system shall support excluding discrepancies found 
             | 5 (#1) | number = 10.000                     | Out of range | exclude |
 
         And I click on the button labeled "Close" in the dialog box
-        #M: refresh the page
+        #Manual: refresh the page
 
         ##VERIFY
         Then I click on the button labeled "Clear"

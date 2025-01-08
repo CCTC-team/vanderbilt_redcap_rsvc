@@ -9,7 +9,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to sea
       And I create a new project named "C.3.24.2000.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
 
       #SETUP_PRODUCTION
-      When I click on the button labeled "Project Setup"
+      When I click on the link labeled "Project Setup"
       And I click on the button labeled "Move project to production"
       And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
       And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
@@ -18,7 +18,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to sea
       #FUNCTIONAL_REQUIREMENT
       ##ACTION: e-consent search
       When I click on the button labeled "Designer"
-      And I click on the button labeled "e-Consent and PDF Snapshots"
+      And I click on the button labeled "e-Consent"
       Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
       And I should see the e-consent framework for survey labeled "Coordinator Consent" is "Active"
 

@@ -10,7 +10,7 @@ Feature: Control Center: The system shall support enabling or disabling the use 
         When I click on the link labeled "Control Center"
         And I click on the link labeled "File Upload Settings "
         Then I should see "Microsoft Azure Blob Storage"
-        #M REDCap Administrators may need to work with their Azure Administrator to get the Account Name, Account Key, and Blob Container information
+        #Manual: REDCap Administrators may need to work with their Azure Administrator to get the Account Name, Account Key, and Blob Container information
         And I click on the button labeled "Save Changes"
         And I should see "Your configuration values have now been changed"
 
@@ -65,5 +65,5 @@ Feature: Control Center: The system shall support enabling or disabling the use 
 #Manual: Close document
 
 ##VERIFY_PDF Snapshot Specific File Location
-#M REDCap Administrators may need to work with their Azure Administrator to get a screenshot that the PDF file exists
+#Manual: REDCap Administrators may need to work with their Azure Administrator to get a screenshot that the PDF file exists
 #END

@@ -25,7 +25,7 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         And I should see the field labeled "Calculated Field"
         And I should see the field labeled "Multiple Choice dropdown Auto"
         And I should see the field labeled "Multiple Choice Dropdown Manual"
-        #M: Close the survey page
+        #Manual: Close the survey page
 
         #FUNCTIONAL_REQUIREMENT: data entry mode
         Given I return to the REDCap page I opened the survey from
@@ -33,7 +33,7 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
 
-        #MANUAL: These confirmation windows are automatically accepted on automated side
+        #Manual: These confirmation windows are automatically accepted on automated side
         Then I should see an alert box with the following text: 'ERASE THE VALUE OF THE FIELD "ptname" ?'
         #And I click on the button labeled "OK" in the alert box
         Then I should see an alert box with the following text: 'ERASE THE VALUE OF THE FIELD "textbox" ?'
@@ -87,7 +87,7 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         And I should see the field labeled "Calculated Field"
         And I should see the field labeled "Multiple Choice dropdown Auto"
         And I should see the field labeled "Multiple Choice Dropdown Manual"
-        #M: Close tab
+        #Manual: Close tab
 
         #FUNCTIONAL_REQUIREMENT: data entry mode
         Given I return to the REDCap page I opened the survey from
@@ -136,7 +136,7 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
 
         When I uncheck the checkbox labeled "Checkbox3"
         Then I should NOT see the field labeled "Required"
-        #M: Close the survey page
+        #Manual: Close the survey page
 
         ##VERIFY_LOG
         Given I return to the REDCap page I opened the survey from

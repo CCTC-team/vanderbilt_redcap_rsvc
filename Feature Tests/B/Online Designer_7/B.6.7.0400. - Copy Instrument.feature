@@ -18,6 +18,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
 
         When I click on the button labeled "Online Designer"
         And I click on the button labeled "Enter Draft Mode"
+        And I click on the button labeled "Dismiss"
         Then I should see "The project is now in Draft Mode"
 
         Then I should see a table header and rows containing the following values in a table:

@@ -10,7 +10,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       And I create a new project named "C.3.24.2200.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
 
       #SETUP_PRODUCTION
-      When I click on the button labeled "Project Setup"
+      When I click on the link labeled "Project Setup"
       And I click on the button labeled "Move project to production"
       And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
       And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
@@ -22,7 +22,7 @@ Feature: User Interface: The system shall support the creation, modification, an
    Scenario: Cancel New PDF Trigger
       ##ACTION: New PDF Trigger
       When I click on the button labeled "PDF Snapshots of Record"
-      And I click the button "+Add new trigger"
+      And I click on the button labeled "+Add new trigger"
       And I click on the button labeled "Cancel"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name | Type of trigger | Save snapshot when... | Scope of the snapshot | Location(s) to save the snapshot |
@@ -30,14 +30,14 @@ Feature: User Interface: The system shall support the creation, modification, an
    Scenario: New PDF Trigger for survey completion all instruments
       ##ACTION: New PDF Trigger
       When I click on the button labeled "PDF Snapshots of Record"
-      And I click the button "+Add new trigger"
+      And I click on the button labeled "+Add new trigger"
       And I enter "Custom Dropdown 1 Form Snapshot" in the box labeled "Name of trigger"
       And I select "'Participant Consent' - [Any EVENT]" from the dropdown field labeled "Every time the following survey is completed:" in the dialog box
-      And I enter "" into the field labeled "[All instruments]"
-      And I "Check" the box labeled "Save as Compact PDF (includes only fields with saved data)"
-      And I "Uncheck" the box labeled "Store the translated version of the PDF(if using Multi-language Management)"
-      And I "Check" the box labeled "Save to File Repository"
-      And I "Check" the box labeled "Save to specified field:"
+      And I enter "" into the input field labeled "[All instruments]"
+      And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
+      And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
+      And I check the checkbox labeled "Save to File Repository"
+      And I check the checkbox labeled "Save to specified field:"
       And I select "participant_file" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "select a File Upload field" in the dialog box
       And I enter "Custom" into the input field labeled "File name:"
       And I click on the button labeled "Save"
@@ -88,10 +88,10 @@ Feature: User Interface: The system shall support the creation, modification, an
       And I select "--- select a survey ---" from the dropdown field labeled "Every time the following survey is completed:" in the dialog box
       And I enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" in the box labeled "When the following logic becomes true"
       And I click "Particpant Consent" and "Coordinator Siganture" from "[Any Event]" located in "Arm 1: Arm 1"
-      And I "Check" the box labeled "Save as Compact PDF (includes only fields with saved data)"
-      And I "Uncheck" the box labeled "Store the translated version of the PDF(if using Multi-language Management)"
-      And I "Check" the box labeled "Save to File Repository"
-      And I "Check" the box labeled "Save to specified field:"
+      And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
+      And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
+      And I check the checkbox labeled "Save to File Repository"
+      And I check the checkbox labeled "Save to specified field:"
       And I select "coo_sign" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "select a File Upload field" in the dialog box
       And I enter "Custom" into the input field labeled "File name:"
       And I click on the button labeled "Save"
@@ -188,7 +188,7 @@ Feature: User Interface: The system shall support the creation, modification, an
 
       When I click on the file link the field labeled "Participant Consent file"
       Then I should have a pdf file with the following values "Participant Consent"
-      #M: Close document
+      #Manual: Close document
 
       #Add Insturment 2's response
       When I click on the bubble labeled "Coordiantor Signature"
@@ -217,7 +217,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I click on the file link the field labeled "Coordinator Signature file"
       Then I should have a pdf file with the following values "Participant Consent"
       And I should have a pdf file with the following values "Coordinator Signature"
-   #M: Close document
+   #Manual: Close document
 
 
    Scenario: Verification pdf saved and logged correctly

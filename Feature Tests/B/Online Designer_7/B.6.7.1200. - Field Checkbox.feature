@@ -54,8 +54,8 @@ Feature: Field Creation: The system shall support the creation of Checkboxes (mu
         ##VERIFY_CODEBOOK
         When I click on the link labeled "Codebook"
         Then I should see a table header and rows containing the following values in the codebook table:
-            | # | Variable / Field Name | Field Label | Field Attributes |
-            | 2 | [checkbox]            | Checkbox    | checkbox         |
+            | Variable / Field Name | Field Label | Field Attributes |
+            | [checkbox]            | Checkbox    | checkbox         |
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"
@@ -76,7 +76,12 @@ Feature: Field Creation: The system shall support the creation of Checkboxes (mu
         Then I should see "Your document was uploaded successfully and awaits your confirmation below."
 
         When I click on the button labeled "Commit Changes"
-        Then I should see "Changes Made Successfully!"
+        Then I should see "Changes to the DRAFT have been made successfully!"
+
+        When I click on the button labeled "Submit Changes for Review"
+        And I click on the button labeled "Submit" in the dialog box
+        Then I should see "Changes Were Made Automatically"
+        When I click on the button labeled "Close" in the dialog box
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"
@@ -91,6 +96,6 @@ Feature: Field Creation: The system shall support the creation of Checkboxes (mu
         ##VERIFY_CODEBOOK
         When I click on the link labeled "Codebook"
         Then I should see a table header and rows containing the following values in the codebook table:
-            | #  | Variable / Field Name | Field Label | Field Attributes |
-            | 14 | [checkbox]            | Checkbox    | checkbox         |
+            | Variable / Field Name | Field Label | Field Attributes |
+            | [checkbox]            | Checkbox    | checkbox         |
 #END

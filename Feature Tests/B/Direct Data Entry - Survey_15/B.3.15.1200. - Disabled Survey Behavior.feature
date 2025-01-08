@@ -72,7 +72,7 @@ Feature: User Interface: Survey Project Settings: The system shall delete all su
    
     ##VERIFY_DE
     Given I return to the REDCap page I opened the survey from
-    #Manual Only: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
+    #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
     #And I click on the button labeled "Leave without saving changes" in the dialog box
     When I click on the link labeled "Data Exports, Reports, and Stats"
     Then I should see a table row containing the following values in the reports table:
@@ -103,7 +103,7 @@ Feature: User Interface: Survey Project Settings: The system shall delete all su
       | Record ID | Event Name             | Repeat Instrument | Repeat Instance | Data Access Group | Survey Identifier | Name            |
       | 1         | Event 1 (Arm 1: Arm 1) |                   |                 |                   |                   | B.3.15.1200.100 |
 
-    #MANUAL: Note that "text_validation_timestamp" is the column VARIABLE name used if Text Validation instrument was enabled as survey.
+    #Manual: Note that "text_validation_timestamp" is the column VARIABLE name used if Text Validation instrument was enabled as survey.
     # Cannot look for "Survey Timestamp" because that same LABEL is used for all survey timestamp columns.
     And I should NOT see "text_validation_timestamp"
 
@@ -111,7 +111,7 @@ Feature: User Interface: Survey Project Settings: The system shall delete all su
     Given I click on the link labeled "Survey Distribution Tools"
     And I click on the tab labeled "Participant List"
 
-    #MANUAL: We are verifying that you do NOT see "Text Validation" in the dropdown labeled "Participant List".
+    #Manual: We are verifying that you do NOT see "Text Validation" in the dropdown labeled "Participant List".
     # For comparison, see line 43 where "Text Validation" is included in this list ...
     Then I should see the dropdown field labeled "Participant List" with the options below
       | "Consent" - Event 1 (Arm 1: Arm 1)     |

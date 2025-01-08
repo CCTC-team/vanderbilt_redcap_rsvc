@@ -22,7 +22,7 @@ Feature: User Interface: The system shall require the repeating instrument and i
     When I click on the button labeled "Move project to production"
     And I click on the radio labeled "Delete ALL data in the project" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
-    #M: Will have to accept confirmation window "And I click on the button labeled "Ok" in the pop-up box"
+    #Manual: Will have to accept confirmation window "And I click on the button labeled "Ok" in the pop-up box"
     Then I see Project status: "Production"
 
     #FUNCTIONAL REQUIREMENT

@@ -9,7 +9,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       And I create a new project named "C.3.24.2900.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
 
       #SETUP_PRODUCTION
-      When I click on the button labeled "Project Setup"
+      When I click on the link labeled "Project Setup"
       And I click on the button labeled "Move project to production"
       And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
       And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
@@ -18,7 +18,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
    Scenario: #SETUP_eConsent for participant consent process
       #SETUP_eConsent for participant consent process
       When I click on the button labeled "Designer"
-      And I click on the button labeled "e-Consent and PDF Snapshots"
+      And I click on the button labeled "e-Consent"
       And I click on the button labeled "+Enable the e-Consent Framework for a survey"
       And I select "Participant Consent" from the dialogue box labeled "Enable e-Consent for a Survey"
       Then I should see a dialogue box labeled "Enable e-Consent"
@@ -36,22 +36,22 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       And I enter "eConsent" into the input field labeled "File name:"
       And I click on the button labeled "Save settings"
       Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
-      Then I should see a table header and rows containing the following values in a table::
+      Then I should see a table header and rows containing the following values in a table:
          | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
          | Active            | "Participant Consent" (participant_consent) | File Repository Specified field:[participant_file] | Participant         |       |
 
    Scenario: New PDF Trigger for survey completion all instruments
       ##ACTION: New PDF Trigger
       When I click on the button labeled "PDF Snapshots of Record"
-      And I click the button "+Add new trigger"
+      And I click on the button labeled "+Add new trigger"
       And I enter "Snapshot" in the box labeled "Name of trigger"
       And I select "--- select a survey ---" from the dropdown field labeled "Every time the following survey is completed:" in the dialog box
       And I enter "[participant_consent_complete]='2'" in the box labeled "When the following logic becomes true"
 
-      And I enter "" into the field labeled "[All instruments]"
-      And I "Check" the box labeled "Save as Compact PDF (includes only fields with saved data)"
-      And I "Uncheck" the box labeled "Store the translated version of the PDF(if using Multi-language Management)"
-      And I "Check" the box labeled "Save to File Repository"
+      And I enter "" into the input field labeled "[All instruments]"
+      And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
+      And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
+      And I check the checkbox labeled "Save to File Repository"
       And I enter "Snapshot" into the input field labeled "File name:"
       And I click on the button labeled "Save"
       Then I should see "Saved!"

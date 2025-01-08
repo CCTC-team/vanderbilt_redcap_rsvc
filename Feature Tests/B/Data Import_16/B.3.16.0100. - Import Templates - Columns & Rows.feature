@@ -24,7 +24,7 @@ Feature: User Interface: The system shall support the ability to download two ve
     ##VERIFY
     And the downloaded CSV with filename "B316100100_ImportTemplate_yyyy-mm-dd.csv" has the header below
       | record_id | name | email | text_validation_complete | ptname | bdate | role | notesbox | multiple_dropdown_auto | multiple_dropdown_manual | multiple_radio_auto | radio_button_manual | checkbox___1 | checkbox___2 | checkbox___3 | required | identifier_ssn | identifier_phone | slider | date_time_hh_mm | date_time_hh_mm_ss | data_types_complete | data_dictionary_form_complete | phone | demo_branching_complete |  |
-    #M: close csv file
+    #Manual: close csv file
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION Data Import Template (with records in columns)
@@ -32,7 +32,7 @@ Feature: User Interface: The system shall support the ability to download two ve
     Then I should see "Download your Data Import Template (with records in columns)"
     And I click on the link labeled "Download your Data Import Template" near "with records in columns" to download a file
     Then I should see a downloaded file named "B316100100_ImportTemplate_yyyy-mm-dd.csv"
-    #M: close csv file
+    #Manual: close csv file
 
     ##VERIFY
     And the downloaded CSV with filename "B316100100_ImportTemplate_yyyy-mm-dd.csv" has the header and rows below

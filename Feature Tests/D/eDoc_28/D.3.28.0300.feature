@@ -98,5 +98,5 @@ Feature: User Interface: The system shall allow project level enabling or disabl
 
 
 ##VERIFY_PDF Snapshot Specific File Location
-#M REDCap Administrators may need to work with their Azure Administrator to get a screenshot that the PDF file exists
+#Manual: REDCap Administrators may need to work with their Azure Administrator to get a screenshot that the PDF file exists
 #END

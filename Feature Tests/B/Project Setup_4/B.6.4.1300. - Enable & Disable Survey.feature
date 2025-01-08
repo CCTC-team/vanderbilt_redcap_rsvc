@@ -11,7 +11,7 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
         ##VERIFY columns in Designer when Survey is Enabled
         Given I click on the link labeled "Designer"
         Then I should see a table header containing the following values in a table:
-            | Instrument name | Fields | View\nPDF | Enabled as\nsurvey | Instrument actions | Survey related options |
+            | Instrument name | Fields | PDF | Enabled as\nsurvey | Instrument actions | Survey related options |
 
         Given I click on the link labeled "Project Setup"
         When I click on the button labeled "Disable" in the "Use surveys in this project?" row in the "Main project settings" section
@@ -24,7 +24,7 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
         ##VERIFY columns in Designer when Survey is Disabled
         Given I click on the link labeled "Designer"
         Then I should see a table header containing the following values in a table:
-            | Instrument name | Fields | View\nPDF | Instrument actions |
+            | Instrument name | Fields | PDF | Instrument actions |
 
         #VERIFY_LOG
         When I click on the link labeled "Logging"

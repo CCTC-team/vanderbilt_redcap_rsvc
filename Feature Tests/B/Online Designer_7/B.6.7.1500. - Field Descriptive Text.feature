@@ -57,8 +57,8 @@ Feature: Field Creation: The system shall support the creation of Descriptive Te
         ##VERIFY_CODEBOOK
         When I click on the link labeled "Codebook"
         Then I should see a table header and rows containing the following values in the codebook table:
-            | # | Variable / Field Name   | Field Label                | Field Attributes |
-            | 2 | [descriptive_text_file] | Descriptive Text with File | descriptive      |
+            | Variable / Field Name   | Field Label                | Field Attributes |
+            | [descriptive_text_file] | Descriptive Text with File | descriptive      |
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"
@@ -101,6 +101,6 @@ Feature: Field Creation: The system shall support the creation of Descriptive Te
         ##VERIFY_CODEBOOK
         When I click on the link labeled "Codebook"
         Then I should see a table header and rows containing the following values in the codebook table:
-            | # | Variable / Field Name   | Field Label                | Field Attributes |
-            | 2 | [descriptive_text_file] | Descriptive Text with File | descriptive      |
+            | Variable / Field Name   | Field Label                | Field Attributes |
+            | [descriptive_text_file] | Descriptive Text with File | descriptive      |
 #END

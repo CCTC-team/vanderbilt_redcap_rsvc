@@ -24,6 +24,6 @@ Feature: User Interface: The system shall allow for exporting every field in a d
     # ##VERIFY:
     # Then I should have a "csv" file that contains the headings below
     #   | record_id | redcap_repeat_instrument | redcap_repeat_instance | redcap_data_access_group | redcap_survey_identifier | data_types_timestamp | ptname | textbox | radio | notesbox | identifier | identifier_2 | date_ymd | datetime_ymd_hmss | data_types_complete |
-    # #M: Close the report
+    # #Manual: Close the report
     # And I click on the button labeled "Close" in the dialog box
 #END

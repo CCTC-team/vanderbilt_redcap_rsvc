@@ -15,26 +15,20 @@ Feature: User Interface: The system shall provide the ability for the user impor
         Then I should see Project status: "Production"
 
         Given I click on the link labeled "Data Import Tool"
-        And I select "Import as background process" on the dropdown field labeled "Choose an import option"
+        And I select "Import as background process (better for large data sets)" on the dropdown field labeled "Choose an import option"
         And I upload a "csv" format file located at "import_files/BigDataTestProjectDATA.csv", by clicking the button near "Select your CSV data file" to browse for the file, and clicking the button labeled "Upload File" to upload the file
-        And I click on the button labeled "Upload"
-        And I click on the button labeled "Yes, use background process"
-        And I click on the button labeled "Confirm"
-        And I click on the button labeled "Upload File"
-        Then I should see "Your file is currently being uploaded. Please wait"
-        ##M this may take several minutes while the system analyzes for errors
-
-        And I should see "File was uploaded and will be processed soon"
+        Then I should see "File was uploaded and will be processed soon"
         And I click on the button labeled "Close"
-        And I click the tab labeled "View Background imports"
-        And I click on the button labeled "Halt imports"
-        Then I should see "Cancel this background import?"
-        And I click on the button labeled "Yes, cancel it now"
-        Then I should see "Success"
+        And I wait for background processes to finish
+        #Manual: this may take several minutes while the system analyzes for errors
+
+        And I click on the button labeled "Halt import"
+        Then I should see "Halt this background import?"
+        And I click on the button labeled "Yes, halt it now"
+        Then I should see "The background import process has been successfully cancelled"
         And I click on the button labeled "Close"
 
-        #VERIFY: LOGGING
-        Then I should see a table header and rows containing the following values in the logging table:
-            | Username   | Action        | List of Data Changes              |
-            | test_admin | Manage/Design | Move project to Production status |
+        Then I should see a table header and rows containing the following values in the a table:
+            | Status     | Original Filename           |
+            | Cancelled  | BigDataTestProjectDATA.csv |
 #END

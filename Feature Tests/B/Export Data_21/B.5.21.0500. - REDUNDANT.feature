@@ -153,7 +153,7 @@ Feature: User Interface: The system shall have the following data de-identificat
 #         When I click on the button labeled "Submit"
 #         #And I click on the button labeled "Close survey"
 
-#         #Manual Only: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
+#         #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
 
 #         Given I return to the REDCap page I opened the survey from
 #         And I click on the button labeled "Leave without saving changes" in the dialog box
@@ -174,7 +174,7 @@ Feature: User Interface: The system shall have the following data de-identificat
 
 #         Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format in the dialog box
 #         ##VERIFY:
-#         #MUser can see all variables with dates shifted ([data_types_timestamp]=! today) AND ([date_ymd]=! today) AND ([date_ymd_hmss]=! today)
+#         #Manual: User can see all variables with dates shifted ([data_types_timestamp]=! today) AND ([date_ymd]=! today) AND ([date_ymd_hmss]=! today)
 
 #         Then I should see the latest downloaded "csv" file containing the headings below
 #             | record_id | redcap_repeat_instrument | redcap_repeat_instance | redcap_data_access_group | redcap_survey_identifier | data_types_timestamp | ptname | textbox | radio | notesbox | identifier | identifier_2 | date_ymd | datetime_ymd_hmss | data_types_complete |
@@ -182,7 +182,7 @@ Feature: User Interface: The system shall have the following data de-identificat
 #         And I verify the date in column labeled "date_ymd" for record "5" has shifted today's date in the latest downloaded "csv"
 #         And I verify the datetime in column labeled "datetime_ymd_hmss" for record "5" has shifted today's date in the latest downloaded "csv"
 
-#         #M: Close the report & refresh page
+#         #Manual: Close the report & refresh page
 
 #         And I click on the button labeled "Close" in the dialog box
 #         And I logout

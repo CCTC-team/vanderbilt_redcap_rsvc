@@ -20,14 +20,14 @@ Feature: User Interface: The tool shall display locked status of forms for all r
         When I click on the link labeled "User Rights"
         And I enter "Test_User1" into the input field labeled "Add with custom rights"
         And I click on the button labeled "Add with custom rights"
-        Then I should see "Adding new user "test_user1"
+        Then I should see 'Adding new user "Test_User1"'
 
         When I click on the checkbox for the field labeled "Record Locking Customization"
-        And I click on the radio labeled "Locking / Unlocking" for the field labeled "Lock / Unlock Records (instrument level)"
+        And I select the radio option "Locking / Unlocking" for the field labeled "Lock / Unlock Records (instrument level)"
         And I click on the checkbox for the field labeled "Lock/Unlock *Entire* Records (record level)"
         And I click on the button labeled "Add user"
         And I click on the checkbox for the field labeled "Logging"
-        Then I should see "User "test_user1" was successfully added"
+        Then I should see 'User "Test_User1" was successfully added'
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"

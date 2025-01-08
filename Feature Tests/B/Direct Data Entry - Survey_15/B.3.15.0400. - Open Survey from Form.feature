@@ -39,7 +39,7 @@ Feature: User Interface: Survey Distribution: The system shall provide a survey 
     Then I should see "Thank you for taking the survey"
     And I click on the button labeled "Close survey"
 
-    #Manual Only: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
+    #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
     #And I click on the button labeled "Leave without saving changes" in the dialog box
 
     #FUNCTIONAL REQUIREMENT

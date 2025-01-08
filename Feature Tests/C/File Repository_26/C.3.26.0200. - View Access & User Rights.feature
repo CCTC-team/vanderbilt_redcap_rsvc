@@ -23,14 +23,14 @@ Feature: User Interface: The system shall support limiting file repository user 
 
         #Create DAG limited folder
         And I click on the button labeled "Create Folder"
-        And I type "TestGroup1_Folder" into the field labeled "New folder name"
+        And I enter "TestGroup1_Folder" into the input field labeled "New folder name"
         And I select "TestGroup1" in the dropdown labeled "Limit access by Data Access Group?"
         And I click on the button labeled "Create Folder"
         Then I should see "TestGroup1_Folder"
 
         #Create role limited folder
         And I click on the button labeled "Create Folder"
-        And I type "Role1_Folder" into the field labeled "New folder name"
+        And I enter "Role1_Folder" into the input field labeled "New folder name"
         And I select "1_FullRights" in the dropdown labeled "Limit access by User Role?"
         And I click on the button labeled "Create Folder"
         Then I should see "Role1_Folder"

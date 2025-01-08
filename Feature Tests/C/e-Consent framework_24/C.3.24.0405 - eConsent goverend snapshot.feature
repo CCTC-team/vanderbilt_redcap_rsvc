@@ -10,7 +10,7 @@ Feature:  C.3.24.0405. User Interface: The system shall support the e-Consent Fr
         And I create a new project named "C.3.24.405.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
-        When I click on the button labeled "Project Setup"
+        When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
@@ -19,9 +19,9 @@ Feature:  C.3.24.0405. User Interface: The system shall support the e-Consent Fr
     Scenario: Verify eConsent Framework and PDF Snapshot setup
         #SETUP eConsent Framework and PDF Snapshot setup
         When I click on the button labeled "Designer"
-        And I click on the button labeled "e-Consent and PDF Snapshots"
+        And I click on the button labeled "e-Consent"
         Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
-        Then I should see a table header and rows containing the following values in a table::
+        Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                          | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
             | Active            | "Coordinator Signature" (coordinator_signature) | File Repository Specified field:[coo_sign]         | Coordinator         |       |
             | Active            | "Participant Consent" (participant_consent)     | File Repository Specified field:[participant_file] | Participant         |       |
@@ -65,9 +65,7 @@ Feature:  C.3.24.0405. User Interface: The system shall support the e-Consent Fr
         And I should see the button labeled "Submit" is disabled
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
-        Then I should see the button labeled "Submit" is enabled
-
-        When I click on the button labeled "Submit"
+        And I click on the button labeled "Submit"
         Then I should see "Thank you for taking the survey."
 
         When I click on the button labeled "Close survey"
@@ -85,7 +83,7 @@ Feature:  C.3.24.0405. User Interface: The system shall support the e-Consent Fr
         When I click on the file link for record "1" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
         Then I should have a pdf file with the following values in the header: "PID xxxx - LastName"
         And I should have a pdf file with the following values in the footer: "Type: Participant"
-        #M: Close document
+        #Manual: Close document
 
 
         ##VERIFY_Logging

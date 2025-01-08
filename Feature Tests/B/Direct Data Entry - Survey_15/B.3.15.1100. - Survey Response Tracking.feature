@@ -44,7 +44,7 @@ Feature: User Interface: Survey Project Settings: The system shall support track
 
     ##VERIFY_RSD
     Given I return to the REDCap page I opened the survey from
-    #Manual Only: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
+    #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
     #And I click on the button labeled "Leave without saving changes" in the dialog box
     And I click on the link labeled "Survey Distribution Tools"
     When I click on the tab labeled "Participant List"

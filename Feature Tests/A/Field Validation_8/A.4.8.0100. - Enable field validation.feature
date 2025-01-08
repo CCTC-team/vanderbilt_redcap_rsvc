@@ -52,6 +52,7 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
     And I click on the link labeled "A.4.8.0100.100"
     And I click on the link labeled "Designer"
     And I click on the button labeled "Enter Draft Mode"
+    And I click on the button labeled "Dismiss"
     Then I should see "The project is now in Draft Mode."
     When I click on the instrument labeled "Data Types"
     And I click on the button labeled "Dismiss"

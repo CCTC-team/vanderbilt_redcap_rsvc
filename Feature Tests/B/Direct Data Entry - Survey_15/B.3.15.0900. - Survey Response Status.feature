@@ -51,8 +51,8 @@ Feature: User Interface: The system shall support the following statuses for sur
         Given I click on the button labeled "Save & Return Later"
         And I click on the button labeled "Close" in the dialog box
 
-        #M: Close browser tab
-        #Manual Only: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
+        #Manual: Close browser tab
+        #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
         #And I click on the button labeled "Leave without saving changes" in the dialog box
 
         When I return to the REDCap page I opened the survey from
@@ -74,7 +74,7 @@ Feature: User Interface: The system shall support the following statuses for sur
         And I click on the button labeled "Close survey"
 
         ##VERIFY_RSD
-        #Manual Only: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
+        #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
         # When I click on the button labeled "Leave without saving changes"
 
         Given I return to the REDCap page I opened the survey from

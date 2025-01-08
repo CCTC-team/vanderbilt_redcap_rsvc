@@ -12,7 +12,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
       #SETUP_DESIGNER
       When I click on the button labeled "Designer"
       And I click on the link labeled "Participant Consent"
-      And I click on the button labeled "Add Field" at the bottom of the instrument
+      And I click on the last button labeled "Add Field"
       And I click on the dropdown field labeled "Select a Type of Field"
       And I add a new Multiple Choice - Radio Buttons (Single Answer) field labeled "Form 1 Trigger" with the variable name "trigger1"
       And I enter "1, Data Mode" on the first row of the input field labeled "Choices (one choice per line)"
@@ -22,7 +22,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
       When I click on the button labeled "Designer"
       And I click on the link labeled "Coordinator Signature"
-      And I click on the button labeled "Add Field" at the bottom of the instrument
+      And I click on the last button labeled "Add Field"
       And I click on the dropdown field labeled "Select a Type of Field"
       And I add a new Multiple Choice - Radio Buttons (Single Answer) field labeled "Form 2 Trigger" with the variable name "trigger2"
       And I enter "1, Data Mode" on the first row of the input field labeled "Choices (one choice per line)"
@@ -31,7 +31,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
       Then I should see the field labeled "Form 2 Trigger"
 
       #SETUP_PRODUCTION
-      When I click on the button labeled "Project Setup"
+      When I click on the link labeled "Project Setup"
       And I click on the button labeled "Move project to production"
       And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
       And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
@@ -42,14 +42,14 @@ Feature: User Interface: The system shall support the capture and storage of mul
       When I click on the button labeled "Designer"
       And I click on the button labeled "e-Consent and PDF Snapshot"
       And I click on the button labeled "PDF Snapshots of Record"
-      And I click the button "+Add new trigger"
+      And I click on the button labeled "+Add new trigger"
       And I enter "1 multi data form same event" in the box labeled "Name of trigger"
       And I enter "[trigger1]='1' and [trigger2]='1'" in the box labeled "When the following logic becomes true"
-      And I enter "" into the field labeled "[All instruments]"
-      And I "Check" the box labeled "Save as Compact PDF (includes only fields with saved data)"
-      And I "Uncheck" the box labeled "Store the translated version of the PDF(if using Multi-language Management)"
-      And I "Check" the box labeled "Save to File Repository"
-      And I "Uncheck" the box labeled "Save to specified field:"
+      And I enter "" into the input field labeled "[All instruments]"
+      And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
+      And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
+      And I check the checkbox labeled "Save to File Repository"
+      And I uncheck the checkbox labeled "Save to specified field:"
       And I enter "multi data form same event" into the input field labeled "File name:"
       And I click on the button labeled "Save"
       Then I should see "Saved!"
@@ -59,14 +59,14 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
    Scenario: New mixed multi data form and survey same event PDF Trigger
       ##ACTION: New PDF Trigger
-      When I click the button "+Add new trigger"
+      When I click on the button labeled "+Add new trigger"
       And I enter "2 multi data form and survey same event" in the box labeled "Name of trigger"
       And I enter "[trigger1]='2' and [trigger2]='1'" in the box labeled "When the following logic becomes true"
-      And I enter "" into the field labeled "[All instruments]"
-      And I "Check" the box labeled "Save as Compact PDF (includes only fields with saved data)"
-      And I "Uncheck" the box labeled "Store the translated version of the PDF(if using Multi-language Management)"
-      And I "Check" the box labeled "Save to File Repository"
-      And I "Uncheck" the box labeled "Save to specified field:"
+      And I enter "" into the input field labeled "[All instruments]"
+      And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
+      And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
+      And I check the checkbox labeled "Save to File Repository"
+      And I uncheck the checkbox labeled "Save to specified field:"
       And I enter "multi data form and survey same event" into the input field labeled "File name:"
       And I click on the button labeled "Save"
       Then I should see "Saved!"
@@ -77,14 +77,14 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
    Scenario: New multi survey same event PDF Trigger
       ##ACTION: New PDF Trigger
-      When I click the button "+Add new trigger"
+      When I click on the button labeled "+Add new trigger"
       And I enter "3 multi survey same event" in the box labeled "Name of trigger"
       And I enter "[trigger1]='2' and [trigger2]='2'" in the box labeled "When the following logic becomes true"
-      And I enter "" into the field labeled "[All instruments]"
-      And I "Check" the box labeled "Save as Compact PDF (includes only fields with saved data)"
-      And I "Uncheck" the box labeled "Store the translated version of the PDF(if using Multi-language Management)"
-      And I "Check" the box labeled "Save to File Repository"
-      And I "Uncheck" the box labeled "Save to specified field:"
+      And I enter "" into the input field labeled "[All instruments]"
+      And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
+      And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
+      And I check the checkbox labeled "Save to File Repository"
+      And I uncheck the checkbox labeled "Save to specified field:"
       And I enter "multi data form and survey same event" into the input field labeled "File name:"
       And I click on the button labeled "Save"
       Then I should see "Saved!"
@@ -96,14 +96,14 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
    Scenario: New multi data form different event PDF Trigger
       ##ACTION: New PDF Trigger
-      When I click the button "+Add new trigger"
+      When I click on the button labeled "+Add new trigger"
       And I enter "4 multi data form different event" in the box labeled "Name of trigger"
       And I enter "[event_1_arm_1][trigger1]='1' and [event_three_arm_1][trigger1]='1'" in the box labeled "When the following logic becomes true"
-      And I enter "" into the field labeled "[All instruments]"
-      And I "Check" the box labeled "Save as Compact PDF (includes only fields with saved data)"
-      And I "Uncheck" the box labeled "Store the translated version of the PDF(if using Multi-language Management)"
-      And I "Check" the box labeled "Save to File Repository"
-      And I "Uncheck" the box labeled "Save to specified field:"
+      And I enter "" into the input field labeled "[All instruments]"
+      And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
+      And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
+      And I check the checkbox labeled "Save to File Repository"
+      And I uncheck the checkbox labeled "Save to specified field:"
       And I enter "multi data form different event" into the input field labeled "File name:"
       And I click on the button labeled "Save"
       Then I should see "Saved!"
@@ -116,14 +116,14 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
    Scenario: New mixed multi data form and survey different event PDF Trigger
       ##ACTION: New PDF Trigger
-      When I click the button "+Add new trigger"
+      When I click on the button labeled "+Add new trigger"
       And I enter "5 multi data form and survey different event" in the box labeled "Name of trigger"
       And I enter "[event_1_arm_1][trigger1]='1' and [event_three_arm_1][trigger1]='2'" in the box labeled "When the following logic becomes true"
-      And I enter "" into the field labeled "[All instruments]"
-      And I "Check" the box labeled "Save as Compact PDF (includes only fields with saved data)"
-      And I "Uncheck" the box labeled "Store the translated version of the PDF(if using Multi-language Management)"
-      And I "Check" the box labeled "Save to File Repository"
-      And I "Uncheck" the box labeled "Save to specified field:"
+      And I enter "" into the input field labeled "[All instruments]"
+      And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
+      And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
+      And I check the checkbox labeled "Save to File Repository"
+      And I uncheck the checkbox labeled "Save to specified field:"
       And I enter "multi data form and survey different event" into the input field labeled "File name:"
       And I click on the button labeled "Save"
       Then I should see "Saved!"
@@ -136,14 +136,14 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
    Scenario: New multi survey different event PDF Trigger
       ##ACTION: New PDF Trigger
-      When I click the button "+Add new trigger"
+      When I click on the button labeled "+Add new trigger"
       And I enter "6 multi survey different event" in the box labeled "Name of trigger"
       And I enter "[event_1_arm_1][trigger1]='2' and [event_three_arm_1][trigger1]='2'" in the box labeled "When the following logic becomes true"
-      And I enter "" into the field labeled "[All instruments]"
-      And I "Check" the box labeled "Save as Compact PDF (includes only fields with saved data)"
-      And I "Uncheck" the box labeled "Store the translated version of the PDF(if using Multi-language Management)"
-      And I "Check" the box labeled "Save to File Repository"
-      And I "Uncheck" the box labeled "Save to specified field:"
+      And I enter "" into the input field labeled "[All instruments]"
+      And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
+      And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
+      And I check the checkbox labeled "Save to File Repository"
+      And I uncheck the checkbox labeled "Save to specified field:"
       And I enter "multi data form and survey different event" into the input field labeled "File name:"
       And I click on the button labeled "Save"
       Then I should see "Saved!"

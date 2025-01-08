@@ -47,7 +47,7 @@ Feature: User Interface: The system shall allow submitted survey responses to be
 
     When I click on the button labeled "Close survey"
 
-    #Manual Only: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
+    #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
     #And I click on the button labeled "Leave without saving changes"
 
     Given I return to the REDCap page I opened the survey from
