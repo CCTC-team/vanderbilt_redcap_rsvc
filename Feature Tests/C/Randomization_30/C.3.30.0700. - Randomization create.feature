@@ -43,13 +43,13 @@ Scenario: C.3.30.0700.1900. Admin uploads an additional allocation table in PROD
 
 #SETUP project with randomization enabled - "C.3.30.Rand.xml"
 Scenario:
-Given I login to REDCap with the user "Test_User1"
+Given I login to REDCap with the user "test_User1"
 And I create a new project named "C.3.30.0700A" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "C.3.30.Rand.xml", and clicking the "Create Project" button
 
 #SETUP User Rights
 Scenario: 
 When I click on the link labeled "User Rights"
-And I click on the link labeled "Test User1"
+And I click on the link labeled "test_User1"
 And I click on the button labeled "Assign to role" on the tooltip
 And I select "1_FullRights" on the dropdown field labeled "Select Role"
 And I click on the button labeled exactly "Assign"
@@ -88,7 +88,7 @@ Then I should see a "strat_var1" with the "simple_rand" row of the column labele
 
 ##VERIFY audit trail
 When I click on “Logging”
-Then I should see a table row containing the following values in the logging table : “test_user1”, “Manage/Design”, “Save randomization model”
+Then I should see a table row containing the following values in the logging table : “test_User1”, “Manage/Design”, “Save randomization model”
 
 #FUNCTIONAL_REQUIREMENT C.3.30.0700.0300: Enable stratified randomization with up to 14 strata (test all 14).
 Scenario:
@@ -156,13 +156,13 @@ And I log out
 
 #SETUP project with randomization enabled - "C.3.30.Rand.xml"
 Scenario:
-Given I login to REDCap with the user "Test_User1"
+Given I login to REDCap with the user "test_User1"
 And I create a new project named "C.3.30.0700B" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "C.3.30.Rand.xml", and clicking the "Create Project" button
 
 #SETUP User Rights
 Scenario: 
 When I click on the link labeled "User Rights"
-And I click on the link labeled "Test User1"
+And I click on the link labeled "test_User1"
 And I click on the button labeled "Assign to role" on the tooltip
 And I select "1_FullRights" on the dropdown field labeled "Select Role"
 And I click on the button labeled exactly "Assign"
@@ -211,12 +211,12 @@ And I log out
 
 #SETUP project with randomization enabled - "Project 3.30 randAM.xml"
 Scenario:
-Given I login to REDCap with the user "Test_User1"
+Given I login to REDCap with the user "test_User1"
 And I create a new project named "C.3.30.0700.D" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project 3.30 randAM.xml", and clicking the "Create Project" button
 
 #SETUP Randomization User Rights (Give User all Rand Rights)
 When I click on the link labeled "User Rights"
-And I click on the link labeled "Test User1"
+And I click on the link labeled "test_User1"
 And I click on the button labeled "Edit User Privileges"
 And I check a checkbox labeled "Setup"
 And I check a checkbox labeled "Dashboard"
@@ -248,8 +248,8 @@ Then I should NOT see a "will_survey" within the "5" row of the column labeled "
 When I click on the link labeled "Logging"
 Then I should see a table header and rows containing the following values in the logging table:
   | Username   | Action        | List of Data Changes OR Fields Exported      |
-  | Test_User1 | Manage/Design | Save Randomization Model |
-  | Test_User1 | Manage/Design | Erase randomization model and allocations |
+  | test_User1 | Manage/Design | Save Randomization Model |
+  | test_User1 | Manage/Design | Erase randomization model and allocations |
 And I logout
 #END
 
