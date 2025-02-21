@@ -78,6 +78,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
     Scenario: B.6.7.0700.200 Text box field creation in Data Dictionary
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
+        And I click on the link labeled "My Projects"
         When I click on the link labeled "New Project"
         And I enter "B.6.7.0700.200" into the input field labeled "Project title"
         And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"

@@ -25,6 +25,7 @@ Feature: A.2.12.0100. Security Settings- The system shall support changing the s
 
     #Test REDCap offline for Admin User
     Given I login to REDCap with the user "Test_Admin"
+    And I click on the link labeled "My Projects"
     Then I should see "REDCap and all its projects are currently OFFLINE and are not accessible to normal users."
     And I click on the link labeled "Control Center"
     And I click on the link labeled "General Configuration"

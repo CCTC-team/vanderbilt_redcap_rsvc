@@ -37,6 +37,7 @@ Feature: User Interface: The system shall support the storage, organization, and
 
     #SETUP
         Given I login to REDCap with the user "Test_Admin"
+        And I click on the link labeled "My Projects"
         And I create a new project named "C.3.26.300.300" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.3.26.300.300"

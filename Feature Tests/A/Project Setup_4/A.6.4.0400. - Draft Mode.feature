@@ -137,6 +137,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
   Scenario: A.6.4.0400.200 User's ability to approve draft changes without administrative approval if no existing fields were modified
     Given I login to REDCap with the user "Test_Admin"
+    And I click on the link labeled "My Projects"
     And I create a new project named "A.6.4.0400.200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.200"
@@ -221,6 +222,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
   Scenario: A.6.4.0400.300 User's ability to approve draft changes without administrative approval if no critical issues exist
     Given I login to REDCap with the user "Test_Admin"
+    And I click on the link labeled "My Projects"
     And I create a new project named "A.6.4.0400.300" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.300"
