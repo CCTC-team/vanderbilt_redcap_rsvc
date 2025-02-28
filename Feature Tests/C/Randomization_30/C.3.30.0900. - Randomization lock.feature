@@ -8,4 +8,5 @@ Scenario:  C.3.30.0900.0300. Admin cannot modify setup in production.  C.3.30.09
 
 Scenario: C.3.30.0900.0600. Admin can upload additional allocations to existing table in production.
 
+Given The above functional requirement has not been written and tested, this functional requirement fail.
 Given The above scenarios are completed before removing this line, which causes this feature to correctly fail automation until it is complete

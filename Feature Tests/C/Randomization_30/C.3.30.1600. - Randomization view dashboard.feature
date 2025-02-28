@@ -7,4 +7,5 @@ Scenario: C.3.30.1600.0100. User without dashboard rights cannot access randomiz
 
 Scenario: C.3.30.1600.0200. User with dashboard rights cannot access randomization dashboard.
 
+Given The above functional requirement has not been written and tested, this functional requirement fail.
 Given The above scenarios are completed before removing this line, which causes this feature to correctly fail automation until it is complete

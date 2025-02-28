@@ -7,4 +7,5 @@ Scenario: C.3.30.1200.0100. Logging of record?s randomization includes user and 
 
 Scenario: C.3.30.1200.0200. Users with logging privileges and without randomization privileges will not see record?s randomized values.
 
+Given The above functional requirement has not been written and tested, this functional requirement fail.
 Given The above scenarios are completed before removing this line, which causes this feature to correctly fail automation until it is complete

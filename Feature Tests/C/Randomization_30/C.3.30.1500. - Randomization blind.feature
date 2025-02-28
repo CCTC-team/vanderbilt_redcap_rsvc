@@ -10,4 +10,5 @@ Scenario: C.3.30.1500.0300. All users with export rights can export randomized r
 
 Scenario: C.3.30.1500.0400. Only users with setup rights or admin privileges can access and export the full allocation table directly from the setup interface, regardless of model type.
 
+Given The above functional requirement has not been written and tested, this functional requirement fail.
 Given The above scenarios are completed before removing this line, which causes this feature to correctly fail automation until it is complete

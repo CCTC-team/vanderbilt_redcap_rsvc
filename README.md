@@ -27,4 +27,6 @@ For more information about the Regulatory & Software Validation Committee (RSVC)
 
 Thank you for your interest in ensuring the quality and compliance of REDCap through manual validation test scripts. Together, we can enhance the reliability of REDCap for critical research and clinical projects.
 
+## Reference
 
+Baker TA, Bosler T, De Fouw ALC, Jones M, Harris PA, Cheng AC. Consortium-Driven Rapid Software Validation for Research Electronic Data Capture (REDCap). Journal of Clinical and Translational Science. Published online 2024:1-18. doi:10.1017/cts.2024.671
