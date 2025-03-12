@@ -31,7 +31,7 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
 
         When I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "Yes, Request Admin to Move to Production Status" in the dialog box to request a change in project status
+        And I click on the button labeled "Yes, Request Admin to Move to Production Status" in the dialog box
         Then I should see "Request pending"
         And I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
@@ -93,7 +93,7 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
 
         Given I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far." in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+        And I click on the button labeled "YES, Move to Production Status" in the dialog box
         Then I should see Project status: "Production"
         Given I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:

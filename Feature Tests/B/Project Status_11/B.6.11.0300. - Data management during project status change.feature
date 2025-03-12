@@ -16,7 +16,7 @@ Feature: User Interface: The system shall support the ability for a user to keep
         And I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+        And I click on the button labeled "YES, Move to Production Status" in the dialog box
         ##VERIFY
         Then I should see Project status: "Production"
 
@@ -42,7 +42,7 @@ Feature: User Interface: The system shall support the ability for a user to keep
         And I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Delete ALL data in the project" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+        And I click on the button labeled "YES, Move to Production Status" in the dialog box
         ##VERIFY
         Then I should see Project status: "Production"
 

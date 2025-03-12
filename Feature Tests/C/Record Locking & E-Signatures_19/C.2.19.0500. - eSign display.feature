@@ -14,7 +14,7 @@ Feature: User Interface: The tool shall display e-signature status of forms for 
         When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+        And I click on the button labeled "YES, Move to Production Status" in the dialog box
         Then I should see Project status: "Production"
 
         #USER_RIGHTS
@@ -25,7 +25,8 @@ Feature: User Interface: The tool shall display e-signature status of forms for 
 
         When I click on the checkbox for the field labeled "Logging"
         And I click on the checkbox for the field labeled "Record Locking Customization"
-        And I select the radio option "Locking / Unlocking with E-signature authority" for the field labeled "Lock / Unlock Records (instrument level)"
+        And I select the radio option "Locking / Unlocking with E-signature authority" for the field labeled "Lock/Unlock Records (instrument level)"
+        And I should see "Please note that giving a user 'Locking / Unlocking with E-signature authority' privileges"
         And I click on the button labeled "Close" in the dialog box
         And I click on the button labeled "Add user"
         Then I should see 'User "Test_User1" was successfully added'
@@ -34,7 +35,7 @@ Feature: User Interface: The tool shall display e-signature status of forms for 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action              | List of Data Changes OR Fields Exported |
-            | test_admin | Add user test_user1 | user = 'test_user1'                     |
+            | test_admin | Add user Test_User1 | user = 'Test_User1'                     |
 
         And I logout
 
@@ -56,15 +57,14 @@ Feature: User Interface: The tool shall display e-signature status of forms for 
         When I click on the link labeled "Record Status Dashboard"
         And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "3" and click on the bubble
         Then I should see "Text Validation"
-        And I should see a checkbox labeled "Lock this instrument?" that is unchecked
-        And I should see a checkbox labeled "E-signature" that is unchecked
 
-        When I click on the checkbox for the field labeled "Lock this instrument?"
-        And I click on the checkbox labeled "E-signature"
+        When I click on the checkbox labeled exactly "Lock"
+        And I click on the checkbox labeled exactly "E-signature"
         And I click on the button labeled "Save & Exit Form"
         Then I should see a dialog containing the following text: "E-signature: Username/password verification"
 
-        Given I enter Test_User login credentials
+        Given I provide E-Signature credentials for the user "Test_User1"
+        And I click on the button labeled "Save" in the dialog box
         Then I should see "Record Home Page"
         And I should see a table header and rows containing the following values in the record home page table:
             | Data Collection Instrument | Event 1         |
@@ -74,9 +74,15 @@ Feature: User Interface: The tool shall display e-signature status of forms for 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
-            | Username   | Action               | List of Data Changes OR Fields Exported                                    |
-            | test_user1 | E-signature 3        | Action: Save e-signature, Record: 3, Form: Text Validation, Event: Event 1 |
-            | test_user1 | Lock/Unlock Record 3 | Action: Lock instrument, Record: 3, Form: Text Validation, Event: Event 1  |
+            | Username   | Action               | List of Data Changes OR Fields Exported |
+            | test_user1 | E-signature 3        | Action: Save e-signature                |
+            |            |                      | Record: 3                               |
+            |            |                      | Form: Text Validation                   |
+            |            |                      | Event: Event 1                          |
+            | test_user1 | Lock/Unlock Record 3 | Action: Lock instrument                 |
+            |            |                      | Record: 3                               |
+            |            |                      | Form: Text Validation                   |
+            |            |                      | Event: Event 1                          |
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION Record lock and signature status
