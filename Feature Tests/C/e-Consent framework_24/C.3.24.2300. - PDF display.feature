@@ -14,7 +14,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       And I click on the button labeled "PDF Snapshot"
       And I click on the link labeled "PDF Snapshots of Record"
       And I click on the button labeled "Add new trigger"
-      And I enter "Snapshot" in the box labeled "Name of trigger"
+      And I enter "Snapshot" into the input field labeled "Name of trigger"
       And I select "'Participant Consent' - [Any EVENT]" from the dropdown field labeled "Every time the following survey is completed:" in the dialog box
       And I enter "" into the input field labeled "[All instruments]"
       And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
@@ -46,7 +46,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
    Scenario: Edit trigger
       ##ACTION: Edit trigger
       When I click on the button labeled "Edit trigger" for the trigger labeled "Snapshot"
-      And I enter "Hide Snapshot" in the box labeled "Name of trigger"
+      And I enter "Hide Snapshot" into the input field labeled "Name of trigger"
       And I click on the button labeled "Save"
       Then I should see "Saved! Trigger for PDF Snapshot was successfully modified"
       Then I should see a table header and rows containing the following values in a table:

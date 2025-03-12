@@ -71,8 +71,8 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
             | [✓]    | Governed by e-Consent |      | Survey completion | Complete survey "Coordinator Signature" | Single survey response | File Repository Specified field: [coo_sign]         |
 
         When I click on the button labeled "Add new trigger"
-        And I enter "Combine PDF file" in the box labeled "Name of trigger"
-        And I enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" in the box labeled "When the following logic becomes true"
+        And I enter "Combine PDF file" into the input field labeled "Name of trigger"
+        And I enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the input field labeled "When the following logic becomes true"
         And I click "Particpant Consent" and "Coordinator Siganture" from "[Any Event]" located in "Arm 1: Arm 1"
         And I click on the button labeled "Update"
         And I check the checkbox labeled "Save to File Repository"
