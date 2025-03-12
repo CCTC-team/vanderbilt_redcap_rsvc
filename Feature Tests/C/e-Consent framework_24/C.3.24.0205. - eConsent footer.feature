@@ -60,7 +60,9 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I check the checkbox labeled "Save to specified field"
         And I select "coo_sign" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "select a File Upload field" in the dialog box
         And I click on the button labeled "Save settings"
-        Then I should see the e-consent framework for survey labeled "Coordinator Signature" is "Active"
+        Then I should see a table header and rows containing the following values in a table:
+            | e-Consent active? | Survey              |
+            | [✓]               | Coordinator Signature |
 
     Scenario: Combine the PDFs to one combined PDF
         #SETUP Trigger to combine the PDFs to one combined PDF
