@@ -17,7 +17,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     When I click on the link labeled "Designer"
     And I click on the button labeled "e-Consent"
     And I click on the button labeled "Enable the e-Consent Framework for a survey"
-    And I select "Participant Consent" from the dialogue box labeled "Enable e-Consent for a Survey"
+    And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
     Then I should see a dialogue box labeled "Enable e-Consent"
     And I should see "Primary settings"
       #C.3.24.1300.100 e-Consent Framework custom file name
