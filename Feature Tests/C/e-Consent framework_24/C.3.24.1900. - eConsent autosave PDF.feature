@@ -25,14 +25,14 @@ Feature: User Interface: The system shall support the e-Consent Framework to opt
       Then I should see "Enable e-Consent" in the dialog box
       And I should see "Primary settings"
 
-      When I check "Allow e-Consent responses to be edited by users?"
+      When I check the checkbox labeled "Allow e-Consent responses to be edited by users?"
       And I select "first_name" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "First name field:" in the dialog box
       And I select "last_name" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "Last name field:" in the dialog box
       And I select "dob" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "Date of birth field:" in the dialog box
       And I enter "Participant" into the input field labeled "e-Consent tag/category:"
       And I enter "PID [project-id] - [last_name]" into the input field labeled "Custom label for PDF header"
       And I select "part_sign Particiant signature" for the field labeled "Signature field #1"
-      And I check "Save to a specific field"
+      And I check the checkbox labeled "Save to a specific field"
       And I select "participant_file" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "select a File Upload field" in the dialog box
       And I click on the button labeled "Save settings"
       Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"

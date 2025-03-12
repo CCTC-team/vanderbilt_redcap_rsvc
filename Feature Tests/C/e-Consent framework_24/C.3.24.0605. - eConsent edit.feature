@@ -26,7 +26,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         When I edit "Participant Consent"
         When I uncheck "Allow e-Consent responses to be edited by users?"
         And I select "part_sign Particiant signature" for the field labeled "Signature field #1"
-        And I check "Save to a specific field"
+        And I check the checkbox labeled "Save to a specific field"
         And I select "participant_file" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "select a File Upload field" in the dialog box
         And I click on the button labeled "Save settings"
         Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
@@ -84,9 +84,9 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
 
         When I edit "Participant Consent"
-        When I check "Allow e-Consent responses to be edited by users?"
+        When I check the checkbox labeled "Allow e-Consent responses to be edited by users?"
         And I select "part_sign Particiant signature" for the field labeled "Signature field #1"
-        And I check "Save to a specific field"
+        And I check the checkbox labeled "Save to a specific field"
         And I select "participant_file" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "select a File Upload field" in the dialog box
         And I click on the button labeled "Save settings"
         Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
