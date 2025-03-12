@@ -30,8 +30,8 @@ Feature: C.3.24.0505. User Interface: The system shall support the e-Consent Fra
         When I click on the link labeled "PDF Snapshots of Record"
         Then I should see a table header and rows containing the following values in a table:
             | Active | Edit settings         | Name | Type of trigger   | Save snapshot when...                   | Scope of the snapshot  | Location(s) to save the snapshot                     |
-            | [✓]    | Governed by e-Consent |      | Survey completion | Complete survey "Participant Consent"   | Single survey response | File Repository Specificed field: [participant_file] |
-            | [✓]    | Governed by e-Consent |      | Survey completion | Complete survey "Coordinator Signature" | Single survey response | File Repository Specificed field: [coo_sign]         |
+            | [✓]    | Governed by e-Consent |      | Survey completion | Complete survey "Participant Consent"   | Single survey response | File Repository Specified field: [participant_file] |
+            | [✓]    | Governed by e-Consent |      | Survey completion | Complete survey "Coordinator Signature" | Single survey response | File Repository Specified field: [coo_sign]         |
 
     Scenario: Add record
         ##ACTION: add record with consent framework
