@@ -46,16 +46,17 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
     Scenario: #SETUP_eConsent for coordinator signature (second signature) process
         #SETUP_eConsent for coordinator signature (second signature) process
         When I click on the button labeled "Enable the e-Consent Framework for a survey"
-        And I select "Coordinator Signature" from the dialogue box labeled "Enable e-Consent for a Survey"
+        And I select '"Coordinator Signature" (coordinator_signature)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
         Then I should see "Enable e-Consent" in the dialog box
         And I should see "Primary settings"
 
         When I check the checkbox labeled "Allow e-Consent responses to be edited by users?"
         And I enter "Coordinator" into the input field labeled "Custom tag/category for PDF footer:"
         And I enter "PID [project-id] - [last_name]" into the input field labeled "Custom label for PDF header"
-        And I select "coo_sign1" for the field labeled "Signature field #1"
+        And I select 'coo_sign1 "Coordinator\'s Signature"' in the dropdown field labeled "Signature field #1"
         And I check the checkbox labeled "Save to specified field"
-        And I select "coo_sign" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "select a File Upload field" in the dialog box
+        And I select "coo_sign" in the dropdown field labeled "Save to specified field:"
+        And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
         And I click on the button labeled "Save settings"
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey              |
