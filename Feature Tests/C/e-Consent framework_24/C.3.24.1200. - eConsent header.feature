@@ -31,7 +31,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
             | [✓]               | Participant Consent |
     Then I should see a table header and rows containing the following values in a table:
       | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
-      | Active            | "Participant Consent" (participant_consent) | File Repository Specified field:[participant_file] | Participant         |       |
+      | [✓]               | "Participant Consent" (participant_consent) | File Repository Specified field:[event_1_arm_1][participant_file] | Participant         |       |
 
   Scenario: Add record
         ##ACTION: add record to get participant signature

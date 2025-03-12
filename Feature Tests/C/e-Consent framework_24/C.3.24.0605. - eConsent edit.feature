@@ -37,7 +37,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
             | [✓]               | Participant Consent |
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot | Custom tag/category | Notes |
-            | Active            | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
+            | [✓]               | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
 
     Scenario: add record with consent framework
         ##ACTION: add record with consent framework
@@ -102,7 +102,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
             | [✓]               | Participant Consent |
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot | Custom tag/category | Notes |
-            | Active            | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
+            | [✓]               | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
 
     Scenario: add record with consent framework
         ##ACTION: add record with consent framework

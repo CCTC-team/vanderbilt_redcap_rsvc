@@ -17,20 +17,20 @@ Feature: User Interface: The system shall support the search function within PDF
       And I click on the button labeled "PDF Snapshots of Record"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings         | Name       | Type of trigger   | Save snapshot when...                                    | Scope of the snapshot  | Location(s) to save the snapshot                     |
-         | Active | Edit Copy             | combo file | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | Selected instruments   | File Repository Specified field: [combo_file]        |
-         | Active | Governed by e-Consent |            | Survey completion | Complete survey "Participant Consent"                    | Single survey response | File Repository Specificed field: [participant_file] |
-         | Active | Governed by e-Consent |            | Survey completion | Complete survey "Coordinator Signature"                  | Single survey response | File Repository Specificed field: [coo_sign]         |
+         | [✓]    | Edit Copy             | combo file | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | Selected instruments   | File Repository Specified field: [combo_file]        |
+         | [✓]    | Governed by e-Consent |            | Survey completion | Complete survey "Participant Consent"                    | Single survey response | File Repository Specificed field: [participant_file] |
+         | [✓]    | Governed by e-Consent |            | Survey completion | Complete survey "Coordinator Signature"                  | Single survey response | File Repository Specificed field: [coo_sign]         |
 
       When I enter "combo file" into the input field labeled "Search"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name       | Type of trigger | Save snapshot when...                                    | Scope of the snapshot | Location(s) to save the snapshot              |
-         | Active | Edit Copy     | combo file | Logic-based     | Logic becomes true: [participant_consent_complete]='2... | Selected instruments  | File Repository Specified field: [combo_file] |
+         | [✓]    | Edit Copy     | combo file | Logic-based     | Logic becomes true: [participant_consent_complete]='2... | Selected instruments  | File Repository Specified field: [combo_file] |
 
       ##ACTION: clear search
       When I enter "" into the input field labeled "Search"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings         | Name       | Type of trigger   | Save snapshot when...                                    | Scope of the snapshot  | Location(s) to save the snapshot                     |
-         | Active | Edit Copy             | combo file | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | Selected instruments   | File Repository Specified field: [combo_file]        |
-         | Active | Governed by e-Consent |            | Survey completion | Complete survey "Participant Consent"                    | Single survey response | File Repository Specificed field: [participant_file] |
-         | Active | Governed by e-Consent |            | Survey completion | Complete survey "Coordinator Signature"                  | Single survey response | File Repository Specificed field: [coo_sign]         |
+         | [✓]    | Edit Copy             | combo file | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | Selected instruments   | File Repository Specified field: [combo_file]        |
+         | [✓]    | Governed by e-Consent |            | Survey completion | Complete survey "Participant Consent"                    | Single survey response | File Repository Specificed field: [participant_file] |
+         | [✓]    | Governed by e-Consent |            | Survey completion | Complete survey "Coordinator Signature"                  | Single survey response | File Repository Specificed field: [coo_sign]         |
 #END

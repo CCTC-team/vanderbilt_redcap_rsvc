@@ -44,13 +44,13 @@ Feature: User Interface: The system shall support the e-Consent Framework to opt
             | [✓]               | Participant Consent |
       Then I should see a table header and rows containing the following values in a table:
          | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
-         | Active            | "Participant Consent" (participant_consent) | File Repository Specified field:[participant_file] | Participant         |       |
+         | [✓]               | "Participant Consent" (participant_consent) | File Repository Specified field:[event_1_arm_1][participant_file] | Participant         |       |
 
    Scenario: eConsent goverend PDF Snapshot
       When I click on the button labeled "PDF Snapshots of Record"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings         | Name | Type of trigger   | Save snapshot when...                 | Scope of the snapshot  | Location(s) to save the snapshot                     |
-         | Active | Governed by e-Consent |      | Survey completion | Complete survey "Participant Consent" | Single survey response | File Repository Specificed field: [participant_file] |
+         | [✓]    | Governed by e-Consent |      | Survey completion | Complete survey "Participant Consent" | Single survey response | File Repository Specificed field: [participant_file] |
 
    Scenario: Test e-Consent by adding record
       ##ACTION: add record
