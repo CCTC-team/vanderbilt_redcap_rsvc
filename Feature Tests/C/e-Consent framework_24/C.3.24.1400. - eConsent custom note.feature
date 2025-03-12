@@ -20,7 +20,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
       And I click on the button labeled "e-Consent"
       And I click on the button labeled "Enable the e-Consent Framework for a survey"
       And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
-      Then I should see a dialogue box labeled "Enable e-Consent"
+      Then I should see a dialog containing the following text: "e-Consent settings for survey"
       And I should see "Primary settings"
 
       When I enter "My custom note" into the input field labeled "Notes:"
