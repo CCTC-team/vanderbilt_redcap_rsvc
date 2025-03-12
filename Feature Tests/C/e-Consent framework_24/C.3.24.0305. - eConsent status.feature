@@ -28,7 +28,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         When I check the checkbox labeled "Allow e-Consent responses to be edited by users?"
         And I select 'part_sign "Participant signature field"' in the dropdown field labeled "Signature field #1"
-        And I check the checkbox labeled "Save to a specific field"
+        And I check the checkbox labeled "Save to specified field"
         And I select "participant_file" in the dropdown field labeled "Save to specified field:"
         And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
         And I click on the button labeled "Save settings"

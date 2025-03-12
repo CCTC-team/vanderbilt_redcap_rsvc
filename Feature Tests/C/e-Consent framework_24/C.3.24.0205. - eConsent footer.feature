@@ -35,7 +35,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I enter "Participant" into the input field labeled "Custom tag/category for PDF footer:"
         And I enter "PID [project-id] - [last_name]" into the input field labeled "Custom label for PDF header"
         And I select 'part_sign "Participant signature field"' in the dropdown field labeled "Signature field #1"
-        And I check the checkbox labeled "Save to a specific field"
+        And I check the checkbox labeled "Save to specified field"
         And I select "participant_file" in the dropdown field labeled "Save to specified field:"
         And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
         And I click on the button labeled "Save settings"
@@ -55,7 +55,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I enter "Coordinator" into the input field labeled "Custom tag/category for PDF footer:"
         And I enter "PID [project-id] - [last_name]" into the input field labeled "Custom label for PDF header"
         And I select "coo_sign1" for the field labeled "Signature field #1"
-        And I check the checkbox labeled "Save to a specific field"
+        And I check the checkbox labeled "Save to specified field"
         And I select "coo_sign" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "select a File Upload field" in the dialog box
         And I click on the button labeled "Save settings"
         Then I should see the e-consent framework for survey labeled "Coordinator Signature" is "Active"
