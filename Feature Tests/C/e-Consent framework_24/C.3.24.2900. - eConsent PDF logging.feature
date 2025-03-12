@@ -33,7 +33,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Date of birth field:"
       And I enter "Participant" into the input field labeled "e-Consent tag/category:"
       And I enter "PID [project-id] - [last_name]" into the input field labeled "Custom label for PDF header"
-      And I select "part_sign Particiant signature" for the field labeled "Signature field #1"
+      And I select 'part_sign "Participant signature field"' in the dropdown field labeled "Signature field #1"
       And I check the checkbox labeled "Save to a specific field"
       And I select "participant_file" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "select a File Upload field" in the dialog box
       And I enter "eConsent" into the input field labeled "File name:"
