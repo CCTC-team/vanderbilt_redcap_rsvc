@@ -42,7 +42,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
   Scenario: New multi data form same event PDF Trigger
     When I click on the link labeled "Designer"
     And I click on the button labeled "PDF Snapshot"
-    And I click on the button labeled "+Add new trigger"
+    And I click on the button labeled "Add new trigger"
     And I enter "1 multi data form same event" in the box labeled "Name of trigger"
     And I enter "[trigger1]='1' and [trigger2]='1'" in the box labeled "When the following logic becomes true"
     And I enter "" into the input field labeled "[All instruments]"
@@ -59,7 +59,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: New mixed multi data form and survey same event PDF Trigger
       ##ACTION: New PDF Trigger
-    When I click on the button labeled "+Add new trigger"
+    When I click on the button labeled "Add new trigger"
     And I enter "2 multi data form and survey same event" in the box labeled "Name of trigger"
     And I enter "[trigger1]='2' and [trigger2]='1'" in the box labeled "When the following logic becomes true"
     And I enter "" into the input field labeled "[All instruments]"
@@ -77,7 +77,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: New multi survey same event PDF Trigger
       ##ACTION: New PDF Trigger
-    When I click on the button labeled "+Add new trigger"
+    When I click on the button labeled "Add new trigger"
     And I enter "3 multi survey same event" in the box labeled "Name of trigger"
     And I enter "[trigger1]='2' and [trigger2]='2'" in the box labeled "When the following logic becomes true"
     And I enter "" into the input field labeled "[All instruments]"
@@ -96,7 +96,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: New multi data form different event PDF Trigger
       ##ACTION: New PDF Trigger
-    When I click on the button labeled "+Add new trigger"
+    When I click on the button labeled "Add new trigger"
     And I enter "4 multi data form different event" in the box labeled "Name of trigger"
     And I enter "[event_1_arm_1][trigger1]='1' and [event_three_arm_1][trigger1]='1'" in the box labeled "When the following logic becomes true"
     And I enter "" into the input field labeled "[All instruments]"
@@ -116,7 +116,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: New mixed multi data form and survey different event PDF Trigger
       ##ACTION: New PDF Trigger
-    When I click on the button labeled "+Add new trigger"
+    When I click on the button labeled "Add new trigger"
     And I enter "5 multi data form and survey different event" in the box labeled "Name of trigger"
     And I enter "[event_1_arm_1][trigger1]='1' and [event_three_arm_1][trigger1]='2'" in the box labeled "When the following logic becomes true"
     And I enter "" into the input field labeled "[All instruments]"
@@ -136,7 +136,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: New multi survey different event PDF Trigger
       ##ACTION: New PDF Trigger
-    When I click on the button labeled "+Add new trigger"
+    When I click on the button labeled "Add new trigger"
     And I enter "6 multi survey different event" in the box labeled "Name of trigger"
     And I enter "[event_1_arm_1][trigger1]='2' and [event_three_arm_1][trigger1]='2'" in the box labeled "When the following logic becomes true"
     And I enter "" into the input field labeled "[All instruments]"

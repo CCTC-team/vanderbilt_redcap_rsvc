@@ -13,7 +13,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       When I click on the link labeled "Designer"
       And I click on the button labeled "PDF Snapshot"
       And I click on the link labeled "PDF Snapshots of Record"
-      And I click on the button labeled "+Add new trigger"
+      And I click on the button labeled "Add new trigger"
       And I enter "Snapshot" in the box labeled "Name of trigger"
       And I select "'Participant Consent' - [Any EVENT]" from the dropdown field labeled "Every time the following survey is completed:" in the dialog box
       And I enter "" into the input field labeled "[All instruments]"

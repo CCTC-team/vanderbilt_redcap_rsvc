@@ -49,7 +49,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
    Scenario: New PDF Trigger for survey completion all instruments
       ##ACTION: New PDF Trigger
       When I click on the link labeled "PDF Snapshots of Record"
-      And I click on the button labeled "+Add new trigger"
+      And I click on the button labeled "Add new trigger"
       And I enter "Snapshot" in the box labeled "Name of trigger"
       And I select "--- select a survey ---" from the dropdown field labeled "Every time the following survey is completed:" in the dialog box
       And I enter "[participant_consent_complete]='2'" in the box labeled "When the following logic becomes true"
