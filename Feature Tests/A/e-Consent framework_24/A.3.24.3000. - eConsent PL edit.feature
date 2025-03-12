@@ -168,7 +168,7 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
 
   Scenario: ##VERIFY I Custom message appears at the bottom of the Modify Setting window  in the e-Consent Framework
     Then I should see "Your system configuration values have now been changed!"
-    When I click on the button labeled "Designer"
+    When I click on the link labeled "Designer"
     And I click on the button labeled "e-Consent"
     And I click on the icon to edit the "Participant Consent"
     Then I should see " If you are using the e-Consent Framework, the IRB must see you final version and you must use the stamped version of the IRB Approval"

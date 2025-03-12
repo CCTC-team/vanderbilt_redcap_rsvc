@@ -16,7 +16,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
 
   Scenario: Cancel an add consent form version
       #SETUP_eConsent
-    When I click on the button labeled "Designer"
+    When I click on the link labeled "Designer"
     And I click on the button labeled "e-Consent"
     Then I should see "Participant Consent"
 

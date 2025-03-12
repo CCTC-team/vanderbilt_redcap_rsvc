@@ -10,7 +10,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       And I create a new project named "C.3.24.2300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
 
       ##ACTION: New Active PDF Trigger
-      When I click on the button labeled "Designer"
+      When I click on the link labeled "Designer"
       And I click on the button labeled "PDF Snapshot"
       And I click on the button labeled "PDF Snapshots of Record"
       And I click on the button labeled "+Add new trigger"

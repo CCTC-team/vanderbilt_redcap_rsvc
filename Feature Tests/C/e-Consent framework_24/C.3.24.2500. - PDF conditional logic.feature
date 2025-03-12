@@ -15,7 +15,7 @@ Feature: User Interface: The system shall support conditional logic integration 
 
   Scenario: New PDF Trigger testing Every time the following survey is completed
       ##ACTION: New PDF Trigger with survey based Every time the following survey is completed
-    When I click on the button labeled "Designer"
+    When I click on the link labeled "Designer"
     And I click on the button labeled "PDF Snapshot"
     And I click on the button labeled "PDF Snapshots of Record"
     And I click on the button labeled "+Add new trigger"

@@ -83,7 +83,7 @@ Given This scenario is fully tested within C.3.24.1500.
 #    Scenario: C.3.24.1600.200 e-Consent create unique version using Inline PDF
 #       #Add consent form version via file upload
 #       #SETUP_eConsent
-#       When I click on the button labeled "Designer"
+#       When I click on the link labeled "Designer"
 #       And I click on the button labeled "e-Consent"
 #       Then I should see "Participant Consent"
 #       When I click on the button labeled "+Add consent form" for the survey labeled "Participant Consent"

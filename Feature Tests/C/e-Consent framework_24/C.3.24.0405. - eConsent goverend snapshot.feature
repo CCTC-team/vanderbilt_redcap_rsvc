@@ -18,7 +18,7 @@ Feature:  C.3.24.0405. User Interface: The system shall support the e-Consent Fr
 
     Scenario: Verify eConsent Framework and PDF Snapshot setup
         #SETUP eConsent Framework and PDF Snapshot setup
-        When I click on the button labeled "Designer"
+        When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
         Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
         Then I should see a table header and rows containing the following values in a table:

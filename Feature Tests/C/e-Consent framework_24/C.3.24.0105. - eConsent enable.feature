@@ -18,7 +18,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
 
     #FUNCTIONAL_REQUIREMENT
     Scenario: ##ACTION: e-consent survey settings - disabled
-        When I click on the button labeled "Designer"
+        When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
         Then I should see a checkbox labeled "Hide inactive" that is checked
 

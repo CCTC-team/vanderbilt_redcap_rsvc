@@ -9,7 +9,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I create a new project named "C.3.24.2600.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
 
   Scenario: #SETUP_DESIGNER #SETUP PDF Snapshot Field Trigger 1
-    When I click on the button labeled "Designer"
+    When I click on the link labeled "Designer"
     And I click on the link labeled "Participant Consent"
     And I click on the last button labeled "Add Field"
     And I select "Multiple Choice - Radio Buttons (Single Answer)" in the dropdown field labeled "Field Type"
@@ -21,7 +21,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     Then I should see the field labeled "Form 1 Trigger"
 
   Scenario: #SETUP_DESIGNER #SETUP PDF Snapshot Field Trigger
-    When I click on the button labeled "Designer"
+    When I click on the link labeled "Designer"
     And I click on the link labeled "Coordinator Signature"
     And I click on the last button labeled "Add Field"
     And I select "Multiple Choice - Radio Buttons (Single Answer)" in the dropdown field labeled "Field Type"
@@ -40,7 +40,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     Then I should see Project status: "Production"
 
   Scenario: New multi data form same event PDF Trigger
-    When I click on the button labeled "Designer"
+    When I click on the link labeled "Designer"
     And I click on the button labeled "PDF Snapshot"
     And I click on the button labeled "+Add new trigger"
     And I enter "1 multi data form same event" in the box labeled "Name of trigger"
