@@ -26,7 +26,8 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I should see "Primary settings"
 
         When I check the checkbox labeled "Allow e-Consent responses to be edited by users?"
-        And I select "first_name" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "First name field:" in the dialog box
+        And I select "first_name" in the dropdown field labeled "First name field:"
+        And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "First name field:"
         And I select "last_name" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "Last name field:" in the dialog box
         And I select "dob" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "Date of birth field:" in the dialog box
         And I enter "Participant" into the input field labeled "e-Consent tag/category:"
