@@ -19,7 +19,9 @@ Feature: C.3.24.0505. User Interface: The system shall support the e-Consent Fra
         #SETUP eConsent Framework and PDF Snapshot setup
         When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
-        Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
+        Then I should see a table header and rows containing the following values in a table:
+            | e-Consent active? | Survey              |
+            | [✓]               | Participant Consent |
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                          | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
             | Active            | "Coordinator Signature" (coordinator_signature) | File Repository Specified field:[coo_sign]         | Coordinator         |       |

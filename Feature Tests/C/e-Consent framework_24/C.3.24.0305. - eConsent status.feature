@@ -32,7 +32,9 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         And I select "participant_file" in the dropdown field labeled "Save to specified field:"
         And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
         And I click on the button labeled "Save settings"
-        Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
+        Then I should see a table header and rows containing the following values in a table:
+            | e-Consent active? | Survey              |
+            | [✓]               | Participant Consent |
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot | Custom tag/category | Notes |
             | Active            | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
