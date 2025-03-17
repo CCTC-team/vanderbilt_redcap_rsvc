@@ -15,11 +15,11 @@ Feature: User Interface: The system shall support conditional logic integration 
 
   Scenario: New PDF Trigger testing Every time the following survey is completed
       ##ACTION: New PDF Trigger with survey based Every time the following survey is completed
-    When I click on the button labeled "Designer"
+    When I click on the link labeled "Designer"
     And I click on the button labeled "PDF Snapshot"
-    And I click on the button labeled "PDF Snapshots of Record"
-    And I click on the button labeled "+Add new trigger"
-    And I enter "Snapshot 1" in the box labeled "Name of trigger"
+    And I click on the link labeled "PDF Snapshots of Record"
+    And I click on the button labeled "Add new trigger"
+    And I enter "Snapshot 1" into the input field labeled "Name of trigger"
     And I select "'Participant Consent' - Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "Every time the following survey is completed:" in the dialog box
     And I enter "" into the input field labeled "[All instruments]"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
@@ -31,14 +31,14 @@ Feature: User Interface: The system shall support conditional logic integration 
     Then I should see "Saved!"
     Then I should see a table header and rows containing the following values in a table:
       | Active | Edit settings | Name       | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot |
-      | Active | Edit Copy     | Snapshot 1 | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     | Snapshot 1 | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository                  |
 
   Scenario: New PDF Trigger testing When the following logic becomes true (only once per record)
       ##ACTION: When the following logic becomes true (only once per record)
-    When I click on the button labeled "+Add new trigger"
-    And I enter "Snapshot 2" in the box labeled "Name of trigger"
+    When I click on the button labeled "Add new trigger"
+    And I enter "Snapshot 2" into the input field labeled "Name of trigger"
     And I select "--- select a survey ---" from the dropdown field labeled "Every time the following survey is completed:" in the dialog box
-    And I enter "[participant_consent_complete]='2'" in the box labeled "When the following logic becomes true"
+    And I enter "[participant_consent_complete]='2'" into the input field labeled "When the following logic becomes true"
     And I enter "" into the input field labeled "[All instruments]"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -49,16 +49,16 @@ Feature: User Interface: The system shall support conditional logic integration 
     Then I should see "Saved!"
     Then I should see a table header and rows containing the following values in a table:
       | Active | Edit settings | Name       | Type of trigger   | Save snapshot when...                                  | Scope of the snapshot | Location(s) to save the snapshot |
-      | Active | Edit Copy     | Snapshot 2 | Logic-based       | Logic becomes true: [participant_consent_complete]='2' | All instruments       | File Repository                  |
-      | Active | Edit Copy     | Snapshot 1 | Survey completion | Complete survey "Participant Consent"                  | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     | Snapshot 2 | Logic-based       | Logic becomes true: [participant_consent_complete]='2' | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     | Snapshot 1 | Survey completion | Complete survey "Participant Consent"                  | All instruments       | File Repository                  |
 
   Scenario: New PDF Trigger testing multi-form
    #C.3.24.2600.100 multi-form/survey PDF snapshots
    ##ACTION: When the following logic becomes true (only once per record)
-    When I click on the button labeled "+Add new trigger"
-    And I enter "Snapshot 3" in the box labeled "Name of trigger"
+    When I click on the button labeled "Add new trigger"
+    And I enter "Snapshot 3" into the input field labeled "Name of trigger"
     And I select "--- select a survey ---" from the dropdown field labeled "Every time the following survey is completed:" in the dialog box
-    And I enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" in the box labeled "When the following logic becomes true"
+    And I enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the input field labeled "When the following logic becomes true"
     And I enter "" into the input field labeled "[All instruments]"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -69,9 +69,9 @@ Feature: User Interface: The system shall support conditional logic integration 
     Then I should see "Saved!"
     Then I should see a table header and rows containing the following values in a table:
       | Active | Edit settings | Name       | Type of trigger   | Save snapshot when...                                    | Scope of the snapshot | Location(s) to save the snapshot |
-      | Active | Edit Copy     | Snapshot 3 | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | All instruments       | File Repository                  |
-      | Active | Edit Copy     | Snapshot 2 | Logic-based       | Logic becomes true: [participant_consent_complete]='2'   | All instruments       | File Repository                  |
-      | Active | Edit Copy     | Snapshot 1 | Survey completion | Complete survey "Participant Consent"                    | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     | Snapshot 3 | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     | Snapshot 2 | Logic-based       | Logic becomes true: [participant_consent_complete]='2'   | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     | Snapshot 1 | Survey completion | Complete survey "Participant Consent"                    | All instruments       | File Repository                  |
       ##VERIFY_Logging - Manage/Designof the triggers
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:

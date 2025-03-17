@@ -17,19 +17,21 @@ Feature: C.3.24.0505. User Interface: The system shall support the e-Consent Fra
 
     Scenario: Verify eConsent Framework and PDF Snapshot setup
         #SETUP eConsent Framework and PDF Snapshot setup
-        When I click on the button labeled "Designer"
+        When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
-        Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
+        Then I should see a table header and rows containing the following values in a table:
+            | e-Consent active? | Survey              |
+            | [✓]               | Participant Consent |
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                          | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
-            | Active            | "Coordinator Signature" (coordinator_signature) | File Repository Specified field:[coo_sign]         | Coordinator         |       |
-            | Active            | "Participant Consent" (participant_consent)     | File Repository Specified field:[participant_file] | Participant         |       |
+            | [✓]               | "Coordinator Signature" (coordinator_signature) | File Repository Specified field:[event_1_arm_1][coo_sign]         | Coordinator         |       |
+            | [✓]               | "Participant Consent" (participant_consent)     | File Repository Specified field:[event_1_arm_1][participant_file] | Participant         |       |
 
-        When I click on the button labeled "PDF Snapshots of Record"
+        When I click on the link labeled "PDF Snapshots of Record"
         Then I should see a table header and rows containing the following values in a table:
             | Active | Edit settings         | Name | Type of trigger   | Save snapshot when...                   | Scope of the snapshot  | Location(s) to save the snapshot                     |
-            | Active | Governed by e-Consent |      | Survey completion | Complete survey "Participant Consent"   | Single survey response | File Repository Specificed field: [participant_file] |
-            | Active | Governed by e-Consent |      | Survey completion | Complete survey "Coordinator Signature" | Single survey response | File Repository Specificed field: [coo_sign]         |
+            | [✓]    | Governed by e-Consent |      | Survey completion | Complete survey "Participant Consent"   | Single survey response | File Repository Specified field: [participant_file] |
+            | [✓]    | Governed by e-Consent |      | Survey completion | Complete survey "Coordinator Signature" | Single survey response | File Repository Specified field: [coo_sign]         |
 
     Scenario: Add record
         ##ACTION: add record with consent framework

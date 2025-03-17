@@ -19,22 +19,22 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
     Scenario: #SETUP_eConsent to allow for edit by users
         ##SETUP Allow e-Consent responses to be edited by users?
-        When I click on the button labeled "Designer"
+        When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
-        And I click on the button labeled "+Enable the e-Consent Framework for a survey"
-        And I select "Participant Consent" from the dialogue box labeled "Enable e-Consent for a Survey"
-        Then I should see a dialogue box labeled "Enable e-Consent"
+        And I click on the button labeled "Enable the e-Consent Framework for a survey"
+        And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
+        Then I should see "Enable e-Consent" in the dialog box
         And I should see "Primary settings"
 
-        When I check "Allow e-Consent responses to be edited by users?"
-        And I select "part_sign Particiant signature" for the field labeled "Signature field #1"
-        And I check "Save to a specific field"
-        And I select "participant_file" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "select a File Upload field" in the dialog box
+        When I check the checkbox labeled "Allow e-Consent responses to be edited by users?"
+        And I select 'part_sign "Participant signature field"' in the dropdown field labeled "Signature field #1"
+        And I check the checkbox labeled "Save to specified field"
+        And I select "participant_file" in the dropdown field labeled "Save to specified field:"
+        And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
         And I click on the button labeled "Save settings"
-        Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot | Custom tag/category | Notes |
-            | Active            | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
+            | [✓]               | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
 
         ##ACTION: add record with consent framework
         When I click on the link labeled "Add/Edit Records"

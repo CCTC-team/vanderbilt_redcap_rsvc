@@ -16,20 +16,22 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
 
   Scenario: #SETUP_eConsent for custom header
         #SETUP_eConsent for participant consent process
-    When I click on the button labeled "Designer"
+    When I click on the link labeled "Designer"
     And I click on the button labeled "e-Consent"
-    And I click on the button labeled "+Enable the e-Consent Framework for a survey"
-    And I select "Participant Consent" from the dialogue box labeled "Enable e-Consent for a Survey"
-    Then I should see a dialogue box labeled "Enable e-Consent"
+    And I click on the button labeled "Enable the e-Consent Framework for a survey"
+    And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
+    Then I should see "Enable e-Consent" in the dialog box
     And I should see "Primary settings"
 
   Scenario:
     When I enter "PID [project-id] - [last_name]" into the input field labeled "Custom label for PDF header"
     And I click on the button labeled "Save settings"
-    Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
+    Then I should see a table header and rows containing the following values in a table:
+            | e-Consent active? | Survey              |
+            | [✓]               | Participant Consent |
     Then I should see a table header and rows containing the following values in a table:
       | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
-      | Active            | "Participant Consent" (participant_consent) | File Repository Specified field:[participant_file] | Participant         |       |
+      | [✓]               | "Participant Consent" (participant_consent) | File Repository Specified field:[event_1_arm_1][participant_file] | Participant         |       |
 
   Scenario: Add record
         ##ACTION: add record to get participant signature

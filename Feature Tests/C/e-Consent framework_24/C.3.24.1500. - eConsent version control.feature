@@ -16,7 +16,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario: Cancel an add consent form version
         #SETUP_eConsent
-    When I click on the button labeled "Designer"
+    When I click on the link labeled "Designer"
     And I click on the button labeled "e-Consent"
     Then I should see "Participant Consent"
 
@@ -122,7 +122,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
   #CROSS-REF ##C.3.24.1600.200 e-Consent create unique version using Inline PDF
         #Add consent form version via file upload
         #SETUP_eConsent
-    When I click on the button labeled "Designer"
+    When I click on the link labeled "Designer"
     And I click on the button labeled "e-Consent"
     Then I should see "Participant Consent"
 
@@ -242,7 +242,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
   Scenario: C.3.24.1500.300 Disable version
         #Add consent form version via file upload
         #SETUP_eConsent
-    When I click on the button labeled "Designer"
+    When I click on the link labeled "Designer"
     And I click on the button labeled "e-Consent"
     Then I should see "Participant Consent"
 

@@ -12,7 +12,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         And I click on the link labeled "C.3.26.200.100"
 
     ##SETUP auto-archive
-        When I click on the button labeled "Designer"
+        When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
         And I enable the toggle button labeled "Consent"
         And I should see a toggle button labeled "Consent" that is in the enabled state

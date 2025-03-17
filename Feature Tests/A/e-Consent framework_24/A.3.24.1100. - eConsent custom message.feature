@@ -20,7 +20,7 @@ Feature: Control Center: The system shall allow optional adding of a custom mess
 
     Scenario: Verify institutional custom message in framework
         #VERIFY institutional custom message in framework
-        When I click on the button labeled "Designer"
+        When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
         And I click on the button labeled "Enable the e-Consent Framework for a survey"
         Then I should see a dialog containing the following text: "Enable e-Consent for a Survey"

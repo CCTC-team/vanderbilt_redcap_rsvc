@@ -18,33 +18,39 @@ Feature: User Interface: The system shall support the e-Consent Framework to opt
 
    Scenario: #SETUP_eConsent for participant consent process
       #SETUP_eConsent for participant consent process
-      When I click on the button labeled "Designer"
+      When I click on the link labeled "Designer"
       And I click on the button labeled "e-Consent"
-      And I click on the button labeled "+Enable the e-Consent Framework for a survey"
-      And I select "Participant Consent" from the dialogue box labeled "Enable e-Consent for a Survey"
-      Then I should see a dialogue box labeled "Enable e-Consent"
+      And I click on the button labeled "Enable the e-Consent Framework for a survey"
+      And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
+      Then I should see "Enable e-Consent" in the dialog box
       And I should see "Primary settings"
 
-      When I check "Allow e-Consent responses to be edited by users?"
-      And I select "first_name" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "First name field:" in the dialog box
-      And I select "last_name" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "Last name field:" in the dialog box
-      And I select "dob" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "Date of birth field:" in the dialog box
-      And I enter "Participant" into the input field labeled "e-Consent tag/category:"
+      When I check the checkbox labeled "Allow e-Consent responses to be edited by users?"
+      And I select "first_name" in the dropdown field labeled "First name field:"
+      And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "First name field:"
+      And I select "last_name" in the dropdown field labeled "Last name field:"
+      And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Last name field:"
+      And I select "dob" in the dropdown field labeled "Date of birth field:"
+      And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Date of birth field:"
+      And I enter "Participant" into the input field labeled "Custom tag/category for PDF footer:"
       And I enter "PID [project-id] - [last_name]" into the input field labeled "Custom label for PDF header"
-      And I select "part_sign Particiant signature" for the field labeled "Signature field #1"
-      And I check "Save to a specific field"
-      And I select "participant_file" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "select a File Upload field" in the dialog box
+      And I select 'part_sign "Participant signature field"' in the dropdown field labeled "Signature field #1"
+      And I check the checkbox labeled "Save to specified field"
+      And I select "participant_file" in the dropdown field labeled "Save to specified field:"
+        And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
       And I click on the button labeled "Save settings"
-      Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
+      Then I should see a table header and rows containing the following values in a table:
+            | e-Consent active? | Survey              |
+            | [✓]               | Participant Consent |
       Then I should see a table header and rows containing the following values in a table:
          | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
-         | Active            | "Participant Consent" (participant_consent) | File Repository Specified field:[participant_file] | Participant         |       |
+         | [✓]               | "Participant Consent" (participant_consent) | File Repository Specified field:[event_1_arm_1][participant_file] | Participant         |       |
 
    Scenario: eConsent goverend PDF Snapshot
-      When I click on the button labeled "PDF Snapshots of Record"
+      When I click on the link labeled "PDF Snapshots of Record"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings         | Name | Type of trigger   | Save snapshot when...                 | Scope of the snapshot  | Location(s) to save the snapshot                     |
-         | Active | Governed by e-Consent |      | Survey completion | Complete survey "Participant Consent" | Single survey response | File Repository Specificed field: [participant_file] |
+         | [✓]    | Governed by e-Consent |      | Survey completion | Complete survey "Participant Consent" | Single survey response | File Repository Specified field: [participant_file] |
 
    Scenario: Test e-Consent by adding record
       ##ACTION: add record

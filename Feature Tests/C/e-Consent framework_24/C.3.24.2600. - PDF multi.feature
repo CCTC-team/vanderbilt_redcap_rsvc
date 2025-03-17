@@ -9,7 +9,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I create a new project named "C.3.24.2600.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
 
   Scenario: #SETUP_DESIGNER #SETUP PDF Snapshot Field Trigger 1
-    When I click on the button labeled "Designer"
+    When I click on the link labeled "Designer"
     And I click on the link labeled "Participant Consent"
     And I click on the last button labeled "Add Field"
     And I select "Multiple Choice - Radio Buttons (Single Answer)" in the dropdown field labeled "Field Type"
@@ -21,7 +21,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     Then I should see the field labeled "Form 1 Trigger"
 
   Scenario: #SETUP_DESIGNER #SETUP PDF Snapshot Field Trigger
-    When I click on the button labeled "Designer"
+    When I click on the link labeled "Designer"
     And I click on the link labeled "Coordinator Signature"
     And I click on the last button labeled "Add Field"
     And I select "Multiple Choice - Radio Buttons (Single Answer)" in the dropdown field labeled "Field Type"
@@ -40,11 +40,11 @@ Feature: User Interface: The system shall support the capture and storage of mul
     Then I should see Project status: "Production"
 
   Scenario: New multi data form same event PDF Trigger
-    When I click on the button labeled "Designer"
+    When I click on the link labeled "Designer"
     And I click on the button labeled "PDF Snapshot"
-    And I click on the button labeled "+Add new trigger"
-    And I enter "1 multi data form same event" in the box labeled "Name of trigger"
-    And I enter "[trigger1]='1' and [trigger2]='1'" in the box labeled "When the following logic becomes true"
+    And I click on the button labeled "Add new trigger"
+    And I enter "1 multi data form same event" into the input field labeled "Name of trigger"
+    And I enter "[trigger1]='1' and [trigger2]='1'" into the input field labeled "When the following logic becomes true"
     And I enter "" into the input field labeled "[All instruments]"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -55,13 +55,13 @@ Feature: User Interface: The system shall support the capture and storage of mul
     Then I should see "Saved!"
     Then I should see a table header and rows containing the following values in a table:
       | Active | Edit settings | Name                         | Type of trigger | Save snapshot when...                                 | Scope of the snapshot | Location(s) to save the snapshot |
-      | Active | Edit Copy     | 1 multi data form same event | Logic-based     | Logic becomes true: [trigger1]='1' and [trigger2]='1' | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     | 1 multi data form same event | Logic-based     | Logic becomes true: [trigger1]='1' and [trigger2]='1' | All instruments       | File Repository                  |
 
   Scenario: New mixed multi data form and survey same event PDF Trigger
       ##ACTION: New PDF Trigger
-    When I click on the button labeled "+Add new trigger"
-    And I enter "2 multi data form and survey same event" in the box labeled "Name of trigger"
-    And I enter "[trigger1]='2' and [trigger2]='1'" in the box labeled "When the following logic becomes true"
+    When I click on the button labeled "Add new trigger"
+    And I enter "2 multi data form and survey same event" into the input field labeled "Name of trigger"
+    And I enter "[trigger1]='2' and [trigger2]='1'" into the input field labeled "When the following logic becomes true"
     And I enter "" into the input field labeled "[All instruments]"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -72,14 +72,14 @@ Feature: User Interface: The system shall support the capture and storage of mul
     Then I should see "Saved!"
     Then I should see a table header and rows containing the following values in a table:
       | Active | Edit settings | Name                                    | Type of trigger | Save snapshot when...                                 | Scope of the snapshot | Location(s) to save the snapshot |
-      | Active | Edit Copy     |            1 multi data form same event | Logic-based     | Logic becomes true: [trigger1]='1' and [trigger2]='1' | All instruments       | File Repository                  |
-      | Active | Edit Copy     | 2 multi data form and survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='1' | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     |            1 multi data form same event | Logic-based     | Logic becomes true: [trigger1]='1' and [trigger2]='1' | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     | 2 multi data form and survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='1' | All instruments       | File Repository                  |
 
   Scenario: New multi survey same event PDF Trigger
       ##ACTION: New PDF Trigger
-    When I click on the button labeled "+Add new trigger"
-    And I enter "3 multi survey same event" in the box labeled "Name of trigger"
-    And I enter "[trigger1]='2' and [trigger2]='2'" in the box labeled "When the following logic becomes true"
+    When I click on the button labeled "Add new trigger"
+    And I enter "3 multi survey same event" into the input field labeled "Name of trigger"
+    And I enter "[trigger1]='2' and [trigger2]='2'" into the input field labeled "When the following logic becomes true"
     And I enter "" into the input field labeled "[All instruments]"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -90,15 +90,15 @@ Feature: User Interface: The system shall support the capture and storage of mul
     Then I should see "Saved!"
     Then I should see a table header and rows containing the following values in a table:
       | Active | Edit settings | Name                                    | Type of trigger | Save snapshot when...                                 | Scope of the snapshot | Location(s) to save the snapshot |
-      | Active | Edit Copy     |            1 multi data form same event | Logic-based     | Logic becomes true: [trigger1]='1' and [trigger2]='1' | All instruments       | File Repository                  |
-      | Active | Edit Copy     | 2 multi data form and survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='1' | All instruments       | File Repository                  |
-      | Active | Edit Copy     |               3 multi survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='2' | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     |            1 multi data form same event | Logic-based     | Logic becomes true: [trigger1]='1' and [trigger2]='1' | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     | 2 multi data form and survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='1' | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     |               3 multi survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='2' | All instruments       | File Repository                  |
 
   Scenario: New multi data form different event PDF Trigger
       ##ACTION: New PDF Trigger
-    When I click on the button labeled "+Add new trigger"
-    And I enter "4 multi data form different event" in the box labeled "Name of trigger"
-    And I enter "[event_1_arm_1][trigger1]='1' and [event_three_arm_1][trigger1]='1'" in the box labeled "When the following logic becomes true"
+    When I click on the button labeled "Add new trigger"
+    And I enter "4 multi data form different event" into the input field labeled "Name of trigger"
+    And I enter "[event_1_arm_1][trigger1]='1' and [event_three_arm_1][trigger1]='1'" into the input field labeled "When the following logic becomes true"
     And I enter "" into the input field labeled "[All instruments]"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -109,16 +109,16 @@ Feature: User Interface: The system shall support the capture and storage of mul
     Then I should see "Saved!"
     Then I should see a table header and rows containing the following values in a table:
       | Active | Edit settings | Name                                    | Type of trigger | Save snapshot when...                                    | Scope of the snapshot | Location(s) to save the snapshot |
-      | Active | Edit Copy     |            1 multi data form same event | Logic-based     | Logic becomes true: [trigger1]='1' and [trigger2]='1'    | All instruments       | File Repository                  |
-      | Active | Edit Copy     | 2 multi data form and survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='1'    | All instruments       | File Repository                  |
-      | Active | Edit Copy     |               3 multi survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='2'    | All instruments       | File Repository                  |
-      | Active | Edit Copy     |       4 multi data form different event | Logic-based     | Logic becomes true: [event_1_arm_1][trigger1]='1' and... | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     |            1 multi data form same event | Logic-based     | Logic becomes true: [trigger1]='1' and [trigger2]='1'    | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     | 2 multi data form and survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='1'    | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     |               3 multi survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='2'    | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     |       4 multi data form different event | Logic-based     | Logic becomes true: [event_1_arm_1][trigger1]='1' and... | All instruments       | File Repository                  |
 
   Scenario: New mixed multi data form and survey different event PDF Trigger
       ##ACTION: New PDF Trigger
-    When I click on the button labeled "+Add new trigger"
-    And I enter "5 multi data form and survey different event" in the box labeled "Name of trigger"
-    And I enter "[event_1_arm_1][trigger1]='1' and [event_three_arm_1][trigger1]='2'" in the box labeled "When the following logic becomes true"
+    When I click on the button labeled "Add new trigger"
+    And I enter "5 multi data form and survey different event" into the input field labeled "Name of trigger"
+    And I enter "[event_1_arm_1][trigger1]='1' and [event_three_arm_1][trigger1]='2'" into the input field labeled "When the following logic becomes true"
     And I enter "" into the input field labeled "[All instruments]"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -128,17 +128,17 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I click on the button labeled "Save"
     Then I should see "Saved!"
       | Active | Edit settings | Name                                         | Type of trigger | Save snapshot when...                                    | Scope of the snapshot | Location(s) to save the snapshot |
-      | Active | Edit Copy     |                 1 multi data form same event | Logic-based     | Logic becomes true: [trigger1]='1' and [trigger2]='1'    | All instruments       | File Repository                  |
-      | Active | Edit Copy     |      2 multi data form and survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='1'    | All instruments       | File Repository                  |
-      | Active | Edit Copy     |                    3 multi survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='2'    | All instruments       | File Repository                  |
-      | Active | Edit Copy     |            4 multi data form different event | Logic-based     | Logic becomes true: [event_1_arm_1][trigger1]='1' and... | All instruments       | File Repository                  |
-      | Active | Edit Copy     | 5 multi data form and survey different event | Logic-based     | Logic becomes true: [event_1_arm_1][trigger1]='1' and... | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     |                 1 multi data form same event | Logic-based     | Logic becomes true: [trigger1]='1' and [trigger2]='1'    | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     |      2 multi data form and survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='1'    | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     |                    3 multi survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='2'    | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     |            4 multi data form different event | Logic-based     | Logic becomes true: [event_1_arm_1][trigger1]='1' and... | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     | 5 multi data form and survey different event | Logic-based     | Logic becomes true: [event_1_arm_1][trigger1]='1' and... | All instruments       | File Repository                  |
 
   Scenario: New multi survey different event PDF Trigger
       ##ACTION: New PDF Trigger
-    When I click on the button labeled "+Add new trigger"
-    And I enter "6 multi survey different event" in the box labeled "Name of trigger"
-    And I enter "[event_1_arm_1][trigger1]='2' and [event_three_arm_1][trigger1]='2'" in the box labeled "When the following logic becomes true"
+    When I click on the button labeled "Add new trigger"
+    And I enter "6 multi survey different event" into the input field labeled "Name of trigger"
+    And I enter "[event_1_arm_1][trigger1]='2' and [event_three_arm_1][trigger1]='2'" into the input field labeled "When the following logic becomes true"
     And I enter "" into the input field labeled "[All instruments]"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
@@ -148,12 +148,12 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I click on the button labeled "Save"
     Then I should see "Saved!"
       | Active | Edit settings | Name                                         | Type of trigger | Save snapshot when...                                    | Scope of the snapshot | Location(s) to save the snapshot |
-      | Active | Edit Copy     |                 1 multi data form same event | Logic-based     | Logic becomes true: [trigger1]='1' and [trigger2]='1'    | All instruments       | File Repository                  |
-      | Active | Edit Copy     |      2 multi data form and survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='1'    | All instruments       | File Repository                  |
-      | Active | Edit Copy     |                    3 multi survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='2'    | All instruments       | File Repository                  |
-      | Active | Edit Copy     |            4 multi data form different event | Logic-based     | Logic becomes true: [event_1_arm_1][trigger1]='1' and... | All instruments       | File Repository                  |
-      | Active | Edit Copy     | 5 multi data form and survey different event | Logic-based     | Logic becomes true: [event_1_arm_1][trigger1]='1' and... | All instruments       | File Repository                  |
-      | Active | Edit Copy     |               6 multi survey different event | Logic-based     | Logic becomes true: [event_1_arm_1][trigger1]='2' and... | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     |                 1 multi data form same event | Logic-based     | Logic becomes true: [trigger1]='1' and [trigger2]='1'    | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     |      2 multi data form and survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='1'    | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     |                    3 multi survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='2'    | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     |            4 multi data form different event | Logic-based     | Logic becomes true: [event_1_arm_1][trigger1]='1' and... | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     | 5 multi data form and survey different event | Logic-based     | Logic becomes true: [event_1_arm_1][trigger1]='1' and... | All instruments       | File Repository                  |
+      | [✓]    | Edit Copy     |               6 multi survey different event | Logic-based     | Logic becomes true: [event_1_arm_1][trigger1]='2' and... | All instruments       | File Repository                  |
 
   Scenario: Add record - 1 multi data form same event
       #Add record

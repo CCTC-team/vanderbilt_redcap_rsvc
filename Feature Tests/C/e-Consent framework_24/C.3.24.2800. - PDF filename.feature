@@ -20,24 +20,25 @@ Feature: User Interface: The system shall support the customization of the file 
 
    Scenario: New PDF Trigger for survey completion all instruments
       ##ACTION: New PDF Trigger
-      When I click on the button labeled "PDF Snapshots of Record"
-      And I click on the button labeled "+Add new trigger"
-      And I enter "Snapshot" in the box labeled "Name of trigger"
+      When I click on the link labeled "PDF Snapshots of Record"
+      And I click on the button labeled "Add new trigger"
+      And I enter "Snapshot" into the input field labeled "Name of trigger"
       And I select "--- select a survey ---" from the dropdown field labeled "Every time the following survey is completed:" in the dialog box
-      And I enter "[participant_consent_complete]='2'" in the box labeled "When the following logic becomes true"
+      And I enter "[participant_consent_complete]='2'" into the input field labeled "When the following logic becomes true"
 
       And I enter "" into the input field labeled "[All instruments]"
       And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
       And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
       And I check the checkbox labeled "Save to File Repository"
       And I check the checkbox labeled "Save to specified field:"
-      And I select "participant_file" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "select a File Upload field" in the dialog box
+      And I select "participant_file" in the dropdown field labeled "Save to specified field:"
+        And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
       And I enter "Custom" into the input field labeled "File name:"
       And I click on the button labeled "Save"
       Then I should see "Saved!"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name     | Type of trigger | Save snapshot when...                                  | Scope of the snapshot | Location(s) to save the snapshot                    |
-         | Active | Edit Copy     | Snapshot | Logic-based     | Logic becomes true: [participant_consent_complete]='2' | All instruments       | File Repository Specified field: [participant_file] |
+         | [✓]    | Edit Copy     | Snapshot | Logic-based     | Logic becomes true: [participant_consent_complete]='2' | All instruments       | File Repository Specified field: [participant_file] |
 
    Scenario: Add record
       #Add record

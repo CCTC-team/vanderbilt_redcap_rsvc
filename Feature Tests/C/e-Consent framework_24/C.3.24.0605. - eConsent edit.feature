@@ -19,20 +19,25 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
     Scenario: #SETUP_eConsent to NOT allow for edit by users
         ##SETUP Allow e-Consent responses to be edited by users?
-        When I click on the button labeled "Designer"
+        When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
-        Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
+        Then I should see a table header and rows containing the following values in a table:
+            | e-Consent active? | Survey              |
+            | [✓]               | Participant Consent |
 
         When I edit "Participant Consent"
         When I uncheck "Allow e-Consent responses to be edited by users?"
-        And I select "part_sign Particiant signature" for the field labeled "Signature field #1"
-        And I check "Save to a specific field"
-        And I select "participant_file" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "select a File Upload field" in the dialog box
+        And I select 'part_sign "Participant signature field"' in the dropdown field labeled "Signature field #1"
+        And I check the checkbox labeled "Save to specified field"
+        And I select "participant_file" in the dropdown field labeled "Save to specified field:"
+        And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
         And I click on the button labeled "Save settings"
-        Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
+        Then I should see a table header and rows containing the following values in a table:
+            | e-Consent active? | Survey              |
+            | [✓]               | Participant Consent |
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot | Custom tag/category | Notes |
-            | Active            | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
+            | [✓]               | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
 
     Scenario: add record with consent framework
         ##ACTION: add record with consent framework
@@ -79,20 +84,25 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
     Scenario: #SETUP_eConsent to allow for edit by users
         ##SETUP Allow e-Consent responses to be edited by users?
-        When I click on the button labeled "Designer"
+        When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
-        Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
+        Then I should see a table header and rows containing the following values in a table:
+            | e-Consent active? | Survey              |
+            | [✓]               | Participant Consent |
 
         When I edit "Participant Consent"
-        When I check "Allow e-Consent responses to be edited by users?"
-        And I select "part_sign Particiant signature" for the field labeled "Signature field #1"
-        And I check "Save to a specific field"
-        And I select "participant_file" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "select a File Upload field" in the dialog box
+        When I check the checkbox labeled "Allow e-Consent responses to be edited by users?"
+        And I select 'part_sign "Participant signature field"' in the dropdown field labeled "Signature field #1"
+        And I check the checkbox labeled "Save to specified field"
+        And I select "participant_file" in the dropdown field labeled "Save to specified field:"
+        And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
         And I click on the button labeled "Save settings"
-        Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
+        Then I should see a table header and rows containing the following values in a table:
+            | e-Consent active? | Survey              |
+            | [✓]               | Participant Consent |
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot | Custom tag/category | Notes |
-            | Active            | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
+            | [✓]               | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
 
     Scenario: add record with consent framework
         ##ACTION: add record with consent framework
