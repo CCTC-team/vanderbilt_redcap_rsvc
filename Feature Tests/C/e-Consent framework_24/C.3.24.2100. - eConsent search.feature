@@ -22,7 +22,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to sea
       Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey              |
             | [✓]               | Participant Consent |
-      And I should see the e-consent framework for survey labeled "Coordinator Consent" is "Active"
+            | [✓]               | Coordinator Consent |
 
       When I enter "Participant Consent" into the input field labeled "Search"
       Then I should see a table header and rows containing the following values in a table:
@@ -35,5 +35,5 @@ Feature: User Interface: The system shall support the e-Consent Framework to sea
       Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey              |
             | [✓]               | Participant Consent |
-      And I should see the e-consent framework for survey labeled "Coordinator Consent" is "Active"
+            | [✓]               | Coordinator Consent |
 #END
