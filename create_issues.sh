@@ -15,13 +15,13 @@ function url_encode() {
         -e 's/ /%20/g'
 }
 
-branch='v14.7.0'
+branch='staging'
 
 # For the following command:
 # - We use awk to print the file because it will append a trailing newline if it is missing
 # - We use 'tr -d "\r"' to remove carriage returns in case the file has been edited on Windows
 awk 1 features.csv | tr -d "\r" | while read line; do
-    file=$(find . | grep "$line")
+    file=$(find 'Feature Tests' | grep "$line")
     if [ -z "$file" ]; then
       echo "File not found matching '$line'.  Stopping..."
       exit
@@ -32,13 +32,19 @@ awk 1 features.csv | tr -d "\r" | while read line; do
     # Use the file path as the description
     file_url="https://github.com/4bbakers/redcap_rsvc/tree/$branch/$file"
 
+    if [[ $file_name == *REDUNDANT* ]]; then
+      echo "Skipping REDUNDANT feature: $file_name"
+      continue
+    fi
+
+    echo "Creating issue for: $file_name"
+
     # Create a GitHub issue
     issue_url="$(gh issue create --repo "$GITHUB_REPO" --title "$file_name" --body "Feature: [$file_name]($(url_encode $file_url))" | grep https)"
 
     gh project item-add 2 --url $issue_url --owner vanderbilt-redcap
 
-    echo "Issue created for: $file_name"
-
-    sleep 10
+    # Attempt to avoid API rate limiting (may need tweaking depending on batch size)
+    sleep 1
 
 done
