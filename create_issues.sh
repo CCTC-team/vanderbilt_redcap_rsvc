@@ -32,6 +32,11 @@ awk 1 features.csv | tr -d "\r" | while read line; do
     # Use the file path as the description
     file_url="https://github.com/4bbakers/redcap_rsvc/tree/$branch/$file"
 
+    if [[ $file_name == *REDUNDANT* ]]; then
+      echo "Skipping REDUNDANT feature: $file_name"
+      continue
+    fi
+
     echo "Creating issue for: $file_name"
 
     # Create a GitHub issue
