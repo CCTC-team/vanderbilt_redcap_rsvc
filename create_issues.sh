@@ -39,6 +39,7 @@ awk 1 features.csv | tr -d "\r" | while read line; do
 
     gh project item-add 2 --url $issue_url --owner vanderbilt-redcap
 
-    sleep 10
+    # Attempt to avoid API rate limiting (may need tweaking depending on batch size)
+    sleep 1
 
 done
