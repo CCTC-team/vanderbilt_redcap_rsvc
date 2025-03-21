@@ -15,7 +15,7 @@ function url_encode() {
         -e 's/ /%20/g'
 }
 
-branch='v14.7.0'
+branch='staging'
 
 # For the following command:
 # - We use awk to print the file because it will append a trailing newline if it is missing
