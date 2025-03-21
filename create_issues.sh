@@ -32,12 +32,12 @@ awk 1 features.csv | tr -d "\r" | while read line; do
     # Use the file path as the description
     file_url="https://github.com/4bbakers/redcap_rsvc/tree/$branch/$file"
 
+    echo "Creating issue for: $file_name"
+
     # Create a GitHub issue
     issue_url="$(gh issue create --repo "$GITHUB_REPO" --title "$file_name" --body "Feature: [$file_name]($(url_encode $file_url))" | grep https)"
 
     gh project item-add 2 --url $issue_url --owner vanderbilt-redcap
-
-    echo "Issue created for: $file_name"
 
     sleep 10
 
