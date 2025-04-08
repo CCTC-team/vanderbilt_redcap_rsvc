@@ -89,9 +89,6 @@ Feature: User Interface: The system shall support the ability to assign the User
     And I click on the button labeled "Create New Report"
     And I enter "C.5.22.100.100 REPORT" into the input field labeled "Name of Report:"
     #FUNCTIONAL_REQUIREMENT
-    # The following lines are commented because they're broken and don't actually do anything anyway
-    # And I select the radio button labeled "All users" is selected for the field labeled "View Access"
-    # And I select the radio button labeled "All users" is selected for the field labeled "Edit Access"
     And I click on the button labeled "Save Report"
     Then I should see "Your report has been saved!" in the dialog box
     When I click on the button labeled "Return to My Reports & Exports"
@@ -239,4 +236,5 @@ Feature: User Interface: The system shall support the ability to assign the User
     And I should NOT see a link labeled exactly "4"
     ##VERIFY: Edit Report button
     And I should see a button labeled "Edit Report"
+    And I logout
 #END
