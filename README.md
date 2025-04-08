@@ -1,7 +1,4 @@
-# redcap_rsvc
-REDCap Regulatory &amp; Software Validation Committee (RSVC) - Automated validation feature test scripts
-
-# Regulatory & Software Validation Committee (RSVC)
+# REDCap Regulatory & Software Validation Committee (RSVC)
 
 Welcome to the Regulatory and Software Validation Committee (RSVC) GitHub repository. This repository is dedicated to hosting automated validation test scripts for REDCap's core functionality, as developed and maintained by our automated testing subcommittee.
 
