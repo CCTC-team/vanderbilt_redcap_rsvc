@@ -15,11 +15,11 @@ Within this repository, you will find a collection of validation test scripts me
 
 ## Contribution
 
-We welcome contributions and collaboration from the REDCap community and regulatory compliance enthusiasts. If you have expertise in regulatory compliance, validation, or REDCap, feel free to join our efforts by contributing to this repository.  The stable version of the scripts used to validate the last LTS package can be found in the `main` branch.  Pull requests should be made against the `staging` branch, as it contains the changes being actively developed for staging the next LTS package.
+We welcome contributions and collaboration from the REDCap community and regulatory compliance enthusiasts. If you have expertise in regulatory compliance, validation, or REDCap, feel free to join our efforts by contributing to this repository.  The stable version of the scripts used to validate the last LTS package can be found in the `main` branch.  Pull requests should be made against the `staging` branch, as it contains the changes being actively developed for staging the next LTS package.  Anyone is welcome to take on any task in the `Unassigned` column of [our work queue](https://github.com/orgs/vanderbilt-redcap/projects/2).  If you do so, please move the task to the `In Progress` column and comment on it, or assign it to yourself if you have the appropriate access.  This indicates owernship and avoids duplicate effort.
 
-## Managing Outstanding Issues
+## Managing Our Work Queue
 
-We use standard GitHub issues to track individual items that need to be addressed.  These issues are managed as a whole via [this GitHub Project](https://github.com/orgs/vanderbilt-redcap/projects/2).  Issues are added by placing their test IDs (e.g. A.3.14.1300.) one per line in `features.csv` and running the `create_issues.sh`.
+[Our work queue](https://github.com/orgs/vanderbilt-redcap/projects/2) uses standard GitHub issues to track individual items that need to be addressed.  Issues are added by placing their test IDs (e.g. A.3.14.1300.) one per line in `features.csv` and running the `create_issues.sh`.
 
 ## More Information
 
