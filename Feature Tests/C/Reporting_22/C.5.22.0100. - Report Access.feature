@@ -78,6 +78,7 @@ Feature: User Interface: The system shall support the ability to assign the User
         When I select "TestGroup2" on the dropdown field labeled "Assign record" on the dialog box
         And I click on the button labeled "Assign to Data Access Group" in the dialog box
         Then I should see "Record ID 2 was successfully assigned to a Data Access Group"
+
   Scenario: #Delete Existing Report
     When I click on the link labeled "Data Exports, Reports, and Stats"
     And  I click on the button labeled "Delete" for the report named "Test Report"
@@ -192,8 +193,6 @@ Feature: User Interface: The system shall support the ability to assign the User
     Given I login to REDCap with the user "Test_User3"
     And I click on the link labeled "Data Exports, Reports, and Stats"
     Then I should NOT see the link labeled "C.5.22.100.100 REPORT"
-    When I click on the link labeled "Data Exports, Reports, and Stats"
-    Then I should NOT see "C.5.22.100.100 REPORT"
     And I logout
 
   Scenario: ##VERIFY: USER 2
