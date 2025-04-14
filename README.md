@@ -1,7 +1,4 @@
-# redcap_rsvc
-REDCap Regulatory &amp; Software Validation Committee (RSVC) - Automated validation feature test scripts
-
-# Regulatory & Software Validation Committee (RSVC)
+# REDCap Regulatory & Software Validation Committee (RSVC)
 
 Welcome to the Regulatory and Software Validation Committee (RSVC) GitHub repository. This repository is dedicated to hosting automated validation test scripts for REDCap's core functionality, as developed and maintained by our automated testing subcommittee.
 
@@ -15,7 +12,7 @@ Within this repository, you will find a collection of validation test scripts me
 
 ## Contribution
 
-We welcome contributions and collaboration from the REDCap community and regulatory compliance enthusiasts. If you have expertise in regulatory compliance, validation, or REDCap, feel free to join our efforts by contributing to this repository.  The stable version of the scripts used to validate the last LTS package can be found in the `main` branch.  Pull requests should be made against the `staging` branch, as it contains the changes being actively developed for staging the next LTS package.  Anyone is welcome to take on any task in the `Unassigned` column of [our work queue](https://github.com/orgs/vanderbilt-redcap/projects/2).  If you do so, please move the task to the `In Progress` column and comment on it, or assign it to yourself if you have the appropriate access.  This indicates owernship and avoids duplicate effort.
+We welcome contributions and collaboration from the REDCap community and regulatory compliance enthusiasts. If you have expertise in regulatory compliance, validation, or REDCap, feel free to join our efforts by contributing to this repository.  The stable version of the scripts used to validate the last LTS package can be found in the `main` branch.  Pull requests should be made against the `staging` branch, as it contains the changes being actively developed for staging the next LTS package.  Anyone is welcome to take on any task in the `Unassigned` column of [our work queue](https://github.com/orgs/vanderbilt-redcap/projects/2).  If you do so, please move the task to the `In Progress` column and comment on it, or assign it to yourself if you have the appropriate access.  This indicates ownership and avoids duplicate effort. Once you've completed one or more features, they can submitted via a pull request (if you're familiar with that process), or by emailing the relevant files to mark.mcever@vumc.org.
 
 ## Managing Our Work Queue
 
