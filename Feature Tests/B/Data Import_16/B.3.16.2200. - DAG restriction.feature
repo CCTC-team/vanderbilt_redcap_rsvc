@@ -22,6 +22,7 @@ Feature: User Interface: The system shall restrict users by DAGs when using the 
         When I click on the link labeled "User Rights"
         And I enter "Test_User2" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
+        And I should see "Assign To DAG"
         And I select "TestGroup2" on the dropdown field labeled "Assign To DAG" on the role selector dropdown
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
         And I click on the button labeled exactly "Assign" on the role selector dropdown
