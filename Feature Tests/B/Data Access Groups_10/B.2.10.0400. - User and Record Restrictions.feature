@@ -67,7 +67,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         #ASSIGN RECORDS TO SPECIFIC DAGs
         # -- Record ID 3 - TestGroup1 --
         Given I click on the link labeled "Add / Edit Records"
-        And I select "3" on the dropdown field labeled "Choose an existing Record ID"
+        And I select "3" on the dropdown field labeled "-- select record --"
         Then I should see "Record ID 3"
 
         Given I click on the button labeled "Choose action for record"
@@ -80,7 +80,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
 
         # -- Record ID 4 - TestGroup2 --
         Given I click on the link labeled "Add / Edit Records"
-        And I select "4" on the dropdown field labeled "Choose an existing Record ID"
+        And I select "4" on the dropdown field labeled "-- select record --"
         Then I should see "Record ID 4"
 
         Given I click on the button labeled "Choose action for record"
@@ -233,7 +233,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
 
         ##VERIFY
         When I click on the link labeled "Add / Edit Records"
-        And I select "4" on the dropdown field labeled "Choose an existing Record ID"
+        And I select "4" on the dropdown field labeled "-- select record --"
         Then I should see "Record Home Page"
 
         ##ACTION: Add record while in a DAG
