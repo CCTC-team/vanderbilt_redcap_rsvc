@@ -26,6 +26,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I should see a toggle button labeled "Participant Consent" that is in the enabled state
 
         When I uncheck the checkbox labeled "Hide inactive"
+        And I wait for 5 seconds
         And I disable the toggle button labeled "Participant Consent"
         Then I should see a dialog containing the following text: "Set as inactive"
 
