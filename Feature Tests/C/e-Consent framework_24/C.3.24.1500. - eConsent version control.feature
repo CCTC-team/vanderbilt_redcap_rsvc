@@ -65,7 +65,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario: #Test e-Consent by adding record
         ##ACTION: add record to get participant signature
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 1."
@@ -183,7 +183,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario: # Test e-Consent by adding record
         ##ACTION: add record to get participant signature
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 2."
@@ -289,7 +289,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     Then I should NOT see "Consent form vtest 2" for the survey labeled "Participant Consent"
 
   Scenario: ##ACTION: Test e-Consent version is gone by adding record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 3."

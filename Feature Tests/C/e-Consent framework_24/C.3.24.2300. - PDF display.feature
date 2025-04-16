@@ -64,7 +64,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
 
    Scenario: Add record in data survey mode (pdf snapshot created)
       #Add record in data survey mode (pdf snapshot created)
-      When I click on the link labeled "Add/Edit Records"
+      When I click on the link labeled "Add / Edit Records"
       And I click on the button labeled "Add new record for the arm selected above"
       And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
       Then I should see "Adding new Record ID 1."
@@ -161,7 +161,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
 
    Scenario: Add record in data survey mode (pdf snapshot NOT created)
       #Add record
-      When I click on the link labeled "Add/Edit Records"
+      When I click on the link labeled "Add / Edit Records"
       And I click on the button labeled "Add new record for the arm selected above"
       And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
       Then I should see "Adding new Record ID 2."
@@ -220,7 +220,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
 
    Scenario: Add record in data survey mode (pdf snapshot created)
       #Add record
-      When I click on the link labeled "Add/Edit Records"
+      When I click on the link labeled "Add / Edit Records"
       And I click on the button labeled "Add new record for the arm selected above"
       And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
       Then I should see "Adding new Record ID 3."

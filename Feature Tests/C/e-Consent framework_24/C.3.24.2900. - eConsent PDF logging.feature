@@ -67,7 +67,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
 
    Scenario: Add record for snapshot
       #Add record
-      When I click on the link labeled "Add/Edit Records"
+      When I click on the link labeled "Add / Edit Records"
       And I click on the button labeled "Add new record for the arm selected above"
       And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
       Then I should see "Adding new Record ID 1."
@@ -92,7 +92,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
 
    Scenario: Add record for eConsent and snapshot
       #Add record
-      When I click on the link labeled "Add/Edit Records"
+      When I click on the link labeled "Add / Edit Records"
       And I click on the button labeled "Add new record for the arm selected above"
       And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
       Then I should see "Adding new Record ID 2."

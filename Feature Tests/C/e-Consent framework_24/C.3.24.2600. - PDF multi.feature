@@ -157,7 +157,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: Add record - 1 multi data form same event
       #Add record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 1."
@@ -194,7 +194,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: Add record - 2 multi data form and survey same event
       #Add record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 2."
@@ -239,7 +239,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I should see a Complete icon for the Data Collection Instrument labeled "Coordinator Signature" for event "Event 1"
 
   Scenario: Add record -3 multi survey same event
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 3."
@@ -293,7 +293,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: Add record - 4 multi data form different event
       #Add record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 4."
@@ -341,7 +341,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: Add record -  5 multi data form and survey different event
       #Add record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 5."
@@ -395,7 +395,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: Add record -  6 multi survey different event
       #Add record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 6."

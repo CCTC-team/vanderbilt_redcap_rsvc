@@ -96,7 +96,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
 
   Scenario: ##ACTION: add NO DAG record
       ##ACTION: add NO DAG record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 1."
@@ -134,7 +134,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
 
   Scenario: ##ACTION: add DAG1 record
       ##ACTION: add DAG1 record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 2."
@@ -187,7 +187,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
 
   Scenario: ##ACTION: add DAG2 record
       ##ACTION: add DAG2 record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 3."

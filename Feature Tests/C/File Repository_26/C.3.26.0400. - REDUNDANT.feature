@@ -121,7 +121,7 @@ Feature: User Interface: The system shall support multiple file upload through t
 
 #         ##SETUP Record: Create record while in DAG through eConsent framework
 #         Given I login to REDCap with the user "Test_User1"
-#         When I click on the link labeled "Add/Edit Records"
+#         When I click on the link labeled "Add / Edit Records"
 #         And I click on the button labeled "Add new record for the arm selected above"
 #         And I click on the bubble labeled "Consent" for event "Event 1"
 #         Then I should see "Adding new Record ID"
@@ -189,7 +189,7 @@ Feature: User Interface: The system shall support multiple file upload through t
 
 #         ##SETUP Record: Create record while in DAG through
 #         Given I login to REDCap with the user "Test_User2"
-#         When I click on the link labeled "Add/Edit Records"
+#         When I click on the link labeled "Add / Edit Records"
 #         And I click on the button labeled "Add new record for the arm selected above"
 #         And I click on the bubble labeled "Consent" for event "Event 1"
 #         Then I should see "Adding new Record ID"

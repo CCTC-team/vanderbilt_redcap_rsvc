@@ -41,7 +41,7 @@ Given This scenario is fully tested within C.3.24.1500.
 #          | test_admin | Manage/Design | Add new consent form for instrument "participant_consent" (consent_form_id = |
 #       #Test e-Consent by adding record
 #       ##ACTION: add record to get participant signature
-#       When I click on the link labeled "Add/Edit Records"
+#       When I click on the link labeled "Add / Edit Records"
 #       And I click on the button labeled "Add new record for the arm selected above"
 #       And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
 #       Then I should see "Adding new Record ID 1."
@@ -114,7 +114,7 @@ Given This scenario is fully tested within C.3.24.1500.
 #          | test_admin | Manage/Design | Add new consent form for instrument "participant_consent" (consent_form_id = |
 #       # Test e-Consent by adding record
 #       ##ACTION: add record to get participant signature
-#       When I click on the link labeled "Add/Edit Records"
+#       When I click on the link labeled "Add / Edit Records"
 #       And I click on the button labeled "Add new record for the arm selected above"
 #       And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
 #       Then I should see "Adding new Record ID 2."

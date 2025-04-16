@@ -33,7 +33,7 @@ Feature:  C.3.24.0405. User Interface: The system shall support the e-Consent Fr
 
     Scenario: Add record
         ##ACTION: add record with consent framework
-        When I click on the link labeled "Add/Edit Records"
+        When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
         Then I should see "Adding new Record ID 1."
