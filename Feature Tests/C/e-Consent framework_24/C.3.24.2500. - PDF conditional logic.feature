@@ -20,7 +20,7 @@ Feature: User Interface: The system shall support conditional logic integration 
     And I click on the link labeled "PDF Snapshots of Record"
     And I click on the button labeled "Add new trigger"
     And I enter "Snapshot 1" into the input field labeled "Name of trigger"
-    And I select "'Participant Consent' - Event 1 (Arm 1: Arm 1)" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
+    And I select '"Participant Consent" - Event 1 (Arm 1: Arm 1)' on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
     And I enter "" into the input field labeled "[All instruments]"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
