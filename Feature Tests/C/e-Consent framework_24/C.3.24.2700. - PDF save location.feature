@@ -16,7 +16,7 @@ Feature: User Interface: The system shall support the saving PDF snapshots to sp
       And I click on the button labeled "YES, Move to Production Status" in the dialog box
       Then I should see Project status: "Production"
 
-      When I click on the button lanbeled "Designer"
+      When I click on the button labeled "Designer"
       And I click on the button labeled "PDF Snapshot"
 
    Scenario: New PDF Trigger for survey completion all instruments
