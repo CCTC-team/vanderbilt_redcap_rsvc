@@ -59,8 +59,8 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
         And I click on the button labeled "Save settings"
         Then I should see a table header and rows containing the following values in a table:
-            | e-Consent active? | Survey              |
-            | [✓]               | Coordinator Signature |
+            | e-Consent active? | Survey                                          |
+            | [✓]               | "Coordinator Signature" (coordinator_signature) |
 
     Scenario: Combine the PDFs to one combined PDF
         #SETUP Trigger to combine the PDFs to one combined PDF
@@ -74,20 +74,19 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I enter "Combine PDF file" into the input field labeled "Name of trigger"
         And I click on "" in the textarea field labeled "When the following logic becomes true"
         And I wait for 1 seconds
-        And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor"
+        And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
         And I click on the button labeled "Update & Close Editor" in the dialog box
-        And I click "Particpant Consent" and "Coordinator Siganture" from "[Any Event]" located in "Arm 1: Arm 1"
-        And I click on the button labeled "Update"
         And I check the checkbox labeled "Save to File Repository"
-        And I check the checkbox labeled "Save to specific field"
-        And I select "combo_file" on the event name "Curent event" from the dropdown field labeled "Save to specified field:" in the dialog box
+        And I check the checkbox labeled "Save to specified field"
+        And I select "combo_file" in the dropdown field labeled "Save to specified field:"
+        And I select "Current event" in the dropdown field labeled "Save to specified field:"
         And I click on the button labeled "Save"
-        Then I should see "Saved! Trigger for PDF Snapshot was successfully modified"
+        Then I should see "Trigger for PDF Snapshot was successfully created"
         Then I should see a table header and rows containing the following values in a table:
-            | Active | Edit settings         | Name             | Type of trigger   | Save snapshot when...                                    | Scope of the snapshot  | Location(s) to save the snapshot                     |
-            | [✓]    | Edit Copy             | Combine PDF file | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | Selected instruments   | File Repository Specified field: [combo_file]        |
-            | [✓]    | Governed by e-Consent |                  | Survey completion | Complete survey "Participant Consent"                    | Single survey response | File Repository Specified field: [participant_file] |
-            | [✓]    | Governed by e-Consent |                  | Survey completion | Complete survey "Coordinator Signature"                  | Single survey response | File Repository Specified field: [coo_sign]         |
+            | Active | Edit settings         | Name             | Type of trigger   | Save snapshot when...                                    | Scope of the snapshot  | Location(s) to save the snapshot                                   |
+            | [✓]    |                       | Combine PDF file | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | All instruments        | File Repository Specified field: [combo_file]                      |
+            | [✓]    | Governed by e-Consent |                  | Survey completion | Complete survey "Participant Consent"                    | Single survey response | File Repository Specified field: [event_1_arm_1][participant_file] |
+            | [✓]    | Governed by e-Consent |                  | Survey completion | Complete survey "Coordinator Signature"                  | Single survey response | File Repository Specified field: [event_1_arm_1][coo_sign]         |
 
     Scenario: Test e-Consent by adding record
         ##ACTION: add record to get participant signature
