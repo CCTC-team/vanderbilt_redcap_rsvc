@@ -193,20 +193,24 @@
 		<Question><TranslatedText>Randomization group</TranslatedText></Question>
 		<CodeListRef CodeListOID="rand_group.choices"/>
 	</ItemDef>
-		<ItemDef OID="rand_group_2" Name="rand_group_2" DataType="text" Length="1" redcap:Variable="rand_group_2" redcap:FieldType="radio">
+	<ItemDef OID="rand_group_2" Name="rand_group_2" DataType="text" Length="1" redcap:Variable="rand_group_2" redcap:FieldType="radio">
 		<Question><TranslatedText>Randomization group 2</TranslatedText></Question>
 		<CodeListRef CodeListOID="rand_group.choices"/>
 	</ItemDef>
-		<ItemDef OID="rand_group_3" Name="rand_group_3" DataType="text" Length="1" redcap:Variable="rand_group_3" redcap:FieldType="radio">
+	<ItemDef OID="rand_group_3" Name="rand_group_3" DataType="text" Length="1" redcap:Variable="rand_group_3" redcap:FieldType="radio">
 		<Question><TranslatedText>Randomization group 3</TranslatedText></Question>
 		<CodeListRef CodeListOID="rand_group.choices"/>
 	</ItemDef>
-		<ItemDef OID="rand_group_4" Name="rand_group_4" DataType="text" Length="1" redcap:Variable="rand_group_4" redcap:FieldType="radio">
+	<ItemDef OID="rand_group_4" Name="rand_group_4" DataType="text" Length="1" redcap:Variable="rand_group_4" redcap:FieldType="radio">
 		<Question><TranslatedText>Randomization group 4</TranslatedText></Question>
 		<CodeListRef CodeListOID="rand_group.choices"/>
 	</ItemDef>
-			<ItemDef OID="rand_group_5" Name="rand_group_5" DataType="text" Length="1" redcap:Variable="rand_group_5" redcap:FieldType="radio">
+	<ItemDef OID="rand_group_5" Name="rand_group_5" DataType="text" Length="1" redcap:Variable="rand_group_5" redcap:FieldType="radio">
 		<Question><TranslatedText>Randomization group 5</TranslatedText></Question>
+		<CodeListRef CodeListOID="rand_group.choices"/>
+	</ItemDef>
+	<ItemDef OID="rand_group_6" Name="rand_group_6" DataType="text" Length="1" redcap:Variable="rand_group_5" redcap:FieldType="radio">
+		<Question><TranslatedText>Randomization group 6</TranslatedText></Question>
 		<CodeListRef CodeListOID="rand_group.choices"/>
 	</ItemDef>
 	<ItemDef OID="rand_blind" Name="rand_blind" DataType="text" Length="999" redcap:Variable="rand_blind" redcap:FieldType="text">
