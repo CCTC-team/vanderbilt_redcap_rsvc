@@ -19,8 +19,8 @@ Given This scenario is fully tested within C.3.24.1500.
 #       When I click on the button labeled "+Add consent form" for the survey labeled "Participant Consent"
 #       Then I should see "Consent form version"
 #       When I enter "test 1" into the input field labeled "Consent form version:" in the dialog box
-#       And I select "Consent file" from the dropdown field labeled "Placement of consent form:" in the dialog box
-#       And I select "When record is not assigned to a DAG (default)" from the dropdown field labeled "Display for specific DAG" in the dialog box
+#       And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
+#       And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
 #       And I select "No languages defined on MLM page" for the dropdown filed labeled "Display for specific language" in the dialog box
 #       And I click on the link labeled "Consent Form (Rich Text)" in the dialog box
 #       And I enter "This is my test 1 consent form" into the input field labeled "Consent Form (Rich Text)" in the dialog box
@@ -89,8 +89,8 @@ Given This scenario is fully tested within C.3.24.1500.
 #       When I click on the button labeled "+Add consent form" for the survey labeled "Participant Consent"
 #       Then I should see "Consent form version"
 #       When I enter "test 2" into the input field labeled "Consent form version:" in the dialog box
-#       And I select "Consent file" from the dropdown field labeled "Placement of consent form:" in the dialog box
-#       And I select "When record is not assigned to a DAG (default)" from the dropdown field labeled "Display for specific DAG" in the dialog box
+#       And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
+#       And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
 #       And I select "No languages defined on MLM page" for the dropdown filed labeled "Display for specific language" in the dialog box
 #       And I click on the link labeled "Consent Form (Inline PDF)" in the dialog box
 #       And I click on the button labeled "Choose File" in the dialog box
