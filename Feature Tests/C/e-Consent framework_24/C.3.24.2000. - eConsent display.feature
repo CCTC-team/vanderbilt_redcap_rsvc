@@ -46,7 +46,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       When I enter "FirstName" into the input field labeled "First Name"
       And I enter "LastName" into the input field labeled "Last Name"
       And I enter "email@test.edu" into the input field labeled "Email"
-      And I enter "2000-01-01" into the input field labeled "DOB"
+      And I enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
       
         Given I click on the link labeled "Add signature"
@@ -100,7 +100,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       When I enter "FirstName" into the input field labeled "First Name"
       And I enter "LastName" into the input field labeled "Last Name"
       And I enter "email@test.edu" into the input field labeled "Email"
-      And I enter "2000-01-01" into the input field labeled "DOB"
+      And I enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
       
         Given I click on the link labeled "Add signature"
@@ -149,7 +149,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       When I enter "FirstName" into the input field labeled "First Name"
       And I enter "LastName" into the input field labeled "Last Name"
       And I enter "email@test.edu" into the input field labeled "Email"
-      And I enter "2000-01-01" into the input field labeled "DOB"
+      And I enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
       
         Given I click on the link labeled "Add signature"

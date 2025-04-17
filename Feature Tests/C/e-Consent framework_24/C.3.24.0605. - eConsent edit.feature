@@ -55,7 +55,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         When I enter "FirstName" into the input field labeled "Name"
         And I enter "LastName" into the input field labeled "Name"
         And I enter "email@test.edu" into the input field labeled "Email"
-        And I enter "2000-01-01" into the input field labeled "DOB"
+        And I enter "2000-01-01" into the input field labeled "Date of Birth"
         And I enter "MyName" into the input field labeled "Participant's Name Typed"
         
         Given I click on the link labeled "Add signature"
@@ -120,7 +120,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         When I enter "FirstName" into the input field labeled "Name"
         And I enter "LastName" into the input field labeled "Name"
         And I enter "email@test.edu" into the input field labeled "Email"
-        And I enter "2000-01-01" into the input field labeled "DOB"
+        And I enter "2000-01-01" into the input field labeled "Date of Birth"
         And I enter "MyName" into the input field labeled "Participant's Name Typed"
         
         Given I click on the link labeled "Add signature"
