@@ -102,9 +102,9 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I click on the survey option label containing "Open survey" label
         Then I should see "Participant Consent"
 
-        When I enter "FirstName" into the input field labeled "First Name"
-        And I enter "LastName" into the input field labeled "Last Name"
-        And I enter "email@test.edu" into the input field labeled "Email"
+        When I clear field and enter "FirstName" into the input field labeled "First Name"
+        And I clear field and enter "LastName" into the input field labeled "Last Name"
+        And I clear field and enter "email@test.edu" into the input field labeled "Email"
         And I enter "2000-01-01" into the input field labeled "DOB"
         And I enter "MyName" into the input field labeled "Participant's Name Typed"
         
