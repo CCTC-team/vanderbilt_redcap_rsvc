@@ -46,6 +46,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
     Scenario: #SETUP_eConsent for coordinator signature (second signature) process
         #SETUP_eConsent for coordinator signature (second signature) process
         When I click on the button labeled "Enable the e-Consent Framework for a survey"
+        And I wait for 1 second
         And I select '"Coordinator Signature" (coordinator_signature)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
         Then I should see "Enable e-Consent" in the dialog box
         And I should see "Primary settings"
