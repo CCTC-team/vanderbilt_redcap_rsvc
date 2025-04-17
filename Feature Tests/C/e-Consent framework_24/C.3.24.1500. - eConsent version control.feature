@@ -82,7 +82,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
   Scenario:
     When I clear field and enter "FirstName" into the input field labeled "First Name"
     And I clear field and enter "LastName" into the input field labeled "Last Name"
-    And I clear field and enter "email@test.edu" into the input field labeled "Email"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
     And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
@@ -200,7 +200,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
   Scenario:
     When I clear field and enter "FirstName" into the input field labeled "First Name"
     And I clear field and enter "LastName" into the input field labeled "Last Name"
-    And I clear field and enter "email@test.edu" into the input field labeled "Email"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
     And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
 
   Scenario:
@@ -306,7 +306,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
   Scenario:
     When I clear field and enter "FirstName" into the input field labeled "First Name"
     And I clear field and enter "LastName" into the input field labeled "Last Name"
-    And I clear field and enter "email@test.edu" into the input field labeled "Email"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
     And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
 
   Scenario:

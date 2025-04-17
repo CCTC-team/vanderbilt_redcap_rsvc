@@ -31,7 +31,7 @@ Feature: Control Center: The system shall support enabling or disabling the use 
         And I click on the survey option label containing "Open survey" label
         And I clear field and enter "FirstName" into the input field labeled "First Name"
         And I clear field and enter "LastName" into the input field labeled "Last Name"
-        And I clear field and enter "email@test.edu" into the input field labeled "Email"
+        And I clear field and enter "email@test.edu" into the input field labeled "email"
         And I enter "01-01-2000" into the input field labeled "Date of Birth"
         And I enter "MyName" into the input field labeled "Participant's Name Typed"
         
