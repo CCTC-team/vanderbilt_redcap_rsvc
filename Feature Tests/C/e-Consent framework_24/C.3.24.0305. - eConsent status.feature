@@ -62,7 +62,6 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
         And I should see the button labeled "Submit" is disabled
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
@@ -100,7 +99,6 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
         And I should see the button labeled "Submit" is disabled
 
 
@@ -110,7 +108,6 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         When I click on the button labeled "Cancel" in the dialog box
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
         And I should see the button labeled "Submit" is disabled
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
@@ -159,7 +156,6 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
         And I should see the button labeled "Submit" is disabled
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."

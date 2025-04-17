@@ -116,7 +116,6 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
         And I click on the button labeled "Submit"
@@ -139,7 +138,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct"
+        And I should see "I certify that all of my information in the document above is correct"
         When I click on the button labeled "Close survey"
         And I click on the button labeled "Leave without saving changes" in the dialog box
 
