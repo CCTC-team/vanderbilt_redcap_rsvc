@@ -126,7 +126,7 @@ Feature: User Interface: The system shall limit folder deletion to empty folders
 #         And I click on the bubble labeled "Consent" for event "Event 1"
 #         Then I should see "Adding new Record ID"
 
-#         When I click on the button labeled "Save & Stay"
+#         When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
 #         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
 #         And I click on the button labeled "Next Page"
@@ -194,7 +194,7 @@ Feature: User Interface: The system shall limit folder deletion to empty folders
 #         And I click on the bubble labeled "Consent" for event "Event 1"
 #         Then I should see "Adding new Record ID"
 
-#         When I click on the button labeled "Save & Stay"
+#         When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
 #         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
 #         And I click on the button labeled "Next Page"

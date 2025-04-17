@@ -67,7 +67,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     Then I should see "Adding new Record ID 1."
 
   Scenario:
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -107,7 +107,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1" and click the repeating instrument bubble for the second instance
 
   Scenario:
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -143,7 +143,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
   Scenario: add instance 1 for record with consent framework in Arm 1 Event Three  (repeatable instance)
         ##ACTION: add instance 1 for record with consent framework in Arm 1 Event Three  (repeatable instance)
     When I click on the bubble labeled "Participant Consent" for event "Event Three"
-    And I click on the button labeled "Save & Stay"
+    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -176,7 +176,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
   Scenario: add instance 2 for record with consent framework in Arm 1 Event Three  (repeatable instance)
         ##ACTION: add instance 2 for record with consent framework in Arm 1 Event Three  (repeatable instance)
     When I click on the button labled "Add a New Instance" for the bubble labeled "Participant Consent" for event "Event Three"
-    And I click on the button labeled "Save & Stay"
+    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -219,7 +219,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     Then I should see "Adding new Record ID 2."
 
   Scenario:
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -255,7 +255,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
         ##ACTION: add instance 2 for record with consent framework in Arm 1 Event 1  (repeatable event)
     When I click on the button labeled "Add New" for event "Event 1"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1" instance "2"
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label

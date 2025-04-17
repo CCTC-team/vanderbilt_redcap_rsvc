@@ -46,7 +46,7 @@ Given This scenario is fully tested within C.3.24.1500.
 #       And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
 #       Then I should see "Adding new Record ID 1."
 #       And I should see "This is my test 1 consent form"
-#       When I click on the button labeled "Save & Stay"
+#       When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
 #       And I click on the button labeled "Okay" in the dialog box
 #       And I click on the button labeled "Survey options"
 #       And I click on the survey option label containing "Open survey" label
@@ -119,7 +119,7 @@ Given This scenario is fully tested within C.3.24.1500.
 #       And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
 #       Then I should see "Adding new Record ID 2."
 #       And I should see "consent.pdf"
-#       When I click on the button labeled "Save & Stay"
+#       When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
 #       And I click on the button labeled "Okay" in the dialog box
 #       And I click on the button labeled "Survey options"
 #       And I click on the survey option label containing "Open survey" label

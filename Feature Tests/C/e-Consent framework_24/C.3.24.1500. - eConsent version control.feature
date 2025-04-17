@@ -72,7 +72,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I should see "This is my test 1 consent form"
 
   Scenario:
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -190,7 +190,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I should see "consent.pdf"
 
   Scenario:
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -296,7 +296,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I should NOT see "consent.pdf"
 
   Scenario:
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
