@@ -77,7 +77,7 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
         #ASSIGN RECORDS TO SPECIFIC DAGs
         # -- Record ID 3 - TestGroup1 --
         Given I click on the link labeled "Add / Edit Records"
-        And I select "3" on the dropdown field labeled "-- select record --"
+        And I select "3" on the dropdown field labeled "Choose an existing Record ID"
         Then I should see "Record ID 3"
 
         Given I click on the button labeled "Choose action for record"
@@ -90,7 +90,7 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
 
         # -- Record ID 4 - TestGroup2 --
         Given I click on the link labeled "Add / Edit Records"
-        And I select "4" on the dropdown field labeled "-- select record --"
+        And I select "4" on the dropdown field labeled "Choose an existing Record ID"
         Then I should see "Record ID 4"
 
         Given I click on the button labeled "Choose action for record"
