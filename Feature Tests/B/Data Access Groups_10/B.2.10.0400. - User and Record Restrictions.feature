@@ -26,6 +26,8 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
             | test_user3 |
             | test_user4 |
 
+        # We wait for a second because the "Upload" button sometimes doesn't work if clicked immediately during automation
+        Then I wait for 1 second
         Given I click on the button labeled "Upload" in the dialog box
         Then I should see a dialog containing the following text: "SUCCESS!"
 
@@ -233,7 +235,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
 
         ##VERIFY
         When I click on the link labeled "Add / Edit Records"
-        And I select "4" on the dropdown field labeled "-- select record --"
+        And I select "4 TestGroup2" on the dropdown field labeled "-- select record --"
         Then I should see "Record Home Page"
 
         ##ACTION: Add record while in a DAG
