@@ -23,7 +23,7 @@ Feature: User Interface: The system shall support data quality rule creation.
 
     When I enter "Integer" into the textarea field labeled "Enter descriptive name for new rule"
     And I click on "" in the textarea field labeled "Enter logic for new rule"
-    And I wait for 1 seconds
+    And I wait for 1 second
     And I clear field and enter "[event_1_arm_1][integer]='1999'" in the textarea field labeled "Logic Editor" in the dialog box
     And I click on the button labeled "Update & Close Editor" in the dialog box
     And I click on the button labeled "Add" on the active Data Quality rule
@@ -81,7 +81,7 @@ Feature: User Interface: The system shall support data quality rule creation.
         
     ##ACTION: edit existing rule for longitudinal projects
     When I click the element containing the following text: "[event_1_arm_1][integer]='1999'"
-    And I wait for 1 seconds
+    And I wait for 1 second
     And I clear field and enter "[event_1_arm_1][integer]='1'" in the textarea field labeled "Logic Editor" in the dialog box
     And I click on the button labeled "Update & Close Editor" in the dialog box
     And I click on the button labeled "Save" on the active Data Quality rule
