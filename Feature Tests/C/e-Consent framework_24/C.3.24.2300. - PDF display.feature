@@ -203,7 +203,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
    #I should NOT see Record 2
 
    Scenario: Reactivate triggers
-      When I click on the button labeled "Designer"
+      When I click on the link labeled "Designer"
       And I click on the button labeled "PDF Snapshot"
       And I uncheck the checkbox labeled "Hide inactive"
       Then I should see a table header and rows containing the following values in a table:

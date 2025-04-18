@@ -16,7 +16,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       And I click on the button labeled "YES, Move to Production Status" in the dialog box
       Then I should see Project status: "Production"
 
-      When I click on the button labeled "Designer"
+      When I click on the link labeled "Designer"
       And I click on the button labeled "PDF Snapshot"
 
    Scenario: Cancel New PDF Trigger
