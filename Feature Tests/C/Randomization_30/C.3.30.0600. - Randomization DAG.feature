@@ -41,7 +41,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
 
   Scenario: #SETUP Add a record 1 to DAG 1
     When I click on the link labeled "Add / Edit Records"
-    And I select "1" on the dropdown field labeled "Choose an existing Record ID"
+    And I select "1" on the dropdown field labeled "-- select record --"
     And I select "Assign to Data Access Group" on the dropdown field labeled "Choose action for record"
     And I select "DAG 1" on the dropdown field labeled "Assign record "1" to one of the following Data Access Groups:"
     And I click on the button labeled "Assign to Data Access Group"
@@ -75,7 +75,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
 
   Scenario: #Users in a DAG can view randomization in their DAG
     When I click on the link labeled "Add / Edit Records"
-    And I select "1" on the dropdown field labeled "Choose an existing Record ID"
+    And I select "1" on the dropdown field labeled "-- select record --"
     And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
     Then I should see "Drug A" in the data entry form field "Randomization Group"
     And I should see "1" in the data entry form field "Blinded randomization"
@@ -83,11 +83,11 @@ Feature: User Interface: The system shall restrict users to randomizing records 
 
   Scenario: #Users in a DAG cannot view or randomize outside their DAG
     When I click on the link labeled "Add / Edit Records"
-    And I click on the dropdown field labeled "Choose an existing Record ID"
-    Then I should see the radio field labeled "Choose an existing Record ID" with the options below
+    And I click on the dropdown field labeled "-- select record --"
+    Then I should see the radio field labeled "-- select record --" with the options below
       | "1"   |
       | "1-1" |
-    And I should NOT see the radio field labeled "Choose an existing Record ID" WITHOUT the options below
+    And I should NOT see the radio field labeled "-- select record --" WITHOUT the options below
       | "2" |
       | "3" |
       | "4" |
@@ -112,7 +112,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     And I click "My Projects" on the menu bar
     And I click the link labeled "C.3.30.0600"
     And I click on the link labeled "Add / Edit Records"
-    And I select "2" on the dropdown field labeled "Choose an existing Record ID"
+    And I select "2" on the dropdown field labeled "-- select record --"
     And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
     And I click on the button labeled "Randomize" for the field labeled "Stratified by DAG Randomization"
     Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
@@ -125,7 +125,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
 
   Scenario: #Test User 1 and Randomize record 3 to DAG 2 - Group 2 is expected
     When I click on the link labeled "Add / Edit Records"
-    And I select "3" on the dropdown field labeled "Choose an existing Record ID"
+    And I select "3" on the dropdown field labeled "-- select record --"
     And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
     And I click on the button labeled "Randomize" for the field labeled "Stratified by DAG Randomization"
     Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"

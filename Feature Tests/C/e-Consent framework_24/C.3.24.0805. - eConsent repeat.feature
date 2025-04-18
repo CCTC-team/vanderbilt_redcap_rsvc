@@ -209,7 +209,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
   Scenario: add record in arm 2 with consent framework
         ##ACTION: add record with consent framework in Arm 1 Event 1  (repeatable event)
     When I click on the link labeled "Add / Edit Records"
-    And I select "Arm 2: Arm Two" on the dropdown field labeled "Choose an existing Record ID"
+    And I select "Arm 2: Arm Two" on the dropdown field labeled "-- select record --"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 2."
