@@ -25,6 +25,8 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
             | test_user3 |
             | test_user4 |
 
+        # We wait for a second because the "Upload" button doesn't work if clicked immediately during automation
+        Then I wait for 1 second
         Given I click on the button labeled "Upload" in the dialog box
         Then I should see a dialog containing the following text: "SUCCESS!"
 
