@@ -27,6 +27,8 @@ Feature: User Interface: The system shall allow data to be uploaded as backgroun
         And I wait for background processes to finish
         # Wait for import batch 2
         And I wait for background processes to finish
+        # We've intermittently seen that it takes three cron runs to get through two batches. Perhaps the import is sometimes bumped by other crons.
+        And I wait for background processes to finish
         #Manual: this may take several minutes
 
         When I click on the button labeled "View details"
