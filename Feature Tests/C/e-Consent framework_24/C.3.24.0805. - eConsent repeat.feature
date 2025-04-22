@@ -98,6 +98,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
   Scenario:
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
+    And I click on the link labeled "Record Status Dashboard"
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
   Scenario: add instance 2 for record with consent framework in Arm 1 Event 1  (repeatable event)
@@ -135,6 +136,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
   Scenario:
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
+    And I click on the link labeled "Record Status Dashboard"
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" instance "2"
     And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event 1" instance "1"
 
@@ -244,6 +246,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
   Scenario:
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
+    And I click on the link labeled "Record Status Dashboard"
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
   Scenario: add instance 2 for record with consent framework in Arm 2 Event 1  (repeatable event)
@@ -279,6 +282,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
   Scenario:
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
+    And I click on the link labeled "Record Status Dashboard"
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" instance "2"
     And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event 1" instance "1"
 

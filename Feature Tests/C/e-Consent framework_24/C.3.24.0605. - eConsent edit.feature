@@ -74,6 +74,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
         When I click on the button labeled "Close survey"
         And I return to the REDCap page I opened the survey from
+        And I click on the link labeled "Record Status Dashboard"
         Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
     Scenario: User unable to edit consent
@@ -138,6 +139,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
         When I click on the button labeled "Close survey"
         And I return to the REDCap page I opened the survey from
+        And I click on the link labeled "Record Status Dashboard"
         Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
     Scenario: Test ability to for user to edit a completed consent

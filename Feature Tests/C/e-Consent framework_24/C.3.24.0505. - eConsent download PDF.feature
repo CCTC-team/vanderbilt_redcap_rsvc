@@ -68,6 +68,7 @@ Feature: C.3.24.0505. User Interface: The system shall support the e-Consent Fra
 
         When I click on the button labeled "Close survey"
         And I return to the REDCap page I opened the survey from
+        And I click on the link labeled "Record Status Dashboard"
         Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
     Scenario: Verification e-Consent saved and logged correctly
