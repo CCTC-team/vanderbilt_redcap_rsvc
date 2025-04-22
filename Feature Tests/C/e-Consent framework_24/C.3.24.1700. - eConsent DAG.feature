@@ -243,9 +243,9 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see a table header and rows containing the following values in a table:
       | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type                  |
-      | .pdf |                                  |      3 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 | DAG 2   | e-Consent Participant |
-      | .pdf |                                  |      2 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 | DAG 1   | e-Consent Participant |
-      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 | No DAG  | e-Consent Participant |
+      | .pdf |                                  |      3 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | DAG 2   | e-Consent Participant |
+      | .pdf |                                  |      2 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | DAG 1   | e-Consent Participant |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | No DAG  | e-Consent Participant |
 
   Scenario: ##VERIFY_Logging
     When I click on the link labeled "Logging"
