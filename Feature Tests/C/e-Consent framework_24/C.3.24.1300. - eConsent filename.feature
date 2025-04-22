@@ -59,7 +59,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     And I click on the button labeled "Submit"
     Then I should see "Thank you for taking the survey."
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
       ##ACTION: add Coordinator Signature
     When I click on the bubble labeled "Coordinator Signature" for event "Event 1 and Record 1"
@@ -74,7 +74,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     Then I should see "Displayed below is a read-only copy of your survey responses."
     And I should see "I certify that all of my information in the document above is correct"
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
     Then I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Coordinator Signature" for event "Event 1"
     And I should see an Incomplete Survey Response icon for the Data Collection Instrument labeled "PDF And Combined Signatures PDF" for event "Event 1"
     When I click on the bubble labeled "PDF And Combined Signatures PDF" for event "Event 1"

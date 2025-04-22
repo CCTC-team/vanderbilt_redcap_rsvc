@@ -122,7 +122,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       Then I should see "Thank you for taking the survey."
 
       When I click on the button labeled "Close survey"
-      And I click on the button labeled "Leave without saving changes" in the dialog box
+      And I return to the REDCap page I opened the survey from
       Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
       And I should see an Incomplete Survey Response icon for the Data Collection Instrument labeled "PDF And Combined Signatures PDF" for event "Event 1"
 

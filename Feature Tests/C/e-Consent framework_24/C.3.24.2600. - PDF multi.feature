@@ -215,7 +215,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I click on the button labeled "Submit"
     Then I should see "Thank you for taking the survey."
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
 
   Scenario:
     When I click on the bubble labeled "Coordinator Signature" for event "Event 1"
@@ -260,7 +260,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I click on the button labeled "Submit"
     Then I should see "Thank you for taking the survey."
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
 
   Scenario:
     When I click on the bubble labeled "Coordinator Signature" for event "Event 1"
@@ -280,7 +280,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
     Then I should see "Record Home Page"
     And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 1"
     And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Coordinator Signature" for event "Event 1"
@@ -364,7 +364,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I click on the button labeled "Submit"
     Then I should see "Thank you for taking the survey."
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
 
   Scenario:
     When I click on the bubble labeled "Participant Consent" for event "Event 2"
@@ -418,7 +418,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I click on the button labeled "Submit"
     Then I should see "Thank you for taking the survey."
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
 
   Scenario:
     When I click on the bubble labeled "Participant Consent" for event "Event 2"
@@ -440,7 +440,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
     Then I should see "Record Home Page"
     And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 1"
     And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 2"

@@ -97,7 +97,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
 
   Scenario: add instance 2 for record with consent framework in Arm 1 Event 1  (repeatable event)
@@ -134,7 +134,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" instance "2"
     And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event 1" instance "1"
 
@@ -167,7 +167,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I click on the button labeled "Submit"
     Then I should see "Thank you for taking the survey."
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
     Then I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event Three"
 
   Scenario: add instance 2 for record with consent framework in Arm 1 Event Three  (repeatable instance)
@@ -203,7 +203,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
     Then I should see a Many Completed Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event Three"
 
   Scenario: add record in arm 2 with consent framework
@@ -243,7 +243,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
 
   Scenario: add instance 2 for record with consent framework in Arm 2 Event 1  (repeatable event)
@@ -278,7 +278,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" instance "2"
     And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event 1" instance "1"
 

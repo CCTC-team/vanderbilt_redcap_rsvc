@@ -101,7 +101,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
 
   Scenario: #Verification e-Consent saved and logged correctly
@@ -220,7 +220,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
 
   Scenario: #Verification e-Consent saved and logged correctly
@@ -325,7 +325,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
 
   Scenario: #Verification e-Consent saved and logged correctly

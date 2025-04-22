@@ -67,7 +67,7 @@ Given This scenario is fully tested within C.3.24.1500.
 #       And I click on the button labeled "Submit"
 #       Then I should see "Thank you for taking the survey."
 #       When I click on the button labeled "Close survey"
-#       And I click on the button labeled "Leave without saving changes" in the dialog box
+#       And I return to the REDCap page I opened the survey from
 #       Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
 #       # Verification e-Consent saved and logged correctly
 #       ##VERIFY_FiRe
@@ -139,7 +139,7 @@ Given This scenario is fully tested within C.3.24.1500.
 #       And I click on the button labeled "Submit"
 #       Then I should see "Thank you for taking the survey."
 #       When I click on the button labeled "Close survey"
-#       And I click on the button labeled "Leave without saving changes" in the dialog box
+#       And I return to the REDCap page I opened the survey from
 #       Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
 #       # Verification e-Consent saved and logged correctly
 #       ##VERIFY_FiRe
