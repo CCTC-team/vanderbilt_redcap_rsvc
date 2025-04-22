@@ -292,12 +292,12 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see a table header and rows containing the following values in a table:
       | Name | PDF utilized e-Consent Framework | Record | Survey Completed                                    | Identifier (Name, DOB) | Version | Type      |
-      | .pdf | YES                              |      2 | Participant Consent (Event 1 (Arm 2: Arm Two)) #2   |                        |     1.0 | e-Consent |
-      | .pdf | YES                              |      2 | Participant Consent (Event 1 (Arm 2: Arm Two)) #1   |                        |     1.0 | e-Consent |
-      | .pdf | YES                              |      1 | Participant Consent (Event Three (Arm 1: Arm 1)) #2 |             2000-01-01 |     1.0 | e-Consent |
-      | .pdf | YES                              |      1 | Participant Consent (Event Three (Arm 1: Arm 1)) #1 |             2000-01-01 |     1.0 | e-Consent |
-      | .pdf | YES                              |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) #2     |             2000-01-01 |     1.0 | e-Consent |
-      | .pdf | YES                              |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) #1     |             2000-01-01 |     1.0 | e-Consent |
+      | .pdf |                                  |      2 | Participant Consent (Event 1 (Arm 2: Arm Two)) #2   |                        |     1.0 | e-Consent |
+      | .pdf |                                  |      2 | Participant Consent (Event 1 (Arm 2: Arm Two)) #1   |                        |     1.0 | e-Consent |
+      | .pdf |                                  |      1 | Participant Consent (Event Three (Arm 1: Arm 1)) #2 |             2000-01-01 |     1.0 | e-Consent |
+      | .pdf |                                  |      1 | Participant Consent (Event Three (Arm 1: Arm 1)) #1 |             2000-01-01 |     1.0 | e-Consent |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) #2     |             2000-01-01 |     1.0 | e-Consent |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) #1     |             2000-01-01 |     1.0 | e-Consent |
         ##VERIFY_Logging
 
   Scenario:

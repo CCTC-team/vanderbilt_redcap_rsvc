@@ -126,7 +126,7 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     And I should NOT see "IP Address"
     Then I should see a table header and rows containing the following values in a table:
       | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         | Version | Type                  |
-      | .pdf | YES                              |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
 
   Scenario: #FUNCTIONAL_REQUIREMENT Capture IP Address
         ##ACTION: Capture the IP Address in the e-Consent Framework option
@@ -144,7 +144,7 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     And I should see "IP Address"
     Then I should see a table header and rows containing the following values in a table:
       | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         | IP Address      | Version | Type                  |
-      | .pdf | YES                              |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | xxx.xxx.xxx.xxx |         | e-Consent Participant |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | xxx.xxx.xxx.xxx |         | e-Consent Participant |
 #END
 
   Scenario: A.3.24.3000.300 Add a custom message via e-Consent Framework in the Control Center
