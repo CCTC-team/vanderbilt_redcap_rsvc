@@ -3,7 +3,7 @@ Feature:  C.3.24.0405. User Interface: The system shall support the e-Consent Fr
     As a REDCap end user
     I want to see that eConsent is functioning as expected
 
-    Scenario: C.3.24.0305.100 Automatic PDF Governed by e-Consent
+    Scenario: C.3.24.0405.100 Automatic PDF Governed by e-Consent
 
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
