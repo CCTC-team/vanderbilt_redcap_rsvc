@@ -74,7 +74,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
         When I click on the button labeled "Close survey"
         And I return to the REDCap page I opened the survey from
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
     Scenario: User unable to edit consent
         ##ACTION: User unable to edit consent
@@ -138,7 +138,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
         When I click on the button labeled "Close survey"
         And I return to the REDCap page I opened the survey from
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
     Scenario: Test ability to for user to edit a completed consent
         ##ACTION: Test ability to for user to edit a completed consent
@@ -151,7 +151,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         When I enter "NewFirstName" into the input field labeled "First Name"
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 2"
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
         When I click on the bubble labeled "Participant Consent" for event "Event 1"
         Then I should see "Survey response is editable"

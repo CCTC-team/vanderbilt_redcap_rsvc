@@ -71,7 +71,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         When I click on the button labeled "Close survey"
         And I return to the REDCap page I opened the survey from
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
     Scenario: Test previous page erase signature
         ##ACTION: Test previous page button on certification page with signature erase
@@ -120,7 +120,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         When I close the browser window.
         And I click on the button labeled "Leave without saving changes" in the dialog box
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
         When I click on the button labeled "Submit"
         Then I should see "Thank you for taking the survey."
@@ -165,7 +165,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         When I click on the button labeled "Close survey"
         And I return to the REDCap page I opened the survey from
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
     Scenario: Verification e-Consent saved and logged correctly
         ##VERIFY_FiRe

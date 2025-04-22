@@ -123,7 +123,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
 
         When I click on the button labeled "Close survey"
         And I return to the REDCap page I opened the survey from
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
         ##ACTION: add Coordinator Signature
         When I click on the bubble labeled "Coordinator Signature" for event "Event 1 and Record 1"
