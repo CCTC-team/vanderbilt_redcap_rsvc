@@ -118,8 +118,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         When I click on the button labeled "Erase my signature(s) and go to earlier page" in the dialog box
         Then I should NOT see a signature in the field labeled "Participant signature file" on the form labeled "Participant Consent"
 
-        When I close the browser window.
-        And I click on the button labeled "Leave without saving changes" in the dialog box
+        When I return to the REDCap page I opened the survey from
         Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
         When I click on the button labeled "Submit"
