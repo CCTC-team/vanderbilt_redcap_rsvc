@@ -142,7 +142,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario: add instance 1 for record with consent framework in Arm 1 Event Three  (repeatable instance)
         ##ACTION: add instance 1 for record with consent framework in Arm 1 Event Three  (repeatable instance)
-    When I click on the bubble labeled "Participant Consent" for event "Event Three"
+    When I locate the bubble for the "Participant Consent" instrument on event "Event Three" for record ID "1" and click on the bubble
     And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"

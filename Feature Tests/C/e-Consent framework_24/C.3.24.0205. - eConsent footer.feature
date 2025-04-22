@@ -127,7 +127,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
         ##ACTION: add Coordinator Signature
-        When I click on the bubble labeled "Coordinator Signature" for event "Event 1 and Record 1"
+        When I locate the bubble for the "Coordinator Signature" instrument on event "Event 1" for record ID "1" and click on the bubble
         Then I should see "Coordinator Signature."
 
         And I click on the button labeled "Survey options"
@@ -146,7 +146,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         Then I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Coordinator Signature" for event "Event 1"
         And I should see an Incomplete Survey Response icon for the Data Collection Instrument labeled "PDF And Combined Signatures PDF" for event "Event 1"
 
-        When I click on the bubble labeled "PDF And Combined Signatures PDF" for event "Event 1"
+        When I locate the bubble for the "PDF And Combined Signatures PDF" instrument on event "Event 1" for record ID "1" and click on the bubble
         Then I should see "Participant Consent file."
         And I should see a file uploaded to the field labeled "Coordinator Signature file."
         And I should see a file uploaded to the field labeled "PDF And Combined Signatures PDF."

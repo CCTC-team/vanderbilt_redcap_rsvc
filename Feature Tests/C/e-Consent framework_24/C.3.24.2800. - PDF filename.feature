@@ -66,7 +66,7 @@ Feature: User Interface: The system shall support the customization of the file 
 
    Scenario: Verification pdf saved and logged correctly
       ##VERIFY specified field
-      When I click on the bubble labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
+      When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
       Then I should see "custom" in the field labeled "Participant Consent file"
 
       When I click on the file link the field labeled "Participant Consent file"

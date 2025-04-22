@@ -150,7 +150,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
       ##VERIFY
     Then I should see "Record ID 2 was successfully assigned to a Data Access Group!"
     And I should see "Arm 1: Arm 1 - TestGroup1"
-    When I click on the bubble labeled "Participant Consent" for event "Event 1"
+    When I locate the bubble for the "Participant Consent" instrument on event "Event 1" for record ID "1" and click on the bubble
     Then I should see "DAG1.pdf"
     And I should NOT see "This is my NO DAG consent form"
 
@@ -203,7 +203,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
   Scenario: ##VERIFY
     Then I should see "Record ID 3 was successfully assigned to a Data Access Group!"
     And I should see "Arm 1: Arm 1 - TestGroup1"
-    When I click on the bubble labeled "Participant Consent" for event "Event 1"
+    When I locate the bubble for the "Participant Consent" instrument on event "Event 1" for record ID "1" and click on the bubble
     Then I should see "DAG2.pdf"
     And I should NOT see "This is my NO DAG consent form"
 

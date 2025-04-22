@@ -79,7 +79,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
     Scenario: User unable to edit consent
         ##ACTION: User unable to edit consent
-        When I click on the bubble labeled "Participant Consent" for event "Event 1"
+        When I locate the bubble for the "Participant Consent" instrument on event "Event 1" for record ID "1" and click on the bubble
         Then I should see "Survey response is read-only because it was completed via the e-Consent Framework."
 
     Scenario: #SETUP_eConsent to allow for edit by users
@@ -144,7 +144,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
     Scenario: Test ability to for user to edit a completed consent
         ##ACTION: Test ability to for user to edit a completed consent
-        When I click on the bubble labeled "Participant Consent" for event "Event 1"
+        When I locate the bubble for the "Participant Consent" instrument on event "Event 1" for record ID "1" and click on the bubble
         Then I should see "Survey response is editable"
 
         When I click the bubble labeled "Edit response"
@@ -155,7 +155,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         Then I should see "Record ID 2"
         Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
-        When I click on the bubble labeled "Participant Consent" for event "Event 1"
+        When I locate the bubble for the "Participant Consent" instrument on event "Event 1" for record ID "1" and click on the bubble
         Then I should see "Survey response is editable"
         And I should see "NewFirstName" into the input field labeled "First Name"
 
