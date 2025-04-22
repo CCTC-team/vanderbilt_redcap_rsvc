@@ -24,8 +24,8 @@ Feature: C.3.24.0505. User Interface: The system shall support the e-Consent Fra
             | [✓]               | Participant Consent |
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                          | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
-            | [✓]               | "Coordinator Signature" (coordinator_signature) | File Repository Specified field:[event_1_arm_1][coo_sign]         | Coordinator         |       |
-            | [✓]               | "Participant Consent" (participant_consent)     | File Repository Specified field:[event_1_arm_1][participant_file] | Participant         |       |
+            | [✓]               | "Participant Consent" (participant_consent)     | File Repository Specified field:[participant_file] | Participant         |       |
+            | [✓]               | "Coordinator Signature" (coordinator_signature) | File Repository Specified field:[coo_sign]         | Coordinator         |       |
 
         When I click on the link labeled "PDF Snapshots of Record"
         Then I should see a table header and rows containing the following values in a table:
