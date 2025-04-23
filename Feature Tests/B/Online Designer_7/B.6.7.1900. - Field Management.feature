@@ -77,7 +77,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         And I click on the Move image for the field named "Required"
 
         #Then I should see "Move field to another location"
-        And I select "name" in the dropdown field labeled "Move the field(s) so that it will be located immediately after the following field:" in the dialog box
+        And I select 'name "Name"' in the dropdown field labeled "Move the field(s) so that it will be located immediately after the following field:" in the dialog box
         And I click on the button labeled "Move field" in the dialog box
         ##VERIFY
         Then I should see "SUCCESSFULLY MOVED" in the dialog box

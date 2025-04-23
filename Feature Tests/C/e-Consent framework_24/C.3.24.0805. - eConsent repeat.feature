@@ -61,23 +61,23 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario: add record with consent framework
         ##ACTION: add record with consent framework in Arm 1 Event 1  (repeatable event)
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 1."
 
   Scenario:
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Participant Consent"
 
   Scenario:
-    When I enter "FirstName" into the input field labeled "Name"
-    And I enter "LastName" into the input field labeled "Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    When I clear field and enter "FirstName" into the input field labeled "Name"
+    And I clear field and enter "LastName" into the input field labeled "Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
@@ -88,7 +88,6 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
   Scenario:
     When I click on the button labeled "Next Page"
     Then I should see "Displayed below is a read-only copy of your survey responses."
-    And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
     And I should see the button labeled "Submit" is disabled
 
   Scenario:
@@ -98,8 +97,9 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
-    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+    And I return to the REDCap page I opened the survey from
+    And I click on the link labeled "Record Status Dashboard"
+    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
   Scenario: add instance 2 for record with consent framework in Arm 1 Event 1  (repeatable event)
         ##ACTION: add instance 2 for record with consent framework in Arm 1 Event 1  (repeatable event)
@@ -107,17 +107,17 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1" and click the repeating instrument bubble for the second instance
 
   Scenario:
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Participant Consent"
 
   Scenario:
-    When I enter "FirstName" into the input field labeled "Name"
-    And I enter "LastName" into the input field labeled "Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    When I clear field and enter "FirstName" into the input field labeled "Name"
+    And I clear field and enter "LastName" into the input field labeled "Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
@@ -128,7 +128,6 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
   Scenario:
     When I click on the button labeled "Next Page"
     Then I should see "Displayed below is a read-only copy of your survey responses."
-    And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
     And I should see the button labeled "Submit" is disabled
     When I check the checkbox labeled "I certify that all of my information in the document above is correct."
     And I click on the button labeled "Submit"
@@ -136,24 +135,25 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
+    And I click on the link labeled "Record Status Dashboard"
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" instance "2"
     And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event 1" instance "1"
 
   Scenario: add instance 1 for record with consent framework in Arm 1 Event Three  (repeatable instance)
         ##ACTION: add instance 1 for record with consent framework in Arm 1 Event Three  (repeatable instance)
-    When I click on the bubble labeled "Participant Consent" for event "Event Three"
-    And I click on the button labeled "Save & Stay"
+    When I locate the bubble for the "Participant Consent" instrument on event "Event Three" for record ID "1" and click on the bubble
+    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Participant Consent"
 
   Scenario:
-    When I enter "FirstName" into the input field labeled "Name"
-    And I enter "LastName" into the input field labeled "Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    When I clear field and enter "FirstName" into the input field labeled "Name"
+    And I clear field and enter "LastName" into the input field labeled "Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
@@ -164,29 +164,29 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
   Scenario:
     When I click on the button labeled "Next Page"
     Then I should see "Displayed below is a read-only copy of your survey responses."
-    And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
     And I should see the button labeled "Submit" is disabled
     When I check the checkbox labeled "I certify that all of my information in the document above is correct."
     And I click on the button labeled "Submit"
     Then I should see "Thank you for taking the survey."
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
+    When I click on the link labeled "Record Status Dashboard"
     Then I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event Three"
 
   Scenario: add instance 2 for record with consent framework in Arm 1 Event Three  (repeatable instance)
         ##ACTION: add instance 2 for record with consent framework in Arm 1 Event Three  (repeatable instance)
     When I click on the button labled "Add a New Instance" for the bubble labeled "Participant Consent" for event "Event Three"
-    And I click on the button labeled "Save & Stay"
+    And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Participant Consent"
 
   Scenario:
-    When I enter "FirstName" into the input field labeled "Name"
-    And I enter "LastName" into the input field labeled "Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    When I clear field and enter "FirstName" into the input field labeled "Name"
+    And I clear field and enter "LastName" into the input field labeled "Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
@@ -197,7 +197,6 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     Then I should see a link labeled "Remove signature"
     When I click on the button labeled "Next Page"
     Then I should see "Displayed below is a read-only copy of your survey responses."
-    And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
     And I should see the button labeled "Submit" is disabled
 
   Scenario:
@@ -207,29 +206,29 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
     Then I should see a Many Completed Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event Three"
 
   Scenario: add record in arm 2 with consent framework
         ##ACTION: add record with consent framework in Arm 1 Event 1  (repeatable event)
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I select "Arm 2: Arm Two" on the dropdown field labeled "Choose an existing Record ID"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 2."
 
   Scenario:
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Participant Consent"
 
   Scenario:
-    When I enter "FirstName" into the input field labeled "Name"
-    And I enter "LastName" into the input field labeled "Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    When I clear field and enter "FirstName" into the input field labeled "Name"
+    And I clear field and enter "LastName" into the input field labeled "Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
@@ -240,7 +239,6 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
   Scenario:
     When I click on the button labeled "Next Page"
     Then I should see "Displayed below is a read-only copy of your survey responses."
-    And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
     And I should see the button labeled "Submit" is disabled
     When I check the checkbox labeled "I certify that all of my information in the document above is correct."
     And I click on the button labeled "Submit"
@@ -248,24 +246,25 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
-    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+    And I return to the REDCap page I opened the survey from
+    And I click on the link labeled "Record Status Dashboard"
+    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
   Scenario: add instance 2 for record with consent framework in Arm 2 Event 1  (repeatable event)
         ##ACTION: add instance 2 for record with consent framework in Arm 1 Event 1  (repeatable event)
     When I click on the button labeled "Add New" for event "Event 1"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1" instance "2"
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Participant Consent"
 
   Scenario:
-    When I enter "FirstName" into the input field labeled "Name"
-    And I enter "LastName" into the input field labeled "Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    When I clear field and enter "FirstName" into the input field labeled "Name"
+    And I clear field and enter "LastName" into the input field labeled "Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
@@ -276,7 +275,6 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
   Scenario:
     When I click on the button labeled "Next Page"
     Then I should see "Displayed below is a read-only copy of your survey responses."
-    And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
     And I should see the button labeled "Submit" is disabled
     When I check the checkbox labeled "I certify that all of my information in the document above is correct."
     And I click on the button labeled "Submit"
@@ -284,7 +282,8 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
+    And I click on the link labeled "Record Status Dashboard"
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" instance "2"
     And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event 1" instance "1"
 
@@ -294,12 +293,12 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see a table header and rows containing the following values in a table:
       | Name | PDF utilized e-Consent Framework | Record | Survey Completed                                    | Identifier (Name, DOB) | Version | Type      |
-      | .pdf | YES                              |      2 | Participant Consent (Event 1 (Arm 2: Arm Two)) #2   |                        |     1.0 | e-Consent |
-      | .pdf | YES                              |      2 | Participant Consent (Event 1 (Arm 2: Arm Two)) #1   |                        |     1.0 | e-Consent |
-      | .pdf | YES                              |      1 | Participant Consent (Event Three (Arm 1: Arm 1)) #2 |             2000-01-01 |     1.0 | e-Consent |
-      | .pdf | YES                              |      1 | Participant Consent (Event Three (Arm 1: Arm 1)) #1 |             2000-01-01 |     1.0 | e-Consent |
-      | .pdf | YES                              |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) #2     |             2000-01-01 |     1.0 | e-Consent |
-      | .pdf | YES                              |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) #1     |             2000-01-01 |     1.0 | e-Consent |
+      | .pdf |                                  |      2 | Participant Consent (Event 1 (Arm 2: Arm Two)) #2   |                        |     1.0 | e-Consent |
+      | .pdf |                                  |      2 | Participant Consent (Event 1 (Arm 2: Arm Two)) #1   |                        |     1.0 | e-Consent |
+      | .pdf |                                  |      1 | Participant Consent (Event Three (Arm 1: Arm 1)) #2 |             2000-01-01 |     1.0 | e-Consent |
+      | .pdf |                                  |      1 | Participant Consent (Event Three (Arm 1: Arm 1)) #1 |             2000-01-01 |     1.0 | e-Consent |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) #2     |             2000-01-01 |     1.0 | e-Consent |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) #1     |             2000-01-01 |     1.0 | e-Consent |
         ##VERIFY_Logging
 
   Scenario:

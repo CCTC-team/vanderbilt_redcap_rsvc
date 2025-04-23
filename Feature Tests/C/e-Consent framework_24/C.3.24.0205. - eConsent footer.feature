@@ -46,6 +46,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
     Scenario: #SETUP_eConsent for coordinator signature (second signature) process
         #SETUP_eConsent for coordinator signature (second signature) process
         When I click on the button labeled "Enable the e-Consent Framework for a survey"
+        And I wait for 1 second
         And I select '"Coordinator Signature" (coordinator_signature)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
         Then I should see "Enable e-Consent" in the dialog box
         And I should see "Primary settings"
@@ -59,8 +60,8 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
         And I click on the button labeled "Save settings"
         Then I should see a table header and rows containing the following values in a table:
-            | e-Consent active? | Survey              |
-            | [✓]               | Coordinator Signature |
+            | e-Consent active? | Survey                                          |
+            | [✓]               | "Coordinator Signature" (coordinator_signature) |
 
     Scenario: Combine the PDFs to one combined PDF
         #SETUP Trigger to combine the PDFs to one combined PDF
@@ -72,37 +73,39 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
 
         When I click on the button labeled "Add new trigger"
         And I enter "Combine PDF file" into the input field labeled "Name of trigger"
-        And I enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the input field labeled "When the following logic becomes true"
-        And I click "Particpant Consent" and "Coordinator Siganture" from "[Any Event]" located in "Arm 1: Arm 1"
-        And I click on the button labeled "Update"
+        And I click on "" in the textarea field labeled "When the following logic becomes true"
+        And I wait for 1 second
+        And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
+        And I click on the button labeled "Update & Close Editor" in the dialog box
         And I check the checkbox labeled "Save to File Repository"
-        And I check the checkbox labeled "Save to specific field"
-        And I select "combo_file" on the event name "Curent event" from the dropdown field labeled "Save to specified field:" in the dialog box
+        And I check the checkbox labeled "Save to specified field"
+        And I select "combo_file" in the dropdown field labeled "Save to specified field:"
+        And I select "Current event" in the dropdown field labeled "Save to specified field:"
         And I click on the button labeled "Save"
-        Then I should see "Saved! Trigger for PDF Snapshot was successfully modified"
+        Then I should see "Trigger for PDF Snapshot was successfully created"
         Then I should see a table header and rows containing the following values in a table:
-            | Active | Edit settings         | Name             | Type of trigger   | Save snapshot when...                                    | Scope of the snapshot  | Location(s) to save the snapshot                     |
-            | [✓]    | Edit Copy             | Combine PDF file | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | Selected instruments   | File Repository Specified field: [combo_file]        |
-            | [✓]    | Governed by e-Consent |                  | Survey completion | Complete survey "Participant Consent"                    | Single survey response | File Repository Specified field: [participant_file] |
-            | [✓]    | Governed by e-Consent |                  | Survey completion | Complete survey "Coordinator Signature"                  | Single survey response | File Repository Specified field: [coo_sign]         |
+            | Active | Edit settings         | Name             | Type of trigger   | Save snapshot when...                                    | Scope of the snapshot  | Location(s) to save the snapshot                                   |
+            | [✓]    |                       | Combine PDF file | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | All instruments        | File Repository Specified field: [combo_file]                      |
+            | [✓]    | Governed by e-Consent |                  | Survey completion | Complete survey "Participant Consent"                    | Single survey response | File Repository Specified field: [event_1_arm_1][participant_file] |
+            | [✓]    | Governed by e-Consent |                  | Survey completion | Complete survey "Coordinator Signature"                  | Single survey response | File Repository Specified field: [event_1_arm_1][coo_sign]         |
 
     Scenario: Test e-Consent by adding record
         ##ACTION: add record to get participant signature
-        When I click on the link labeled "Add/Edit Records"
+        When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
         Then I should see "Adding new Record ID 1."
 
-        When I click on the button labeled "Save & Stay"
+        When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
         And I click on the button labeled "Okay" in the dialog box
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
         Then I should see "Participant Consent"
 
-        When I enter "FirstName" into the input field labeled "First Name"
-        And I enter "LastName" into the input field labeled "Last Name"
-        And I enter "email@test.edu" into the input field labeled "Email"
-        And I enter "2000-01-01" into the input field labeled "DOB"
+        When I clear field and enter "FirstName" into the input field labeled "First Name"
+        And I clear field and enter "LastName" into the input field labeled "Last Name"
+        And I clear field and enter "email@test.edu" into the input field labeled "email"
+        And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
         And I enter "MyName" into the input field labeled "Participant's Name Typed"
         
         Given I click on the link labeled "Add signature"
@@ -113,40 +116,44 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
         And I click on the button labeled "Submit"
         Then I should see "Thank you for taking the survey."
 
         When I click on the button labeled "Close survey"
-        And I click on the button labeled "Leave without saving changes" in the dialog box
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+        And I return to the REDCap page I opened the survey from
+        And I click on the link labeled "Record Status Dashboard"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
         ##ACTION: add Coordinator Signature
-        When I click on the bubble labeled "Coordinator Signature" for event "Event 1 and Record 1"
-        Then I should see "Coordinator Signature."
+        When I locate the bubble for the "Coordinator Signature" instrument on event "Event 1" for record ID "1" and click on the bubble
+        Then I should see "Coordinator's Signature"
 
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
-        Then I should see " Coordinator Signature "
-        And I enter "Coordinator Name" into the input field labeled "Coordinator Name Typed"
-        And I enter a signature in the field labeled "Coordinator'sSignature"
-        And I click on the button labeled "Save signature" in the dialog box
+        Then I should see "Coordinator Signature"
+        And I clear field and enter "Coordinator Name" into the input field labeled "Coordinator's Name Typed"
+        
+        Given I click on the link labeled "Add signature"
+        And I see a dialog containing the following text: "Add signature"
+        And I draw a signature in the signature field area
+        When I click on the button labeled "Save signature" in the dialog box
+        Then I should see a link labeled "Remove signature"
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct"
-        When I click on the button labeled "Close survey"
-        And I click on the button labeled "Leave without saving changes" in the dialog box
+        And I should see "I certify that all of my information in the document above is correct"
+        And I return to the REDCap page I opened the survey from
 
+        When I click on the link labeled "Record Status Dashboard"
         Then I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Coordinator Signature" for event "Event 1"
-        And I should see an Incomplete Survey Response icon for the Data Collection Instrument labeled "PDF And Combined Signatures PDF" for event "Event 1"
+        And I should see an Incomplete Survey Response icon for the Data Collection Instrument labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
 
-        When I click on the bubble labeled "PDF And Combined Signatures PDF" for event "Event 1"
+        When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
         Then I should see "Participant Consent file."
         And I should see a file uploaded to the field labeled "Coordinator Signature file."
-        And I should see a file uploaded to the field labeled "PDF And Combined Signatures PDF."
+        And I should see a file uploaded to the field labeled "Pdfs And Combined Signatures Pdf."
 
     Scenario: Verification e-Consent saved and logged correctly
         ##VERIFY_FiRe
@@ -154,9 +161,9 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I click on the link labeled "PDF Snapshot Archive"
         Then I should see a table header and rows containing the following values in a table:
             | Name | PDF utilized e-Consent Framework | Record | Survey Completed                               | Identifier (Name, DOB)        | Version | Type                  |
-            | .pdf | YES                              | 1      | (Event 1 (Arm 1: Arm 1))                       |                               |         |                       |
-            | .pdf | YES                              | 1      | Coordinator Signature (Event 1 (Arm 1: Arm 1)) |                               |         | e-Consent Coordinator |
-            | .pdf | YES                              | 1      | Participant Consent (Event 1 (Arm 1: Arm 1))   | FirstName LatName, 2000-01-01 |         | e-Consent Participant |
+            | .pdf |                                  | 1      | (Event 1 (Arm 1: Arm 1))                       |                               |         |                       |
+            | .pdf |                                  | 1      | Coordinator Signature (Event 1 (Arm 1: Arm 1)) |                               |         | e-Consent Coordinator |
+            | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1))   | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
 
         When I click on the file link for record "1" Survey "(Event 1 (Arm 1: Arm 1))"
         Then I should have a pdf file with the following values in the header: "PID xxxx - LastName"

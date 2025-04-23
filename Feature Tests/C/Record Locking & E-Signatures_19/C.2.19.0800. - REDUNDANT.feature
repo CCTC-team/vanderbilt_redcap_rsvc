@@ -59,7 +59,7 @@ Feature: User Interface: The Record Locking Customization module shall provide t
 
 #         When I check the checkbox labeled "Test custom text"
 #         And I check the checkbox labeled "E-signature"
-#         And I click on the button labeled "Save & Stay"
+#         And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
 #         Then I should see "E-signature: Username/password verification" in the dialog box
 
 #         Given I enter credentials for user "Test_Admin"
@@ -111,7 +111,7 @@ Feature: User Interface: The Record Locking Customization module shall provide t
 
 #         When I check the checkbox labeled "Edit Test custom text"
 #         And I check the checkbox labeled "E-signature"
-#         And I click on the button labeled "Save & Stay"
+#         And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
 #         Then I should see "E-signature: Username/password verification" in the dialog box
 
 #         Given I enter credentials for user "Test_Admin"

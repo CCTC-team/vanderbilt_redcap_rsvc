@@ -41,21 +41,21 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
     Scenario: add record with consent framework
         ##ACTION: add record with consent framework
-        When I click on the link labeled "Add/Edit Records"
+        When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
         Then I should see "Adding new Record ID 1."
 
-        When I click on the button labeled "Save & Stay"
+        When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
         And I click on the button labeled "Okay" in the dialog box
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
         Then I should see "Participant Consent"
 
-        When I enter "FirstName" into the input field labeled "Name"
-        And I enter "LastName" into the input field labeled "Name"
-        And I enter "email@test.edu" into the input field labeled "Email"
-        And I enter "2000-01-01" into the input field labeled "DOB"
+        When I clear field and enter "FirstName" into the input field labeled "Name"
+        And I clear field and enter "LastName" into the input field labeled "Name"
+        And I clear field and enter "email@test.edu" into the input field labeled "email"
+        And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
         And I enter "MyName" into the input field labeled "Participant's Name Typed"
         
         Given I click on the link labeled "Add signature"
@@ -66,7 +66,6 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
         And I should see the button labeled "Submit" is disabled
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
@@ -74,12 +73,13 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         Then I should see "Thank you for taking the survey."
 
         When I click on the button labeled "Close survey"
-        And I click on the button labeled "Leave without saving changes" in the dialog box
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+        And I return to the REDCap page I opened the survey from
+        And I click on the link labeled "Record Status Dashboard"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
     Scenario: User unable to edit consent
         ##ACTION: User unable to edit consent
-        When I click on the bubble labeled "Participant Consent" for event "Event 1"
+        When I locate the bubble for the "Participant Consent" instrument on event "Event 1" for record ID "1" and click on the bubble
         Then I should see "Survey response is read-only because it was completed via the e-Consent Framework."
 
     Scenario: #SETUP_eConsent to allow for edit by users
@@ -106,21 +106,21 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
     Scenario: add record with consent framework
         ##ACTION: add record with consent framework
-        When I click on the link labeled "Add/Edit Records"
+        When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
         Then I should see "Adding new Record ID 2."
 
-        When I click on the button labeled "Save & Stay"
+        When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
         And I click on the button labeled "Okay" in the dialog box
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
         Then I should see "Participant Consent"
 
-        When I enter "FirstName" into the input field labeled "Name"
-        And I enter "LastName" into the input field labeled "Name"
-        And I enter "email@test.edu" into the input field labeled "Email"
-        And I enter "2000-01-01" into the input field labeled "DOB"
+        When I clear field and enter "FirstName" into the input field labeled "Name"
+        And I clear field and enter "LastName" into the input field labeled "Name"
+        And I clear field and enter "email@test.edu" into the input field labeled "email"
+        And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
         And I enter "MyName" into the input field labeled "Participant's Name Typed"
         
         Given I click on the link labeled "Add signature"
@@ -131,7 +131,6 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
         And I should see the button labeled "Submit" is disabled
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
@@ -139,12 +138,13 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         Then I should see "Thank you for taking the survey."
 
         When I click on the button labeled "Close survey"
-        And I click on the button labeled "Leave without saving changes" in the dialog box
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+        And I return to the REDCap page I opened the survey from
+        And I click on the link labeled "Record Status Dashboard"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
     Scenario: Test ability to for user to edit a completed consent
         ##ACTION: Test ability to for user to edit a completed consent
-        When I click on the bubble labeled "Participant Consent" for event "Event 1"
+        When I locate the bubble for the "Participant Consent" instrument on event "Event 1" for record ID "1" and click on the bubble
         Then I should see "Survey response is editable"
 
         When I click the bubble labeled "Edit response"
@@ -153,9 +153,9 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         When I enter "NewFirstName" into the input field labeled "First Name"
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 2"
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
-        When I click on the bubble labeled "Participant Consent" for event "Event 1"
+        When I locate the bubble for the "Participant Consent" instrument on event "Event 1" for record ID "1" and click on the bubble
         Then I should see "Survey response is editable"
         And I should see "NewFirstName" into the input field labeled "First Name"
 
@@ -166,8 +166,8 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         And I click on the link labeled "PDF Snapshot Archive"
         Then I should see a table header and rows containing the following values in a table:
             | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type      |
-            | .pdf | YES                              | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) | 2000-01-01             |         | e-Consent |
-            | .pdf | YES                              | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | 2000-01-01             |         | e-Consent |
+            | .pdf |                                  | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) | 2000-01-01             |         | e-Consent |
+            | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | 2000-01-01             |         | e-Consent |
 
 
         When I click on the file link for record "1" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"

@@ -38,21 +38,21 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
             | [✓]               | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
 
         ##ACTION: add record with consent framework
-        When I click on the link labeled "Add/Edit Records"
+        When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
         Then I should see "Adding new Record ID 1."
 
-        When I click on the button labeled "Save & Stay"
+        When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
         And I click on the button labeled "Okay" in the dialog box
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
         Then I should see "Participant Consent"
 
-        When I enter "FirstName" into the input field labeled "First Name"
-        And I enter "LastName" into the input field labeled "Last Name"
-        And I enter "email@test.edu" into the input field labeled "Email"
-        And I enter "2000-01-01" into the input field labeled "DOB"
+        When I clear field and enter "FirstName" into the input field labeled "First Name"
+        And I clear field and enter "LastName" into the input field labeled "Last Name"
+        And I clear field and enter "email@test.edu" into the input field labeled "email"
+        And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
         And I enter "MyName" into the input field labeled "Participant's Name Typed"
         
         Given I click on the link labeled "Add signature"
@@ -63,7 +63,6 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
         And I should see the button labeled "Submit" is disabled
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
@@ -71,26 +70,27 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         Then I should see "Thank you for taking the survey."
 
         When I click on the button labeled "Close survey"
-        And I click on the button labeled "Leave without saving changes" in the dialog box
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+        And I return to the REDCap page I opened the survey from
+        And I click on the link labeled "Record Status Dashboard"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
     Scenario: Test previous page erase signature
         ##ACTION: Test previous page button on certification page with signature erase
-        When I click on the link labeled "Add/Edit Records"
+        When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
         Then I should see "Adding new Record ID 2."
 
-        When I click on the button labeled "Save & Stay"
+        When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
         And I click on the button labeled "Okay" in the dialog box
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
         Then I should see "Participant Consent"
 
-        When I enter "FirstName" into the input field labeled "First Name"
-        And I enter "LastName" into the input field labeled "Last Name"
-        And I enter "email@test.edu" into the input field labeled "Email"
-        And I enter "2000-01-01" into the input field labeled "DOB"
+        When I clear field and enter "FirstName" into the input field labeled "First Name"
+        And I clear field and enter "LastName" into the input field labeled "Last Name"
+        And I clear field and enter "email@test.edu" into the input field labeled "email"
+        And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
         And I enter "MyName" into the input field labeled "Participant's Name Typed"
         
         Given I click on the link labeled "Add signature"
@@ -101,7 +101,6 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
         And I should see the button labeled "Submit" is disabled
 
 
@@ -111,7 +110,6 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         When I click on the button labeled "Cancel" in the dialog box
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
         And I should see the button labeled "Submit" is disabled
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
@@ -121,15 +119,15 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         When I click on the button labeled "Erase my signature(s) and go to earlier page" in the dialog box
         Then I should NOT see a signature in the field labeled "Participant signature file" on the form labeled "Participant Consent"
 
-        When I close the browser window.
-        And I click on the button labeled "Leave without saving changes" in the dialog box
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+        When I return to the REDCap page I opened the survey from
+        And I click on the link labeled "Record Status Dashboard"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
         When I click on the button labeled "Submit"
         Then I should see "Thank you for taking the survey."
 
         When I click on the button labeled "Close survey"
-        And I click on the button labeled "Leave without saving changes" in the dialog box
+        And I return to the REDCap page I opened the survey from
         Then I should see Partial Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event 1"
 
     Scenario: Test reopen partially completed this survey and start over
@@ -146,10 +144,10 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         Then I should see "Participant Consent"
 
-        When I enter "FirstName" into the input field labeled "Name"
-        And I enter "LastName" into the input field labeled "Name"
-        And I enter "email@test.edu" into the input field labeled "Email"
-        And I enter "2000-01-01" into the input field labeled "DOB"
+        When I clear field and enter "FirstName" into the input field labeled "Name"
+        And I clear field and enter "LastName" into the input field labeled "Name"
+        And I clear field and enter "email@test.edu" into the input field labeled "email"
+        And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
         And I enter "MyName" into the input field labeled "Participant's Name Typed"
         
         Given I click on the link labeled "Add signature"
@@ -160,7 +158,6 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
         And I should see the button labeled "Submit" is disabled
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
@@ -168,8 +165,9 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         Then I should see "Thank you for taking the survey."
 
         When I click on the button labeled "Close survey"
-        And I click on the button labeled "Leave without saving changes" in the dialog box
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+        And I return to the REDCap page I opened the survey from
+        And I click on the link labeled "Record Status Dashboard"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
     Scenario: Verification e-Consent saved and logged correctly
         ##VERIFY_FiRe
@@ -177,8 +175,8 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         And I click on the link labeled "PDF Snapshot Archive"
         Then I should see a table header and rows containing the following values in a table:
             | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type      |
-            | .pdf | YES                              | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |           |
-            | .pdf | YES                              | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         | e-Consent |
+            | .pdf |                                  | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |           |
+            | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         | e-Consent |
 
 
         When I click on the file link for record "1" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
