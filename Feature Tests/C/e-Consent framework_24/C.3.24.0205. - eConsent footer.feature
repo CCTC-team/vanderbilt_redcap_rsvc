@@ -132,7 +132,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
 
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
-        Then I should see " Coordinator Signature "
+        Then I should see "Coordinator Signature"
         And I clear field and enter "Coordinator Name" into the input field labeled "Coordinator's Name Typed"
         
         Given I click on the link labeled "Add signature"
