@@ -197,7 +197,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       And I click on the button labeled "Okay" in the dialog box
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
-      And I type "Coo" in the field labeled "Coordinator's name Typed"
+      And I clear field and enter "Coo" into the input field labeled "Coordinator's Name Typed"
       And I enter a signature in the field labeled "Coordinator's Signature"
       And I click on the button labeled "Save signature" in the dialog box
       And I click on the button labeled "Submit"

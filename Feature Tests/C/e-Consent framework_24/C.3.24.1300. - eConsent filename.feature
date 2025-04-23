@@ -61,11 +61,11 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
       ##ACTION: add Coordinator Signature
     When I locate the bubble for the "Coordinator Signature" instrument on event "Event 1" for record ID "1" and click on the bubble
-    Then I should see "Coordinator Signature."
+    Then I should see "Coordinator's Signature"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
-    Then I should see " Coordinator Signature "
-    And I enter "Coordinator Name" into the input field labeled "Coordinator Name Typed"
+    Then I should see "Coordinator's Signature"
+    And I clear field and enter "Coordinator Name" into the input field labeled "Coordinator's Name Typed"
     And I enter a signature in the field labeled "Coordinator'sSignature"
     And I click on the button labeled "Save signature" in the dialog box
     When I click on the button labeled "Next Page"
