@@ -99,6 +99,7 @@
 		<ItemRef ItemOID="rand_group_3" Mandatory="No" redcap:Variable="rand_group_3"/>
 		<ItemRef ItemOID="rand_group_4" Mandatory="No" redcap:Variable="rand_group_4"/>
 		<ItemRef ItemOID="rand_group_5" Mandatory="No" redcap:Variable="rand_group_5"/>
+		<ItemRef ItemOID="rand_group_6" Mandatory="No" redcap:Variable="rand_group_6"/>
 		<ItemRef ItemOID="rand_blind" Mandatory="No" redcap:Variable="rand_blind"/>
 		<ItemRef ItemOID="auto_rand" Mandatory="No" redcap:Variable="auto_rand"/>
 	</ItemGroupDef>
@@ -207,13 +208,17 @@
 		<Question><TranslatedText>Randomization group</TranslatedText></Question>
 		<CodeListRef CodeListOID="rand_group_3.choices"/>
 	</ItemDef>
-	<ItemDef OID="rand_group_4" Name="rand_group_4" DataType="text" Length="1" redcap:Variable="rand_group_4" redcap:FieldType="radio">
+	<ItemDef OID="rand_group_4" Name="rand_group_4" DataType="text" Length="1" redcap:Variable="rand_group_4" redcap:FieldType="dropdown">
 		<Question><TranslatedText>Randomization group</TranslatedText></Question>
 		<CodeListRef CodeListOID="rand_group_4.choices"/>
 	</ItemDef>
 	<ItemDef OID="rand_group_5" Name="rand_group_5" DataType="text" Length="1" redcap:Variable="rand_group_5" redcap:FieldType="radio">
 		<Question><TranslatedText>Randomization group</TranslatedText></Question>
 		<CodeListRef CodeListOID="rand_group_5.choices"/>
+	</ItemDef>
+		<ItemDef OID="rand_group_6" Name="rand_group_6" DataType="text" Length="1" redcap:Variable="rand_group_6" redcap:FieldType="radio">
+		<Question><TranslatedText>Randomization group</TranslatedText></Question>
+		<CodeListRef CodeListOID="rand_group_6.choices"/>
 	</ItemDef>
 	<ItemDef OID="rand_blind" Name="rand_blind" DataType="text" Length="999" redcap:Variable="rand_blind" redcap:FieldType="text">
 		<Question><TranslatedText>Blinded randomization</TranslatedText></Question>
@@ -339,6 +344,11 @@ Randomization UTC Time: [ rand-utc-time ]: [rand-utc-time]
 		<CodeListItem CodedValue="3"><Decode><TranslatedText>Placebo</TranslatedText></Decode></CodeListItem>
 	</CodeList>
 	<CodeList OID="rand_group_5.choices" Name="rand_group_5" DataType="text" redcap:Variable="rand_group_5">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Drug A</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Drug B</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>Placebo</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="rand_group_6.choices" Name="rand_group_6" DataType="text" redcap:Variable="rand_group_6">
 		<CodeListItem CodedValue="1"><Decode><TranslatedText>Drug A</TranslatedText></Decode></CodeListItem>
 		<CodeListItem CodedValue="2"><Decode><TranslatedText>Drug B</TranslatedText></Decode></CodeListItem>
 		<CodeListItem CodedValue="3"><Decode><TranslatedText>Placebo</TranslatedText></Decode></CodeListItem>
