@@ -113,8 +113,13 @@ Feature: User Interface: The system shall support conditional logic integration 
       #Add Insturment 2's response
     When I click on the bubble labeled "Coordiantor Signature"
     Then I should see "Editing existing Record ID 1."
-    When I enter a signature in the field labeled "Coordinator's Signature"
-    And I click on the button labeled "Save signature" in the dialog box
+    
+    Given I click on the link labeled "Add signature"
+    And I see a dialog containing the following text: "Add signature"
+    And I draw a signature in the signature field area
+    When I click on the button labeled "Save signature" in the dialog box
+    Then I should see a link labeled "Remove signature"
+
     And I slect "Complete" from the drowpown labeled "Complete?"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record Home Page"

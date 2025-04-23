@@ -178,8 +178,13 @@ Feature: User Interface: The system shall support the capture and storage of mul
     When I locate the bubble for the "Coordinator Signature" instrument on event "Event 1" for record ID "1" and click on the bubble
     When I select "Data Mode" from the field labeled "Form 2 Trigger"
     And I enter "Coordinator" into the input field labeled "Coordinator's Name Typed"
-    And I enter a signature in the field labeled "Coordinator's Signature"
-    And I click on the button labeled "Save signature" in the dialog box
+    
+    Given I click on the link labeled "Add signature"
+    And I see a dialog containing the following text: "Add signature"
+    And I draw a signature in the signature field area
+    When I click on the button labeled "Save signature" in the dialog box
+    Then I should see a link labeled "Remove signature"
+
     And I slect "Complete" from the drowpown labeled "Complete?"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record Home Page"
