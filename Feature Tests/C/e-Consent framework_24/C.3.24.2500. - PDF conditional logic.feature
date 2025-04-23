@@ -104,13 +104,13 @@ Feature: User Interface: The system shall support conditional logic integration 
     And I return to the REDCap page I opened the survey from
     And I click on the link labeled "Record Status Dashboard"
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
-    And I should see "Incomplete" icon for the Data Collection Instrument labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
+    And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "1"
     When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
     Then I should see "custom" in the field labeled "Participant Consent file"
     When I click on the file link the field labeled "Participant Consent file"
     Then I should have a pdf file with the following values "Participant Consent"
       #Manual: Close document
-      #Add Insturment 2's response
+      #Add instrument 2's response
     When I click on the bubble labeled "Coordiantor Signature"
     Then I should see "Editing existing Record ID 1."
     

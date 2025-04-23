@@ -61,8 +61,8 @@ Feature: User Interface: The system shall support the customization of the file 
       And I select "Complete" from the field labeled "Complete?"
       And I click on the button labeled "Save & Exit Form"
       Then I should see "Record Home Page"
-      And I should see "Complete" status for "Event 1" insturment "Participant Consent"
-      And I should see "Incomplete (no data saved)" icon for the Data Collection Instrument labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
+      And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event 1" 
+      And I should see the "Incomplete (no data saved)" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1"
 
    Scenario: Verification pdf saved and logged correctly
       ##VERIFY specified field
