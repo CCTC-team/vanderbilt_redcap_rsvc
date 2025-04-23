@@ -110,7 +110,7 @@ Feature: User Interface: The system shall support conditional logic integration 
     When I click on the file link the field labeled "Participant Consent file"
     Then I should have a pdf file with the following values "Participant Consent"
       #Manual: Close document
-      #Add instrument 2's response
+      #Add Instrument 2's response
     When I click on the bubble labeled "Coordiantor Signature"
     Then I should see "Editing existing Record ID 1."
     
