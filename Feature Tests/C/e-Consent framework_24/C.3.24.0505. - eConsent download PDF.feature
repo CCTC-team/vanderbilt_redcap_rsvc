@@ -24,8 +24,8 @@ Feature: C.3.24.0505. User Interface: The system shall support the e-Consent Fra
             | [✓]               | Participant Consent |
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                          | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
-            | [✓]               | "Coordinator Signature" (coordinator_signature) | File Repository Specified field:[event_1_arm_1][coo_sign]         | Coordinator         |       |
-            | [✓]               | "Participant Consent" (participant_consent)     | File Repository Specified field:[event_1_arm_1][participant_file] | Participant         |       |
+            | [✓]               | "Participant Consent" (participant_consent)     | File Repository Specified field:[participant_file] | Participant         |       |
+            | [✓]               | "Coordinator Signature" (coordinator_signature) | File Repository Specified field:[coo_sign]         | Coordinator         |       |
 
         When I click on the link labeled "PDF Snapshots of Record"
         Then I should see a table header and rows containing the following values in a table:
@@ -35,21 +35,21 @@ Feature: C.3.24.0505. User Interface: The system shall support the e-Consent Fra
 
     Scenario: Add record
         ##ACTION: add record with consent framework
-        When I click on the link labeled "Add/Edit Records"
+        When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
         Then I should see "Adding new Record ID 1."
 
-        When I click on the button labeled "Save & Stay"
+        When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
         And I click on the button labeled "Okay" in the dialog box
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
         Then I should see "Participant Consent"
 
-        When I enter "FirstName" into the input field labeled "First Name"
-        And I enter "LastName" into the input field labeled "Last Name"
-        And I enter "email@test.edu" into the input field labeled "Email"
-        And I enter "2000-01-01" into the input field labeled "DOB"
+        When I clear field and enter "FirstName" into the input field labeled "First Name"
+        And I clear field and enter "LastName" into the input field labeled "Last Name"
+        And I clear field and enter "email@test.edu" into the input field labeled "email"
+        And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
         And I enter "MyName" into the input field labeled "Participant's Name Typed"
         
         Given I click on the link labeled "Add signature"
@@ -60,7 +60,6 @@ Feature: C.3.24.0505. User Interface: The system shall support the e-Consent Fra
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
         And I should see the button labeled "Submit" is disabled
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct."
@@ -68,16 +67,17 @@ Feature: C.3.24.0505. User Interface: The system shall support the e-Consent Fra
         Then I should see "Thank you for taking the survey."
 
         When I click on the button labeled "Close survey"
-        And I click on the button labeled "Leave without saving changes" in the dialog box
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+        And I return to the REDCap page I opened the survey from
+        And I click on the link labeled "Record Status Dashboard"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
     Scenario: Verification e-Consent saved and logged correctly
         ##VERIFY_FiRe
         When I click on the link labeled "File Repository"
         And I click on the link labeled "PDF Snapshot Archive"
         Then I should see a table header and rows containing the following values in a table:
-            | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type                  |
-            | .pdf | YES                              | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 |         | e-Consent Participant |
+            | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         | Version | Type                  |
+            | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
 
         When I click on the file link for record "1" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
         Then I should have a pdf file with the following values in the header: "PID xxxx - LastName"

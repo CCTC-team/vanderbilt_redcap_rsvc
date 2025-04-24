@@ -64,6 +64,8 @@ Feature: User Interface: The system shall support the storage, organization, and
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Delete file
+        # The following wait is to avoid intermittent failures on the following step
+        And I wait for 1 second
         When I check the checkbox labeled "testusers_bulkupload.csv"
         And I click on the button labeled "Delete"
         Then I should see a dialog containing the following text: "Are you sure you wish to delete all the files currently selected on the page? Total files to be deleted: 1."
@@ -118,6 +120,8 @@ Feature: User Interface: The system shall support the storage, organization, and
     ##ACTION Delete file
         When I click on the link labeled "File Repository"
 
+        # The following wait is to avoid intermittent failures on the following step
+        And I wait for 1 second
         When I check the checkbox labeled "testusers_bulkupload.csv"
         And I click on the button labeled "Delete"
         Then I should see a dialog containing the following text: "Are you sure you wish to delete all the files currently selected on the page? Total files to be deleted: 1."

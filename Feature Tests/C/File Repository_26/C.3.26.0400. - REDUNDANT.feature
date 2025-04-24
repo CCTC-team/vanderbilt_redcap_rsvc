@@ -121,16 +121,15 @@ Feature: User Interface: The system shall support multiple file upload through t
 
 #         ##SETUP Record: Create record while in DAG through eConsent framework
 #         Given I login to REDCap with the user "Test_User1"
-#         When I click on the link labeled "Add/Edit Records"
+#         When I click on the link labeled "Add / Edit Records"
 #         And I click on the button labeled "Add new record for the arm selected above"
 #         And I click on the bubble labeled "Consent" for event "Event 1"
 #         Then I should see "Adding new Record ID"
 
-#         When I click on the button labeled "Save & Stay"
+#         When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
 #         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
 #         And I click on the button labeled "Next Page"
-#         Then I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
 
 #         When I click on the checkbox for the field labeled "I certify that all of my information in the document above is correct."
 #         And I click on the button labeled "Submit"
@@ -189,16 +188,15 @@ Feature: User Interface: The system shall support multiple file upload through t
 
 #         ##SETUP Record: Create record while in DAG through
 #         Given I login to REDCap with the user "Test_User2"
-#         When I click on the link labeled "Add/Edit Records"
+#         When I click on the link labeled "Add / Edit Records"
 #         And I click on the button labeled "Add new record for the arm selected above"
 #         And I click on the bubble labeled "Consent" for event "Event 1"
 #         Then I should see "Adding new Record ID"
 
-#         When I click on the button labeled "Save & Stay"
+#         When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
 #         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
 #         And I click on the button labeled "Next Page"
-#         Then I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
 
 #         When I click on the checkbox for the field labeled "I certify that all of my information in the document above is correct."
 #         And I click on the button labeled "Submit"

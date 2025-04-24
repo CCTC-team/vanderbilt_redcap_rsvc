@@ -26,8 +26,8 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario: #CROSS-REF ##C.3.24.1600.100 Add consent form version via rich text
     When I enter "test 1" into the input field labeled "Consent form version:" in the dialog box
-    And I select "Consent file" from the dropdown field labeled "Placement of consent form:" in the dialog box
-    And I select "When record is not assigned to a DAG (default)" from the dropdown field labeled "Display for specific DAG" in the dialog box
+    And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
+    And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
     And I select "No languages defined on MLM page" for the dropdown filed labeled "Display for specific language" in the dialog box
     And I click on the link labeled "Consent Form (Rich Text)" in the dialog box
     And I enter "This is my test 1 consent form" into the input field labeled "Consent Form (Rich Text)" in the dialog box
@@ -40,8 +40,8 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario:
     When I enter "test 1" into the input field labeled "Consent form version:" in the dialog box
-    And I select "Consent file" from the dropdown field labeled "Placement of consent form:" in the dialog box
-    And I select "When record is not assigned to a DAG (default)" from the dropdown field labeled "Display for specific DAG" in the dialog box
+    And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
+    And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
     And I select "No languages defined on MLM page" for the dropdown filed labeled "Display for specific language" in the dialog box
     And I click on the link labeled "Consent Form (Rich Text)" in the dialog box
     And I enter "This is my test 1 consent form" into the input field labeled "Consent Form (Rich Text)" in the dialog box
@@ -65,14 +65,14 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario: #Test e-Consent by adding record
         ##ACTION: add record to get participant signature
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 1."
     And I should see "This is my test 1 consent form"
 
   Scenario:
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -80,10 +80,10 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I should see "This is my test 1 consent form"
 
   Scenario:
-    When I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    When I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
@@ -93,7 +93,6 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
   Scenario:
     When I click on the button labeled "Next Page"
     Then I should see "Displayed below is a read-only copy of your survey responses."
-    And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
 
   Scenario:
     When I check the checkbox labeled "I certify that all of my information in the document above is correct."
@@ -102,8 +101,9 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
-    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+    And I return to the REDCap page I opened the survey from
+    And I click on the link labeled "Record Status Dashboard"
+    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
   Scenario: #Verification e-Consent saved and logged correctly
         ##VERIFY_FiRe
@@ -111,7 +111,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see a table header and rows containing the following values in a table:
       | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type |                       |
-      | .pdf | YES                              |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 |         |      | e-Consent Participant |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         |      | e-Consent Participant |
 
   Scenario:
     When I click on the file link for record "1" Survey "(Event 1 (Arm 1: Arm 1))"
@@ -141,8 +141,8 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     When I click on the button labled "Close" in the dialog box
         #Add unique version
     And I enter "test 2" into the input field labeled "Consent form version:" in the dialog box
-    And I select "Consent file" from the dropdown field labeled "Placement of consent form:" in the dialog box
-    And I select "When record is not assigned to a DAG (default)" from the dropdown field labeled "Display for specific DAG" in the dialog box
+    And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
+    And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
     And I select "No languages defined on MLM page" for the dropdown filed labeled "Display for specific language" in the dialog box
     And I click on the link labeled "Consent Form (Inline PDF)" in the dialog box
     And I click on the button labeled "Choose File" in the dialog box
@@ -183,14 +183,14 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario: # Test e-Consent by adding record
         ##ACTION: add record to get participant signature
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 2."
     And I should see "consent.pdf"
 
   Scenario:
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -198,10 +198,10 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I should see "consent.pdf"
 
   Scenario:
-    When I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    When I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
 
   Scenario:
     Given I click on the link labeled "Add signature"
@@ -213,7 +213,6 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
   Scenario:
     When I click on the button labeled "Next Page"
     Then I should see "Displayed below is a read-only copy of your survey responses."
-    And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
 
   Scenario:
     When I check the checkbox labeled "I certify that all of my information in the document above is correct."
@@ -222,8 +221,9 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
-    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+    And I return to the REDCap page I opened the survey from
+    And I click on the link labeled "Record Status Dashboard"
+    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
   Scenario: #Verification e-Consent saved and logged correctly
         ##VERIFY_FiRe
@@ -231,8 +231,8 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see a table header and rows containing the following values in a table:
       | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type |                       |
-      | .pdf | YES                              |      2 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 |         |      | e-Consent Participant |
-      | .pdf | YES                              |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 |         |      | e-Consent Participant |
+      | .pdf |                                  |      2 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         |      | e-Consent Participant |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         |      | e-Consent Participant |
 
   Scenario:
     When I click on the file link for record "2" Survey "(Event 1 (Arm 1: Arm 1))"
@@ -289,14 +289,14 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     Then I should NOT see "Consent form vtest 2" for the survey labeled "Participant Consent"
 
   Scenario: ##ACTION: Test e-Consent version is gone by adding record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 3."
     And I should NOT see "consent.pdf"
 
   Scenario:
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -304,10 +304,10 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I should NOT see "consent.pdf"
 
   Scenario:
-    When I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    When I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
 
   Scenario:
     Given I click on the link labeled "Add signature"
@@ -319,7 +319,6 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
   Scenario:
     When I click on the button labeled "Next Page"
     Then I should see "Displayed below is a read-only copy of your survey responses."
-    And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
 
   Scenario:
     When I check the checkbox labeled "I certify that all of my information in the document above is correct."
@@ -328,8 +327,9 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
-    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+    And I return to the REDCap page I opened the survey from
+    And I click on the link labeled "Record Status Dashboard"
+    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
   Scenario: #Verification e-Consent saved and logged correctly
         ##VERIFY_FiRe
@@ -337,9 +337,9 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see a table header and rows containing the following values in a table:
       | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type                  |
-      | .pdf | YES                              |      3 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 |         | e-Consent Participant |
-      | .pdf | YES                              |      2 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 |         | e-Consent Participant |
-      | .pdf | YES                              |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 |         | e-Consent Participant |
+      | .pdf |                                  |      3 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
+      | .pdf |                                  |      2 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
 
   Scenario:
     When I click on the file link for record "3" Survey "(Event 1 (Arm 1: Arm 1))"
