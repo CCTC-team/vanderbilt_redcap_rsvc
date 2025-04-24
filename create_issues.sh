@@ -7,7 +7,7 @@ if ! command -v gh &> /dev/null; then
 fi
 
 # GitHub repository (update with your repo, e.g., 'username/repo')
-GITHUB_REPO="4bbakers/redcap_rsvc"
+GITHUB_REPO="vanderbilt-redcap/redcap_rsvc"
 
 function url_encode() {
     echo "$@" \
@@ -30,7 +30,7 @@ awk 1 features.csv | tr -d "\r" | while read line; do
     # Extract file name without extension
     file_name=$(basename "$file" .feature)
     # Use the file path as the description
-    file_url="https://github.com/4bbakers/redcap_rsvc/tree/$branch/$file"
+    file_url="https://github.com/vanderbilt-redcap/redcap_rsvc/tree/$branch/$file"
 
     if [[ $file_name == *REDUNDANT* ]]; then
       echo "Skipping REDUNDANT feature: $file_name"
