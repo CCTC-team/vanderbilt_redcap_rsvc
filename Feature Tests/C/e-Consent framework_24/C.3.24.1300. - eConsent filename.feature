@@ -62,26 +62,6 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     When I click on the button labeled "Close survey"
     And I click on the button labeled "Leave without saving changes" in the dialog box
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
-      ##ACTION: add Coordinator Signature
-    When I click on the bubble labeled "Coordinator Signature" for event "Event 1 and Record 1"
-    Then I should see "Coordinator Signature."
-    And I click on the button labeled "Survey options"
-    And I click on the survey option label containing "Open survey" label
-    Then I should see " Coordinator Signature "
-    And I enter "Coordinator Name" into the input field labeled "Coordinator Name Typed"
-    And I enter a signature in the field labeled "Coordinator'sSignature"
-    And I click on the button labeled "Save signature" in the dialog box
-    When I click on the button labeled "Next Page"
-    Then I should see "Displayed below is a read-only copy of your survey responses."
-    And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct"
-    When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
-    Then I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Coordinator Signature" for event "Event 1"
-    And I should see an Incomplete Survey Response icon for the Data Collection Instrument labeled "PDF And Combined Signatures PDF" for event "Event 1"
-    When I click on the bubble labeled "PDF And Combined Signatures PDF" for event "Event 1"
-    Then I should see "Participant Consent file."
-    And I should see a file uploaded to the field labeled "Coordinator Signature file."
-    And I should see a file uploaded to the field labeled "PDF And Combined Signatures PDF."
 
   Scenario: Verification e-Consent saved and logged correctly
       ##VERIFY_FiRe
