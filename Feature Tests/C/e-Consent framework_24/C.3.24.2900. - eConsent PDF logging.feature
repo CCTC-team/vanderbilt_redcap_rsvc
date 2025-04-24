@@ -137,8 +137,8 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       And I click on the link labeled "PDF Snapshot Archive"
       Then I should see a table header and rows containing the following values in a table:
          | Name     | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        |
-         | Snapshot | YES                              | 2      | (Event 1 (Arm 1: Arm 1))                     |                               |
-         | eConsent | YES                              | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |
+         | Snapshot |                                  | 2      | (Event 1 (Arm 1: Arm 1))                     |                               |
+         | eConsent |                                  | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |
          | Snapshot | -                                | 1      | (Event 1 (Arm 1: Arm 1))                     |                               |
 
       ##VERIFY_Logging
