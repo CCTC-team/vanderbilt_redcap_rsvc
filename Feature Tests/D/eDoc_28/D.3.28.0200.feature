@@ -48,7 +48,7 @@ Feature: Control Center: The system shall support enabling or disabling the use 
         And I click on the button labeled "Leave without saving changes" in the dialog box
         ##VERIFY_RSD
         Then I should see "Record Home Page"
-        And I should see "Completed Survey Response" icon for the bubble labeled "Participant Consent" for event "Event 1"
+        And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
 
         ##VERIFY_FiRe
         ##e-Consent Framework not used, and PDF Snapshot is used

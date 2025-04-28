@@ -59,6 +59,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     And I return to the REDCap page I opened the survey from
     And I click on the link labeled "Record Status Dashboard"
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+
       ##ACTION: add Coordinator Signature
     When I locate the bubble for the "Coordinator Signature" instrument on event "Event 1" for record ID "1" and click on the bubble
     Then I should see "Coordinator's Signature"
@@ -66,13 +67,13 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     And I click on the survey option label containing "Open survey" label
     Then I should see "Coordinator's Signature"
     And I clear field and enter "Coordinator Name" into the input field labeled "Coordinator's Name Typed"
-    
+
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature" in the dialog box
     Then I should see a link labeled "Remove signature"
-    
+
     When I click on the button labeled "Next Page"
     Then I should see "Displayed below is a read-only copy of your survey responses."
     And I should see "I certify that all of my information in the document above is correct"
@@ -90,12 +91,12 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see a table header and rows containing the following values in a table:
-      | Name                         | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type                  |
-      | custom_xxxx-xx-xx_xxxxxx.pdf | YES                              |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         | e-Consent Participant |
+      | Name                                    | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type                  |
+      | pid13_formParticipantConsent_id1Custom_ |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         | e-Consent |
       ##VERIFY_Logging
       ##e-Consent Framework not used, and PDF Snapshot is used
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Username            | Action                    | List of Data Changes OR Fields Exported                                                                                                         |
-      | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent" snapshot_file = "custom_xxxx-xx-xx_xxxxxx.pdf" |
+      | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent" snapshot_file = "pid13_formParticipantConsent_id1Custom_ |
 #END

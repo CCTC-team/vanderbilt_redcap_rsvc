@@ -171,7 +171,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
     When I click on the link labeled "Record Status Dashboard"
-    Then I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event Three"
+    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event Three" for record "1"
 
   Scenario: add instance 2 for record with consent framework in Arm 1 Event Three  (repeatable instance)
         ##ACTION: add instance 2 for record with consent framework in Arm 1 Event Three  (repeatable instance)

@@ -77,17 +77,17 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
       
-        Given I click on the link labeled "Add signature"
-        And I see a dialog containing the following text: "Add signature"
-        And I draw a signature in the signature field area
-        When I click on the button labeled "Save signature" in the dialog box
-        Then I should see a link labeled "Remove signature"
+      Given I click on the link labeled "Add signature"
+      And I see a dialog containing the following text: "Add signature"
+      And I draw a signature in the signature field area
+      When I click on the button labeled "Save signature" in the dialog box
+      Then I should see a link labeled "Remove signature"
 
       And I select "Complete" from the field labeled "Complete?"
       And I click on the button labeled "Save & Exit Form"
       Then I should see "Record Home Page"
-      And I should see "Complete" status for "Event 1" insturment "Participant Consent"
-      And I should see "Incomplete (no data saved)" icon for the Data Collection Instrument labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
+      And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event 1" 
+      And I should see the "Incomplete (no data saved)" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1"
 
    Scenario: Add record for eConsent and snapshot
       #Add record
@@ -108,11 +108,11 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
       
-        Given I click on the link labeled "Add signature"
-        And I see a dialog containing the following text: "Add signature"
-        And I draw a signature in the signature field area
-        When I click on the button labeled "Save signature" in the dialog box
-        Then I should see a link labeled "Remove signature"
+      Given I click on the link labeled "Add signature"
+      And I see a dialog containing the following text: "Add signature"
+      And I draw a signature in the signature field area
+      When I click on the button labeled "Save signature" in the dialog box
+      Then I should see a link labeled "Remove signature"
 
       When I click on the button labeled "Next Page"
       Then I should see "Displayed below is a read-only copy of your survey responses."
@@ -137,8 +137,8 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       And I click on the link labeled "PDF Snapshot Archive"
       Then I should see a table header and rows containing the following values in a table:
          | Name     | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        |
-         | Snapshot | YES                              | 2      | (Event 1 (Arm 1: Arm 1))                     |                               |
-         | eConsent | YES                              | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |
+         | Snapshot |                                  | 2      | (Event 1 (Arm 1: Arm 1))                     |                               |
+         | eConsent |                                  | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |
          | Snapshot | -                                | 1      | (Event 1 (Arm 1: Arm 1))                     |                               |
 
       ##VERIFY_Logging

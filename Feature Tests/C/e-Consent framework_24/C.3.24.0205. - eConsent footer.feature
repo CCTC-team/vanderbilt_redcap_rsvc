@@ -132,7 +132,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
 
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
-        Then I should see "Coordinator Signature"
+        Then I should see "Please complete the survey"
         And I clear field and enter "Coordinator Name" into the input field labeled "Coordinator's Name Typed"
         
         Given I click on the link labeled "Add signature"
@@ -147,8 +147,8 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I return to the REDCap page I opened the survey from
 
         When I click on the link labeled "Record Status Dashboard"
-        Then I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Coordinator Signature" for event "Event 1"
-        And I should see an Incomplete Survey Response icon for the Data Collection Instrument labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
+        Then I should see the "Partial Survey Response" icon for the "Coordinator Signature" longitudinal instrument on event "Event 1" for record "1"
+        And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "1"
 
         When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
         Then I should see "Participant Consent file."

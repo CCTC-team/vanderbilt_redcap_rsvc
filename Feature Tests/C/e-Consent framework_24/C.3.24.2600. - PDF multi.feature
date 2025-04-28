@@ -188,8 +188,8 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I slect "Complete" from the drowpown labeled "Complete?"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record Home Page"
-    And I should see a Complete icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 1"
-    And I should see a Complete icon for the Data Collection Instrument labeled "Coordinator Signature" for event "Event 1"
+    And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
+    And I should see the "Complete" icon for the "Coordinator Signature" longitudinal instrument on event "Event 1"
 
   Scenario: Add record - 2 multi data form and survey same event
       #Add record
@@ -234,8 +234,8 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I slect "Complete" from the drowpown labeled "Complete?"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record Home Page"
-    And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 1"
-    And I should see a Complete icon for the Data Collection Instrument labeled "Coordinator Signature" for event "Event 1"
+    And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
+    And I should see the "Complete" icon for the "Coordinator Signature" longitudinal instrument on event "Event 1"
 
   Scenario: Add record -3 multi survey same event
     When I click on the link labeled "Add / Edit Records"
@@ -287,8 +287,8 @@ Feature: User Interface: The system shall support the capture and storage of mul
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
     Then I should see "Record Home Page"
-    And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 1"
-    And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Coordinator Signature" for event "Event 1"
+    And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
+    And I should see the "Completed Survey Response" icon for the "Coordinator Signature" longitudinal instrument on event "Event 1"
 
   Scenario: Add record - 4 multi data form different event
       #Add record
@@ -335,8 +335,8 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I slect "Complete" from the drowpown labeled "Complete?"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record Home Page"
-    And I should see a Complete icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 1"
-    And I should see a Complete icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 2"
+    And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
+    And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event 2"
 
   Scenario: Add record -  5 multi data form and survey different event
       #Add record
@@ -389,8 +389,8 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I slect "Complete" from the drowpown labeled "Complete?"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record Home Page"
-    And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 1"
-    And I should see a Complete icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 2"
+    And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
+    And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event 2"
 
   Scenario: Add record -  6 multi survey different event
       #Add record
@@ -447,8 +447,8 @@ Feature: User Interface: The system shall support the capture and storage of mul
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
     Then I should see "Record Home Page"
-    And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 1"
-    And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 2"
+    And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
+    And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 2"
 
   Scenario: Verification pdf saved and logged correctly
       ##VERIFY_FiRe
