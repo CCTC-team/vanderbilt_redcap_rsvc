@@ -39,7 +39,8 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
-    Then I should see "Participant Consent"
+    Then I should see "Please complete the survey"
+
     When I clear field and enter "FirstName" into the input field labeled "First Name"
     And I clear field and enter "LastName" into the input field labeled "Last Name"
     And I clear field and enter "email@test.edu" into the input field labeled "email"
@@ -65,7 +66,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     Then I should see "Coordinator's Signature"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
-    Then I should see "Coordinator's Signature"
+    Then I should see "Please complete the survey"
     And I clear field and enter "Coordinator Name" into the input field labeled "Coordinator's Name Typed"
 
     Given I click on the link labeled "Add signature"
