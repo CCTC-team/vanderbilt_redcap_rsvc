@@ -15,8 +15,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       And I click on the link labeled "PDF Snapshots of Record"
       And I click on the button labeled "Add new trigger"
       And I enter "Snapshot" into the input field labeled "Name of trigger"
-      And I select "'Participant Consent' - [Any EVENT]" from the dropdown field labeled "Every time the following survey is completed:" in the dialog box
-      And I enter "" into the input field labeled "[All instruments]"
+      And I select '"Participant Consent" - [Any Event]' on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
       And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
       And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
       And I check the checkbox labeled "Save to File Repository"
@@ -64,21 +63,21 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
 
    Scenario: Add record in data survey mode (pdf snapshot created)
       #Add record in data survey mode (pdf snapshot created)
-      When I click on the link labeled "Add/Edit Records"
+      When I click on the link labeled "Add / Edit Records"
       And I click on the button labeled "Add new record for the arm selected above"
       And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
       Then I should see "Adding new Record ID 1."
 
-      When I click on the button labeled "Save & Stay"
+      When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
       And I click on the button labeled "Okay" in the dialog box
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
       Then I should see "Participant Consent"
 
-      When I enter "FirstName" into the input field labeled "First Name"
-      And I enter "LastName" into the input field labeled "Last Name"
-      And I enter "email@test.edu" into the input field labeled "Email"
-      And I enter "2000-01-01" into the input field labeled "DOB"
+      When I clear field and enter "FirstName" into the input field labeled "First Name"
+      And I clear field and enter "LastName" into the input field labeled "Last Name"
+      And I clear field and enter "email@test.edu" into the input field labeled "email"
+      And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
       
         Given I click on the link labeled "Add signature"
@@ -91,8 +90,9 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       Then I should see "Thank you for taking the survey."
 
       When I click on the button labeled "Close survey"
-      And I click on the button labeled "Leave without saving changes" in the dialog box
-      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+      And I return to the REDCap page I opened the survey from
+      And I click on the link labeled "Record Status Dashboard"
+      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
       And I should see "Incomplete" icon for the Data Collection Instrument labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
 
       # Verification pdf saved and logged correctly
@@ -161,21 +161,21 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
 
    Scenario: Add record in data survey mode (pdf snapshot NOT created)
       #Add record
-      When I click on the link labeled "Add/Edit Records"
+      When I click on the link labeled "Add / Edit Records"
       And I click on the button labeled "Add new record for the arm selected above"
       And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
       Then I should see "Adding new Record ID 2."
 
-      When I click on the button labeled "Save & Stay"
+      When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
       And I click on the button labeled "Okay" in the dialog box
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
       Then I should see "Participant Consent"
 
-      When I enter "FirstName" into the input field labeled "First Name"
-      And I enter "LastName" into the input field labeled "Last Name"
-      And I enter "email@test.edu" into the input field labeled "Email"
-      And I enter "2000-01-01" into the input field labeled "DOB"
+      When I clear field and enter "FirstName" into the input field labeled "First Name"
+      And I clear field and enter "LastName" into the input field labeled "Last Name"
+      And I clear field and enter "email@test.edu" into the input field labeled "email"
+      And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
       
         Given I click on the link labeled "Add signature"
@@ -188,8 +188,9 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       Then I should see "Thank you for taking the survey."
 
       When I click on the button labeled "Close survey"
-      And I click on the button labeled "Leave without saving changes" in the dialog box
-      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+      And I return to the REDCap page I opened the survey from
+      And I click on the link labeled "Record Status Dashboard"
+      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
       And I should see "Incomplete" icon for the Data Collection Instrument labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
 
       # Verification pdf saved and logged correctly
@@ -203,7 +204,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
    #I should NOT see Record 2
 
    Scenario: Reactivate triggers
-      When I click on the button lanbeled "Designer"
+      When I click on the link labeled "Designer"
       And I click on the button labeled "PDF Snapshot"
       And I uncheck the checkbox labeled "Hide inactive"
       Then I should see a table header and rows containing the following values in a table:
@@ -220,21 +221,21 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
 
    Scenario: Add record in data survey mode (pdf snapshot created)
       #Add record
-      When I click on the link labeled "Add/Edit Records"
+      When I click on the link labeled "Add / Edit Records"
       And I click on the button labeled "Add new record for the arm selected above"
       And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
       Then I should see "Adding new Record ID 3."
 
-      When I click on the button labeled "Save & Stay"
+      When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
       And I click on the button labeled "Okay" in the dialog box
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
       Then I should see "Participant Consent"
 
-      When I enter "FirstName" into the input field labeled "First Name"
-      And I enter "LastName" into the input field labeled "Last Name"
-      And I enter "email@test.edu" into the input field labeled "Email"
-      And I enter "2000-01-01" into the input field labeled "DOB"
+      When I clear field and enter "FirstName" into the input field labeled "First Name"
+      And I clear field and enter "LastName" into the input field labeled "Last Name"
+      And I clear field and enter "email@test.edu" into the input field labeled "email"
+      And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
       
         Given I click on the link labeled "Add signature"
@@ -247,8 +248,9 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       Then I should see "Thank you for taking the survey."
 
       When I click on the button labeled "Close survey"
-      And I click on the button labeled "Leave without saving changes" in the dialog box
-      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+      And I return to the REDCap page I opened the survey from
+      And I click on the link labeled "Record Status Dashboard"
+      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
       And I should see "Incomplete" icon for the Data Collection Instrument labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
 
       # Verification pdf saved and logged correctly

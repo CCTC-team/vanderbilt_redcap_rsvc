@@ -26,6 +26,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I should see a toggle button labeled "Participant Consent" that is in the enabled state
 
         When I uncheck the checkbox labeled "Hide inactive"
+        And I wait for 5 seconds
         And I disable the toggle button labeled "Participant Consent"
         Then I should see a dialog containing the following text: "Set as inactive"
 
@@ -70,6 +71,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         When I click on the link labeled "Record Status Dashboard"
 
         ##VERIFY - Completed survey response in "Participant Consent" but no data saved within Pdfs And Combined Signatures Pdf
+        Given I click on the link labeled "Record Status Dashboard"
         Then I should see the "Completed Survey Response" icon for the "Participant Consent" instrument on event "Event 1" for record "1"
         And I should see the "Incomplete (no data saved)" icon for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record "1"
 

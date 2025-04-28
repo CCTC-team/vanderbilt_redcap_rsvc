@@ -45,7 +45,6 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I click on the button labeled "Add new trigger"
     And I enter "1 multi data form same event" into the input field labeled "Name of trigger"
     And I enter "[trigger1]='1' and [trigger2]='1'" into the input field labeled "When the following logic becomes true"
-    And I enter "" into the input field labeled "[All instruments]"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
     And I check the checkbox labeled "Save to File Repository"
@@ -62,7 +61,6 @@ Feature: User Interface: The system shall support the capture and storage of mul
     When I click on the button labeled "Add new trigger"
     And I enter "2 multi data form and survey same event" into the input field labeled "Name of trigger"
     And I enter "[trigger1]='2' and [trigger2]='1'" into the input field labeled "When the following logic becomes true"
-    And I enter "" into the input field labeled "[All instruments]"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
     And I check the checkbox labeled "Save to File Repository"
@@ -80,7 +78,6 @@ Feature: User Interface: The system shall support the capture and storage of mul
     When I click on the button labeled "Add new trigger"
     And I enter "3 multi survey same event" into the input field labeled "Name of trigger"
     And I enter "[trigger1]='2' and [trigger2]='2'" into the input field labeled "When the following logic becomes true"
-    And I enter "" into the input field labeled "[All instruments]"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
     And I check the checkbox labeled "Save to File Repository"
@@ -99,7 +96,6 @@ Feature: User Interface: The system shall support the capture and storage of mul
     When I click on the button labeled "Add new trigger"
     And I enter "4 multi data form different event" into the input field labeled "Name of trigger"
     And I enter "[event_1_arm_1][trigger1]='1' and [event_three_arm_1][trigger1]='1'" into the input field labeled "When the following logic becomes true"
-    And I enter "" into the input field labeled "[All instruments]"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
     And I check the checkbox labeled "Save to File Repository"
@@ -119,7 +115,6 @@ Feature: User Interface: The system shall support the capture and storage of mul
     When I click on the button labeled "Add new trigger"
     And I enter "5 multi data form and survey different event" into the input field labeled "Name of trigger"
     And I enter "[event_1_arm_1][trigger1]='1' and [event_three_arm_1][trigger1]='2'" into the input field labeled "When the following logic becomes true"
-    And I enter "" into the input field labeled "[All instruments]"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
     And I check the checkbox labeled "Save to File Repository"
@@ -139,7 +134,6 @@ Feature: User Interface: The system shall support the capture and storage of mul
     When I click on the button labeled "Add new trigger"
     And I enter "6 multi survey different event" into the input field labeled "Name of trigger"
     And I enter "[event_1_arm_1][trigger1]='2' and [event_three_arm_1][trigger1]='2'" into the input field labeled "When the following logic becomes true"
-    And I enter "" into the input field labeled "[All instruments]"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
     And I check the checkbox labeled "Save to File Repository"
@@ -157,17 +151,17 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: Add record - 1 multi data form same event
       #Add record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 1."
 
   Scenario:
     When I select "Data Mode" from the field labeled "Form 1 Trigger"
-    And I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -181,11 +175,16 @@ Feature: User Interface: The system shall support the capture and storage of mul
     Then I should see "Record Home Page"
 
   Scenario:
-    When I click on the bubble labeled "Coordinator Signature" for event "Event 1"
+    When I locate the bubble for the "Coordinator Signature" instrument on event "Event 1" for record ID "1" and click on the bubble
     When I select "Data Mode" from the field labeled "Form 2 Trigger"
     And I enter "Coordinator" into the input field labeled "Coordinator's Name Typed"
-    And I enter a signature in the field labeled "Coordinator's Signature"
-    And I click on the button labeled "Save signature" in the dialog box
+    
+    Given I click on the link labeled "Add signature"
+    And I see a dialog containing the following text: "Add signature"
+    And I draw a signature in the signature field area
+    When I click on the button labeled "Save signature" in the dialog box
+    Then I should see a link labeled "Remove signature"
+
     And I slect "Complete" from the drowpown labeled "Complete?"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record Home Page"
@@ -194,13 +193,13 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: Add record - 2 multi data form and survey same event
       #Add record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 2."
 
   Scenario:
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -208,10 +207,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I select "Survey Mode" from the field labeled "Form 1 Trigger"
-    And I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
@@ -221,10 +220,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I click on the button labeled "Submit"
     Then I should see "Thank you for taking the survey."
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
 
   Scenario:
-    When I click on the bubble labeled "Coordinator Signature" for event "Event 1"
+    When I locate the bubble for the "Coordinator Signature" instrument on event "Event 1" for record ID "1" and click on the bubble
     When I select "Data Mode" from the field labeled "Form 2 Trigger"
     And I enter "Coordinator" into the input field labeled "Coordinator's Name Typed"
     Given I click on the link labeled "Add signature"
@@ -239,11 +238,11 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I should see a Complete icon for the Data Collection Instrument labeled "Coordinator Signature" for event "Event 1"
 
   Scenario: Add record -3 multi survey same event
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 3."
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -251,10 +250,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I select "Survey Mode" from the field labeled "Form 1 Trigger"
-    And I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -266,11 +265,11 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I click on the button labeled "Submit"
     Then I should see "Thank you for taking the survey."
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
 
   Scenario:
-    When I click on the bubble labeled "Coordinator Signature" for event "Event 1"
-    When I click on the button labeled "Save & Stay"
+    When I locate the bubble for the "Coordinator Signature" instrument on event "Event 1" for record ID "1" and click on the bubble
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -286,24 +285,24 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
     Then I should see "Record Home Page"
     And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 1"
     And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Coordinator Signature" for event "Event 1"
 
   Scenario: Add record - 4 multi data form different event
       #Add record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 4."
 
   Scenario:
     When I select "Data Mode" from the field labeled "Form 1 Trigger"
-    And I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -317,12 +316,12 @@ Feature: User Interface: The system shall support the capture and storage of mul
     Then I should see "Record Home Page"
 
   Scenario:
-    When I click on the bubble labeled "Participant Consent" for event "Event 2"
+    When I locate the bubble for the "Participant Consent" instrument on event "Event 2" for record ID "1" and click on the bubble
     And I select "Data Mode" from the field labeled "Form 1 Trigger"
-    And I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -341,13 +340,13 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: Add record -  5 multi data form and survey different event
       #Add record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 5."
 
   Scenario:
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -355,10 +354,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I select "Survey Mode" from the field labeled "Form 1 Trigger"
-    And I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -370,15 +369,15 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I click on the button labeled "Submit"
     Then I should see "Thank you for taking the survey."
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
 
   Scenario:
-    When I click on the bubble labeled "Participant Consent" for event "Event 2"
+    When I locate the bubble for the "Participant Consent" instrument on event "Event 2" for record ID "1" and click on the bubble
     And I select "Data Mode" from the field labeled "Form 1 Trigger"
-    And I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -395,13 +394,13 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario: Add record -  6 multi survey different event
       #Add record
-    When I click on the link labeled "Add/Edit Records"
+    When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 6."
 
   Scenario:
-    When I click on the button labeled "Save & Stay"
+    When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
@@ -409,10 +408,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I select "Survey Mode" from the field labeled "Form 1 Trigger"
-    And I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -424,15 +423,15 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I click on the button labeled "Submit"
     Then I should see "Thank you for taking the survey."
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
 
   Scenario:
-    When I click on the bubble labeled "Participant Consent" for event "Event 2"
+    When I locate the bubble for the "Participant Consent" instrument on event "Event 2" for record ID "1" and click on the bubble
     And I select "Survey Mode" from the field labeled "Form 1 Trigger"
-    And I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I clear field and enter "FirstName" into the input field labeled "First Name"
+    And I clear field and enter "LastName" into the input field labeled "Last Name"
+    And I clear field and enter "email@test.edu" into the input field labeled "email"
+    And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
 
   Scenario:
@@ -446,7 +445,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I click on the button labeled "Close survey"
-    And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I return to the REDCap page I opened the survey from
     Then I should see "Record Home Page"
     And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 1"
     And I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 2"

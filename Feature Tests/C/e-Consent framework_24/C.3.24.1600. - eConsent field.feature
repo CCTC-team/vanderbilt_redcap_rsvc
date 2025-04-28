@@ -19,8 +19,8 @@ Given This scenario is fully tested within C.3.24.1500.
 #       When I click on the button labeled "+Add consent form" for the survey labeled "Participant Consent"
 #       Then I should see "Consent form version"
 #       When I enter "test 1" into the input field labeled "Consent form version:" in the dialog box
-#       And I select "Consent file" from the dropdown field labeled "Placement of consent form:" in the dialog box
-#       And I select "When record is not assigned to a DAG (default)" from the dropdown field labeled "Display for specific DAG" in the dialog box
+#       And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
+#       And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
 #       And I select "No languages defined on MLM page" for the dropdown filed labeled "Display for specific language" in the dialog box
 #       And I click on the link labeled "Consent Form (Rich Text)" in the dialog box
 #       And I enter "This is my test 1 consent form" into the input field labeled "Consent Form (Rich Text)" in the dialog box
@@ -41,21 +41,21 @@ Given This scenario is fully tested within C.3.24.1500.
 #          | test_admin | Manage/Design | Add new consent form for instrument "participant_consent" (consent_form_id = |
 #       #Test e-Consent by adding record
 #       ##ACTION: add record to get participant signature
-#       When I click on the link labeled "Add/Edit Records"
+#       When I click on the link labeled "Add / Edit Records"
 #       And I click on the button labeled "Add new record for the arm selected above"
 #       And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
 #       Then I should see "Adding new Record ID 1."
 #       And I should see "This is my test 1 consent form"
-#       When I click on the button labeled "Save & Stay"
+#       When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
 #       And I click on the button labeled "Okay" in the dialog box
 #       And I click on the button labeled "Survey options"
 #       And I click on the survey option label containing "Open survey" label
 #       Then I should see "Participant Consent"
 #       And I should see "This is my test 1 consent form"
-#       When I enter "FirstName" into the input field labeled "First Name"
-#       And I enter "LastName" into the input field labeled "Last Name"
-#       And I enter "email@test.edu" into the input field labeled "Email"
-#       And I enter "2000-01-01" into the input field labeled "DOB"
+#       When I clear field and enter "FirstName" into the input field labeled "First Name"
+#       And I clear field and enter "LastName" into the input field labeled "Last Name"
+#       And I clear field and enter "email@test.edu" into the input field labeled "email"
+#       And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
 #         Given I click on the link labeled "Add signature"
 #         And I see a dialog containing the following text: "Add signature"
 #         And I draw a signature in the signature field area
@@ -63,12 +63,11 @@ Given This scenario is fully tested within C.3.24.1500.
 #         Then I should see a link labeled "Remove signature"
 #       When I click on the button labeled "Next Page"
 #       Then I should see "Displayed below is a read-only copy of your survey responses."
-#       And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
 #       When I check the checkbox labeled "I certify that all of my information in the document above is correct."
 #       And I click on the button labeled "Submit"
 #       Then I should see "Thank you for taking the survey."
 #       When I click on the button labeled "Close survey"
-#       And I click on the button labeled "Leave without saving changes" in the dialog box
+#       And I return to the REDCap page I opened the survey from
 #       Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
 #       # Verification e-Consent saved and logged correctly
 #       ##VERIFY_FiRe
@@ -76,7 +75,7 @@ Given This scenario is fully tested within C.3.24.1500.
 #       And I click on the link labeled "PDF Snapshot Archive"
 #       Then I should see a table header and rows containing the following values in a table:
 #          | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type |                       |
-#          | .pdf | YES                              | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 |         |      | e-Consent Participant |
+#          | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         |      | e-Consent Participant |
 #       When I click on the file link for record "1" Survey "(Event 1 (Arm 1: Arm 1))"
 #       Then I should see "This is my test 1 consent form"
 #    #Manual: Close document
@@ -89,8 +88,8 @@ Given This scenario is fully tested within C.3.24.1500.
 #       When I click on the button labeled "+Add consent form" for the survey labeled "Participant Consent"
 #       Then I should see "Consent form version"
 #       When I enter "test 2" into the input field labeled "Consent form version:" in the dialog box
-#       And I select "Consent file" from the dropdown field labeled "Placement of consent form:" in the dialog box
-#       And I select "When record is not assigned to a DAG (default)" from the dropdown field labeled "Display for specific DAG" in the dialog box
+#       And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
+#       And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
 #       And I select "No languages defined on MLM page" for the dropdown filed labeled "Display for specific language" in the dialog box
 #       And I click on the link labeled "Consent Form (Inline PDF)" in the dialog box
 #       And I click on the button labeled "Choose File" in the dialog box
@@ -114,21 +113,21 @@ Given This scenario is fully tested within C.3.24.1500.
 #          | test_admin | Manage/Design | Add new consent form for instrument "participant_consent" (consent_form_id = |
 #       # Test e-Consent by adding record
 #       ##ACTION: add record to get participant signature
-#       When I click on the link labeled "Add/Edit Records"
+#       When I click on the link labeled "Add / Edit Records"
 #       And I click on the button labeled "Add new record for the arm selected above"
 #       And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
 #       Then I should see "Adding new Record ID 2."
 #       And I should see "consent.pdf"
-#       When I click on the button labeled "Save & Stay"
+#       When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
 #       And I click on the button labeled "Okay" in the dialog box
 #       And I click on the button labeled "Survey options"
 #       And I click on the survey option label containing "Open survey" label
 #       Then I should see "Participant Consent"
 #       And I should see "consent.pdf"
-#       When I enter "FirstName" into the input field labeled "First Name"
-#       And I enter "LastName" into the input field labeled "Last Name"
-#       And I enter "email@test.edu" into the input field labeled "Email"
-#       And I enter "2000-01-01" into the input field labeled "DOB"
+#       When I clear field and enter "FirstName" into the input field labeled "First Name"
+#       And I clear field and enter "LastName" into the input field labeled "Last Name"
+#       And I clear field and enter "email@test.edu" into the input field labeled "email"
+#       And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
 #         Given I click on the link labeled "Add signature"
 #         And I see a dialog containing the following text: "Add signature"
 #         And I draw a signature in the signature field area
@@ -136,12 +135,11 @@ Given This scenario is fully tested within C.3.24.1500.
 #         Then I should see a link labeled "Remove signature"
 #       When I click on the button labeled "Next Page"
 #       Then I should see "Displayed below is a read-only copy of your survey responses."
-#       And I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
 #       When I check the checkbox labeled "I certify that all of my information in the document above is correct."
 #       And I click on the button labeled "Submit"
 #       Then I should see "Thank you for taking the survey."
 #       When I click on the button labeled "Close survey"
-#       And I click on the button labeled "Leave without saving changes" in the dialog box
+#       And I return to the REDCap page I opened the survey from
 #       Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
 #       # Verification e-Consent saved and logged correctly
 #       ##VERIFY_FiRe
@@ -149,8 +147,8 @@ Given This scenario is fully tested within C.3.24.1500.
 #       And I click on the link labeled "PDF Snapshot Archive"
 #       Then I should see a table header and rows containing the following values in a table:
 #          | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type                  |
-#          | .pdf | YES                              | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 |         | e-Consent Participant |
-#          | .pdf | YES                              | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 |         | e-Consent Participant |
+#          | .pdf |                                  | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
+#          | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
 #       When I click on the file link for record "2" Survey "(Event 1 (Arm 1: Arm 1))"
 #       Then I should see "consent.pdf"
 # #Manual: Close document

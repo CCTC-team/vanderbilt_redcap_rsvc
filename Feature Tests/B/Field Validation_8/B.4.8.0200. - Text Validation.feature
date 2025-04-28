@@ -55,7 +55,7 @@ Feature: User Interface: The system shall support text validation for text field
         When I click on the link labeled "Text Validation"
         Then I should see "Editing existing Record ID 5"
 
-        When I enter "email@test.edu" into the data entry form field labeled "Email"
+        When I clear field and enter "email@test.edu" into the data entry form field labeled "Email"
         And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
         Then I should see "Record ID 5 successfully edited."
 
