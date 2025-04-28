@@ -22,8 +22,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
         And I click on the button labeled "Enable the e-Consent Framework for a survey"
-        And I determine why the following step is causing cypress builds to hang before removing this line
-        And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
+        And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "enable the e-Consent Framework for any survey" in the dialog box
         Then I should see "Enable e-Consent" in the dialog box
         And I should see "Primary settings"
 
