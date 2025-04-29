@@ -114,18 +114,11 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         Then I should see "Erase your signature(s) in this survey?"
 
         When I click on the button labeled "Erase my signature(s) and go to earlier page" in the dialog box
-        Then I should NOT see a signature in the field labeled "Participant signature file" on the form labeled "Participant Consent"
+        Then I should NOT see "Remove signature"
 
         When I return to the REDCap page I opened the survey from
         And I click on the link labeled "Record Status Dashboard"
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
-
-        When I click on the button labeled "Submit"
-        Then I should see "Thank you for taking the survey."
-
-        When I click on the button labeled "Close survey"
-        And I return to the REDCap page I opened the survey from
-        Then I should see Partial Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event 1"
+        Then I should see the "Partial Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
 
     Scenario: Test reopen partially completed this survey and start over
         ##ACTION: Test reopen partially completed this survey and start over
