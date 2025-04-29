@@ -122,15 +122,13 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
     Scenario: Test reopen partially completed this survey and start over
         ##ACTION: Test reopen partially completed this survey and start over
-        When I click on
-        And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
+        When I locate the bubble for the "Participant Consent" instrument on event "Event 1" for record ID "2" and click on the bubble
         Then I should see "Survey response is editable"
-        And I should NOT see a signature in the field labeled "Participant signature file" on the form labeled "Participant Consent"
+        And I should NOT see "signature_"
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
         Then I should see "You have partially completed this survey"
-        And I click on the button labeled "Start Over"
-        And I click on the button labeled "OK"
+        And I click on the button labeled "Start Over" and accept the confirmation window
 
         Then I should see "Participant Consent"
 
@@ -164,16 +162,16 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         When I click on the link labeled "File Repository"
         And I click on the link labeled "PDF Snapshot Archive"
         Then I should see a table header and rows containing the following values in a table:
-            | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type      |
-            | .pdf |                                  | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |           |
-            | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         | e-Consent |
+            | Name                              | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type      |
+            | pid13_formParticipantConsent_id2_ |                                  | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         | e-Consent |
+            | pid13_formParticipantConsent_id1_ |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         | e-Consent |
 
 
-        When I click on the file link for record "1" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
-        Then I should have a pdf file with the following values in the signature field "signature"
+        Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
+        And I should see a signature for the "Participant signature field" field in the downloaded PDF for record "1" and survey "Participant Consent"
 
-        When I click on the file link for record "2" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
-        Then I should have a pdf file with the following values in the signature field "signature"
+        Given I download the PDF by clicking on the link for Record "2" and Survey "Participant Consent" in the File Repository table
+        And I should see a signature for the "Participant signature field" field in the downloaded PDF for record "2" and survey "Participant Consent"
         #Manual: Close document
 
 
@@ -182,6 +180,12 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username            | Action                    | List of Data Changes OR Fields Exported                                                           |
-            | [survey respondent] | e-Consent Certification 2 | e-Consent Certification record = "1" event = "event_1_arm_1" instrument = "coordinator_signature" |
-            | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent"  |
+            | [survey respondent] | e-Consent Certification 2 | e-Consent Certification            |
+            |                     |                           | record = "2"                       |
+            |                     |                           | event = "event_1_arm_1"            |
+            |                     |                           | instrument = "participant_consent" |
+            | [survey respondent] | e-Consent Certification 1 | e-Consent Certification            |
+            |                     |                           | record = "1"                       |
+            |                     |                           | event = "event_1_arm_1"            |
+            |                     |                           | instrument = "participant_consent" |
 #END
