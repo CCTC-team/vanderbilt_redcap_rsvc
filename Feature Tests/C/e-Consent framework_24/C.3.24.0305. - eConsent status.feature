@@ -114,17 +114,26 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         Then I should see "Erase your signature(s) in this survey?"
 
         When I click on the button labeled "Erase my signature(s) and go to earlier page" in the dialog box
-        Then I should NOT see a signature in the field labeled "Participant signature file" on the form labeled "Participant Consent"
+        Then I should NOT see "Remove signature"
 
-        When I return to the REDCap page I opened the survey from
-        And I click on the link labeled "Record Status Dashboard"
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
+        Given I click on the link labeled "Add signature"
+        And I see a dialog containing the following text: "Add signature"
+        And I draw a signature in the signature field area
+        When I click on the button labeled "Save signature" in the dialog box
+        Then I should see a link labeled "Remove signature"
 
+        When I click on the button labeled "Next Page"
+        Then I should see "Displayed below is a read-only copy of your survey responses."
+        And I should see the button labeled "Submit" is disabled
+
+        When I check the checkbox labeled "I certify that all of my information in the document above is correct."
         When I click on the button labeled "Submit"
         Then I should see "Thank you for taking the survey."
 
         When I click on the button labeled "Close survey"
         And I return to the REDCap page I opened the survey from
+        And I click on the link labeled "Record Status Dashboard"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
         Then I should see Partial Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event 1"
 
     Scenario: Test reopen partially completed this survey and start over
