@@ -124,7 +124,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         ##VERIFY_RSD
         Given I return to the REDCap page I opened the survey from
         And I click on the link labeled "Record Status Dashboard"
-        Then I should see the "Completed Survey Response" icon for the "Participant Consent" instrument on event "Event 1" for record "1"
+        Then I should see the "Completed Survey Response" icon for the "Participant Consent" instrument on event "Event 1" for record "2"
 
         ##VERIFY_PDF Snapshot Specific File Location
         And I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "2" and click on the bubble

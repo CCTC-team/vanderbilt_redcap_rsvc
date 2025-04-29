@@ -179,8 +179,8 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I click on the button labeled "Close survey"
       And I return to the REDCap page I opened the survey from
       And I click on the link labeled "Record Status Dashboard"
-      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
-      And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "1"
+      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
+      And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "2"
 
       When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
       Then I should see "custom" in the field labeled "Participant Consent file"
@@ -212,9 +212,9 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I click on the button labeled "Close survey"
       And I return to the REDCap page I opened the survey from
       And I click on the link labeled "Record Status Dashboard"
-      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
-      Then I should see the "Completed Survey Response" icon for the "Coordinator Signature" longitudinal instrument on event "Event 1" for record "1"
-      And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "1"
+      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
+      Then I should see the "Completed Survey Response" icon for the "Coordinator Signature" longitudinal instrument on event "Event 1" for record "2"
+      And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "2"
 
 
       When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
