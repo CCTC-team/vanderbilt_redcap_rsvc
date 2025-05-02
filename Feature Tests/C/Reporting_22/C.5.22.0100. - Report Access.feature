@@ -79,14 +79,8 @@ Feature: User Interface: The system shall support the ability to assign the User
         And I click on the button labeled "Assign to Data Access Group" in the dialog box
         Then I should see "Record ID 2 was successfully assigned to a Data Access Group"
 
-  Scenario: #Delete Existing Report
-    When I click on the link labeled "Data Exports, Reports, and Stats"
-    And  I click on the button labeled "Delete" for the report named "Test Report"
-    Then I should see "DELETE REPORT?"
-    And I click on the button labeled "Delete" in the dialog box
-    Then I should NOT see "Test Report"
-
   Scenario: #SETUP: Create report
+    When I click on the link labeled "Data Exports, Reports, and Stats"
     And I click on the button labeled "Create New Report"
     And I enter "C.5.22.100.100 REPORT" into the input field labeled "Name of Report:"
     #FUNCTIONAL_REQUIREMENT
@@ -101,9 +95,9 @@ Feature: User Interface: The system shall support the ability to assign the User
       | 1 | C.5.22.100.100 REPORT |
 
     ##VERIFY: Edit Report button
-    And I should see a button labeled "Edit"
-    And I should see a button labeled "Copy"
-    And I should see a button labeled "Delete"
+    And I should see a button labeled "Edit" in the column labeled "Management Options" and the row labeled "C.5.22.100.100 REPORT"
+    And I should see a button labeled "Copy" in the column labeled "Management Options" and the row labeled "C.5.22.100.100 REPORT"
+    And I should see a button labeled "Delete" in the column labeled "Management Options" and the row labeled "C.5.22.100.100 REPORT"
     When I click on the "View Report" button for the "C.5.22.100.100 REPORT" report in the My Reports & Exports table
     Then I should see the report with 4 rows
     Then I should see a table header and rows containing the following values in a table:
@@ -122,16 +116,14 @@ Feature: User Interface: The system shall support the ability to assign the User
     Then I should see a table row containing the following values in the reports table:
       | 1 | C.5.22.100.100 REPORT |
     ##VERIFY: Edit Report button
-    And I should see a button labeled "Edit"
-    And I should see a button labeled "Copy"
-    And I should see a button labeled "Delete"
-    When I click on the button labeled "View Report"
-    Then I should see the report with 3 rows
+    And I should see a button labeled "Edit" in the column labeled "Management Options" and the row labeled "C.5.22.100.100 REPORT"
+    And I should see a button labeled "Copy" in the column labeled "Management Options" and the row labeled "C.5.22.100.100 REPORT"
+    And I should see a button labeled "Delete" in the column labeled "Management Options" and the row labeled "C.5.22.100.100 REPORT"
+    When I click on the button labeled "View Report" in the column labeled "View/Export Options" and the row labeled "C.5.22.100.100 REPORT"
+    Then I should see the report with 1 rows
     Then I should see a table header and rows containing the following values in a table:
       | Record ID     | Event Name             | Repeat Instance |
       | 2  TestGroup2 | Event 1 (Arm 1: Arm 1) |                 |
-      | 2  TestGroup2 | Event 1 (Arm 1: Arm 1) |               1 |
-      | 2  TestGroup2 | Event 1 (Arm 1: Arm 1) |               2 |
     ##VERIFY: Edit Report button
     When I click on the link labeled "Data Exports, Reports, and Stats"
     And I click on the "Edit" button for the "C.5.22.100.100 REPORT" report in the My Reports & Exports table
@@ -200,9 +192,9 @@ Feature: User Interface: The system shall support the ability to assign the User
     When I click on the link labeled "Data Exports, Reports, and Stats"
     Then I should see a table row containing the following values in the reports table:
       | 2 | C.5.22.100.100 REPORT |
-    And I should NOT see a button labeled "Edit"
-    And I should NOT see a button labeled "Copy"
-    And I should NOT see a button labeled "Delete"
+    And I should NOT see a button labeled "Edit" in the column labeled "Management Options" and the row labeled "C.5.22.100.100 REPORT"
+    And I should NOT see a button labeled "Copy" in the column labeled "Management Options" and the row labeled "C.5.22.100.100 REPORT"
+    And I should NOT see a button labeled "Delete" in the column labeled "Management Options" and the row labeled "C.5.22.100.100 REPORT"
     #VERIFY Report
     When I click on the button labeled "View Report" for the report named "C.5.22.100.100 REPORT"
     Then I should see the report with 1 row
@@ -218,9 +210,9 @@ Feature: User Interface: The system shall support the ability to assign the User
     When I click on the link labeled "Data Exports, Reports, and Stats"
     Then I should see a table row containing the following values in the reports table:
       | 2 | C.5.22.100.100 REPORT |
-    And I should see a button labeled "Edit"
-    And I should see a button labeled "Copy"
-    And I should see a button labeled "Delete"
+    And I should see a button labeled "Edit" in the column labeled "Management Options" and the row labeled "C.5.22.100.100 REPORT"
+    And I should see a button labeled "Copy" in the column labeled "Management Options" and the row labeled "C.5.22.100.100 REPORT"
+    And I should see a button labeled "Delete" in the column labeled "Management Options" and the row labeled "C.5.22.100.100 REPORT"
     #VERIFY Report
     When I click on the button labeled "View Report" for the report named "C.5.22.100.100 REPORT"
     Then I should see the report with 4 rows
