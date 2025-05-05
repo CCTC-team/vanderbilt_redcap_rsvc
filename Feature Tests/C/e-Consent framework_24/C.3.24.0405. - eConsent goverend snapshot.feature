@@ -42,7 +42,7 @@ Feature:  C.3.24.0405. User Interface: The system shall support the e-Consent Fr
         And I click on the button labeled "Okay" in the dialog box
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
-        Then I should see "Participant Consent"
+        Then I should see "Please complete the survey"
 
         When I clear field and enter "FirstName" into the input field labeled "First Name"
         And I clear field and enter "LastName" into the input field labeled "Last Name"

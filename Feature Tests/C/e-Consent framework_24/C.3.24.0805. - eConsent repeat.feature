@@ -71,7 +71,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
-    Then I should see "Participant Consent"
+    Then I should see "Please complete the survey"
 
   Scenario:
     When I clear field and enter "FirstName" into the input field labeled "Name"
@@ -111,7 +111,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
-    Then I should see "Participant Consent"
+    Then I should see "Please complete the survey"
 
   Scenario:
     When I clear field and enter "FirstName" into the input field labeled "Name"
@@ -147,7 +147,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
-    Then I should see "Participant Consent"
+    Then I should see "Please complete the survey"
 
   Scenario:
     When I clear field and enter "FirstName" into the input field labeled "Name"
@@ -180,7 +180,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
-    Then I should see "Participant Consent"
+    Then I should see "Please complete the survey"
 
   Scenario:
     When I clear field and enter "FirstName" into the input field labeled "Name"
@@ -222,7 +222,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
-    Then I should see "Participant Consent"
+    Then I should see "Please complete the survey"
 
   Scenario:
     When I clear field and enter "FirstName" into the input field labeled "Name"
@@ -248,7 +248,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
     And I click on the link labeled "Record Status Dashboard"
-    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
 
   Scenario: add instance 2 for record with consent framework in Arm 2 Event 1  (repeatable event)
         ##ACTION: add instance 2 for record with consent framework in Arm 1 Event 1  (repeatable event)
@@ -258,7 +258,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
-    Then I should see "Participant Consent"
+    Then I should see "Please complete the survey"
 
   Scenario:
     When I clear field and enter "FirstName" into the input field labeled "Name"

@@ -107,7 +107,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
-    Then I should see "Participant Consent"
+    Then I should see "Please complete the survey"
     And I should see "This is my NO DAG consent form"
 
   Scenario:
@@ -159,7 +159,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
-    Then I should see "Participant Consent"
+    Then I should see "Please complete the survey"
     And I should see "DAG1.pdf"
     And I should NOT see "This is my NO DAG consent form"
 
@@ -183,7 +183,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
     And I click on the link labeled "Record Status Dashboard"
-    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
 
   Scenario: ##ACTION: add DAG2 record
       ##ACTION: add DAG2 record
@@ -212,7 +212,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
-    Then I should see "Participant Consent"
+    Then I should see "Please complete the survey"
     And I should see "DAG2.pdf"
     And I should NOT see "This is my NO DAG consent form"
     When I clear field and enter "FirstName" into the input field labeled "First Name"
@@ -234,7 +234,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
     And I click on the link labeled "Record Status Dashboard"
-    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "3"
 
   Scenario: # Verification e-Consent saved and logged correctly
       #Verification e-Consent saved and logged correctly

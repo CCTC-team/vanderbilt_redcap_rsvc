@@ -76,7 +76,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
-    Then I should see "Participant Consent"
+    Then I should see "Please complete the survey"
     And I should see "This is my test 1 consent form"
 
   Scenario:
@@ -194,7 +194,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
-    Then I should see "Participant Consent"
+    Then I should see "Please complete the survey"
     And I should see "consent.pdf"
 
   Scenario:
@@ -223,7 +223,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
     And I click on the link labeled "Record Status Dashboard"
-    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
 
   Scenario: #Verification e-Consent saved and logged correctly
         ##VERIFY_FiRe
@@ -300,7 +300,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
-    Then I should see "Participant Consent"
+    Then I should see "Please complete the survey"
     And I should NOT see "consent.pdf"
 
   Scenario:
@@ -329,7 +329,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
     And I click on the link labeled "Record Status Dashboard"
-    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "3"
 
   Scenario: #Verification e-Consent saved and logged correctly
         ##VERIFY_FiRe

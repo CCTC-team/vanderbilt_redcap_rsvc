@@ -49,6 +49,8 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I click on the button labeled "Okay" in the dialog box
         And I click on the button labeled "Survey options" and will leave the tab open when I return to the REDCap project
         And I click on the survey option label containing "Open survey" label
+        Then I should see "Please complete the survey"
+
         And I clear field and enter "FirstName" into the data entry form field labeled "First Name"
         And I clear field and enter "LastName" into the data entry form field labeled "Last Name"
         And I clear field and enter "email@test.edu" into the data entry form field labeled "email"
@@ -96,6 +98,8 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I click on the button labeled "Okay" in the dialog box
         And I click on the button labeled "Survey options" and will leave the tab open when I return to the REDCap project
         And I click on the survey option label containing "Open survey" label
+        Then I should see "Please complete the survey"
+
         And I clear field and enter "FirstName" into the data entry form field labeled "First Name"
         And I clear field and enter "LastName" into the data entry form field labeled "Last Name"
         And I clear field and enter "email@test.edu" into the data entry form field labeled "email"
@@ -120,7 +124,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         ##VERIFY_RSD
         Given I return to the REDCap page I opened the survey from
         And I click on the link labeled "Record Status Dashboard"
-        Then I should see the "Completed Survey Response" icon for the "Participant Consent" instrument on event "Event 1" for record "1"
+        Then I should see the "Completed Survey Response" icon for the "Participant Consent" instrument on event "Event 1" for record "2"
 
         ##VERIFY_PDF Snapshot Specific File Location
         And I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "2" and click on the bubble
