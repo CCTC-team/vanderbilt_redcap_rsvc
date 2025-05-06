@@ -90,7 +90,8 @@ Feature: User Interface: The system shall support the e-Consent Framework to opt
       Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
       #Verify Auto-Save in specified field
-      When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble      Then I should see "Participant Consent file."
+      When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
+      Then I should see "Participant Consent file."
 
    Scenario: Verification e-Consent saved and logged correctly
       ##VERIFY_FiRe

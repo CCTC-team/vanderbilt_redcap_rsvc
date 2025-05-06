@@ -127,7 +127,8 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
       And I should see an Incomplete Survey Response icon for the Data Collection Instrument labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
 
-      When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble      Then I should see "Participant Consent file."
+      When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
+      Then I should see "Participant Consent file."
       And I should see a file uploaded to the field labeled "Pdfs And Combined Signatures Pdf."
       And I see "econsent"
 
