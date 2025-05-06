@@ -65,8 +65,9 @@ Feature: User Interface: The system shall support the e-Consent Framework to pro
             | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | 2000-01-01             |         | e-Consent |
 
 
-        When I click on the file link for record "1" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
-        Then I should have a pdf file with "FirstName" into the input field labeled "First Name"
+        When I click on the link labeled "pid13_formParticipantConsent_id1"
+        Then I should see the following values in the downloaded PDF for record "1" and survey "Participant Consent"
+          | \n2)First NameFirstName \n3)   |
 
         When I click on the file link for record "2" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
         Then I should have a pdf file with "FirstName" into the input field labeled "First Name"
