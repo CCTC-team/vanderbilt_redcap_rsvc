@@ -22,8 +22,8 @@ Feature:  C.3.24.0405. User Interface: The system shall support the e-Consent Fr
         And I click on the button labeled "e-Consent"
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                          | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
-            | [✓]            | "Coordinator Signature" (coordinator_signature) | File Repository Specified field:[event_1_arm_1][coo_sign]         | Coordinator         |       |
-            | [✓]            | "Participant Consent" (participant_consent)     | File Repository Specified field:[event_1_arm_1][participant_file] | Participant         |       |
+            | [✓]               | "Participant Consent" (participant_consent)     | File Repository Specified field:[participant_file] | Participant         |       |
+            | [✓]               | "Coordinator Signature" (coordinator_signature) | File Repository Specified field:[coo_sign]         | Coordinator         |       |
 
         When I click on the link labeled "PDF Snapshots of Record"
         Then I should see a table header and rows containing the following values in a table:
@@ -77,7 +77,7 @@ Feature:  C.3.24.0405. User Interface: The system shall support the e-Consent Fr
             | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type                  |
             | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
 
-        When I click on the file link for record "1" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
+        When I click on the link labeled "pid13_formParticipantConsent_id1"
         Then I should have a pdf file with the following values in the header: "PID xxxx - LastName"
         And I should have a pdf file with the following values in the footer: "Type: Participant"
         #Manual: Close document
