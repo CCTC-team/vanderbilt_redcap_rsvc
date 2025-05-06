@@ -79,9 +79,10 @@ Feature: C.3.24.0505. User Interface: The system shall support the e-Consent Fra
             | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         | Version | Type                  |
             | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
 
-        When I click on the file link for record "1" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
-        Then I should have a pdf file with the following values in the header: "PID xxxx - LastName"
-        And I should have a pdf file with the following values in the footer: "Type: Participant"
+        When I click on the link labeled "pid13_formParticipantConsent_id1"
+        Then I should see the following values in the downloaded PDF for record "1" and survey "Participant Consent"
+          | PID 13 - LastName   |
+          | Participant Consent |
         #Manual: Close document
 
 
