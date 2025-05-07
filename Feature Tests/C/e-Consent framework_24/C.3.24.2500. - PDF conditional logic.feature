@@ -30,7 +30,7 @@ Feature: User Interface: The system shall support conditional logic integration 
     Then I should see "Saved!"
     Then I should see a table header and rows containing the following values in a table:
       | Active | Edit settings | Name       | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot |
-      | [✓]    | Edit Copy     | Snapshot 1 | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository                  |
+      | [✓]    |                | Snapshot 1 | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository                  |
 
   Scenario: New PDF Trigger testing When the following logic becomes true (only once per record)
       ##ACTION: When the following logic becomes true (only once per record)
