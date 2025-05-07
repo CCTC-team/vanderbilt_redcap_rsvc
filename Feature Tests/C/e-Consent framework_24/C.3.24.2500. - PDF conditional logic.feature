@@ -37,7 +37,7 @@ Feature: User Interface: The system shall support conditional logic integration 
     When I click on the button labeled "Add new trigger"
     And I enter "Snapshot 2" into the input field labeled "Name of trigger"
     And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
-    And I enter "[participant_consent_complete]='2'" into the input field labeled "When the following logic becomes true"
+    And I enter "[participant_consent_complete]='2'" into the textarea field labeled "When the following logic becomes true"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
     And I check the checkbox labeled "Save to File Repository"
@@ -56,7 +56,7 @@ Feature: User Interface: The system shall support conditional logic integration 
     When I click on the button labeled "Add new trigger"
     And I enter "Snapshot 3" into the input field labeled "Name of trigger"
     And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
-    And I enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the input field labeled "When the following logic becomes true"
+    And I enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "When the following logic becomes true"
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
     And I check the checkbox labeled "Save to File Repository"
