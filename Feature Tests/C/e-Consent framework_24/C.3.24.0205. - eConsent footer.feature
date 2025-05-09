@@ -143,17 +143,18 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see "I certify that all of my information in the document above is correct"
+        And I check the checkbox labeled "I certify that all of my information in the document above is correct."
+        And I click on the button labeled "Submit"
         And I return to the REDCap page I opened the survey from
 
         When I click on the link labeled "Record Status Dashboard"
-        Then I should see the "Partial Survey Response" icon for the "Coordinator Signature" longitudinal instrument on event "Event 1" for record "1"
+        Then I should see the "Completed Survey Response" icon for the "Coordinator Signature" longitudinal instrument on event "Event 1" for record "1"
         And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "1"
 
         When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
         Then I should see "Participant Consent file."
-        And I should see a file uploaded to the field labeled "Coordinator Signature file."
-        And I should see a file uploaded to the field labeled "Pdfs And Combined Signatures Pdf."
+        And I should see a link labeled "Remove file" in the column labeled "" and the row labeled "Coordinator Signature file"
+        And I should see a link labeled "Remove file" in the column labeled "" and the row labeled "Combine both files together"
 
     Scenario: Verification e-Consent saved and logged correctly
         ##VERIFY_FiRe
@@ -165,19 +166,22 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
             | .pdf |                                  | 1      | Coordinator Signature (Event 1 (Arm 1: Arm 1)) |                               |         | e-Consent Coordinator |
             | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1))   | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
 
-        When I click on the file link for record "1" Survey "(Event 1 (Arm 1: Arm 1))"
-        Then I should have a pdf file with the following values in the header: "PID xxxx - LastName"
-        And I should have a pdf file with the following values in the footer: "Type: Participant"
-        And I should have a pdf file with the following values in the header: "PID xxxx - LastName"
-        And I should have a pdf file with the following values in the footer: "Type: Coordinator"
+        When I click on the link labeled "pid13_formParticipantConsent_id1_"
+        Then I should see the following values in the downloaded PDF for record "1" and survey "Participant Consent"
+          | PID 13 - LastName   |
+          | Participant Consent |
 
-        When I click on the file link for record "1" Survey "Coordinator Signature (Event 1 (Arm 1: Arm 1))"
-        Then I should have a pdf file with the following values in the header: "PID xxxx - LastName"
-        And I should have a pdf file with the following values in the footer: "Type: Coordinator"
+        When I click on the second link labeled "pid13_formCoordinatorSignature_id1_"
+        Then I should see the following values in the downloaded PDF for record "1" and survey "Coordinator Signature"
+          | PID 13 - LastName   |
+          | Coordinator Signature |
 
-        When I click on the file link for record "1" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
-        Then I should have a pdf file with the following values in the header: "PID xxxx - LastName"
-        And I should have a pdf file with the following values in the footer: "Type: Participant"
+        When I click on the first link labeled "pid13_formCoordinatorSignature_id1_"
+        Then I should see the following values in the downloaded PDF for record "1" and survey "Coordinator Signature"
+          | PID 13 - LastName   |
+          | Participant Consent |
+          | Coordinator Signature |
+
         #Manual: Close document
 
 
@@ -190,6 +194,6 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
             | [survey respondent] | Save PDF Snapshot 1       | Save PDF Snapshot to File Upload Field field = "combo_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "coordinator_signature"      |
             | [survey respondent] | Save PDF Snapshot 1       | Save PDF Snapshot to File Upload Field field = "coo_sign (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "coordinator_signature"        |
             | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1" event = "event_1_arm_1" instrument = "coordinator_signature"                                                          |
-            | [survey respondent] | Save PDF Snapshot 1       | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent"" |
+            | [survey respondent] | Save PDF Snapshot 1       | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent"  |
             | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent"                                                           |
 #END
