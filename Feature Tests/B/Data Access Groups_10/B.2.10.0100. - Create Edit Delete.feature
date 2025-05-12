@@ -56,6 +56,7 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
             | RenameGroup3       | test_user1 (Test User1) |
 
         ##ACTION: Cannot Delete DAG with User
+        And I wait for 2 seconds
         Given I click on the icon in the column labeled "Delete" and the row labeled "RenameGroup3"
         Then I should see a dialog containing the following text: "Delete group?"
         When I click on the button labeled "Delete" on the dialog box
@@ -81,6 +82,7 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
             | RenameGroup3       |                |
 
         ##ACTION: Delete DAG
+        And I wait for 2 seconds
         Given I click on the icon in the column labeled "Delete" and the row labeled "RenameGroup3"
         Then I should see a dialog containing the following text: "Delete group?"
         When I click on the button labeled "Delete" on the dialog box
