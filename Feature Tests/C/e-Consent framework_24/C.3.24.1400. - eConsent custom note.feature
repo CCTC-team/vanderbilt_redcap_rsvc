@@ -26,9 +26,6 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
       When I enter "My custom note" into the input field labeled "Notes:"
       And I click on the button labeled "Save settings"
       Then I should see a table header and rows containing the following values in a table:
-            | e-Consent active? | Survey              |
-            | [✓]               | Participant Consent |
-      Then I should see a table header and rows containing the following values in a table:
          | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes          |
-         | [✓]               | "Participant Consent" (participant_consent) | File Repository Specified field:[event_1_arm_1][participant_file] | Participant         | My custom note |
+         | [✓]               | "Participant Consent" (participant_consent) | File Repository                                    | Participant         | My custom note |
 #END
