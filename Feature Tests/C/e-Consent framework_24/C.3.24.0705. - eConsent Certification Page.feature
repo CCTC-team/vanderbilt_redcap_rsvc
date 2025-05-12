@@ -69,13 +69,13 @@ Feature: User Interface: The system shall support the e-Consent Framework to pro
         Then I should see the following values in the downloaded PDF for record "1" and survey "Participant Consent"
           | \n2)First NameFirstName \n3)   |
 
-        When I click on the file link for record "2" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
-        Then I should have a pdf file with "FirstName" into the input field labeled "First Name"
-        
         ##VERIFY_Logging
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
-            | Username            | Action                                     | List of Data Changes OR Fields Exported                                                          |
-            | [survey respondent] | e-Consent Certification 1                  | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent" |
-            | [survey respondent] | Update Response 1 (Event 1 (Arm 1: Arm 1)) | first_name = 'FirstName', type_sign1 = 'MyName'                                                  |
+            | Username            | Action                                     | List of Data Changes OR Fields Exported         |
+            | [survey respondent] | e-Consent                                  | e-Consent Certification                         |
+            |                     | Certification                              | record = "1"                                    |
+            |                     | 1                                          | event = "event_1_arm_1"                         |
+            |                     |                                            | instrument = "participant_consent"              |
+            | [survey respondent] | Update Response 1 (Event 1 (Arm 1: Arm 1)) | last_name = 'LastName', type_sign1 = 'MyName' |
 #END

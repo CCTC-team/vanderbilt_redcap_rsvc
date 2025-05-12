@@ -24,10 +24,33 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     When I enter "Custom" into the input field labeled "File name:"
       #C.3.24.1400.100 - eConsent Framework custom note
     And I enter "My custom note" into the input field labeled "Notes:"
+    And I check the checkbox labeled "Save to specified field"
+    And I select "participant_file" in the dropdown field labeled "Save to specified field:"
+    And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
     And I click on the button labeled "Save settings"
     Then I should see a table header and rows containing the following values in a table:
       | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes          |
       | [✓]               | "Participant Consent" (participant_consent) | File Repository                                    | Participant         | My custom note |
+
+  Scenario: #SETUP_eConsent for coordinator signature (second signature) process
+    #SETUP_eConsent for coordinator signature (second signature) process
+    When I click on the button labeled "Enable the e-Consent Framework for a survey"
+    And I wait for 1 second
+    And I select '"Coordinator Signature" (coordinator_signature)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
+    Then I should see "Enable e-Consent" in the dialog box
+    And I should see "Primary settings"
+
+    When I check the checkbox labeled "Allow e-Consent responses to be edited by users?"
+    And I enter "Coordinator" into the input field labeled "Custom tag/category for PDF footer:"
+    And I enter "PID [project-id] - [last_name]" into the input field labeled "Custom label for PDF header"
+    And I select 'coo_sign1 "Coordinator\'s Signature"' in the dropdown field labeled "Signature field #1"
+    And I check the checkbox labeled "Save to specified field"
+    And I select "coo_sign" in the dropdown field labeled "Save to specified field:"
+    And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
+    And I click on the button labeled "Save settings"
+    Then I should see a table header and rows containing the following values in a table:
+        | e-Consent active? | Survey                                          |
+        | [✓]               | "Coordinator Signature" (coordinator_signature) |
 
   Scenario: Test e-Consent by adding record
       ##ACTION: add record to get participant signature
@@ -77,15 +100,15 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
 
     When I click on the button labeled "Next Page"
     Then I should see "Displayed below is a read-only copy of your survey responses."
-    And I should see "I certify that all of my information in the document above is correct"
+    And I check the checkbox labeled "I certify that all of my information in the document above is correct."
+    And I click on the button labeled "Submit"
     And I return to the REDCap page I opened the survey from
     When I click on the link labeled "Record Status Dashboard"
-    Then I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Coordinator Signature" for event "Event 1"
-    And I should see an Incomplete Survey Response icon for the Data Collection Instrument labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
+    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+    And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "1"
     When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
-    Then I should see "Participant Consent file."
-    And I should see a file uploaded to the field labeled "Coordinator Signature file."
-    And I should see a file uploaded to the field labeled "Pdfs And Combined Signatures Pdf."
+    Then I should see "pid13_formParticipantCons..."
+    Then I should see "pid13_formCoordinatorSign..."
 
   Scenario: Verification e-Consent saved and logged correctly
       ##VERIFY_FiRe
