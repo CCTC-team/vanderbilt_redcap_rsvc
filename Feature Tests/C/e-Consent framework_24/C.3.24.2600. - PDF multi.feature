@@ -193,7 +193,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     Then I should see "Record Home Page"
 
   Scenario:
-    When I locate the bubble for the "Coordinator Signature" instrument on event "Event 1" for record ID "1" and click on the bubble
+    When I click the bubble to select a record for the "Coordinator Signature" instrument on event "Event 1"
     When I select "Data Mode" from the field labeled "Form 2 Trigger"
     And I enter "Coordinator" into the input field labeled "Coordinator's Name Typed"
     
@@ -241,7 +241,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I return to the REDCap page I opened the survey from
 
   Scenario:
-    When I locate the bubble for the "Coordinator Signature" instrument on event "Event 1" for record ID "1" and click on the bubble
+    When I click the bubble to select a record for the "Coordinator Signature" instrument on event "Event 1"
     When I select "Data Mode" from the field labeled "Form 2 Trigger"
     And I enter "Coordinator" into the input field labeled "Coordinator's Name Typed"
     Given I click on the link labeled "Add signature"
@@ -286,7 +286,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I return to the REDCap page I opened the survey from
 
   Scenario:
-    When I locate the bubble for the "Coordinator Signature" instrument on event "Event 1" for record ID "1" and click on the bubble
+    When I click the bubble to select a record for the "Coordinator Signature" instrument on event "Event 1"
     When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
@@ -335,7 +335,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     Then I should see "Record Home Page"
 
   Scenario:
-    When I locate the bubble for the "Participant Consent" instrument on event "Event 2" for record ID "1" and click on the bubble
+        When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     And I select "Data Mode" from the field labeled "Form 1 Trigger"
     And I clear field and enter "FirstName" into the input field labeled "First Name"
     And I clear field and enter "LastName" into the input field labeled "Last Name"
@@ -391,7 +391,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I return to the REDCap page I opened the survey from
 
   Scenario:
-    When I locate the bubble for the "Participant Consent" instrument on event "Event 2" for record ID "1" and click on the bubble
+    When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     And I select "Data Mode" from the field labeled "Form 1 Trigger"
     And I clear field and enter "FirstName" into the input field labeled "First Name"
     And I clear field and enter "LastName" into the input field labeled "Last Name"
@@ -445,7 +445,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I return to the REDCap page I opened the survey from
 
   Scenario:
-    When I locate the bubble for the "Participant Consent" instrument on event "Event 2" for record ID "1" and click on the bubble
+    When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     And I select "Survey Mode" from the field labeled "Form 1 Trigger"
     And I clear field and enter "FirstName" into the input field labeled "First Name"
     And I clear field and enter "LastName" into the input field labeled "Last Name"

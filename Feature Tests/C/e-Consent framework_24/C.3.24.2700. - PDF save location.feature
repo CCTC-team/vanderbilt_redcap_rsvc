@@ -68,7 +68,7 @@ Feature: User Interface: The system shall support the saving PDF snapshots to sp
 
    Scenario: Verification pdf saved and logged correctly
       ##VERIFY specified field
-      When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
+      When I click the bubble to select a record for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1"
       Then I should see "custom" in the field labeled "Participant Consent file"
 
       When I click on the file link the field labeled "Participant Consent file"

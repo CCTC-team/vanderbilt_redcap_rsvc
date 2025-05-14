@@ -156,7 +156,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         Then I should see "Record ID 1"
         Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
-        When I locate the bubble for the "Participant Consent" instrument on event "Event 1" for record ID "1" and click on the bubble
+        When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
         Then I should see "Survey response is editable"
         And I should see "NewFirstName" into the input field labeled "First Name"
 
