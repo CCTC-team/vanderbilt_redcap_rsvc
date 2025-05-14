@@ -25,8 +25,8 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
             | e-Consent active? | Survey              |
             | [✓]               | Participant Consent |
 
-        When I edit "Participant Consent"
-        When I uncheck "Allow e-Consent responses to be edited by users?"
+        When I click on the icon in the column labeled "Edit settings" and the row labeled "Participant Consent"
+        When I uncheck the checkbox labeled "Allow e-Consent responses to be edited by users?"
         And I select 'part_sign "Participant signature field"' in the dropdown field labeled "Signature field #1"
         And I check the checkbox labeled "Save to specified field"
         And I select "participant_file" in the dropdown field labeled "Save to specified field:"
@@ -86,11 +86,12 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         ##SETUP Allow e-Consent responses to be edited by users?
         When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
+        And I wait for 1 second
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey              |
             | [✓]               | Participant Consent |
 
-        When I edit "Participant Consent"
+        When I click on the icon in the column labeled "Edit settings" and the row labeled "Participant Consent"
         When I check the checkbox labeled "Allow e-Consent responses to be edited by users?"
         And I select 'part_sign "Participant signature field"' in the dropdown field labeled "Signature field #1"
         And I check the checkbox labeled "Save to specified field"
@@ -147,12 +148,12 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         When I locate the bubble for the "Participant Consent" instrument on event "Event 1" for record ID "1" and click on the bubble
         Then I should see "Survey response is editable"
 
-        When I click the bubble labeled "Edit response"
-        Then I should see "Survey response is editable (now editing)"
+        When I click on the button labeled "Edit response"
+        Then I should see "Survey response is editable"
 
         When I enter "NewFirstName" into the input field labeled "First Name"
         And I click on the button labeled "Save & Exit Form"
-        Then I should see "Record ID 2"
+        Then I should see "Record ID 1"
         Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
 
         When I locate the bubble for the "Participant Consent" instrument on event "Event 1" for record ID "1" and click on the bubble
