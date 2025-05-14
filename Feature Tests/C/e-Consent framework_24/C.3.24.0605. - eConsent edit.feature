@@ -149,16 +149,16 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         Then I should see "Survey response is editable"
 
         When I click on the button labeled "Edit response"
-        Then I should see "Survey response is editable"
+        Then I should see "(now editing)"
 
-        When I enter "NewFirstName" into the input field labeled "First Name"
+        When I clear field and enter "NewFirstName" into the input field labeled "First Name"
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 1"
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
 
         When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
         Then I should see "Survey response is editable"
-        And I should see "NewFirstName" into the input field labeled "First Name"
+        And I verify "NewFirstName" is within the input field labeled "First Name" in the dialog box
 
 
     Scenario: Verification e-Consent saved and logged correctly
@@ -171,11 +171,13 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
             | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | 2000-01-01             |         | e-Consent |
 
 
-        When I click on the file link for record "1" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
-        Then I should have a pdf file with "FirstName" into the input field labeled "First Name"
+        When I click on the link labeled "pid13_formParticipantConsent_id1"
+        Then I should see the following values in the downloaded PDF for record "1" and survey "Participant Consent"
+          | \n2)First NameFirstName \n3) |
 
-        When I click on the file link for record "2" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
-        Then I should have a pdf file with "FirstName" into the input field labeled "First Name"
+        When I click on the link labeled "pid13_formParticipantConsent_id2"
+        Then I should see the following values in the downloaded PDF for record "2" and survey "Participant Consent"
+          | \n2)First NameFirstName \n3) |
         #NOTE: Edited version with "NewFirstName" is NOT in the file repository.
         #Manual: Close document
 
@@ -183,11 +185,11 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username            | Action                                     | List of Data Changes OR Fields Exported                                                                                                                    |
-            | test_admin          | Update Response 2 (Event 1 (Arm 1: Arm 1)) | first_name = 'NewFirstName'                                                                                                                                |
+            | test_admin          | Update record 1 (Event 1 (Arm 1: Arm 1))   | first_name = 'NewFirstName'                                                                                                                                |
             | [survey respondent] | Save PDF Snapshot 2                        | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument = "participant_consent"  |
             | [survey respondent] | e-Consent Certification 2                  | e-Consent Certification record = "1" identifier = "email@test.edu" consent_form_version = "1.0" event = "event_1_arm_1" instrument = "participant_consent" |
-            | [survey respondent] | Update Response 2 (Event 1 (Arm 1: Arm 1)) | first_name = 'FirstName', type_sign1 = 'MyName'                                                                                                            |
+            | [survey respondent] | Update Response 2 (Event 1 (Arm 1: Arm 1)) | last_name = 'LastName', type_sign1 = 'MyName' |
             | [survey respondent] | Save PDF Snapshot 2                        | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent"  |
             | [survey respondent] | e-Consent Certification 1                  | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent"                                                           |
-            | [survey respondent] | Update Response 1 (Event 1 (Arm 1: Arm 1)) | first_name = 'FirstName', type_sign1 = 'MyName'                                                                                                            |
+            | [survey respondent] | Update Response 1 (Event 1 (Arm 1: Arm 1)) | last_name = 'LastName', type_sign1 = 'MyName'                                                                                                            |
 #END
