@@ -25,7 +25,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I enter "No DAG" into the input field labeled "Consent form version:" in the dialog box
     And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
     And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
-    And I select "No languages defined on MLM page" for the dropdown filed labeled "Display for specific language" in the dialog box
+    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
     And I click on the link labeled "Consent Form (Rich Text)" in the dialog box
     And I enter "This is my NO DAG consent form" into the input field labeled "Consent Form (Rich Text)" in the dialog box
     And I click on the button labeled "Add new consent form" in the dialog box
@@ -46,7 +46,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I enter "DAG 1" into the input field labeled "Consent form version:" in the dialog box
     And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
     And I select "TestGroup1" on the dropdown field labeled "Display for specific DAG" in the dialog box
-    And I select "No languages defined on MLM page" for the dropdown filed labeled "Display for specific language" in the dialog box
+    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
     And I click on the link labeled "Consent Form (Inline PDF)" in the dialog box
     And I click on the button labeled "Choose File" in the dialog box
     And I select the file labeled "DAG1.pdf" in the dialog box
@@ -61,7 +61,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I enter "DAG 2" into the input field labeled "Consent form version:" in the dialog box
     And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
     And I select "TestGroup2" on the dropdown field labeled "Display for specific DAG" in the dialog box
-    And I select "No languages defined on MLM page" for the dropdown filed labeled "Display for specific language" in the dialog box
+    And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
     And I click on the link labeled "Consent Form (Inline PDF)" in the dialog box
     And I click on the button labeled "Choose File" in the dialog box
     And I select the file labeled "DAG2.pdf" in the dialog box
