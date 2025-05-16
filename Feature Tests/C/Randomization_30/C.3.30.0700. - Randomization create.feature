@@ -24,10 +24,18 @@ Scenario: #SETUP project with randomization enabled
     Then I should see "Create new groups"
     When I enter "DAG 1" into the field with the placeholder text of "Enter new group name"
     And I click on the button labeled "Add Group"
-        #VERIFY
-        Then I should see a table header and rows containing the following values in data access groups table:
+   
+    #VERIFY
+    Then I should see a table header and rows containing the following values in data access groups table:
             | Data Access Groups |
             | DAG 1         |
+
+Scenario: C.3.30.0700.2100. Attempt to use non-categorical field for stratification
+    When I click on the link labeled "Project Setup"
+    And I click on the button labeled "Set up randomization"
+    And I click on the button labeled "Add new randomization model"
+    And I check the checkbox labeled "A) Use stratified randomization?"
+    Then I should NOT see "fname" on the dropdown field labeled "- select a field -"
 
 Scenario: C.3.30.0700.0200. Enable stratified randomization with one stratum. 
     When I click on the link labeled "Project Setup"
@@ -38,10 +46,21 @@ Scenario: C.3.30.0700.0200. Enable stratified randomization with one stratum.
     And I select "rand_group (Randomization group)" on the second dropdown field labeled "- select a field -"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
-    And I should see "STEP 3: Upload your allocation table (CSV file)"
-    #Adding allocation table
+    
+Scenario: C.3.30.0700.2200 Upload invalid allocation table in DEVELOPMENT
+    When I upload a "csv" format file located at "cdisc_files/Invalid_Allocation.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+    Then I should see "ERROR: The following errors occurred. Please address them and try again."
+
+    #Adding valid allocation table
+    When I click on the button labeled "Return to previous page"
     When I upload a "csv" format file located at "cdisc_files/Randomization_one_strat.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
     Then I should see "Already uploaded"
+
+Scenario: C.3.30.0700.2000. Modify an existing randomization model
+    When I click on the link labeled "Project Setup"
+    And I click on the button labeled "Set up randomization"
+    And I click on the icon in the column labeled "Setup" and the row labeled "1"
+    Then I should see "If you wish to modify the randomization setup below, you will need to click the Erase Randomization Model button below."
 
     # Create Record for one stratum
     When I click on the link labeled "Add / Edit Records"
@@ -179,8 +198,8 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     When I click on the link labeled "Summary"
     Then I should see a table header and rows containing the following values in a table:
             | #     | Target     | Allocation Type | Stratification | Total Allocation (Development) |Total Allocation (Production)| Setup | Dashboard | Randomization ID |
-            | 1      | rand_group |                 | strat_1 strat_2 strat_3 strat_4 strat_5 strat_6 strat_7 strat_8 strat_9 strat_10 strat_11 strat_12 strat_13 strat_14         | 0                              | 0                           |       |           | 3                |
-            | 2      | rand_group_2 |                 | Data Access Group | 0                              | 0                           |       |           | 4                |
+            | 1     | rand_group |                 | strat_1 strat_2 strat_3 strat_4 strat_5 strat_6 strat_7 strat_8 strat_9 strat_10 strat_11 strat_12 strat_13 strat_14         | 0                              | 0                           |       |           | 3                |
+            | 2     | rand_group_2 |                 | Data Access Group | 0                              | 0                           |       |           | 4                |
 			
     #VERIFY_log Randomization saved in logging table
     When I click on the link labeled "Logging"
