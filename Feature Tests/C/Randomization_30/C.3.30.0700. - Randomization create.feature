@@ -19,6 +19,13 @@ Scenario: #SETUP project with randomization enabled
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
     When I click on the button labeled exactly "Assign" on the role selector dropdown
     Then I should see "test_admin" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
+    #Adding user Test_User2 (No randomization rights)
+    When I click on the link labeled "User Rights"
+    And I enter "Test_User2" into the field with the placeholder text of "Add new user"
+    And I click on the button labeled "Add with custom rights"
+    And I click on the checkbox labeled "Project Design and Setup"
+    And I click on the button labeled "Add user"
+    Then I should see 'User "Test_User2" was successfully added'
     #Adding DAG
     When I click on the link labeled "DAGs"
     Then I should see "Create new groups"
@@ -30,8 +37,21 @@ Scenario: #SETUP project with randomization enabled
             | Data Access Groups |
             | DAG 1         |
 
+
+Scenario: C.3.30.0700.2300. User without Randomization Setup rights cannot access Setup via Project Setup
+    Given I logout
+    And I login to REDCap with the user "Test_User2"
+    When I click on the link labeled "My Projects"
+    And I click on the link labeled "C.3.30.0700."
+    And I click on the link labeled "Project Setup"
+    Then I should NOT see the button labeled "Set up a randomization model"
+    
 Scenario: C.3.30.0700.2100. Attempt to use non-categorical field for stratification
-    When I click on the link labeled "Project Setup"
+    Given I logout
+    And I login to REDCap with the user "Test_User1"
+    And I click on the link labeled "My Projects"
+    And I click on the link labeled "C.3.30.0700."
+    And I click on the link labeled "Project Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "A) Use stratified randomization?"
@@ -169,8 +189,7 @@ Scenario: C.3.30.0700.0400. Randomize by group/site enabled with no option selec
     And I check the checkbox labeled "B) Randomize by group/site"
     And I select "rand_group_2 (Randomization group)" on the second dropdown field labeled "- select a field -"
     And I click on the button labeled "Save randomization model"
-    # I can't see this firing in the Validation environment but it should be.
-    Then I should see "Please choose one of the grouping options OR uncheck the Randomize By Group checkbox"
+    Then I should see an alert box with the following text: 'Please choose one of the grouping options OR uncheck the Randomize By Group checkbox'
 
     #VERIFY Randomization model was not added to the randomization summary.
     When I click on the link labeled "Summary"
