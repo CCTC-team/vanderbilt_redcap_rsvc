@@ -25,7 +25,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
          | [✓]               | "Participant Consent" (participant_consent) |
 
       #VERIFY: Verify version enabled
-      When I click on the button labeled "View all versions" in the row labeled "Participant Consent"
+      When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
       Then I should see a table header and rows containing the following values in a table:
          | Active?    | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
          | check icon | 1.0     |            |             | 0                           |                   |              | 20240718153905_Fake_Consent[311203].pdf | "Set as inactive" button     |
@@ -79,7 +79,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
             | [ ]               | Participant Consent |
 
       #VERIFY: Verify version enabled
-      When I click on the button labeled "View all versions" in the row labeled "Participant Consent"
+      When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
       Then I should see a table header and rows containing the following values in a table:
          | Active?    | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
          | check icon | 1.0     |            |             | 1                           |                   |              | 20240718153905_Fake_Consent[311203].pdf | "Set as inactive" button     |
@@ -129,7 +129,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
          | [✓]               | "Participant Consent" (participant_consent) |
 
       #VERIFY: Verify version enabled
-      When I click on the button labeled "View all versions" in the row labeled "Participant Consent"
+      When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
       Then I should see a table header and rows containing the following values in a table:
          | Active?    | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
          | check icon | 1.0     |            |             | 2                           |                   |              | 20240718153905_Fake_Consent[311203].pdf | "Set as inactive" button     |

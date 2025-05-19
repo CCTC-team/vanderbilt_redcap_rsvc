@@ -27,7 +27,7 @@ Given This scenario is fully tested within C.3.24.1500.
 #       And I click on the button labeled "Add new consent form" in the dialog box
 #       Then I should see "vtest 1" in the row labeled "Participant Consent"
 #       #VERIFY: view all versions for Test 1
-#       When I click on the button labeled "View all versions" in the row labeled "Participant Consent"
+#       When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
 #       Then I should see a table header and rows containing the following values in a table:
 #          | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
 #          |            | 1.0     |                    |                         | 0                           |                   |              | 20240718153905_Fake_Consent[311203].pdf |                              |
@@ -98,7 +98,7 @@ Given This scenario is fully tested within C.3.24.1500.
 #       And I click on the button labeled "Add new consent form" in the dialog box
 #       Then I should see "vtest 2" in the row labeled "Participant Consent"
 #       # view all versions
-#       When I click on the button labeled "View all versions" in the row labeled "Participant Consent"
+#       When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
 #       Then I should see a table header and rows containing the following values in a table:
 #          | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
 #          |            | 1.0     |                    |                         | 0                           |                   |              | 20240718153905_Fake_Consent[311203].pdf |                              |

@@ -32,7 +32,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     Then I should see "vNO DAG" in the row labeled "Participant Consent"
 
   Scenario: #VERIFY: view all versions for NO DAG
-    When I click on the button labeled "View all versions" in the row labeled "Participant Consent"
+    When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
     Then I should see a table header and rows containing the following values in a table:
       | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
       |            |     1.0 |                    |                         |                           0 |                   |              | 20240718153905_Fake_Consent[311203].pdf |                              |
@@ -73,7 +73,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
 
   Scenario: #VERIFY: view all versions
       #VERIFY: view all versions
-    When I click on the button labeled "View all versions" in the row labeled "Participant Consent"
+    When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
     Then I should see a table header and rows containing the following values in a table:
       | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
       |            |     1.0 |                    |                         |                           0 |                   |              | 20240718153905_Fake_Consent[311203].pdf |                              |
