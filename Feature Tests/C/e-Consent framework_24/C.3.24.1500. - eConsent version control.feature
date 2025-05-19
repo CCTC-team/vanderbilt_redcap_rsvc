@@ -29,7 +29,6 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
     And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
     And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
-    And I click on the link labeled "Consent Form (Rich Text)" in the dialog box
     And I enter "This is my test 1 consent form" into the textarea field labeled "Consent Form (Rich Text)" in the dialog box
     And I click on the button labeled "Cancel" in the dialog box
     Then I should see "v1.0" in the row labeled "Participant Consent"
@@ -43,9 +42,9 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
     And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
     And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
-    And I click on the link labeled "Consent Form (Rich Text)" in the dialog box
     And I enter "This is my test 1 consent form" into the textarea field labeled "Consent Form (Rich Text)" in the dialog box
     And I click on the button labeled "Add new consent form" in the dialog box
+    And I wait for 1 second
     Then I should see "vtest 1" in the row labeled "Participant Consent"
 
   Scenario: #VERIFY: view all versions for Test 1
@@ -114,8 +113,9 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
       | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         |      | e-Consent Participant |
 
   Scenario:
-    When I click on the file link for record "1" Survey "(Event 1 (Arm 1: Arm 1))"
-    Then I should see "This is my test 1 consent form"
+    When I click on the link labeled "pid13_formParticipantConsent_id1_"
+    Then I should see the following values in the downloaded PDF for record "1" and survey "Participant Consent"
+      | This is my test 1 consent form |
     #Manual: Close document
 
   Scenario: C.3.24.1500.200 e-Consent create unique version using Inline PDF
@@ -138,7 +138,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     Then I should see "Error"
 
   Scenario:
-    When I click on the button labled "Close" in the dialog box
+    When I click on the button labeled "Close" in the dialog box
         #Add unique version
     And I enter "test 2" into the input field labeled "Consent form version:" in the dialog box
     And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
@@ -157,7 +157,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     Then I should see "Error"
 
   Scenario:
-    When I click on the button labled "OK" in the dialog box
+    When I click on the button labeled "OK" in the dialog box
     And I click on the button labeled "Choose File" in the dialog box
         #Adding a .pdf file will upload
     And I select the file labeled "consent.pdf" in the dialog box
