@@ -21,7 +21,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     Then I should see "Participant Consent"
 
   Scenario:
-    When I click on the button labeled "+Add consent form" for the survey labeled "Participant Consent"
+    When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
     Then I should see "Consent form version"
 
   Scenario: #CROSS-REF ##C.3.24.1600.100 Add consent form version via rich text
@@ -30,12 +30,12 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
     And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
     And I click on the link labeled "Consent Form (Rich Text)" in the dialog box
-    And I enter "This is my test 1 consent form" into the input field labeled "Consent Form (Rich Text)" in the dialog box
+    And I enter "This is my test 1 consent form" into the textarea field labeled "Consent Form (Rich Text)" in the dialog box
     And I click on the button labeled "Cancel" in the dialog box
-    Then I should see "Consent form v1.0" for the survey labeled "Participant Consent"
+    Then I should see "v1.0" in the row labeled "Participant Consent"
 
   Scenario: Add consent form version via rich text
-    When I click on the button labeled "+Add consent form" for the survey labeled "Participant Consent"
+    When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
     Then I should see "Consent form version"
 
   Scenario:
@@ -44,18 +44,18 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
     And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
     And I click on the link labeled "Consent Form (Rich Text)" in the dialog box
-    And I enter "This is my test 1 consent form" into the input field labeled "Consent Form (Rich Text)" in the dialog box
+    And I enter "This is my test 1 consent form" into the textarea field labeled "Consent Form (Rich Text)" in the dialog box
     And I click on the button labeled "Add new consent form" in the dialog box
-    Then I should see "Consent form vtest 1" for the survey labeled "Participant Consent"
+    Then I should see "vtest 1" in the row labeled "Participant Consent"
 
   Scenario: #VERIFY: view all versions for Test 1
-    When I click on the button labeled "View all versions" for the survey labeled "Participant Consent"
+    When I click on the button labeled "View all versions" in the row labeled "Participant Consent"
     Then I should see a table header and rows containing the following values in a table:
       | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
       |            |     1.0 |                    |                         |                           0 |                   |              | 20240718153905_Fake_Consent[311203].pdf |                              |
       | check icon | test 1  | XX/XX/XXXX XX:XXXm | Test_Admin (Admin Test) |                           0 |                   |              | " This is my test 1 consent form "      | "Set as inactive" button     |
     When I click on the button labeled "Close" in the dialog box
-    Then I should see "Consent form vtest 1" for the survey labeled "Participant Consent"
+    Then I should see "vtest 1" in the row labeled "Participant Consent"
 
   Scenario: ##VERIFY_Logging
     When I click on the link labeled "Logging"
@@ -127,7 +127,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     Then I should see "Participant Consent"
 
   Scenario:
-    When I click on the button labeled "+Add consent form" for the survey labeled "Participant Consent"
+    When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
     Then I should see "Consent form version"
         # Unable to add an existing version name
 
@@ -163,17 +163,17 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I select the file labeled "consent.pdf" in the dialog box
     And I click on the button labeled "Upload File" in the dialog box
     And I click on the button labeled "Add new consent form" in the dialog box
-    Then I should see "Consent form vtest 2" for the survey labeled "Participant Consent"
+    Then I should see "vtest 2" in the row labeled "Participant Consent"
 
   Scenario: #view all versions for Test 1
-    When I click on the button labeled "View all versions" for the survey labeled "Participant Consent"
+    When I click on the button labeled "View all versions" in the row labeled "Participant Consent"
     Then I should see a table header and rows containing the following values in a table:
       | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
       |            |     1.0 |                    |                         |                           0 |                   |              | 20240718153905_Fake_Consent[311203].pdf |                              |
       |            | test 1  | XX/XX/XXXX XX:XXXm | Test_Admin (Admin Test) |                           1 |                   |              | " This is my test 1 consent form "      |                              |
       | check icon | test 2  | XX/XX/XXXX XX:XXXm | Test_Admin (Admin Test) |                           1 |                   |              | consent.pdf                             | "Set as inactive" button     |
     When I click on the button labeled "Close" in the dialog box
-    Then I should see "Consent form vtest 2" for the survey labeled "Participant Consent"
+    Then I should see "vtest 2" in the row labeled "Participant Consent"
 
   Scenario: ##VERIFY_Logging
     When I click on the link labeled "Logging"
@@ -247,7 +247,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     Then I should see "Participant Consent"
 
   Scenario: #view all versions
-    When I click on the button labeled "View all versions" for the survey labeled "Participant Consent"
+    When I click on the button labeled "View all versions" in the row labeled "Participant Consent"
     Then I should see a table header and rows containing the following values in a table:
       | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
       |            |     1.0 |                    |                         |                           0 |                   |              | 20240718153905_Fake_Consent[311203].pdf |                              |
@@ -286,7 +286,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario:
     When I click on the button labeled "Close" in the dialog box
-    Then I should NOT see "Consent form vtest 2" for the survey labeled "Participant Consent"
+    Then I should NOT see "Consent form vtest 2" in the row labeled "Participant Consent"
 
   Scenario: ##ACTION: Test e-Consent version is gone by adding record
     When I click on the link labeled "Add / Edit Records"
