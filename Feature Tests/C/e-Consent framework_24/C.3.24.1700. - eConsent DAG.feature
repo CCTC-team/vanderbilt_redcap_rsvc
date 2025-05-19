@@ -21,28 +21,28 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     Then I should see "Participant Consent"
 
   Scenario: #Add consent with no DAG
-    When I click on the button labeled "+Add consent form" for the survey labeled "Participant Consent"
-    And I enter "No DAG" into the input field labeled "Consent form version:" in the dialog box
+    When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
+    And I enter "NO DAG" into the input field labeled "Consent form version:" in the dialog box
     And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
     And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
     And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
     And I click on the link labeled "Consent Form (Rich Text)" in the dialog box
-    And I enter "This is my NO DAG consent form" into the input field labeled "Consent Form (Rich Text)" in the dialog box
+    And I enter "This is my NO DAG consent form" into the textarea field labeled "Consent Form (Rich Text)" in the dialog box
     And I click on the button labeled "Add new consent form" in the dialog box
-    Then I should see "Consent form vNO DAG" for the survey labeled "Participant Consent"
+    Then I should see "vNO DAG" in the row labeled "Participant Consent"
 
-  Scenario: #VERIFY: view all versions for No DAG
-    When I click on the button labeled "View all versions" for the survey labeled "Participant Consent"
+  Scenario: #VERIFY: view all versions for NO DAG
+    When I click on the button labeled "View all versions" in the row labeled "Participant Consent"
     Then I should see a table header and rows containing the following values in a table:
       | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
       |            |     1.0 |                    |                         |                           0 |                   |              | 20240718153905_Fake_Consent[311203].pdf |                              |
       | check icon | NO DAG  | XX/XX/XXXX XX:XXXm | Test_Admin (Admin Test) |                           0 |                   |              | " This is my NO DAG consent form "      | "Set as inactive" button     |
     When I click on the button labeled "Close" in the dialog box
-    Then I should see "Consent form vNO DAG" for the survey labeled "Participant Consent"
+    Then I should see "vNO DAG" in the row labeled "Participant Consent"
 
   Scenario: #Add consent with DAG TestGroup1
       #Add consent with DAG TestGroup1
-    When I click on the button labeled "+Add consent form" for the survey labeled "Participant Consent"
+    When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
     And I enter "DAG 1" into the input field labeled "Consent form version:" in the dialog box
     And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
     And I select "TestGroup1" on the dropdown field labeled "Display for specific DAG" in the dialog box
@@ -52,12 +52,12 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I select the file labeled "DAG1.pdf" in the dialog box
     And I click on the button labeled "Upload File" in the dialog box
     And I click on the button labeled "Add new consent form" in the dialog box
-    Then I should see "Consent form vDAG 1" for the survey labeled "Participant Consent"
-    And I should see "Consent form vNO DAG" for the survey labeled "Participant Consent"
+    Then I should see "vDAG 1" in the row labeled "Participant Consent"
+    And I should see "vNO DAG" in the row labeled "Participant Consent"
 
   Scenario: #Add consent with DAG TestGroup2
       #Add consent with DAG TestGroup2
-    When I click on the button labeled "+Add consent form" for the survey labeled "Participant Consent"
+    When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
     And I enter "DAG 2" into the input field labeled "Consent form version:" in the dialog box
     And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
     And I select "TestGroup2" on the dropdown field labeled "Display for specific DAG" in the dialog box
@@ -67,13 +67,13 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I select the file labeled "DAG2.pdf" in the dialog box
     And I click on the button labeled "Upload File" in the dialog box
     And I click on the button labeled "Add new consent form" in the dialog box
-    Then I should see "Consent form vDAG 2" for the survey labeled "Participant Consent"
-    And I should see "Consent form vDAG 1" for the survey labeled "Participant Consent"
-    And I should see "Consent form vNO DAG" for the survey labeled "Participant Consent"
+    Then I should see "vDAG 2" in the row labeled "Participant Consent"
+    And I should see "vDAG 1" in the row labeled "Participant Consent"
+    And I should see "vNO DAG" in the row labeled "Participant Consent"
 
   Scenario: #VERIFY: view all versions
       #VERIFY: view all versions
-    When I click on the button labeled "View all versions" for the survey labeled "Participant Consent"
+    When I click on the button labeled "View all versions" in the row labeled "Participant Consent"
     Then I should see a table header and rows containing the following values in a table:
       | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
       |            |     1.0 |                    |                         |                           0 |                   |              | 20240718153905_Fake_Consent[311203].pdf |                              |
@@ -81,9 +81,9 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
       | check icon | DAG 1   | XX/XX/XXXX XX:XXXm | Test_Admin (Admin Test) |                           0 |                   |              | DAG1.pdf                                | "Set as inactive" button     |
       | check icon | DAG 2   | XX/XX/XXXX XX:XXXm | Test_Admin (Admin Test) |                           0 |                   |              | DAG2.pdf                                | "Set as inactive" button     |
     When I click on the button labeled "Close" in the dialog box
-    Then I should see "Consent form vDAG 2" for the survey labeled "Participant Consent"
-    And I should see "Consent form vDAG 1" for the survey labeled "Participant Consent"
-    And I should see "Consent form vNO DAG" for the survey labeled "Participant Consent"
+    Then I should see "vDAG 2" in the row labeled "Participant Consent"
+    And I should see "vDAG 1" in the row labeled "Participant Consent"
+    And I should see "vNO DAG" in the row labeled "Participant Consent"
 
   Scenario: ##VERIFY_Logging
       ##VERIFY_Logging
@@ -245,7 +245,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
       | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type                  |
       | .pdf |                                  |      3 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | DAG 2   | e-Consent Participant |
       | .pdf |                                  |      2 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | DAG 1   | e-Consent Participant |
-      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | No DAG  | e-Consent Participant |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | NO DAG  | e-Consent Participant |
 
   Scenario: ##VERIFY_Logging
     When I click on the link labeled "Logging"
@@ -253,5 +253,5 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
       | Username            | Action                    | List of Data Changes OR Fields Exported                                                                                                                                   |
       | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "3" identifier = "email@test.edu" consent_form_version = "DAG 2" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id  |
       | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "2" identifier = "email@test.edu" consent_form_version = "DAG 1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id  |
-      | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1" identifier = "email@test.edu" consent_form_version = "No DAG" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id |
+      | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1" identifier = "email@test.edu" consent_form_version = "NO DAG" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id |
 #END
