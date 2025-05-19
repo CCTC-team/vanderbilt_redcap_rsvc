@@ -26,17 +26,18 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
     And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
     And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
-    And I click on the link labeled "Consent Form (Rich Text)" in the dialog box
     And I enter "This is my NO DAG consent form" into the textarea field labeled "Consent Form (Rich Text)" in the dialog box
     And I click on the button labeled "Add new consent form" in the dialog box
+    And I wait for 1 second
     Then I should see "vNO DAG" in the row labeled "Participant Consent"
 
   Scenario: #VERIFY: view all versions for NO DAG
     When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
     Then I should see a table header and rows containing the following values in a table:
       | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-      |            |     1.0 |                    |                         |                           0 |                   |              | 20240718153905_Fake_Consent[311203].pdf |                              |
-      | check icon | NO DAG  | XX/XX/XXXX XX:XXXm | Test_Admin (Admin Test) |                           0 |                   |              | " This is my NO DAG consent form "      | "Set as inactive" button     |
+      |            |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
+      |            | NO DAG  |                    | Test_Admin (Admin User) |                           0 |                   |              | "This is my NO DAG consent form"        |                              |
+    And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "NO DAG"
     When I click on the button labeled "Close" in the dialog box
     Then I should see "vNO DAG" in the row labeled "Participant Consent"
 
