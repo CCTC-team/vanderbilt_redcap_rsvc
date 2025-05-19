@@ -155,7 +155,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             Then I should NOT see "(#3)"
 
             When I click on the button labeled "Add new"
-            And I click the bubble to add a record for the "Survey" longitudinal instrument on event "(#3)"
+            And I click the bubble to add a record for the "Survey" longitudinal instrument on event "(NEW)"
             Then I should see "Editing existing Record ID 1"
 
             When I clear field and enter "My repeat event name" into the data entry form field labeled "Name"
