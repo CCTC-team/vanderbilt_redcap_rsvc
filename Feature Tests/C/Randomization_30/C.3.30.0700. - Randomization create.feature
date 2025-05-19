@@ -68,12 +68,12 @@ Scenario: C.3.30.0700.0200. Enable stratified randomization with one stratum.
     Then I should see "Success! The randomization model has been saved!"
     
 Scenario: C.3.30.0700.2200 Upload invalid allocation table in DEVELOPMENT
-    When I upload a "csv" format file located at "import_files/Invalid_Allocation.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+    When I upload a "csv" format file located at "cdisc_files/Invalid_Allocation.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
     Then I should see "ERROR: The following errors occurred. Please address them and try again."
 
     #Adding valid allocation table
     When I click on the button labeled "Return to previous page"
-    When I upload a "csv" format file located at "import_files/Randomization_one_strat.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+    When I upload a "csv" format file located at "cdisc_files/Randomization_one_strat.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
     Then I should see "Already uploaded"
 
 Scenario: C.3.30.0700.2000. Modify an existing randomization model
@@ -352,7 +352,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
 
-    When I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+    When I upload a "csv" format file located at "cdisc_files/RandomizationAllocationTemplate.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
     Then I should see "Already uploaded"
 
     #VERIFY_log Randomization saved in logging table
@@ -382,7 +382,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
 
-    When I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+    When I upload a "csv" format file located at "cdisc_files/RandomizationAllocationTemplate.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
     Then I should see "ERROR: Duplicate allocation table!"
 
     #Different Upload File
@@ -391,7 +391,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
 
-    When I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate_new.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+    When I upload a "csv" format file located at "cdisc_files/RandomizationAllocationTemplate_new.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
     Then I should see "Already uploaded"
 
     #VERIFY_log Randomization saved in logging table
@@ -490,7 +490,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
 
-    When I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate_1basic.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+    When I upload a "csv" format file located at "cdisc_files/RandomizationAllocationTemplate_1basic.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
     Then I should see "Already uploaded"
 
     When I click on the link labeled "Project Setup"
@@ -498,7 +498,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
 
-    When I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate_2allcombos.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+    When I upload a "csv" format file located at "cdisc_files/RandomizationAllocationTemplate_2allcombos.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
     Then I should see "Already uploaded"
 
    #SETUP
@@ -515,7 +515,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
     And I click on the link labeled "Upload more allocations?"
-    And I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate_2allcombos2.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+    And I upload a "csv" format file located at "cdisc_files/RandomizationAllocationTemplate_2allcombos2.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
     Then I should see "Success! New assignments were appended to your existing randomization allocation table!"
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
