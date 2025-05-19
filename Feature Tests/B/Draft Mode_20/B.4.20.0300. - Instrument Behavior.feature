@@ -44,7 +44,6 @@ Feature: User Interface: The system shall require changes made to data collectio
 
     ##VERIFY: (look at a table that shows summary of changes)
     When I click on the link labeled "Designer"
-    And I click on the button labeled "Leave without saving changes"
     And I click on the link labeled "View detailed summary of all drafted changes"
     Then I should see a table header and rows containing the following values in a table:
       | Variable Name       | Section Header | Field Type | Field Label         | Choices or Calculations |
@@ -66,5 +65,6 @@ Feature: User Interface: The system shall require changes made to data collectio
     ##VERIFY INSTRUMENT
     Given I click on the link labeled "Record Status Dashboard"
     And I locate the bubble for the "Data Types" instrument on event "Event 2" for record ID "1" and click on the bubble
+    And I click on the link labeled "Instance #1"
     Then I should see "Choice102"
 #END
