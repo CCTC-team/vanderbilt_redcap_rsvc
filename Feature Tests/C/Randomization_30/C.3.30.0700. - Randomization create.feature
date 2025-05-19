@@ -189,7 +189,7 @@ Scenario: C.3.30.0700.0400. Randomize by group/site enabled with no option selec
     And I check the checkbox labeled "B) Randomize by group/site"
     And I select "rand_group_2 (Randomization group)" on the second dropdown field labeled "- select a field -"
     And I click on the button labeled "Save randomization model"
-    Then I should see an alert box with the following text: 'Please choose one of the grouping options OR uncheck the Randomize By Group checkbox'
+    Then I should see "Please choose one of the grouping options OR uncheck the Randomize By Group checkbox"
 
     #VERIFY Randomization model was not added to the randomization summary.
     When I click on the link labeled "Summary"
