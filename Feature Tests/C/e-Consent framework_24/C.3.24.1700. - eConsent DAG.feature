@@ -209,7 +209,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
 
   Scenario: ##VERIFY
     Then I should see "Record ID 3 was successfully assigned to a Data Access Group!"
-    And I should see "Arm 1: Arm 1 — TestGroup1"
+    And I should see "Arm 1: Arm 1 — TestGroup2"
     When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see the consent pdf has loaded in the iframe
     #Manual: Then I should see "CONSENT DAG 2" in the PDF content displayed within the page
