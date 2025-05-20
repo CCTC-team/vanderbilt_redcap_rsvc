@@ -143,7 +143,9 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the link labeled "Record ID 2"
-    And I select "Assign to Data Access Group" on the dropdown field labeled "Choose action for record"
+    And I click on the button labeled "Choose action for record"
+    And I click on the link labeled "Assign to Data Access Group"
+    Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
     And I select "TestGroup1" on the dropdown field labeled "[No Assignment]" in the dialog box
     And I click on the button labeled "Assign to Data Access Group" in the dialog box
 
@@ -197,7 +199,9 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the link labeled "Record ID 3"
-    And I select "Assign to Data Access Group" on the dropdown field labeled "Choose action for record"
+    And I click on the button labeled "Choose action for record"
+    And I click on the link labeled "Assign to Data Access Group"
+    Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
     And I select "TestGroup2" on the dropdown field labeled "[No Assignment]" in the dialog box
     And I click on the button labeled "Assign to Data Access Group" in the dialog box
 
