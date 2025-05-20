@@ -145,24 +145,18 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
     And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
     And I click on the button labeled "Consent Form (Inline PDF)" in the dialog box
-    And I click on the button labeled "Choose File" in the dialog box
         #Adding a .png file will cause an error
-    And I select the file labeled "consent.png" in the dialog box
-    And I click on the button labeled "Upload File" in the dialog box
-    Then I should see "consent.png" in the dialog box
-        #Verify error
+    And I upload a "pdf" format file located at "import_files/consent.png", by clicking the button near "Upload your PDF consent form" to browse for the file, and clicking the button labeled "Add new consent form" to upload the file
 
-  Scenario:
-    When I click on the button labeled "Add new consent form" in the dialog box
+  Scenario: Verify error
     Then I should see "Error"
 
   Scenario:
     When I click on the button labeled "OK" in the dialog box
-    And I click on the button labeled "Choose File" in the dialog box
         #Adding a .pdf file will upload
-    And I select the file labeled "consent.pdf" in the dialog box
-    And I click on the button labeled "Upload File" in the dialog box
-    And I click on the button labeled "Add new consent form" in the dialog box
+    And I upload a "pdf" format file located at "import_files/consent.pdf", by clicking the button near "Upload your PDF consent form" to browse for the file, and clicking the button labeled "Add new consent form" to upload the file
+    And I wait for 1 second
+
     Then I should see "vtest 2" in the row labeled "Participant Consent"
 
   Scenario: #view all versions for Test 1

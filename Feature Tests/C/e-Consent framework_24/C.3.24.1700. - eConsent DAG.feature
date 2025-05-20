@@ -49,10 +49,8 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I select "TestGroup1" on the dropdown field labeled "Display for specific DAG" in the dialog box
     And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
     And I click on the button labeled "Consent Form (Inline PDF)" in the dialog box
-    And I click on the button labeled "Choose File" in the dialog box
-    And I select the file labeled "DAG1.pdf" in the dialog box
-    And I click on the button labeled "Upload File" in the dialog box
-    And I click on the button labeled "Add new consent form" in the dialog box
+    And I upload a "pdf" format file located at "import_files/DAG1.pdf", by clicking the button near "Upload your PDF consent form" to browse for the file, and clicking the button labeled "Add new consent form" to upload the file
+    And I wait for 1 second
     Then I should see "vDAG 1" in the row labeled "Participant Consent"
     And I should see "vNO DAG" in the row labeled "Participant Consent"
 
@@ -64,10 +62,8 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     And I select "TestGroup2" on the dropdown field labeled "Display for specific DAG" in the dialog box
     And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
     And I click on the button labeled "Consent Form (Inline PDF)" in the dialog box
-    And I click on the button labeled "Choose File" in the dialog box
-    And I select the file labeled "DAG2.pdf" in the dialog box
-    And I click on the button labeled "Upload File" in the dialog box
-    And I click on the button labeled "Add new consent form" in the dialog box
+    And I upload a "pdf" format file located at "import_files/DAG2.pdf", by clicking the button near "Upload your PDF consent form" to browse for the file, and clicking the button labeled "Add new consent form" to upload the file
+    And I wait for 1 second
     Then I should see "vDAG 2" in the row labeled "Participant Consent"
     And I should see "vDAG 1" in the row labeled "Participant Consent"
     And I should see "vNO DAG" in the row labeled "Participant Consent"
