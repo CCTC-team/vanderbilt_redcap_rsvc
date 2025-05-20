@@ -73,10 +73,14 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
     Then I should see a table header and rows containing the following values in a table:
       | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-      |            |     1.0 |                    |                         |                           0 |                   |              | 20240718153905_Fake_Consent[311203].pdf |                              |
-      | check icon | NO DAG  | XX/XX/XXXX XX:XXXm | Test_Admin (Admin Test) |                           0 |                   |              | " This is my NO DAG consent form "      | "Set as inactive" button     |
-      | check icon | DAG 1   | XX/XX/XXXX XX:XXXm | Test_Admin (Admin Test) |                           0 |                   |              | DAG1.pdf                                | "Set as inactive" button     |
-      | check icon | DAG 2   | XX/XX/XXXX XX:XXXm | Test_Admin (Admin Test) |                           0 |                   |              | DAG2.pdf                                | "Set as inactive" button     |
+      |            |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
+      |            | NO DAG  |                    | Test_Admin (Admin User) |                           0 |                   |              | "This is my NO DAG consent form"        |                              |
+      |            | DAG 1   |                    | Test_Admin (Admin User) |                           0 |                   |              | DAG1.pdf                                |                              |
+      |            | DAG 2   |                    | Test_Admin (Admin User) |                           0 |                   |              | DAG2.pdf                                |                              |
+    And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
+    And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "NO DAG"
+    And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "DAG 1"
+    And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "DAG 2"
     When I click on the button labeled "Close" in the dialog box
     Then I should see "vDAG 2" in the row labeled "Participant Consent"
     And I should see "vDAG 1" in the row labeled "Participant Consent"
