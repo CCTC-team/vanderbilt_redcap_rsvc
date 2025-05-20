@@ -90,7 +90,7 @@ Given This scenario is fully tested within C.3.24.1500.
 #       And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
 #       And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
 #       And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
-#       And I click on the link labeled "Consent Form (Inline PDF)" in the dialog box
+#       And I click on the button labeled "Consent Form (Inline PDF)" in the dialog box
 #       And I click on the button labeled "Choose File" in the dialog box
 #       And I select the file labeled "consent.pdf" in the dialog box
 #       And I click on the button labeled "Upload File" in the dialog box
