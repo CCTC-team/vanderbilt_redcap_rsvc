@@ -73,6 +73,7 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         And I should see "Instrument locked by test_admin"
 
         When I click on the link labeled "Data Types"
+        And I click on the link labeled "Instance #1"
         Then I should see "Data Types"
         And I should see "Test custom text"
         And I should NOT see a checkbox for the field labeled "E-signature"
