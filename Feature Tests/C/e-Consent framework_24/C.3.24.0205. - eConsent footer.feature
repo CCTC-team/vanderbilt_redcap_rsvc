@@ -152,9 +152,9 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "1"
 
         When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
-        Then I should see a link labeled "Remove file" in the column labeled "" and the row labeled "Participant Consent file"
-        And I should see a link labeled "Remove file" in the column labeled "" and the row labeled "Coordinator Signature file"
-        And I should see a link labeled "Remove file" in the column labeled "" and the row labeled "Combine both files together"
+        Then I should see a link labeled "Remove file" in the row labeled "Participant Consent file"
+        And I should see a link labeled "Remove file" in the row labeled "Coordinator Signature file"
+        And I should see a link labeled "Remove file" in the row labeled "Combine both files together"
 
     Scenario: Verification e-Consent saved and logged correctly
         ##VERIFY_FiRe
