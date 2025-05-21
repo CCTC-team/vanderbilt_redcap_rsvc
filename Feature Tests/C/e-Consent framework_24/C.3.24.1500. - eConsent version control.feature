@@ -19,6 +19,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     When I click on the link labeled "Designer"
     And I click on the button labeled "e-Consent"
     Then I should see "Participant Consent"
+    And I wait for 1 second
 
   Scenario:
     When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
@@ -127,6 +128,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     When I click on the link labeled "Designer"
     And I click on the button labeled "e-Consent"
     Then I should see "Participant Consent"
+    And I wait for 1 second
 
   Scenario:
     When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
@@ -142,7 +144,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
   Scenario:
     When I click on the button labeled "Close" in the dialog box
         #Add unique version
-    And I enter "test 2" into the input field labeled "Consent form version:" in the dialog box
+    And I clear field and enter "test 2" into the input field labeled "Consent form version:" in the dialog box
     And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
     And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
     And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
@@ -167,7 +169,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
       | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
       |            |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
       |            | test 1  |                    | Test_Admin (Admin User) |                           1 |                   |              | "This is my test 1 consent form"        |                              |
-      |            | test 2  |                    | Test_Admin (Admin User) |                           1 |                   |              | consent.pdf                             |                              |
+      |            | test 2  |                    | Test_Admin (Admin User) |                           0 |                   |              | consent.pdf                             |                              |
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 1"
     And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 2"
@@ -186,7 +188,8 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I click on the button labeled "Add new record for the arm selected above"
     And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     Then I should see "Adding new Record ID 2."
-    And I should see "consent.pdf"
+    And I should see the consent pdf has loaded in the iframe
+    #Manual: Then I should see "CONSENT" in the PDF content displayed within the page
 
   Scenario:
     When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
@@ -194,7 +197,8 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
-    And I should see "consent.pdf"
+    And I should see the consent pdf has loaded in the iframe
+    #Manual: Then I should see "CONSENT" in the PDF content displayed within the page
 
   Scenario:
     When I clear field and enter "FirstName" into the input field labeled "First Name"
@@ -234,8 +238,9 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
       | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         |      | e-Consent Participant |
 
   Scenario:
-    When I click on the file link for record "2" Survey "(Event 1 (Arm 1: Arm 1))"
-    Then I should see "consent.pdf"
+    When I click on the link labeled "pid13_formParticipantConsent_id2_"
+    Then I should see the following values in the downloaded PDF for record "2" and survey "Participant Consent"
+      | Version: test 2 |
     #Manual: Close document
 
   Scenario: C.3.24.1500.300 Disable version
@@ -244,6 +249,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     When I click on the link labeled "Designer"
     And I click on the button labeled "e-Consent"
     Then I should see "Participant Consent"
+    And I wait for 1 second
 
   Scenario: #view all versions
     When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
@@ -277,7 +283,8 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario:
     When I click on the button labeled "Set consent form as inactive" in the dialog box
-    Then I should see "Consent has successfully been removed"
+    Then I should see "Consent form has been successfully removed"
+    And I wait for 5 seconds
     And I should see a table header and rows containing the following values in a table:
       | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
       |            |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
@@ -288,9 +295,11 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 2"
 
   Scenario: C.3.24.1500.400 View historical version
-    When I click on the file link "consent.pdf" in the dialog box
-    Then I should see "consent.pdf"
-        #Manual: Close document
+    When I click on the link labeled "consent.pdf"
+    Then I should see "Displaying consent form content"
+    #Manual: Then I should see "CONSENT" in the PDF content displayed within the page
+    Then I click on the button labeled "Close"
+    #Manual: Close document
 
   Scenario:
     When I click on the button labeled "Close" in the dialog box
@@ -350,7 +359,9 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
       | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
 
   Scenario:
-    When I click on the file link for record "3" Survey "(Event 1 (Arm 1: Arm 1))"
-    Then I should NOT see "consent.pdf"
+    When I click on the link labeled "pid13_formParticipantConsent_id3_"
+    Then I should see the following values in the downloaded PDF for record "3" and survey "Participant Consent"
+      # Make sure the DOB is followed immediatly by "Type:", verifying that the consent "Version:" is omitted. 
+      | 2000-01-01, Type:  |
 #Manual: Close document
 #END
