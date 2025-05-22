@@ -30,6 +30,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
          | Active?    | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
          |            | 1.0     |            |             | 0                           |                   |              | _Fake_Consent[311203].pdf               |                              |
       And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
+      And I click on the button labeled "Close"
 
    Scenario: #Verify eConsent Framework is active by adding a record
       ##ACTION: add record
