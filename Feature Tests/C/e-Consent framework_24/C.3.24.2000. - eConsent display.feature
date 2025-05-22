@@ -74,7 +74,8 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       When I click on the link labeled "Designer"
       And I click on the button labeled "e-Consent"
       And I uncheck the checkbox labeled "Hide inactive"
-      And I "Inactive" the e-consent framework for survey labeled "Participant Consent"
+      And I wait for 1 second
+      And I uncheck the checkbox in the row labeled "Participant Consent"
       And I click on the button labeled "Set as inactive"
       Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey              |
@@ -86,6 +87,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
          | Active?    | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
          |            | 1.0     |            |             | 1                           |                   |              | _Fake_Consent[311203].pdf               |                              |
       And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
+      And I click on the button labeled "Close"
 
    Scenario: #Verify eConsent Framework is inactive by adding a record
       ##ACTION: add record
@@ -125,8 +127,8 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       When I click on the link labeled "Designer"
       And I click on the button labeled "e-Consent"
       And I uncheck the checkbox labeled "Hide inactive"
-      And I "Active" the e-consent framework for survey labeled "Participant Consent"
-      Then I should see "e-Consent successfully"
+      And I wait for 1 second
+      And I check the checkbox in the row labeled "Participant Consent"
       And I should see a table header and rows containing the following values in a table:
          | e-Consent active? | Survey                                      |
          | [✓]               | "Participant Consent" (participant_consent) |
@@ -137,6 +139,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
          | Active?    | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
          |            | 1.0     |            |             | 2                           |                   |              | _Fake_Consent[311203].pdf               |                              |
       And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
+      And I click on the button labeled "Close"
 
    Scenario: #Verify eConsent Framework is active by adding a record
       ##ACTION: add record
@@ -190,9 +193,9 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       When I click on the link labeled "Logging"
       Then I should see a table header and rows containing the following values in the logging table:
          | Username            | Action                    | List of Data Changes OR Fields                                                                                                                             |
-         | [survey respondent] | Save PDF Snapshot 3       | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "3" event = "event_1_arm_1" instrument = "participant_consent"" |
+         | [survey respondent] | Save PDF Snapshot 3       | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "3" event = "event_1_arm_1" instrument = "participant_consent"  |
          | [survey respondent] | e-Consent Certification 3 | e-Consent Certification record = "3"  event = "event_1_arm_1" instrument = "participant_consent"                                                           |
-         | [survey respondent] | Save PDF Snapshot 2       | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument = "participant_consent"" |  
-         | [survey respondent] | Save PDF Snapshot 1       | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent"" |
+         | [survey respondent] | Save PDF Snapshot 2       | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument = "participant_consent"  |  
+         | [survey respondent] | Save PDF Snapshot 1       | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent"  |
          | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent"                                                           |
 #END
