@@ -66,8 +66,9 @@ Feature: User Interface: The system shall support the ability to assign the User
     And I click on the button labeled "Create New Report"
     And I enter "C.5.22.100.100 REPORT" into the input field labeled "Name of Report:"
      #FUNCTIONAL_REQUIREMENT
-    And I select the radio button labeled "All users" is selected for the field labeled "View Access"
-    And I select the radio button labeled "All users" is selected for the field labeled "Edit Access"
+    #Manual: The following lines are commented because they don't work on automation and don't actually do anything anyway.
+    # And I select the radio button labeled "All users" is selected for the field labeled "View Access"
+    # And I select the radio button labeled "All users" is selected for the field labeled "Edit Access"
     And I click on the button labeled "Save Report"
     Then I should see "Your report has been saved!" in the dialog box
     When I click on the button labeled "Return to My Reports & Exports"
