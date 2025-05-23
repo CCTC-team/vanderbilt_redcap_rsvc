@@ -111,8 +111,19 @@ END {
       # Generate the feature name
       feature = letter "." part1 "." part2 "." part3 ".";
 
+      # Figure out estimated modified lines
+      mod = (file_added < file_deleted ? file_added : file_deleted);
+      pure_added = file_added - mod;
+      pure_deleted = file_deleted - mod;
+
       if (upload == "true") {
-        cmd = "sh push_lines_changes.sh \"" feature "\" " file_added " " file_deleted " " file_total;
+        cmd = "sh push_lines_changes.sh \"" feature "\" " \
+              file_added " " \
+              pure_added " " \
+              file_deleted " " \
+              pure_deleted " " \
+              file_total " " \
+              mod;
         system(cmd)
         printf "%10d %10d %10d   %s - UPLOADED\n", file_added, file_deleted, file_total, feature;
       } else {

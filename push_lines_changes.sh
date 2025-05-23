@@ -3,8 +3,11 @@ CURL=`which curl`
 
 FEATURE="$1"
 ADDED="$2"
-DELETED="$3"
-TOTAL="$4"
+PURE_ADDED="$3"
+DELETED="$4"
+PURE_DELETED="$5"
+TOTAL="$6"
+TOTAL_MOD="$7"
 
 # Load environment variables from .env file
 if [ -f .env ]; then
@@ -23,6 +26,6 @@ $CURL -X POST "$REDCAP_API_URL" \
   -d "content=record" \
   -d "format=json" \
   -d "type=flat" \
-  -d "data=[{\"record_id\":\"$FEATURE\",\"lines_added\":\"$ADDED\",\"lines_removed\":\"$DELETED\",\"total_lines_changed\":\"$TOTAL\",\"feature_changes_complete\":\"2\"}]" \
+  -d "data=[{\"record_id\":\"$FEATURE\",\"lines_added\":\"$ADDED\",\"lines_added_pure\":\"$PURE_ADDED\",\"lines_removed\":\"$DELETED\",\"lines_removed_pure\":\"$PURE_DELETED\",\"total_lines_changed\":\"$TOTAL\",\"est_total_mod_lines\":\"$TOTAL_MOD\",\"feature_changes_complete\":\"2\"}]" \
   -d "returnContent=ids" \
   -d "returnFormat=json"
