@@ -32,7 +32,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
 
    Scenario: Copy trigger
       ##ACTION: Copy trigger
-      When I click on the button labeled "Copy trigger" for the trigger labeled "Snapshot"
+      When I click on the button labeled "Copy trigger" in the row labeled "Snapshot"
       Then I should see "Do you wish to copy this PDF Snapshot Trigger?"
 
       When I click on the button labeled "Copy trigger"

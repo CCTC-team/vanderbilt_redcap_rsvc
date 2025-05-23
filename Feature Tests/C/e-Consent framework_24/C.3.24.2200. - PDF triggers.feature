@@ -48,7 +48,7 @@ Feature: User Interface: The system shall support the creation, modification, an
 
    Scenario: Cancel Copy trigger
       ##ACTION: Cancel Copy trigger
-      When I click on the button labeled "Copy trigger" for the trigger labeled "Custom Dropdown 1 Form Snapshot"
+      When I click on the button labeled "Copy trigger" in the row labeled "Custom Dropdown 1 Form Snapshot"
       Then I should see "Do you wish to copy this PDF Snapshot Trigger?"
 
       When I click on the button labeled "Cancel"
@@ -58,7 +58,7 @@ Feature: User Interface: The system shall support the creation, modification, an
 
    Scenario: Copy trigger
       ##ACTION: Copy trigger
-      When I click on the button labeled "Copy trigger" for the trigger labeled "Custom Dropdown 1 Form Snapshot"
+      When I click on the button labeled "Copy trigger" in the row labeled "Custom Dropdown 1 Form Snapshot"
       Then I should see "Do you wish to copy this PDF Snapshot Trigger?"
 
       When I click on the button labeled "Copy trigger"
