@@ -71,10 +71,26 @@ if [[ "$prompt_mode" = true ]]; then
   esac
 fi
 
-awk_script='$3 ~ /\.feature$/ {
-  added[$3] += $1;
-  deleted[$3] += $2;
-  files[$3] = 1;
+awk_script='{
+  path = $3
+
+  # Handle { ... => ... } replacements
+  if (path ~ /\{.*=>.*\}/) {
+    prefix = substr(path, 1, match(path, /\{/) - 1)
+    inside = substr(path, match(path, /\{/) + 1)
+    inside = substr(inside, 1, length(inside) - 1)
+    split(inside, parts, /=>/)
+    new_part = parts[2]
+    gsub(/^[ \t]+|[ \t]+$/, "", new_part)  # trim spaces
+    path = prefix new_part
+  }
+
+  # Now that `path` is corrected, only proceed if it ends in .feature
+  if (path ~ /\.feature$/) {
+    added[path] += $1;
+    deleted[path] += $2;
+    files[path] = 1;
+  }
 }
 END {
   total_added = 0;
@@ -125,7 +141,7 @@ END {
               file_total " " \
               mod;
         system(cmd)
-        printf "%10d %10d %10d   %s - UPLOADED\n", file_added, file_deleted, file_total, feature;
+        printf "%10d %10d %10d   %s - UPLOADED\n", file_added, file_deleted, file_total, file;
       } else {
         # Use the normalized feature name
         printf "%10d %10d %10d   %s\n", file_added, file_deleted, file_total, file;
