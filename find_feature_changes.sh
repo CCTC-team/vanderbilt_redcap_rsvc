@@ -128,7 +128,7 @@ END {
         printf "%10d %10d %10d   %s - UPLOADED\n", file_added, file_deleted, file_total, feature;
       } else {
         # Use the normalized feature name
-        printf "%10d %10d %10d   %s\n", file_added, file_deleted, file_total, feature;
+        printf "%10d %10d %10d   %s\n", file_added, file_deleted, file_total, file;
       }
   }
   printf "%s\n", "---------------------------------------------------------------";
