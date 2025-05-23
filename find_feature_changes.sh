@@ -1,7 +1,18 @@
 #!/bin/bash
 
+# Load environment variables from .env file
+if [ -f .env ]; then
+  source .env
+fi
+
+if [ -z "$REDCAP_API_TOKEN" ]; then
+  echo "Environment variable REDCAP_API_TOKEN is not set. Exiting."
+  exit 1
+fi
+
 # Default values
 prompt_mode=false
+upload=false
 
 # Parse arguments
 while [[ "$#" -gt 0 ]]; do
@@ -24,6 +35,10 @@ while [[ "$#" -gt 0 ]]; do
       ;;
     --prompt)
       prompt_mode=true
+      shift
+      ;;
+    --upload)
+      upload=true
       shift
       ;;
     *)
@@ -71,7 +86,37 @@ END {
     file_total = file_added + file_deleted;
     total_added += file_added;
     total_deleted += file_deleted;
-    printf "%10d %10d %10d   %s\n", file_added, file_deleted, file_total, file;
+
+      # Get the filename like A.6.4.200.feature
+      n = split(file, path_parts, "/");
+      base = path_parts[n];
+
+      # Strip ".feature"
+      sub(/\.feature$/, "", base);
+
+      # Split into letter + parts
+      split(base, parts, "\\.");
+
+      # Normalize
+      letter = toupper(parts[1]);
+      part1 = parts[2];
+      part2 = parts[3];
+      part3 = sprintf("%04d", parts[4]);  # pad to 4 digits
+
+      # Skip anything not A, B, or C
+      if (letter != "A" && letter != "B" && letter != "C") {
+        continue;
+      }
+
+      # Generate the feature name
+      feature = letter "." part1 "." part2 "." part3 ".";
+
+      if (upload == "true") {
+        printf "%10d %10d %10d   %s - UPLOADED\n", file_added, file_deleted, file_total, feature;
+      } else {
+        # Use the normalized feature name
+        printf "%10d %10d %10d   %s\n", file_added, file_deleted, file_total, feature;
+      }
   }
   printf "%s\n", "---------------------------------------------------------------";
   printf "%10d %10d %10d   %s\n", total_added, total_deleted, total_added + total_deleted, "TOTAL";
@@ -121,7 +166,7 @@ else
 fi
 
 # Get the line changes for .feature files between the dates
-git log --since="$START_DATE" --until="$END_DATE" --pretty=tformat: --numstat --ignore-space-change | awk -F'\t' "$awk_script"
+git log --since="$START_DATE" --until="$END_DATE" --pretty=tformat: --numstat --ignore-space-change | awk -F'\t' -v upload="$upload" "$awk_script"
 
 if [ -z $CUR_TAG ]; then
   echo ""
