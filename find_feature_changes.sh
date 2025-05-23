@@ -112,6 +112,8 @@ END {
       feature = letter "." part1 "." part2 "." part3 ".";
 
       if (upload == "true") {
+        cmd = "sh push_lines_changes.sh \"" feature "\" " file_added " " file_deleted " " file_total;
+        system(cmd)
         printf "%10d %10d %10d   %s - UPLOADED\n", file_added, file_deleted, file_total, feature;
       } else {
         # Use the normalized feature name
