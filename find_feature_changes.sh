@@ -71,86 +71,88 @@ if [[ "$prompt_mode" = true ]]; then
   esac
 fi
 
-awk_script='{
-  path = $3
+awk_script='
+{
+  orig_path = $3
+  path = orig_path
+  old_path = ""
 
-  # Handle { ... => ... } replacements
   if (path ~ /\{.*=>.*\}/) {
     prefix = substr(path, 1, match(path, /\{/) - 1)
     inside = substr(path, match(path, /\{/) + 1)
     inside = substr(inside, 1, length(inside) - 1)
     split(inside, parts, /=>/)
+
+    old_part = parts[1]
     new_part = parts[2]
-    gsub(/^[ \t]+|[ \t]+$/, "", new_part)  # trim spaces
+
+    gsub(/^[ \t]+|[ \t]+$/, "", old_part)
+    gsub(/^[ \t]+|[ \t]+$/, "", new_part)
+
+    old_path = prefix old_part
     path = prefix new_part
+
+    old_paths[old_path] = 1
   }
 
-  # Now that `path` is corrected, only proceed if it ends in .feature
   if (path ~ /\.feature$/) {
-    added[path] += $1;
-    deleted[path] += $2;
-    files[path] = 1;
+    added[path] += $1
+    deleted[path] += $2
+    files[path] = 1
   }
 }
+
 END {
-  total_added = 0;
-  total_deleted = 0;
-  printf "%10s %10s %10s   %s\n", "Added", "Deleted", "Total", "File";
-  for (file in files) {
-    file_added = added[file];
-    file_deleted = deleted[file];
-    file_total = file_added + file_deleted;
-    total_added += file_added;
-    total_deleted += file_deleted;
-
-      # Get the filename like A.6.4.200.feature
-      n = split(file, path_parts, "/");
-      base = path_parts[n];
-
-      # Strip ".feature"
-      sub(/\.feature$/, "", base);
-
-      # Split into letter + parts
-      split(base, parts, "\\.");
-
-      # Normalize
-      letter = toupper(parts[1]);
-      part1 = parts[2];
-      part2 = parts[3];
-      part3 = sprintf("%04d", parts[4]);  # pad to 4 digits
-
-      # Skip anything not A, B, or C
-      if (letter != "A" && letter != "B" && letter != "C") {
-        continue;
-      }
-
-      # Generate the feature name
-      feature = letter "." part1 "." part2 "." part3 ".";
-
-      # Figure out estimated modified lines
-      mod = (file_added < file_deleted ? file_added : file_deleted);
-      pure_added = file_added - mod;
-      pure_deleted = file_deleted - mod;
-
-      if (upload == "true") {
-        cmd = "sh push_lines_changes.sh \"" feature "\" " \
-              file_added " " \
-              pure_added " " \
-              file_deleted " " \
-              pure_deleted " " \
-              file_total " " \
-              mod;
-        system(cmd)
-        printf "%10d %10d %10d   %s - UPLOADED\n", file_added, file_deleted, file_total, file;
-      } else {
-        # Use the normalized feature name
-        printf "%10d %10d %10d   %s\n", file_added, file_deleted, file_total, file;
-      }
+  # Remove any files that were old paths in renames
+  for (op in old_paths) {
+    delete files[op]
+    delete added[op]
+    delete deleted[op]
   }
-  printf "%s\n", "---------------------------------------------------------------";
-  printf "%10d %10d %10d   %s\n", total_added, total_deleted, total_added + total_deleted, "TOTAL";
-}'
 
+  total_added = 0
+  total_deleted = 0
+  printf "%10s %10s %10s   %s\n", "Added", "Deleted", "Total", "File"
+
+  for (file in files) {
+    file_added = added[file]
+    file_deleted = deleted[file]
+    file_total = file_added + file_deleted
+    total_added += file_added
+    total_deleted += file_deleted
+
+    n = split(file, path_parts, "/")
+    base = path_parts[n]
+    sub(/\.feature$/, "", base)
+    split(base, parts, "\\.")
+    letter = toupper(parts[1])
+    part1 = parts[2]
+    part2 = parts[3]
+    part3 = sprintf("%04d", parts[4])
+
+    if (letter != "A" && letter != "B" && letter != "C") continue
+
+    feature = letter "." part1 "." part2 "." part3 "."
+
+    mod = (file_added < file_deleted ? file_added : file_deleted)
+    pure_added = file_added - mod
+    pure_deleted = file_deleted - mod
+
+    if (upload == "true") {
+      cmd = "sh push_lines_changes.sh \"" feature "\" " \
+            file_added " " pure_added " " \
+            file_deleted " " pure_deleted " " \
+            file_total " " mod
+      system(cmd)
+      printf "%10d %10d %10d   %s - UPLOADED\n", file_added, file_deleted, file_total, file
+    } else {
+      printf "%10d %10d %10d   %s\n", file_added, file_deleted, file_total, file
+    }
+  }
+
+  printf "%s\n", "---------------------------------------------------------------"
+  printf "%10d %10d %10d   %s\n", total_added, total_deleted, total_added + total_deleted, "TOTAL"
+}'
 
 # Validate input
 if [[ -n "$CUR_TAG" && -n "$COMP_TAG" ]]; then
