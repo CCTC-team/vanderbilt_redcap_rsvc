@@ -44,7 +44,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
 
    Scenario: Edit trigger
       ##ACTION: Edit trigger
-      When I click on the button labeled "Edit trigger" for the trigger labeled "Snapshot"
+      When I click on the button labeled "Edit trigger" in the row labeled "Snapshot"
       And I enter "Hide Snapshot" into the input field labeled "Name of trigger"
       And I click on the button labeled "Save"
       Then I should see "Saved! Trigger for PDF Snapshot was successfully modified"

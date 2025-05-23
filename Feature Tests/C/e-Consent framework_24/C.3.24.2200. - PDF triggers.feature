@@ -69,7 +69,7 @@ Feature: User Interface: The system shall support the creation, modification, an
 
    Scenario: Cancel Edit trigger
       ##ACTION: Cancel Edit trigger
-      When I click on the button labeled "Edit trigger" for the trigger labeled "Custom Dropdown 1 Form Snapshot"
+      When I click on the button labeled "Edit trigger" in the row labeled "Custom Dropdown 1 Form Snapshot"
       Then I should see "Custom Dropdown 1 Form Snapshot" in the field labeled "Name of trigger:"
 
       When I click on the button labeled "Cancel"
@@ -81,7 +81,7 @@ Feature: User Interface: The system shall support the creation, modification, an
 
    Scenario: Edit trigger with Logic-based and selected instruments
       ##ACTION: Edit trigger
-      When I click on the button labeled "Edit trigger" for the trigger labeled "Custom Dropdown 1 Form Snapshot"
+      When I click on the button labeled "Edit trigger" in the row labeled "Custom Dropdown 1 Form Snapshot"
       Then I should see "Custom Dropdown 1 Form Snapshot" in the field labeled "Name of trigger:"
 
       When I enter "Edit trigger name" into the input field labeled "Name of trigger"
