@@ -69,7 +69,7 @@ Feature: User Interface: The system shall support the creation, modification, an
    Scenario: Cancel Edit trigger
       ##ACTION: Cancel Edit trigger
       When I click on the second button labeled "Edit trigger"
-      Then I should see "Custom Dropdown 1 Form Snapshot" in the field labeled "Name of trigger:"
+      Then I verify "Custom Dropdown 1 Form Snapshot" is within the field labeled "Name of trigger:"
 
       When I click on the button labeled "Cancel"
       Then I should see a table header and rows containing the following values in a table:
@@ -81,7 +81,7 @@ Feature: User Interface: The system shall support the creation, modification, an
    Scenario: Edit trigger with Logic-based and selected instruments
       ##ACTION: Edit trigger
       When I click on the second button labeled "Edit trigger"
-      Then I should see "Custom Dropdown 1 Form Snapshot" in the field labeled "Name of trigger:"
+      Then I verify "Custom Dropdown 1 Form Snapshot" is within the field labeled "Name of trigger:"
 
       When I enter "Edit trigger name" into the input field labeled "Name of trigger"
       And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
