@@ -61,15 +61,14 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I click on the button labeled "Copy trigger" in the row labeled "Custom Dropdown 1 Form Snapshot"
       Then I should see "Do you wish to copy this PDF Snapshot Trigger?"
 
-      When I click on the button labeled "Copy trigger"
-      Then I should see a table header and rows containing the following values in a table:
-         | Active | Edit settings | Name                            | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [✓]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
-         | [✓]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+     Then I should see a table header and rows containing the following values in a table:
+         | Active | Edit settings | Name                            | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   | Snapshot ID |
+         | [✓]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] | 1           |
+         | [✓]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] | 2           |
 
    Scenario: Cancel Edit trigger
       ##ACTION: Cancel Edit trigger
-      When I click on the button labeled "Edit trigger" in the row labeled "Custom Dropdown 1 Form Snapshot"
+      When I click on the second button labeled "Edit trigger"
       Then I should see "Custom Dropdown 1 Form Snapshot" in the field labeled "Name of trigger:"
 
       When I click on the button labeled "Cancel"
@@ -81,7 +80,7 @@ Feature: User Interface: The system shall support the creation, modification, an
 
    Scenario: Edit trigger with Logic-based and selected instruments
       ##ACTION: Edit trigger
-      When I click on the button labeled "Edit trigger" in the row labeled "Custom Dropdown 1 Form Snapshot"
+      When I click on the second button labeled "Edit trigger"
       Then I should see "Custom Dropdown 1 Form Snapshot" in the field labeled "Name of trigger:"
 
       When I enter "Edit trigger name" into the input field labeled "Name of trigger"
