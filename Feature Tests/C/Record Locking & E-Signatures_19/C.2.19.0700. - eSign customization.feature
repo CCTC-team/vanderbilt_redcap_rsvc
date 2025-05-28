@@ -31,10 +31,10 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         And I click on the "Save" button within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
-            | [✓]                                          | Text Validation            | [✓]                                            | Test custom text        |
-            | [✓]                                          | Data Types                 | [ ]                                            |                         |
+            | [x]                                          | Text Validation            | [x]                                            | Test custom text        |
+            | [x]                                          | Data Types                 | [ ]                                            |                         |
             | [ ]                                          | Survey                     | [ ]                                            |                         |
-            | [✓]                                          | Consent                    | [ ]                                            |                         |
+            | [x]                                          | Consent                    | [ ]                                            |                         |
 
         Given I enter "Test custom text" into the textarea field within the Record Locking Customization table for the Data Collection Instrument named "Data Types"
         And I click on the "Save" button within the Record Locking Customization table for the Data Collection Instrument named "Data Types"
@@ -43,10 +43,10 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         ##ACTION Display E-Signature or Lock option
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
-            | [✓]                                          | Text Validation            | [✓]                                            | Test custom text        |
-            | [✓]                                          | Data Types                 | [ ]                                            | Test custom text        |
+            | [x]                                          | Text Validation            | [x]                                            | Test custom text        |
+            | [x]                                          | Data Types                 | [ ]                                            | Test custom text        |
             | [ ]                                          | Survey                     | [ ]                                            |                         |
-            | [✓]                                          | Consent                    | [ ]                                            |                         |
+            | [x]                                          | Consent                    | [ ]                                            |                         |
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"
@@ -93,20 +93,20 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         And I click on the "Save" button within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
-            | [✓]                                          | Text Validation            | [✓]                                            | Edit Test custom text   |
-            | [✓]                                          | Data Types                 | [ ]                                            | Test custom text        |
+            | [x]                                          | Text Validation            | [x]                                            | Edit Test custom text   |
+            | [x]                                          | Data Types                 | [ ]                                            | Test custom text        |
             | [ ]                                          | Survey                     | [ ]                                            |                         |
-            | [✓]                                          | Consent                    | [ ]                                            |                         |
+            | [x]                                          | Consent                    | [ ]                                            |                         |
 
         When I click on the Edit icon within the Record Locking Customization table for the Data Collection Instrument named "Data Types"
         And I clear field and enter "Edit Test custom text" into the textarea field within the Record Locking Customization table for the Data Collection Instrument named "Data Types"
         And I click on the "Save" button within the Record Locking Customization table for the Data Collection Instrument named "Data Types"
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
-            | [✓]                                          | Text Validation            | [✓]                                            | Edit Test custom text   |
-            | [✓]                                          | Data Types                 | [ ]                                            | Edit Test custom text   |
+            | [x]                                          | Text Validation            | [x]                                            | Edit Test custom text   |
+            | [x]                                          | Data Types                 | [ ]                                            | Edit Test custom text   |
             | [ ]                                          | Survey                     | [ ]                                            |                         |
-            | [✓]                                          | Consent                    | [ ]                                            |                         |
+            | [x]                                          | Consent                    | [ ]                                            |                         |
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"

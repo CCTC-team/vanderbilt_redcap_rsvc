@@ -44,7 +44,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       Then I should see "Saved!"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name                            | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [✓]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
    Scenario: Cancel Copy trigger
       ##ACTION: Cancel Copy trigger
@@ -54,7 +54,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I click on the button labeled "Cancel"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name                            | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [✓]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
    Scenario: Copy trigger
       ##ACTION: Copy trigger
@@ -63,8 +63,8 @@ Feature: User Interface: The system shall support the creation, modification, an
 
      Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name                            | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   | Snapshot ID |
-         | [✓]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] | 1           |
-         | [✓]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] | 2           |
+         | [x]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] | 1           |
+         | [x]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] | 2           |
 
    Scenario: Cancel Edit trigger
       ##ACTION: Cancel Edit trigger
@@ -74,8 +74,8 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I click on the button labeled "Cancel"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name                            | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [✓]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
-         | [✓]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
 
    Scenario: Edit trigger with Logic-based and selected instruments
@@ -100,8 +100,8 @@ Feature: User Interface: The system shall support the creation, modification, an
       Then I should see "Saved! Trigger for PDF Snapshot was successfully modified"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name                            | Type of trigger   | Save snapshot when...                                    | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [✓]    |               | Edit trigger name               | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | Selected instruments  | File Repository Specified field: [event_1_arm_1][participant_file] |
-         | [✓]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent"                    | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Edit trigger name               | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | Selected instruments  | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent"                    | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
       ##VERIFY_Logging
       When I click on the link labeled "Logging"

@@ -30,7 +30,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     And I click on the button labeled "Save settings"
     Then I should see a table header and rows containing the following values in a table:
       | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes          |
-      | [✓]               | "Participant Consent" (participant_consent) | File Repository                                    | Participant         | My custom note |
+      | [x]               | "Participant Consent" (participant_consent) | File Repository                                    | Participant         | My custom note |
 
   Scenario: #SETUP_eConsent for coordinator signature (second signature) process
     #SETUP_eConsent for coordinator signature (second signature) process
@@ -50,7 +50,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     And I click on the button labeled "Save settings"
     Then I should see a table header and rows containing the following values in a table:
         | e-Consent active? | Survey                                          |
-        | [✓]               | "Coordinator Signature" (coordinator_signature) |
+        | [x]               | "Coordinator Signature" (coordinator_signature) |
 
   Scenario: Test e-Consent by adding record
       ##ACTION: add record to get participant signature

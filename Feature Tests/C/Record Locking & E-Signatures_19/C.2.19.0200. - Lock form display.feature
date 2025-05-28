@@ -29,10 +29,10 @@ Feature: User Interface: The tool shall only display forms that are designated t
     And I click on the first button labeled "Save"
     Then I should see a table header and rows containing the following values in a table:
       | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
-      | [✓]                                          | Text Validation            | [ ]                                            | Test custom text        |
-      | [✓]                                          | Data Types                 | [ ]                                            | Test custom text        |
-      | [✓]                                          | Survey                     | [ ]                                            |                         |
-      | [✓]                                          | Consent                    | [ ]                                            |                         |
+      | [x]                                          | Text Validation            | [ ]                                            | Test custom text        |
+      | [x]                                          | Data Types                 | [ ]                                            | Test custom text        |
+      | [x]                                          | Survey                     | [ ]                                            |                         |
+      | [x]                                          | Consent                    | [ ]                                            |                         |
 
     ##VERIFY_LOG
     When I click on the link labeled "Logging"
@@ -61,10 +61,10 @@ Feature: User Interface: The tool shall only display forms that are designated t
     And I click on the Delete icon within the Record Locking Customization table for the Data Collection Instrument named "Data Types"
     Then I should see a table header and rows containing the following values in a table:
       | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
-      | [✓]                                          | Text Validation            | [ ]                                            | New custom text         |
-      | [✓]                                          | Data Type                  | [ ]                                            |                         |
-      | [✓]                                          | Survey                     | [ ]                                            |                         |
-      | [✓]                                          | Consent                    | [ ]                                            |                         |
+      | [x]                                          | Text Validation            | [ ]                                            | New custom text         |
+      | [x]                                          | Data Type                  | [ ]                                            |                         |
+      | [x]                                          | Survey                     | [ ]                                            |                         |
+      | [x]                                          | Consent                    | [ ]                                            |                         |
 
 
     ##VERIFY_LOG
