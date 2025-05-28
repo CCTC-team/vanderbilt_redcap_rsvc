@@ -13,7 +13,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
     Then I should see "General Configuration"
 
     When I enter "redcap@test.instance" into the input field labeled "Email Address of REDCap Administrator"
-    And I enter "You are now creating a test project" into the textarea field labeled "Custom text displayed in a popup dialog when creating/copying project"
+    And I enter "You are now creating a test project" into the textarea field labeled "Custom message when creating/copying project"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed"
 
