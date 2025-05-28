@@ -49,8 +49,8 @@ Feature: User Interface: The tool shall display e-signature status of forms for 
         And for the Column Name "Also display E-signature option on instrument?", I check the checkbox within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? |
-            | [✓]                                          | Text Validation            | [✓]                                            |
-            | [✓]                                          | Consent                    |                                                |
+            | [x]                                          | Text Validation            | [x]                                            |
+            | [x]                                          | Consent                    |                                                |
 
 
         ##ACTION

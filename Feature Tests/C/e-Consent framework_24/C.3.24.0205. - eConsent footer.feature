@@ -41,7 +41,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I click on the button labeled "Save settings"
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
-            | [✓]               | "Participant Consent" (participant_consent) | File Repository Specified field:[event_1_arm_1][participant_file] | Participant         |       |
+            | [x]               | "Participant Consent" (participant_consent) | File Repository Specified field:[event_1_arm_1][participant_file] | Participant         |       |
 
     Scenario: #SETUP_eConsent for coordinator signature (second signature) process
         #SETUP_eConsent for coordinator signature (second signature) process
@@ -61,15 +61,15 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I click on the button labeled "Save settings"
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                          |
-            | [✓]               | "Coordinator Signature" (coordinator_signature) |
+            | [x]               | "Coordinator Signature" (coordinator_signature) |
 
     Scenario: Combine the PDFs to one combined PDF
         #SETUP Trigger to combine the PDFs to one combined PDF
         When I click on the link labeled "PDF Snapshots of Record"
         Then I should see a table header and rows containing the following values in a table:
             | Active | Edit settings         | Name | Type of trigger   | Save snapshot when...                   | Scope of the snapshot  | Location(s) to save the snapshot                     |
-            | [✓]    | Governed by e-Consent |      | Survey completion | Complete survey "Participant Consent"   | Single survey response | File Repository Specified field: [participant_file] |
-            | [✓]    | Governed by e-Consent |      | Survey completion | Complete survey "Coordinator Signature" | Single survey response | File Repository Specified field: [coo_sign]         |
+            | [x]    | Governed by e-Consent |      | Survey completion | Complete survey "Participant Consent"   | Single survey response | File Repository Specified field: [participant_file] |
+            | [x]    | Governed by e-Consent |      | Survey completion | Complete survey "Coordinator Signature" | Single survey response | File Repository Specified field: [coo_sign]         |
 
         When I click on the button labeled "Add new trigger"
         And I enter "Combine PDF file" into the input field labeled "Name of trigger"
@@ -85,9 +85,9 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         Then I should see "Trigger for PDF Snapshot was successfully created"
         Then I should see a table header and rows containing the following values in a table:
             | Active | Edit settings         | Name             | Type of trigger   | Save snapshot when...                                    | Scope of the snapshot  | Location(s) to save the snapshot                                   |
-            | [✓]    |                       | Combine PDF file | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | All instruments        | File Repository Specified field: [combo_file]                      |
-            | [✓]    | Governed by e-Consent |                  | Survey completion | Complete survey "Participant Consent"                    | Single survey response | File Repository Specified field: [event_1_arm_1][participant_file] |
-            | [✓]    | Governed by e-Consent |                  | Survey completion | Complete survey "Coordinator Signature"                  | Single survey response | File Repository Specified field: [event_1_arm_1][coo_sign]         |
+            | [x]    |                       | Combine PDF file | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | All instruments        | File Repository Specified field: [combo_file]                      |
+            | [x]    | Governed by e-Consent |                  | Survey completion | Complete survey "Participant Consent"                    | Single survey response | File Repository Specified field: [event_1_arm_1][participant_file] |
+            | [x]    | Governed by e-Consent |                  | Survey completion | Complete survey "Coordinator Signature"                  | Single survey response | File Repository Specified field: [event_1_arm_1][coo_sign]         |
 
     Scenario: Test e-Consent by adding record
         ##ACTION: add record to get participant signature

@@ -21,20 +21,20 @@ Feature: User Interface: The system shall support the e-Consent Framework to sea
       And I click on the button labeled "e-Consent"
       Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                |
-            | [✓]               | Participant Consent   |
-            | [✓]               | Coordinator Signature |
+            | [x]               | Participant Consent   |
+            | [x]               | Coordinator Signature |
 
       Given I should see '"Coordinator Signature" (coordinator_signature)'
       When I enter "Participant Consent" into the input field labeled "Search"
       Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey              |
-            | [✓]               | Participant Consent |
+            | [x]               | Participant Consent |
       And I should NOT see '"Coordinator Signature" (coordinator_signature)'
 
       ##ACTION: clear search
       When I clear the field labeled "Search"
       Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey              |
-            | [✓]               | Participant Consent |
-            | [✓]               | Coordinator Signature |
+            | [x]               | Participant Consent |
+            | [x]               | Coordinator Signature |
 #END

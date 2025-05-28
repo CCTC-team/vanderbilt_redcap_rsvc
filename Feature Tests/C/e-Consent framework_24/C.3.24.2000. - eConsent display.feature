@@ -22,7 +22,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       Then I should see a checkbox labeled "Hide inactive" that is checked
       And I should see a table header and rows containing the following values in a table:
          | e-Consent active? | Survey                                      |
-         | [✓]               | "Participant Consent" (participant_consent) |
+         | [x]               | "Participant Consent" (participant_consent) |
 
       #VERIFY: Verify version enabled
       When I click on the button labeled "View all versions" for the survey labeled "Participant Consent"
@@ -126,7 +126,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       Then I should see "e-Consent successfully"
       And I should see a table header and rows containing the following values in a table:
          | e-Consent active? | Survey                                      |
-         | [✓]               | "Participant Consent" (participant_consent) |
+         | [x]               | "Participant Consent" (participant_consent) |
 
       #VERIFY: Verify version enabled
       When I click on the button labeled "View all versions" for the survey labeled "Participant Consent"
