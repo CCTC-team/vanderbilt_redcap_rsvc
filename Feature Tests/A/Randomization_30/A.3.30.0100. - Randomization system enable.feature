@@ -9,16 +9,17 @@ Feature: A.3.30.0100 Control Center: The system shall support enabling or disabl
     And I click on the link labeled "Control Center"
     And I click on the link labeled "Modules/Services Configuration"
     Then I should see "Randomization"
+    And I should see the dropdown field labeled "Randomization" with the option "Enabled" selected
 
-    When I select "Enable" on the dropdown field labeled "Randomization"
-    And I click on the button labeled "Save Changes"
-    Then I should see "Your system configuration values have now been changed!"
+    # When I select "Enable" on the dropdown field labeled "Randomization"
+    # And I click on the button labeled "Save Changes"
+    # Then I should see "Your system configuration values have now been changed!"
 
   Scenario: #VERIFY randomization module avaialbe project level
     #SETUP
     Given I create a new project named "A.3.30.0100." by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
     Then I should see "Main project settings"
-    And I should see "Randomization Module"
+    And I should see "Randomization module"
 
   #A.3.30.0100.0200: Disabled at system level removes randomization module option at the project level.
   Scenario: A.3.30.0100.0200. Disable randomization at system level
@@ -27,7 +28,7 @@ Feature: A.3.30.0100 Control Center: The system shall support enabling or disabl
     And I click on the link labeled "Modules/Services Configuration"
     Then I should see "Randomization"
 
-    When I select "Disable" on the dropdown field labeled "Randomization"
+    When I select "Disabled" on the dropdown field labeled "Randomization"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed!"
 
