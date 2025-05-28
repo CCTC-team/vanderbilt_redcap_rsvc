@@ -16,7 +16,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: Download data dictionary
         When I click on the link labeled "Dictionary"
-        And I click on the button labeled "Download Data Dictionary" to download a file
+        And I click on the link labeled "Download the current Data Dictionary" to download a file
 
         ##VERIFY
         Then I should see the latest downloaded "csv" file containing the headings and rows below
@@ -69,9 +69,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         ##VERIFY
         Then I should see "Errors found in your Data Dictionary:"
         And I click on the button labeled "RETURN TO PREVIOUS PAGE"
-        Then I should see "STEP 1"
-        And I should see "STEP 2"
-        And I should see "STEP 3"
+        Then I should see "Steps for making project changes"
 
         #VERIFY_LOG
         When I click on the link labeled "Logging"

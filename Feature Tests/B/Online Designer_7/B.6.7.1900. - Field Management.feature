@@ -45,7 +45,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         Then I should see "Data Collection Instruments"
 
         When I click on the button labeled "Enter Draft Mode"
-        Given I click on the button labeled "Dismiss"
+        # Given I click on the button labeled "Dismiss"
         Then I should see "The project is now in Draft Mode"
 
         #FUNCTIONAL_REQUIREMENT
