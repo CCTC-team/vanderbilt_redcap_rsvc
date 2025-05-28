@@ -23,7 +23,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         And I click on the button labeled "e-Consent"
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey              |
-            | [✓]               | Participant Consent |
+            | [x]               | Participant Consent |
 
         When I edit "Participant Consent"
         When I uncheck "Allow e-Consent responses to be edited by users?"
@@ -34,10 +34,10 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         And I click on the button labeled "Save settings"
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey              |
-            | [✓]               | Participant Consent |
+            | [x]               | Participant Consent |
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot | Custom tag/category | Notes |
-            | [✓]               | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
+            | [x]               | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
 
     Scenario: add record with consent framework
         ##ACTION: add record with consent framework
@@ -88,7 +88,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         And I click on the button labeled "e-Consent"
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey              |
-            | [✓]               | Participant Consent |
+            | [x]               | Participant Consent |
 
         When I edit "Participant Consent"
         When I check the checkbox labeled "Allow e-Consent responses to be edited by users?"
@@ -99,10 +99,10 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         And I click on the button labeled "Save settings"
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey              |
-            | [✓]               | Participant Consent |
+            | [x]               | Participant Consent |
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot | Custom tag/category | Notes |
-            | [✓]               | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
+            | [x]               | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
 
     Scenario: add record with consent framework
         ##ACTION: add record with consent framework

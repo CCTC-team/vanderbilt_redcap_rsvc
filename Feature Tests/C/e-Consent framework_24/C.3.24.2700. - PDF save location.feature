@@ -39,7 +39,7 @@ Feature: User Interface: The system shall support the saving PDF snapshots to sp
       Then I should see "Saved!"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name     | Type of trigger | Save snapshot when...                                  | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [✓]    | Edit Copy     | Snapshot | Logic-based     | Logic becomes true: [participant_consent_complete]='2' | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    | Edit Copy     | Snapshot | Logic-based     | Logic becomes true: [participant_consent_complete]='2' | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
    Scenario: Add record
       #Add record
