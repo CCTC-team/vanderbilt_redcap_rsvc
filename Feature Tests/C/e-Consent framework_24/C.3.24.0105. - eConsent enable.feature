@@ -73,7 +73,6 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         When I click on the link labeled "Record Status Dashboard"
 
         ##VERIFY - Completed survey response in "Participant Consent" but no data saved within Pdfs And Combined Signatures Pdf
-        Given I click on the link labeled "Record Status Dashboard"
         Then I should see the "Completed Survey Response" icon for the "Participant Consent" instrument on event "Event 1" for record "1"
         And I should see the "Incomplete (no data saved)" icon for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record "1"
 
@@ -114,7 +113,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see the pdf has loaded in the iframe
+        And I should see the consent pdf has loaded in the iframe
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct"
         And I click on the button labeled "Submit"

@@ -42,7 +42,9 @@ Feature: User Interface: The system shall restrict users to randomizing records 
   Scenario: #SETUP Add a record 1 to DAG 1
     When I click on the link labeled "Add / Edit Records"
     And I select "1" on the dropdown field labeled "Choose an existing Record ID"
-    And I select "Assign to Data Access Group" on the dropdown field labeled "Choose action for record"
+    And I click on the button labeled "Choose action for record"
+    And I click on the link labeled "Assign to Data Access Group"
+    Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
     And I select "DAG 1" on the dropdown field labeled "Assign record "1" to one of the following Data Access Groups:"
     And I click on the button labeled "Assign to Data Access Group"
     Then I should see "DAG 1"
