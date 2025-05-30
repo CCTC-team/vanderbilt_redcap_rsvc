@@ -16,15 +16,16 @@ We welcome contributions and collaboration from the REDCap community and regulat
 
 ## Managing Our Work Queue
 
-[Our work queue](https://github.com/orgs/vanderbilt-redcap/projects/2) uses standard GitHub issues to track individual items that need to be addressed.  Issues can be added by...
-1. Clicking `+ Add Item` at the bottom of the `Unassigned` column
-1. Typing a short title/summary of the new issue
-1. Clicking `Create new issue`
-1. Selecting `vanderbilt-redcap/redcap_rsvc` from the `Repository` dropdown
-1. Clicking the `Blank issue` template
-1. Entering a description of the issue including any details needed to make progress on it
-1. Clicking the `Create` button
-1. If the issue is high priority, dragging it to/near the top of the `Unassigned` column so it is worked on before the issues below it
+[Our work queue](https://github.com/orgs/vanderbilt-redcap/projects/2) uses standard GitHub issues to track individual items that need to be addressed.  Issues can be added via the following steps:
+1. Ensure you are added to both [our GitHub organization](https://github.com/vanderbilt-redcap) and [our project](https://github.com/orgs/vanderbilt-redcap/projects/2/settings/access) so that you have access to add items 
+1. Click `+ Add Item` at the bottom of the `Unassigned` column
+1. Type a short title/summary of the new issue
+1. Click `Create new issue`
+1. Select `vanderbilt-redcap/redcap_rsvc` from the `Repository` dropdown
+1. Click the `Blank issue` template
+1. Enter a description of the issue including any details needed to make progress on it
+1. Click the `Create` button
+1. If the issue is high priority, drag it to/near the top of the `Unassigned` column so it is worked on before the issues below it
 
 Issues can also be added en masse included auto-populated links to feature files by placing their test IDs (e.g. A.3.14.1300.) one per line in `features.csv` and running `create_issues.sh`.
 
