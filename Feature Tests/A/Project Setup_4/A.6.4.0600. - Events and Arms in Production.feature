@@ -22,7 +22,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         Given I login to REDCap with the user "Test_User1"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0600.100"
-        And I click on the link labeled "Project Setup"
+        And I click on the link labeled "Setup"
         And I click on the button labeled "Define My Events"
 
         Given I should see a link labeled "Add New Arm"
@@ -37,7 +37,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
             | test_user1 | Manage/Design | Create arm                              |
             | test_user1 | Manage/Design | Arm 3: Arm 3                            |
 
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         And I click on the button labeled "Define My Events"
         And I click on the link labeled "Arm 3"
 
@@ -52,7 +52,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
             | test_user1 | Manage/Design | Create event                                                    |
             | test_user1 | Manage/Design | Event: Event 1, Arm: Arm 3, Days Offset: 0, Offset Range: -0/+0 |
 
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         And I click on the button labeled "Define My Events"
         And I click on the link labeled "Arm Two"
         And I click on the link labeled "Rename Arm 2"
@@ -69,7 +69,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
             | test_user1 | Manage/Design | Edit arm name/number                    |
             | test_user1 | Manage/Design | Arm 2: Arm 2                            |
 
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         And I click on the button labeled "Define My Events"
         And I click on the link labeled "Arm 2"
         And I click on the Edit image for the event named "Event 1"
@@ -84,7 +84,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
             | test_user1 | Manage/Design | Edit event                              |
             | test_user1 | Manage/Design | Event One, Arm: Arm 2                   |
 
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         And I click on the button labeled "Define My Events"
         And I click on the link labeled "Arm 1"
         Then I should see a button labeled "Add new event"
@@ -110,7 +110,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         When I click on the link labeled "Arm 1"
         Then I should see "Event 4"
 
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         When I click on the button labeled "Designate Instruments for My Events"
         And I click on the link labeled "Arm 1"
         And I click on the button labeled "Begin Editing"
@@ -128,7 +128,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
             | Username   | Action        | List of Data Changes OR Fields Exported |
             | test_user1 | Manage/Design | Perform instrument-event mappings       |
 
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         When I click on the button labeled "Designate Instruments for My Events"
         And I click on the link labeled "Arm 1"
         And I click on the button labeled "Begin Editing"
@@ -140,7 +140,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I click on the link labeled "Arm 1"
         Then I should see a Data Collection Instrument named "Consent" for the Event named "Event 2"
 
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         When I click on the button labeled "Designate Instruments for My Events"
         And I click on the link labeled "Arm 1"
         And I click on the button labeled "Begin Editing"
@@ -153,7 +153,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I click on the link labeled "Arm 1"
         Then I should see a Data Collection Instrument named "Text Validation" for the Event named "Event 4"
 
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         When I click on the button labeled "Designate Instruments for My Events"
         And I click on the link labeled "Arm 3"
         When I click on the button labeled "Begin Editing"
@@ -169,7 +169,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         Given I login to REDCap with the user "Test_Admin"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0600.100"
-        And I click on the link labeled "Project Setup"
+        And I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -186,7 +186,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         Given I login to REDCap with the user "Test_User1"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0600.100"
-        And I click on the link labeled "Project Setup"
+        And I click on the link labeled "Setup"
         And I click on the button labeled "Define My Events"
         Then I should see "Events cannot be modified in production"
         And I should NOT see a button labeled "Add new arm"
@@ -198,7 +198,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         But I should NOT see "Upload arms (CSV)"
         And I should NOT see "Upload events (CSV)"
 
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         And I click on the button labeled "Designate Instruments for My Events"
         And I should see "Events cannot be modified in production"
         And I should NOT see a button labeled "Begin Editing"
@@ -220,7 +220,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         Given I login to REDCap with the user "Test_User1"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0600.100"
-        And I click on the link labeled "Project Setup"
+        And I click on the link labeled "Setup"
         And I click on the button labeled "Define My Events"
 
         Given I should see a link labeled "Add New Arm"
@@ -241,7 +241,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
             | test_user1 | Manage/Design | Create event                                                    |
             | test_user1 | Manage/Design | Event: Event 1, Arm: Arm 4, Days Offset: 0, Offset Range: -0/+0 |
 
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         And I click on the button labeled "Define My Events"
         And I click on the link labeled "Arm 2"
         And I click on the link labeled "Rename Arm 2"
@@ -252,7 +252,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         When I click on the link labeled "Record Status Dashboard"
         Then I should see a link labeled "Arm 2"
 
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         And I click on the button labeled "Define My Events"
         And I click on the link labeled "Arm 1"
 
@@ -264,7 +264,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I click on the link labeled "Arm 1"
         Then I should see "Event 2"
 
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         When I click on the button labeled "Designate Instruments for My Events"
         # NOTE: This is listed as Arm 1 in the manual test.  "Event One" does not exist as an event in Arm 1 - so I used Arm 2.
         And I click on the link labeled "Arm 2"
@@ -294,7 +294,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
             | Username   | Action        | List of Data Changes OR Fields Exported |
             | test_user1 | Manage/Design | Perform instrument-event mappings       |
 
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         When I click on the button labeled "Designate Instruments for My Events"
         And I click on the link labeled "Arm 4"
         And I click on the button labeled "Begin Editing"
@@ -310,7 +310,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         Given I login to REDCap with the user "Test_Admin"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0600.100"
-        And I click on the link labeled "Project Setup"
+        And I click on the link labeled "Setup"
         And I click on the button labeled "Define My Events"
         And I click on the link labeled "Arm 1"
         Then I should see "Rename Arm 1"
@@ -331,7 +331,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
             | test_admin | Manage/Design | Edit arm name/number                    |
             | test_admin | Manage/Design | Arm 1: Arm One                          |
 
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         And I click on the button labeled "Define My Events"
         And I click on the link labeled "Arm One"
         And I click on the Edit image for the event named "Event 4"
@@ -349,7 +349,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
             | test_admin | Manage/Design | Edit event                              |
             | test_admin | Manage/Design | Event Four, Arm: Arm One                |
 
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         When I click on the button labeled "Designate Instruments for My Events"
         And I click on the link labeled "Arm 2"
         And I click on the button labeled "Begin Editing"

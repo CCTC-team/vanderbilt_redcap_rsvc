@@ -99,7 +99,7 @@ Feature: C.3.30.0200 User Interface: The system shall allow enabling/disabling R
     And i should NOT see "randomization"
 
   Scenario: C.3.30.0200.0400. Disabling removes randomization module from project setup
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     Then I should see "Disable" in the "Randomization module" row in the "Enable optional modules and customizations" section
 
     When I click on the button labeled "Disable" in the "Randomization module" row in the "Enable optional modules and customizations" section

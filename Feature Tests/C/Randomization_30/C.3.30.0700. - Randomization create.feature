@@ -43,7 +43,7 @@ Scenario: C.3.30.0700.2300. User without Randomization Setup rights cannot acces
     And I login to REDCap with the user "Test_User2"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "C.3.30.0700."
-    And I click on the link labeled "Project Setup"
+    And I click on the link labeled "Setup"
     Then I should NOT see the button labeled "Set up a randomization model"
     
 Scenario: C.3.30.0700.2100. Attempt to use non-categorical field for stratification
@@ -51,14 +51,14 @@ Scenario: C.3.30.0700.2100. Attempt to use non-categorical field for stratificat
     And I login to REDCap with the user "Test_User1"
     And I click on the link labeled "My Projects"
     And I click on the link labeled "C.3.30.0700."
-    And I click on the link labeled "Project Setup"
+    And I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "A) Use stratified randomization?"
     Then I should NOT see "fname" on the dropdown field labeled "- select a field -"
 
 Scenario: C.3.30.0700.0200. Enable stratified randomization with one stratum. 
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "A) Use stratified randomization?"
@@ -77,7 +77,7 @@ Scenario: C.3.30.0700.2200 Upload invalid allocation table in DEVELOPMENT
     Then I should see "Already uploaded"
 
 Scenario: C.3.30.0700.2000. Modify an existing randomization model
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
     Then I should see "If you wish to modify the randomization setup below, you will need to click the Erase Randomization Model button below."
@@ -101,7 +101,7 @@ Scenario: C.3.30.0700.2000. Modify an existing randomization model
     
 
     #VERIFY Randomization model was added to the randomization summary.
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
     And I click on the link labeled "Dashboard"
@@ -119,7 +119,7 @@ Scenario: C.3.30.0700.2000. Modify an existing randomization model
             | mm/dd/yyyy hh:mm | test_user1 | Manage/Design     |Upload randomization allocation table - development (rid=2)|
 
 Scenario: C.3.30.0700.0100. Disable stratified randomization.  
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "A) Use stratified randomization?"
@@ -128,7 +128,7 @@ Scenario: C.3.30.0700.0100. Disable stratified randomization.
     Then I should NOT see "Choose strata"
 
 Scenario: C.3.30.0700.1100. Erase randomization model. 
-    Given I click on the link labeled "Project Setup"
+    Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
     And I click on the button labeled "Erase randomization model"
@@ -141,7 +141,7 @@ Scenario: C.3.30.0700.1100. Erase randomization model.
             | mm/dd/yyyy hh:mm | test_user1 | Manage/Design |Erase randomization model and allocations (rid=2)| 
 
 Scenario: C.3.30.0700.0300. Enable stratified randomization with up to 14 strata (test all 14). 
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "A) Use stratified randomization?"
@@ -183,7 +183,7 @@ Scenario: C.3.30.0700.0300. Enable stratified randomization with up to 14 strata
             | mm/dd/yyyy hh:mm | test_user1 | Manage/Design     |Save randomization model (rid=3)|
 
 Scenario: C.3.30.0700.0400. Randomize by group/site enabled with no option selected.  
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "B) Randomize by group/site"
@@ -204,7 +204,7 @@ Scenario: C.3.30.0700.0400. Randomize by group/site enabled with no option selec
             | mm/dd/yyyy hh:mm | test_user1 | Manage/Design |Save randomization model (rid=3)| 
 
 Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.  
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "B) Randomize by group/site"
@@ -228,7 +228,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
 
 
  Scenario: C.3.30.0700.0600. Randomize by group/site enabled with an existing field selected.  
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "B) Randomize by group/site"
@@ -253,7 +253,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
             | mm/dd/yyyy hh:mm | test_user1 | Manage/Design |Save randomization model (rid=5)| 
 
  Scenario: C.3.30.0700.0700. Choose open randomization dropdown field.   
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the button labeled "Add new randomization model"
     And I select "rand_group_4" on the first dropdown field labeled "- select a field -"
@@ -277,7 +277,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
 
 
  Scenario: C.3.30.0700.0800. Choose open randomization radio field.  
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the button labeled "Add new randomization model"
     And I select "rand_group_5" on the first dropdown field labeled "- select a field -"
@@ -301,7 +301,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
             | mm/dd/yyyy hh:mm | test_user1 | Manage/Design |Save randomization model (rid=7)|
 
  Scenario: C.3.30.0700.0900. Choose concealed randomization text field.  
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the button labeled "Add new randomization model"
     And I select "rand_blind" on the first dropdown field labeled "- select a field -"
@@ -329,7 +329,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     #REDUNDANT - Tested in C.3.30.0700.0200 | C.3.30.0700.0300 | C.3.30.0700.0500 | C.3.30.0700.0600 | C.3.30.0700.0700 | C.3.30.0700.0800 | C.3.30.0700.0900 | 
 
  Scenario: C.3.30.0700.1200. Download example allocation tables (Excel/CSV).  
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the button labeled "Add new randomization model"
     And I select "rand_group_6" on the first dropdown field labeled "- select a field -"
@@ -347,7 +347,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     Then I should see a downloaded file named "RandomizationAllocationTemplate.csv"
 
  Scenario: C.3.30.0700.1300. User with Randomization Setup uploads a unique allocation table in DEVELOPMENT status (system prevents duplicate uploads).
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
@@ -362,7 +362,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
             | mm/dd/yyyy hh:mm | test_user1 | Manage/Design |Upload randomization allocation table - development (rid=3)|
 
  Scenario: C.3.30.0700.1400. User with Randomization Setup downloads the allocation table previously uploaded in DEVELOPMENT.
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
@@ -377,7 +377,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     
  Scenario: C.3.30.0700.1600. User with Randomization Setup uploads a unique allocation table in PRODUCTION status (system prevents duplicate uploads).
     #Duplicate Upload File
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
@@ -386,7 +386,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     Then I should see "ERROR: Duplicate allocation table!"
 
     #Different Upload File
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
@@ -401,7 +401,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
             | mm/dd/yyyy hh:mm | test_user1 | Manage/Design |Upload randomization allocation table - production (rid=3)|
 
  Scenario: C.3.30.0700.1700. User with Randomization Setup downloads the allocation table previously uploaded in PRODUCTION.
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
@@ -415,7 +415,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
             | mm/dd/yyyy hh:mm | test_user1 | Manage/Design |Download randomization allocation table (development)|
 
  Scenario: C.3.30.0700.1500. User with Randomization Setup deletes the allocation table previously uploaded in DEVELOPMENT.
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
@@ -433,7 +433,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I login to REDCap with the user "Test_Admin"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "C.3.30.0700."
-    And I click on the link labeled "Project Setup"
+    And I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
@@ -447,37 +447,37 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
             | mm/dd/yyyy hh:mm | test_admin | Manage/Design |Delete randomization allocation table (production)|
 
     #Removing randomization models so we can move the project to production and test 
-    Given I click on the link labeled "Project Setup"
+    Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
     And I click on the button labeled "Erase randomization model"
     Then I should see "Success! Your randomization setup and all allocations have now been erased."
 
-    Given I click on the link labeled "Project Setup"
+    Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
     And I click on the button labeled "Erase randomization model"
     Then I should see "Success! Your randomization setup and all allocations have now been erased."
 
-    Given I click on the link labeled "Project Setup"
+    Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
     And I click on the button labeled "Erase randomization model"
     Then I should see "Success! Your randomization setup and all allocations have now been erased."
     
-    Given I click on the link labeled "Project Setup"
+    Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
     And I click on the button labeled "Erase randomization model"
     Then I should see "Success! Your randomization setup and all allocations have now been erased."
 
-    Given I click on the link labeled "Project Setup"
+    Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
     And I click on the button labeled "Erase randomization model"
     Then I should see "Success! Your randomization setup and all allocations have now been erased."
 
-    Given I click on the link labeled "Project Setup"
+    Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
     And I click on the button labeled "Erase randomization model"
@@ -485,7 +485,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
 
   
     #SETUP_PRODUCTION (Re-adding allocation tables so the project can be moved to production)
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
@@ -493,7 +493,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     When I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate_1basic.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
     Then I should see "Already uploaded"
 
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
@@ -502,7 +502,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     Then I should see "Already uploaded"
 
    #SETUP
-    And I click on the link labeled "Project Setup"
+    And I click on the link labeled "Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -511,7 +511,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     Then I should see Project status: "Production"
 
  Scenario: C.3.30.0700.1900. Admin uploads an additional allocation table in PRODUCTION status.
-    Given I click on the link labeled "Project Setup"
+    Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
     And I click on the link labeled "Upload more allocations?"

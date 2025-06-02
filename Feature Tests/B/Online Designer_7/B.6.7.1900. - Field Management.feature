@@ -30,7 +30,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
         ##SETUP_PRODUCTION
-        When I click on the link labeled "Project Setup"
+        When I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -40,7 +40,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         Given I login to REDCap with the user "Test_User1"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "B.6.7.1900.100"
-        And I click on the link labeled "Project Setup"
+        And I click on the link labeled "Setup"
         And I click on the button labeled "Online Designer"
         Then I should see "Data Collection Instruments"
 
@@ -66,7 +66,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         And I drag the field variable named "add" below the field variable named "identifier"
 
         # Note: REDCap requires user reload the Online Designer before MOVING a newly added field
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         When I click on the button labeled "Online Designer"
         And I click on the instrument labeled "Data Types"
         ##VERIFY
@@ -151,7 +151,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "B.6.7.1900.100"
-        And I click on the link labeled "Project Setup"
+        And I click on the link labeled "Setup"
         And I click on the button labeled "Online Designer"
         Then I should see "Project Modification Module"
 

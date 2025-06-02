@@ -12,7 +12,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I create a new project named "B.2.6.0100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         And I click on the link labeled "My Projects"
         And I click on the link labeled "B.2.6.0100.100"
-        And I click on the link labeled "Project Setup"
+        And I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -73,7 +73,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         When I click on the link labeled "My Projects"
         And I click on the link labeled "B.2.6.0100.100"
         Then I should see a link labeled "Project Home"
-        And I should NOT see a link labeled "Project Setup"
+        And I should NOT see a link labeled "Setup"
         And I should NOT see a link labeled "Designer"
         And I should NOT see a link labeled "Dictionary"
         And I should see a link labeled "Codebook"
@@ -179,7 +179,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         Then I should see "test_user1"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "B.2.6.0100.100"
-        And I should see a link labeled "Project Setup"
+        And I should see a link labeled "Setup"
         And I should see a link labeled "Designer"
         And I should see a link labeled "Dictionary"
         And I should see a link labeled "Codebook"

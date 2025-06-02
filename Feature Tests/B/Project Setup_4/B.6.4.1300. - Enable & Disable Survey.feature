@@ -13,7 +13,7 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
         Then I should see a table header containing the following values in a table:
             | Instrument name | Fields | PDF | Enabled as\nsurvey | Instrument actions | Survey related options |
 
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         When I click on the button labeled "Disable" in the "Use surveys in this project?" row in the "Main project settings" section
         And I click on the button labeled "Disable" on the dialog box
 
@@ -32,7 +32,7 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
             | Username   | Action        | List of Data Changes OR Fields Exported |
             | test_user1 | Manage/Design | Modify project settings                 |
 
-        When I click on the link labeled "Project Setup"
+        When I click on the link labeled "Setup"
         #FUNCTIONAL REQUIREMENT
         ##ACTION Enable survey in project setup
         And I click on the button labeled "Enable" in the "Use surveys in this project?" row in the "Main project settings" section

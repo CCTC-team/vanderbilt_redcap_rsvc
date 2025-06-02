@@ -8,7 +8,7 @@ Feature: User Interface: The system shall provide the ability to create a new re
         Given I login to REDCap with the user "Test_Admin"
         And I create a new project named "B.3.16.1900.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "BigDataTestProject.xml", and clicking the "Create Project" button
         #SETUP_PRODUCTION
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -39,7 +39,7 @@ Feature: User Interface: The system shall provide the ability to create a new re
         And I should see the "Unverified" icon for the "Form 1" instrument for record "10"
         And I should see the "Showing 1 to 10 of 30 entries"
 
-        When I click on the link labeled "Project Setup"
+        When I click on the link labeled "Setup"
         And I click on the button labeled "Disable" in the "Auto-numbering for records" row in the "Enable optional modules and customizations" section
         Then I should see a button labeled "Enable" in the "Auto-numbering for records" row in the "Enable optional modules and customizations" section
 

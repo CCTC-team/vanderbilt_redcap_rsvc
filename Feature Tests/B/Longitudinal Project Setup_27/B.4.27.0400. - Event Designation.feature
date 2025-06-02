@@ -9,14 +9,14 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
         And I create a new project named "B.4.27.0400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         ##SETUP_PRODUCTION
-        When I click on the link labeled "Project Setup"
+        When I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
         Then I should see Project status: "Production"
 
         ##SETUP
-        When I click on the link labeled "Project Setup"
+        When I click on the link labeled "Setup"
         And I click on the button labeled "Define My Events"
         And I click on the link labeled "Arm 1"
         Then I should see the button labeled "Add new event"

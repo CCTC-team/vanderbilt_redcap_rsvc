@@ -24,7 +24,7 @@ Feature: User Interface: The system shall support ranges for the following data 
 
         #SETUP_PRODUCTION PROJECT
         Given I create a new project named "B.4.8.0300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_4.8.xml", and clicking the "Create Project" button
-        When I click on the link labeled "Project Setup"
+        When I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box

@@ -15,7 +15,7 @@ Feature: Field Creation: The system shall support the creation of File upload (f
         And I should see "B.6.7.1400.100"
 
         ##SETUP_PRODUCTION
-        When I click on the link labeled "Project Setup"
+        When I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box

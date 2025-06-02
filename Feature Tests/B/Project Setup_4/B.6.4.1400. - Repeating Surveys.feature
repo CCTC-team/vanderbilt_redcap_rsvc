@@ -18,7 +18,7 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
     Given I login to REDCap with the user "Test_User1"
     And I create a new project named "B.6.4.1400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
     #VERIFY_SETUP repeat instrument
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     Then I should see a button labeled "Modify" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
 
     #SETUP_PRODUCTION
@@ -52,7 +52,7 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
     And I should see the "Completed Survey Response" icon for the "Survey" longitudinal instrument on event "Event Three" for record "1"
 
     #SETUP modify repeat instrument
-    Given I click on the link labeled "Project Setup"
+    Given I click on the link labeled "Setup"
     When I click on the button labeled "Modify" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
     Then I should see a dialog containing the following text: "WARNING"
     Given I click on the button labeled "Close" in the dialog box

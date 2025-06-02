@@ -15,7 +15,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             When I click on the button labeled exactly "Assign" on the role selector dropdown
             Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
-            Given I click on the link labeled "Project Setup"
+            Given I click on the link labeled "Setup"
             And I click on the button labeled "Move project to production"
             And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
             And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -32,7 +32,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             Given I login to REDCap with the user "Test_User1"
             When I click on the link labeled "My Projects"
             And I click on the link labeled "A.6.4.0500.100"
-            And I click on the link labeled "Project Setup"
+            And I click on the link labeled "Setup"
             Then I should see that repeatable instruments are unchangeable
             Given I logout
 
@@ -50,7 +50,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             Given I login to REDCap with the user "Test_User1"
             When I click on the link labeled "My Projects"
             And I click on the link labeled "A.6.4.0500.100"
-            And I click on the link labeled "Project Setup"
+            And I click on the link labeled "Setup"
             Then I should see "Repeating instruments and events"
 
             When I click on the button labeled "Modify" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
@@ -96,7 +96,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
                   | Event Three (Arm 1: Arm 1) | Survey | 2 | Name MyOtherName |
             And I should NOT see "Data Types"
 
-            Given I click on the link labeled "Project Setup"
+            Given I click on the link labeled "Setup"
             Then I should see "Repeating instruments and events"
 
             When I click on the button labeled "Modify" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
@@ -134,7 +134,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
                   | Event 2 (Arm 1: Arm 1) |  | 1 |  |  | Name | email@test.edu | Unverified |
             And I should NOT see "MyOtherName"
 
-            When I click on the link labeled "Project Setup"
+            When I click on the link labeled "Setup"
             And I click on the button labeled "Modify" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
             Then I should see a dialog containing the following text: "WARNING"
 
@@ -169,7 +169,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I should see a "1" within the "Event Three (Arm 1: Arm 1)" row of the column labeled "Repeat Instance" of the Reports table
             And I should see "My repeat event name"
 
-            When I click on the link labeled "Project Setup"
+            When I click on the link labeled "Setup"
             And I click on the button labeled "Modify" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
             Then I should see a dialog containing the following text: "WARNING"
 

@@ -30,7 +30,7 @@ Feature: User Interface: The system shall support the ability to identify data a
 
 
     ##ACTION: change identifier status
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     Then I should see "Design your data collection instruments & enable your surveys"
 
     When I click on the link labeled "Check For Identifiers"

@@ -11,7 +11,7 @@ Feature: Field Creation: The system shall support marking a data entry field as 
         ##SETUP_PRODUCTION
         When I click on the link labeled "My Projects"
         And I click on the link labeled "B.6.7.1800.100"
-        When I click on the link labeled "Project Setup"
+        When I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box

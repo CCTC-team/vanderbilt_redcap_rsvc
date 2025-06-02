@@ -27,7 +27,7 @@ Feature: B.3.16.1300. User Interface: The system shall provide the ability to as
             |   —   | test_user1  (Test User1)                         |   never         | Test_Group1       |
 
         #SETUP_PRODUCTION
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
