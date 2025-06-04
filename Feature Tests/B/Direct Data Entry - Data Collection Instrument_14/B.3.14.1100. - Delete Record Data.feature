@@ -39,7 +39,7 @@ Feature: B.3.14.1100. The system shall allow users to delete all data in an even
       | A | All data (all records and fields) |
 
     When I click on the button labeled "View Report"
-    Then I should see the report with 19 rows
+    Then I should see the report with 20 rows
 
     #FUNCTIONAL_REQUIREMENT
     When I click on the link labeled "Record Status Dashboard"
@@ -77,5 +77,5 @@ Feature: B.3.14.1100. The system shall allow users to delete all data in an even
 
     #Notice how we have 2 less rows than line 42 because we have removed an entire event from a Record
     When I click on the button labeled "View Report"
-    Then I should see the report with 17 rows
+    Then I should see the report with 18 rows
 #END
