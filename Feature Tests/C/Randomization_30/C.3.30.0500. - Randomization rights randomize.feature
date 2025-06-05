@@ -20,7 +20,7 @@ Feature: C.3.30.0500. User Interface: The system shall allow user rights configu
 
   Scenario: #SETUP Randomization (Setup project with simple Randomization)
     When I click on the link labeled "Randomization"
-    And I click on the "Setup" icon in the row labeled "rand_group"
+    And I click on the icon labeled "Setup" in the row labeled "rand_group"
     And I download a file by clicking on the button labeled "Example #1 (basic)"
     And I upload a "csv" format file located at "RandomizationAllocationTemplate.csv", by clicking the button near "Upload allocation table (CSV file) for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload File" to upload the file
     Then I should see "Success! The randomization allocation table was created!"
