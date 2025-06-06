@@ -25,7 +25,7 @@ Feature: C.3.30.0500. User Interface: The system shall allow user rights configu
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
     When I click on the button labeled "Example #1 (basic)"
     Then I should see a downloaded file named "RandomizationAllocationTemplate.csv"
-    And I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload File" to upload the file
+    And I upload a "csv" format file located at "import_files/C.3.30.0500_RandomizationAllocationTemplate.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload File" to upload the file
     Then I should see "Success! The randomization allocation table was created!"
 
   Scenario: C.3.30.0500.0100. User with Randomization Randomize rights can Randomize.
