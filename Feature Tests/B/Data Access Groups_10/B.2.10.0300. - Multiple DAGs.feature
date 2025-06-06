@@ -71,8 +71,8 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
             | TestGroup2         | test_user1     |
 
         ##ACTION: Assign DAG Switcher
-        When I check "TestGroup1" for user "test_user1" in the DAG Switcher
-        And I check "TestGroup2" for user "test_user1" in the DAG Switcher
+        When I check the checkbox in the column labeled "test_user1" and the row labeled "TestGroup1" 
+        And I check the checkbox in the column labeled "test_user1" and the row labeled "TestGroup2" 
 
         #ASSIGN RECORDS TO SPECIFIC DAGs
         # -- Record ID 3 - TestGroup1 --
