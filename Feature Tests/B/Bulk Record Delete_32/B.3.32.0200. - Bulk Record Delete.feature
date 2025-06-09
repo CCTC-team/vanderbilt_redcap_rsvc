@@ -11,7 +11,6 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the link labeled "B.3.32.0200.100"
 
     Scenario: #SETUP_PRODUCTION
-        When I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box

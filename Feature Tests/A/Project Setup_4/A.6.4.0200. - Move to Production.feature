@@ -26,7 +26,6 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         Given I login to REDCap with the user "Test_User1"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0200.100"
-        And I click on the link labeled "Setup"
         Then I should see a button labeled "Move project to production"
 
         When I click on the button labeled "Move project to production"
@@ -89,7 +88,6 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         Given I login to REDCap with the user "Test_User1"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0200.200"
-        And I click on the link labeled "Setup"
         Then I should see a button labeled "Move project to production"
 
         Given I click on the button labeled "Move project to production"

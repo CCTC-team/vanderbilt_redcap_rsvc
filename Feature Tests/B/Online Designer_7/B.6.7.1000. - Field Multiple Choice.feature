@@ -14,9 +14,6 @@ Feature: Design forms Using Data Dictionary and Online Designer
     And I click on the button labeled "Create Project"
 
     ##SETUP_DEV
-    When I click on the link labeled "My Projects"
-    And I click on the link labeled "B.6.7.1000.100"
-    And I click on the link labeled "Setup"
     And I click on the link labeled "Designer" 
     Then I should see "Data Collection Instruments"
     

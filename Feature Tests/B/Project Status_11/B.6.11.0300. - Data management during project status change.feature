@@ -11,9 +11,6 @@ Feature: User Interface: The system shall support the ability for a user to keep
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION: move to production
-        When I click on the link labeled "My Projects"
-        And I click on the link labeled "B.6.11.0300.100"
-        And I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -37,9 +34,6 @@ Feature: User Interface: The system shall support the ability for a user to keep
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION: move to production
-        When I click on the link labeled "My Projects"
-        And I click on the link labeled "B.6.11.0300.200"
-        And I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Delete ALL data in the project" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box

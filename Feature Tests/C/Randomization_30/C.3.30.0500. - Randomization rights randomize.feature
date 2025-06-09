@@ -7,7 +7,6 @@ Feature: C.3.30.0500. User Interface: The system shall allow user rights configu
     And I create a new project named "C.3.30.0500" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project 3.30 randAM.xml", and clicking the "Create Project" button
 
   Scenario: #SETUP Randomization User Rights (Give User all Rand Rights)
-    When I click on the link labeled "Setup"
     And I click on the link labeled "User Rights"
     And I click on the link labeled "Test User1"
     And I click on the button labeled "Edit User Privileges"
