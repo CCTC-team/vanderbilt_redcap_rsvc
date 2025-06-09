@@ -11,7 +11,6 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the link labeled "B.3.32.0200.100"
 
     Scenario: #SETUP_PRODUCTION
-        When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -79,7 +78,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         When I login to REDCap with the user "Test_User2"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "B.3.32.0200.100"
-        And I click on the link labeled "Project Setup"
+        And I click on the link labeled "Setup"
         And I click on the link labeled "Other Functionality"
         Then I should NOT see a button labeled "Bulk Record Delete"
         And I logout
@@ -87,7 +86,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         When I login to REDCap with the user "Test_User1"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "B.3.32.0200.100"
-        And I click on the link labeled "Project Setup"
+        And I click on the link labeled "Setup"
         And I click on the link labeled "Other Functionality"
         When I click on the button labeled "Bulk Record Delete"
         Then I should see "Bulk Record Delete"
@@ -126,7 +125,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
     #END Scenario
 
     Scenario: B.3.32.0200.200: Bulk Delete Records Using Select Records from List
-        When I click on the link labeled "Project Setup"
+        When I click on the link labeled "Setup"
         And I click on the link labeled "Other Functionality"
 
         When I click on the button labeled "Bulk Record Delete"
@@ -165,7 +164,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
     #END Scenario
 
     Scenario: B.3.32.0200.300: Bulk Delete Partial Records Using Custom List
-        When I click on the link labeled "Project Setup"
+        When I click on the link labeled "Setup"
         And I click on the link labeled "Other Functionality"
 
         When I click on the button labeled "Bulk Record Delete"
@@ -211,7 +210,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
     #END Scenario
 
     Scenario: B.3.32.0200.400: Bulk Delete Partial Records Using Select Records from List
-        When I click on the link labeled "Project Setup"
+        When I click on the link labeled "Setup"
         And I click on the link labeled "Other Functionality"
         When I click on the button labeled "Bulk Record Delete"
         Then I should see "Bulk Record Delete"

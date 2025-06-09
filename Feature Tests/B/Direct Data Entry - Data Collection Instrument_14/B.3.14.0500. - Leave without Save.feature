@@ -19,7 +19,7 @@ Feature: Saving Data: The system shall support the prompt to save when a user at
         And I create a new project named "B.3.14.500.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.14.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
-        When I click on the link labeled "Project Setup"
+        When I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -32,7 +32,7 @@ Feature: Saving Data: The system shall support the prompt to save when a user at
         Then I should see "Adding new Record ID 7"
 
         ##ACTION Navigate away from the record
-        And I click on the link labeled "Project Setup"
+        And I click on the link labeled "Setup"
 
         ##VERIFY
         Then I should see a dialog containing the following text: "Save your changes"
@@ -55,7 +55,7 @@ Feature: Saving Data: The system shall support the prompt to save when a user at
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I should see "Adding new Record ID 7"
-        And I click on the link labeled "Project Setup"
+        And I click on the link labeled "Setup"
         Then I should see a dialog containing the following text: "Save your changes"
 
         ##ACTION Save changes and leave
@@ -73,7 +73,7 @@ Feature: Saving Data: The system shall support the prompt to save when a user at
         Given I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
-        And I click on the link labeled "Project Setup"
+        And I click on the link labeled "Setup"
         Then I should see a dialog containing the following text: "Save your changes"
 
         ##ACTION Stay on page

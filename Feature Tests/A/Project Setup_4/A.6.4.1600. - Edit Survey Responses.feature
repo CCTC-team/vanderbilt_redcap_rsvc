@@ -52,7 +52,7 @@ Feature: Control Center: The system shall allow users to edit survey responses t
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION: Enable editing survey responses for survey instrument
-        When I check the checkbox in the row labeled "Survey" in the Edit survey responses column
+        When I check the checkbox in the column labeled "Edit survey responses" and the row labeled "Survey"
         And I save changes within the context of User Rights
         Then I should see 'User "test_admin" was successfully edited'
 

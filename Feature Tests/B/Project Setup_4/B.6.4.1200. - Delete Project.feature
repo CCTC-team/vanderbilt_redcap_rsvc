@@ -49,9 +49,6 @@ Feature: User Interface: General: The system shall support the ability to delete
     And I click on the button labeled "Create Project"
     Then I should see "B.6.4.1200.200.PROD"
 
-    When I click on the link labeled "My Projects"
-    And I click on the link labeled "B.6.4.1200.200.PROD"
-    And I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -62,7 +59,7 @@ Feature: User Interface: General: The system shall support the ability to delete
     Then I should see "No records exist yet"
 
     #FUNCTIONAL REQUIREMENT
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the link labeled "Other Functionality"
     Then I should see a button labeled "Request delete project"
 
@@ -77,9 +74,6 @@ Feature: User Interface: General: The system shall support the ability to delete
     Given I login to REDCap with the user "Test_User1"
     And I create a new project named "B.6.4.1200.300.PROD" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
-    When I click on the link labeled "My Projects"
-    And I click on the link labeled "B.6.4.1200.300.PROD"
-    And I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -95,7 +89,7 @@ Feature: User Interface: General: The system shall support the ability to delete
       | 4         |
 
     #FUNCTIONAL REQUIREMENT
-    Given I click on the link labeled "Project Setup"
+    Given I click on the link labeled "Setup"
     When I click on the link labeled "Other Functionality"
     Then I should see a button labeled "Request delete project"
 

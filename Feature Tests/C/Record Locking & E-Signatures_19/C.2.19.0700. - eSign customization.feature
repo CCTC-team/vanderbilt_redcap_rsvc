@@ -10,7 +10,6 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         And I create a new project named "C.2.19.700.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
-        When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -132,7 +131,7 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         And I should see "Instrument locked by test_admin"
 
         When I click on the link labeled "Data Types"
-        And I click on the link labeled "Instance #1"
+        And I click on the icon in the row labeled "Instance #1"
         Then I should see "Data Types"
         And I should see a checkbox labeled exactly "Lock" that is unchecked
         And I should NOT see a checkbox labeled "E-signature"

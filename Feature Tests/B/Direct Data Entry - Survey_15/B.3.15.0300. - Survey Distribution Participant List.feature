@@ -18,14 +18,13 @@ Feature: The system shall allow creation of a participant list automatically usi
     And I create a new project named "B.3.15.0300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     #SETUP_PRODUCTION
-    When I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
     Then I should see Project status: "Production"
 
     ##VERIFY_SETUP
-    Given I click on the link labeled "Project Setup"
+    Given I click on the link labeled "Setup"
     Then I should see a button labeled "Disable" in the "Designate an email field for communications (including survey invitations and alerts)" row in the "Enable optional modules and customizations" section
     And I should see "Field currently designated: email"
 

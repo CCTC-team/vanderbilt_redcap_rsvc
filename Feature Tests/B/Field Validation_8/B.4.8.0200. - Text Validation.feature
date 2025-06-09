@@ -7,10 +7,8 @@ Feature: User Interface: The system shall support text validation for text field
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
         And I create a new project named "B.4.8.0200.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_4.8.xml", and clicking the "Create Project" button
-        Then I should see "Project Setup"
 
         #SETUP _PRODUCTION
-        When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
