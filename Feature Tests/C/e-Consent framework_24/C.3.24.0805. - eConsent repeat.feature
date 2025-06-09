@@ -17,17 +17,16 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario:
     When I click on the link labeled "Arm 2"
-    And I click on the link labeled "Arm 1"
     Then I should see a table header and rows containing the following values in a table:
       | Event # [event-number] | Days Offset | Offset Range Min / Max | Event Label [event-label] | Custom Event Label | Unique event name  (auto-generated) [event-name] |
-      |                      1 |           1 |                  -0/+0 | Event 1                   |                    | event_1_arm_1                                    |
+      |                      1 |           1 |                  -0/+0 | Event 1                   |                    | event_1_arm_2                                    |
     When I click on the link labeled "Designate Instruments for My Events"
     And I click on the link labeled "Arm 1"
     Then I should see a table header and rows containing the following values in a table:
       | Data Collection Instrument       | Event 1 (1) | Event 2 (2) | Event Three (3) |
-      | Participant Consent(survey)      | [✓]         |             | [✓]            |
-      | Coordinator Signature(survey)    | [✓]         |             | [✓]            |
-      | Pdfs And Combined Signatures Pdf | [✓]         |             | [✓]            |
+      | Participant Consent(survey)      | [x]         |             | [x]            |
+      | Coordinator Signature(survey)    | [x]         |             | [x]            |
+      | Pdfs And Combined Signatures Pdf | [x]         |             | [x]            |
 
   Scenario:
     When I click on the link labeled "Arm Two"
@@ -36,7 +35,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I click on the button labeled "Save"
     Then I should see a table header and rows containing the following values in a table:
       | Data Collection Instrument  | Event 1 (1) |
-      | Participant Consent(survey) | [✓]         |
+      | Participant Consent(survey) | [x]         |
         #Verify Repeatable
 
   Scenario:
@@ -180,7 +179,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     Given I click on the link labeled "Add / Edit Records"
     And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
     And I wait for 1 second
-    When I click on the second button labeled "Add new"
+    When I click on the button labeled "Add new" in the row labeled "Participant Consent"
     And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
