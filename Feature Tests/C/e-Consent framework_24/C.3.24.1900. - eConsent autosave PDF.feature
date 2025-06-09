@@ -4,10 +4,10 @@ Feature: User Interface: The system shall support the e-Consent Framework to opt
    I want to see that eConsent is functioning as expected
 
    Scenario: C.3.24.1900.100 Auto-save PDF to specified field
-      #REDUNDANT - Auto-save PDF to specified field Tested in C.3.24.0205
+      #REDUNDANT - Auto-save PDF to specified field Tested in C.3.24.1900
       #SETUP
       Given I login to REDCap with the user "Test_Admin"
-      And I create a new project named "C.3.24.0205.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
+      And I create a new project named "C.3.24.1900.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
 
       #SETUP_PRODUCTION
       And I click on the button labeled "Move project to production"
@@ -90,6 +90,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to opt
 
       #Verify Auto-Save in specified field
       When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
+      And I wait for 3 seconds
       Then I should see a link labeled "Remove file" in the row labeled "Participant Consent file"
 
    Scenario: Verification e-Consent saved and logged correctly
