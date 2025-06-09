@@ -15,6 +15,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             When I click on the button labeled exactly "Assign" on the role selector dropdown
             Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
+            Given I click on the link labeled "Setup"
             And I click on the button labeled "Move project to production"
             And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
             And I click on the button labeled "YES, Move to Production Status" in the dialog box
