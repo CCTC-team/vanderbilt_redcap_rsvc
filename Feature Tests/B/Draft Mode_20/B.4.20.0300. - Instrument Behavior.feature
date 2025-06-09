@@ -19,7 +19,6 @@ Feature: User Interface: The system shall require changes made to data collectio
     And I create a new project named "B.4.20.0300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     #SETUP_PRODUCTION
-    When I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -65,6 +64,6 @@ Feature: User Interface: The system shall require changes made to data collectio
     ##VERIFY INSTRUMENT
     Given I click on the link labeled "Record Status Dashboard"
     And I locate the bubble for the "Data Types" instrument on event "Event 2" for record ID "1" and click on the bubble
-    And I click on the link labeled "Instance #1"
+    And I click on the icon in the row labeled "Instance #1"
     Then I should see "Choice102"
 #END

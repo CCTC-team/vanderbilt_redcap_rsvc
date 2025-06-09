@@ -26,7 +26,7 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION Disable longitudinal
-        When I click on the link labeled "Project Setup"
+        When I click on the link labeled "Setup"
         And I click on the button labeled "Disable" in the "Use longitudinal data collection with defined events?" row in the "Main project settings" section
         And I click on the button labeled "Disable" in the dialog box
         Then I should see the button labeled "Enable" in the "Use longitudinal data collection with defined events?" row in the "Main project settings" section
@@ -46,7 +46,7 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION Enable longitudinal
-        When I click on the link labeled "Project Setup"
+        When I click on the link labeled "Setup"
         And I click on the button labeled "Enable" in the "Use longitudinal data collection with defined events?" row in the "Main project settings" section
         Then I should see the button labeled "Disable" in the "Use longitudinal data collection with defined events?" row in the "Main project settings" section
 
@@ -63,7 +63,7 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
             | test_user1 | Manage/Design | Modify project settings                 |
 
         ##SETUP_PRODUCTION
-        When I click on the link labeled "Project Setup"
+        When I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -71,7 +71,7 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION Verify longitudinal button is disabled in production mode for user
-        When I click on the link labeled "Project Setup"
+        When I click on the link labeled "Setup"
         ###VERIFY
         Then I should see the button labeled "Disable" in the "Use longitudinal data collection with defined events?" row in the "Main project settings" section is disabled
         And I logout
@@ -88,7 +88,7 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
         Then I should see "Project Home"
 
         ##ACTION Admin disable longitudinal while in production
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         And I click on the button labeled "Disable" in the "Use longitudinal data collection with defined events?" row in the "Main project settings" section
         And I click on the button labeled "Disable" in the dialog box
         Then I should see the button labeled "Enable" in the "Use longitudinal data collection with defined events?" row in the "Main project settings" section

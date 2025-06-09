@@ -21,7 +21,7 @@ Feature: Creating a Record and Entering Data: The system shall support data entr
     #SETUP_PRODUCTION
     When I click on the link labeled "My Projects"
     And I click on the link labeled "B.3.14.0200.100"
-    And I click on the link labeled "Project Setup"
+    And I click on the link labeled "Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box

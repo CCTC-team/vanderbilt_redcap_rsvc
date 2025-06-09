@@ -29,7 +29,7 @@ Feature: User Interface: The system shall ignore survey identifier and timestamp
         Then I should see "Import Successful!"
 
         When I click on the link labeled "Data Exports, Reports, and Stats"
-        And I click on the "View Report" button in the row labeled "All data (all records and fields)"
+        And I click on the button labeled "View Report" in the row labeled "All data (all records and fields)"
 
         ###VERIFY_DE
         Then I should see "All data (all records and fields)"

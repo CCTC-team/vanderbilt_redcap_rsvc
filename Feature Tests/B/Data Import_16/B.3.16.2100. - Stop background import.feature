@@ -8,7 +8,6 @@ Feature: User Interface: The system shall provide the ability for the user impor
         Given I login to REDCap with the user "Test_Admin"
         And I create a new project named "B.3.16.2100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "BigDataTestProject.xml", and clicking the "Create Project" button
         #SETUP_PRODUCTION
-        Given I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box

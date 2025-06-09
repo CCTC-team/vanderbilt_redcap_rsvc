@@ -51,7 +51,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
 
   Scenario: #SETUP Upload randomization
     When I click on the link labeled "Randomization"
-    And I click on the icon in the column labeled "Setup" in the row labeled "dag_rand"
+    And I click on the icon in the column labeled "Setup" and the row labeled "dag_rand"
     And I upload a "csv" format file located at "C.3.30.0600Allocation1.csv", by clicking the button near "Upload allocation table (CSV file) for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload File" to upload the file
     #NOTE: Automation will have different DAG group ids from manual.  .csv may need to be modified to correct Group IDs based on instance. 
     And I click on the the link labeled "Project Home"

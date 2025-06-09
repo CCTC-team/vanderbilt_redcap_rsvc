@@ -29,7 +29,7 @@ Feature: User Interface: The system shall restrict users by DAGs when using the 
         Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
         #SETUP_PRODUCTION
-        Given I click on the link labeled "Project Setup"
+        Given I click on the link labeled "Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
