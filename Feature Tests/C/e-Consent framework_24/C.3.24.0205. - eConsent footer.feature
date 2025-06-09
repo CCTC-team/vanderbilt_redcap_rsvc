@@ -151,6 +151,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "1"
 
         When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
+        And I wait for 3 seconds
         Then I should see a link labeled "Remove file" in the row labeled "Participant Consent file"
         And I should see a link labeled "Remove file" in the row labeled "Coordinator Signature file"
         And I should see a link labeled "Remove file" in the row labeled "Combine both files together"
@@ -177,7 +178,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
 
         When I click on the first link labeled "pid13_formCoordinatorSignature_id1_"
         # Make sure we wait to make sure the new file is downloaded before checking it
-        And I wait for 1 second
+        And I wait for 3 seconds
         Then I should see the following values in the downloaded PDF for record "1" and survey "Coordinator Signature"
           | PID 13 - LastName   |
           | Participant Consent |
