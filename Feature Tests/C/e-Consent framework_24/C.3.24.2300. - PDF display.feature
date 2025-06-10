@@ -12,7 +12,6 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       ##ACTION: New Active PDF Trigger
       When I click on the link labeled "Designer"
       And I click on the button labeled "PDF Snapshot"
-      And I click on the link labeled "PDF Snapshots of Record"
       And I click on the button labeled "Add new trigger"
       And I enter "Snapshot" into the input field labeled "Name of trigger"
       And I select '"Participant Consent" - [Any Event]' on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
@@ -108,7 +107,6 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
    Scenario: Cancel Inactivate triggers
       When I click on the link labeled "Designer"
       And I click on the button labeled "PDF Snapshot"
-      When I click on the link labeled "PDF Snapshots of Record"
       Then I should see a checkbox labeled "Hide inactive" that is checked
        Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name          | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
@@ -126,7 +124,6 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
 
 
    Scenario: Inactivate triggers
-      When I click on the link labeled "PDF Snapshots of Record"
       Then I should see a checkbox labeled "Hide inactive" that is checked
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name          | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |

@@ -16,7 +16,6 @@ Feature: User Interface: The system shall support conditional logic integration 
       ##ACTION: New PDF Trigger with survey based Every time the following survey is completed
     When I click on the link labeled "Designer"
     And I click on the button labeled "PDF Snapshot"
-    And I click on the link labeled "PDF Snapshots of Record"
     And I click on the button labeled "Add new trigger"
     And I enter "Snapshot 1" into the input field labeled "Name of trigger"
     And I select '"Participant Consent" - Event 1 (Arm 1: Arm 1)' on the dropdown field labeled "Every time the following survey is completed:" in the dialog box

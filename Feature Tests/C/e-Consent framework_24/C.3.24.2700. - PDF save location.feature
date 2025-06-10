@@ -20,7 +20,6 @@ Feature: User Interface: The system shall support the saving PDF snapshots to sp
 
    Scenario: New PDF Trigger for survey completion all instruments
       ##ACTION: New PDF Trigger
-      When I click on the link labeled "PDF Snapshots of Record"
       And I click on the button labeled "Add new trigger"
       And I enter "Snapshot" into the input field labeled "Name of trigger"
       And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
