@@ -47,7 +47,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       When I click on the button labeled "Edit trigger" in the row labeled "Snapshot"
       And I enter "Hide Snapshot" into the input field labeled "Name of trigger"
       And I click on the button labeled "Save"
-      Then I should see "Saved! Trigger for PDF Snapshot was successfully modified"
+      Then I should see "Trigger for PDF Snapshot was successfully modified"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name          | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
          | [x]    |               | Hide Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
