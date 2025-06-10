@@ -97,14 +97,14 @@ Feature: User Interface: The system shall support the creation, modification, an
       And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
       And I check the checkbox labeled "Save to File Repository"
       And I check the checkbox labeled "Save to specified field:"
-      And I select "coo_sign" in the dropdown field labeled "Save to specified field:"
+      And I select "combo_file" in the dropdown field labeled "Save to specified field:"
       And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
       And I enter "Custom" into the input field labeled "File name:"
       And I click on the button labeled "Save"
       Then I should see "Trigger for PDF Snapshot was successfully modified"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name                            | Type of trigger   | Save snapshot when...                                    | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [x]    |               | Edit trigger name               | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | Selected instruments  | File Repository Specified field: [event_1_arm_1][coo_sign]         |
+         | [x]    |               | Edit trigger name               | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | Selected instruments  | File Repository Specified field: [event_1_arm_1][combo_file]       |
          | [x]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent"                    | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
       ##VERIFY_Logging
@@ -154,7 +154,7 @@ Feature: User Interface: The system shall support the creation, modification, an
          | Username   | Action                                   | List of Data Changes OR Fields Exported |
          | test_admin | Create record 1 (Event 1 (Arm 1: Arm 1)) | record_id = '1'                         |
 
-   Scenario: Add record in data survey mode (pdf snapshot created)
+   Scenario: Add record in survey mode (pdf snapshot created)
       #Add record in data survey mode (pdf snapshot created)
       When I click on the link labeled "Add / Edit Records"
       And I click on the button labeled "Add new record for the arm selected above"
@@ -228,11 +228,12 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "2" and click on the bubble
       Then I should see "Editing existing Record ID 2."
       Then I should see "Custom_" in the row labeled "Participant Consent file"
-      And I should see "Custom_" in the row labeled "Coordinator Signature file"
+      And I should see "Custom_" in the row labeled "Combine both files together"
 
-      When I click on the link "Custom_" in the row labeled "Coordinator Signature file"
-      Then I should have a pdf file with the following values "Participant Consent"
-      And I should have a pdf file with the following values "Coordinator Signature"
+      When I click on the link "Custom_" in the row labeled "Combine both files together"
+      And I should see the following values in the last file downloaded
+        | Page 1\nParticipant Consent |
+        | Page 3\nCoordinator Signature |
    #Manual: Close document
 
 
@@ -250,7 +251,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I click on the link labeled "Logging"
       Then I should see a table header and rows containing the following values in the logging table:
          | Username            | Action                                   | List of Data Changes OR Fields Exported                                                                                                                                 |
-         | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Upload Field field =  "coo_sign (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument =  "coordinator_signature" snapshot_id =     |
+         | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Upload Field field =  "combo_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument =  "coordinator_signature" snapshot_id =     |
          | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Repository record = "2" event = "event_1_arm_1" instrument = "coordinator_signature" snapshot_id =                                            |
          | test_admin          | Create record 1 (Event 1 (Arm 1: Arm 1)) | record_id = '1'                                                                                                                                                         |
          | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id = |
