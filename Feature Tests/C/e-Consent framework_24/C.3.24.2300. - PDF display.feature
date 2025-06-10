@@ -198,7 +198,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       And I return to the REDCap page I opened the survey from
       And I click on the link labeled "Record Status Dashboard"
       Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
-      And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "2"
+      And I should see the "Incomplete (no data saved)" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "2"
 
       # Verification pdf saved and logged correctly
       ##VERIFY_FiRe
