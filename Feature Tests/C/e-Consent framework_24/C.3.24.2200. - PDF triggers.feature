@@ -191,6 +191,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "2"
 
       When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "2" and click on the bubble
+      Then I should see "Editing existing Record ID 2."
       Then I should see "Custom_" in the row labeled "Participant Consent file"
 
       When I click on the link "Custom_"
@@ -227,6 +228,7 @@ Feature: User Interface: The system shall support the creation, modification, an
 
 
       When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "2" and click on the bubble
+      Then I should see "Editing existing Record ID 2."
       Then I should see "Custom_" in the row labeled "Participant Consent file"
       And I should see "Custom_" in the row labeled "Coordinator Signature file"
 
