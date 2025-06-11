@@ -188,7 +188,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature" in the dialog box
     Then I should see a link labeled "Remove signature"
-    And I slect "Complete" from the drowpown labeled "Complete?"
+    And I select "Complete" on the dropdown field labeled "Complete?"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record Home Page"
 
@@ -203,7 +203,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     When I click on the button labeled "Save signature" in the dialog box
     Then I should see a link labeled "Remove signature"
 
-    And I slect "Complete" from the drowpown labeled "Complete?"
+    And I select "Complete" on the dropdown field labeled "Complete?"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record Home Page"
     And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
@@ -249,7 +249,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature" in the dialog box
     Then I should see a link labeled "Remove signature"
-    And I slect "Complete" from the drowpown labeled "Complete?"
+    And I select "Complete" on the dropdown field labeled "Complete?"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record Home Page"
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
@@ -330,7 +330,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature" in the dialog box
     Then I should see a link labeled "Remove signature"
-    And I slect "Complete" from the drowpown labeled "Complete?"
+    And I select "Complete" on the dropdown field labeled "Complete?"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record Home Page"
 
@@ -351,7 +351,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     Then I should see a link labeled "Remove signature"
 
   Scenario:
-    And I slect "Complete" from the drowpown labeled "Complete?"
+    And I select "Complete" on the dropdown field labeled "Complete?"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record Home Page"
     And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
@@ -405,7 +405,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I draw a signature in the signature field area
     When I click on the button labeled "Save signature" in the dialog box
     Then I should see a link labeled "Remove signature"
-    And I slect "Complete" from the drowpown labeled "Complete?"
+    And I select "Complete" on the dropdown field labeled "Complete?"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record Home Page"
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"

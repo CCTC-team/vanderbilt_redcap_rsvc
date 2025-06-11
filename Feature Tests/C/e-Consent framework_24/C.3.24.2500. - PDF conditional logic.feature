@@ -124,7 +124,7 @@ Feature: User Interface: The system shall support conditional logic integration 
     When I click on the button labeled "Save signature" in the dialog box
     Then I should see a link labeled "Remove signature"
 
-    And I slect "Complete" from the drowpown labeled "Complete?"
+    And I select "Complete" on the dropdown field labeled "Complete?"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record Home Page"
 
