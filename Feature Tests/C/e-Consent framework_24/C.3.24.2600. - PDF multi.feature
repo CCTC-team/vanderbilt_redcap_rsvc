@@ -224,7 +224,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     Then I should see "Please complete the survey"
 
   Scenario:
-    When I select "Survey Mode" from the field labeled "Form 1 Trigger"
+    When I select "Survey Mode" on the dropdown field labeled "Form 1 Trigger"
     And I clear field and enter "FirstName" into the input field labeled "First Name"
     And I clear field and enter "LastName" into the input field labeled "Last Name"
     And I clear field and enter "email@test.edu" into the input field labeled "email"
@@ -267,7 +267,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     Then I should see "Please complete the survey"
 
   Scenario:
-    When I select "Survey Mode" from the field labeled "Form 1 Trigger"
+    When I select "Survey Mode" on the dropdown field labeled "Form 1 Trigger"
     And I clear field and enter "FirstName" into the input field labeled "First Name"
     And I clear field and enter "LastName" into the input field labeled "Last Name"
     And I clear field and enter "email@test.edu" into the input field labeled "email"
@@ -292,7 +292,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     Then I should see "Please complete the survey"
-    And I select "Survey Mode" from the field labeled "Form 2 Trigger"
+    And I select "Survey Mode" on the dropdown field labeled "Form 2 Trigger"
     And I enter "Coordinator" into the input field labeled "Coordinator's Name Typed"
     Given I click on the link labeled "Add signature"
     And I see a dialog containing the following text: "Add signature"
@@ -372,7 +372,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     Then I should see "Please complete the survey"
 
   Scenario:
-    When I select "Survey Mode" from the field labeled "Form 1 Trigger"
+    When I select "Survey Mode" on the dropdown field labeled "Form 1 Trigger"
     And I clear field and enter "FirstName" into the input field labeled "First Name"
     And I clear field and enter "LastName" into the input field labeled "Last Name"
     And I clear field and enter "email@test.edu" into the input field labeled "email"
@@ -426,7 +426,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     Then I should see "Please complete the survey"
 
   Scenario:
-    When I select "Survey Mode" from the field labeled "Form 1 Trigger"
+    When I select "Survey Mode" on the dropdown field labeled "Form 1 Trigger"
     And I clear field and enter "FirstName" into the input field labeled "First Name"
     And I clear field and enter "LastName" into the input field labeled "Last Name"
     And I clear field and enter "email@test.edu" into the input field labeled "email"
@@ -446,7 +446,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
-    And I select "Survey Mode" from the field labeled "Form 1 Trigger"
+    And I select "Survey Mode" on the dropdown field labeled "Form 1 Trigger"
     And I clear field and enter "FirstName" into the input field labeled "First Name"
     And I clear field and enter "LastName" into the input field labeled "Last Name"
     And I clear field and enter "email@test.edu" into the input field labeled "email"
