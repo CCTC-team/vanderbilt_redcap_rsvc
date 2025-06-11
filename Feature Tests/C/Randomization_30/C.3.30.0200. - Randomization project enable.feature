@@ -1,7 +1,7 @@
 Feature: C.3.30.0200 User Interface: The system shall allow enabling/disabling Randomization at the project level.
   As a REDCap end user I want to see that Randomization is functioning as expected
 
-  Scenario: Setup
+  Scenario: #SETUP project
      #SETUP project with no randomization enabled
     Given I login to REDCap with the user "Test_User1"
     And I create a new project named "C.3.30.0200." by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
