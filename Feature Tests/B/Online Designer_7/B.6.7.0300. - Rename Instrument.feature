@@ -28,8 +28,9 @@ Feature: Design forms Using Data Dictionary and Online Designer
 
     Given I click on the first button labeled "Choose action"
     And I click on the link labeled "Rename" in the action popup
-    And I clear field and enter "Text Validation Rename" into the field with the placeholder text of "Text Validation"
-    And I click on the button labeled "Save" to rename an instrument
+    And I clear field and enter "Text Validation Rename" into the field labeled "Instrument name"
+    And I clear field and enter "text_validation_rename" into the field labeled "Form name"
+    And I click on the button labeled "Apply"
 
     #VERIFY
     Then I should see a table header and rows containing the following values in a table:
@@ -50,7 +51,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
       | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Rename data collection instrument       |
 
     ##SETUP_PRODUCTION
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far." in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -71,8 +72,8 @@ Feature: Design forms Using Data Dictionary and Online Designer
     ##ACTION: Rename instrument and Keep old instrument variable name
     Given I click on the first button labeled "Choose action"
     And I click on the link labeled "Rename" in the action popup
-    And I clear field and enter "Text Validation Rename 2" into the field with the placeholder text of "Text Validation Rename"
-    And I click on the button labeled "Save" to rename an instrument
+    And I clear field and enter "Text Validation Rename 2" into the field labeled "Instrument name"
+    And I click on the button labeled "Apply"
 
     #VERIFY
     Then I should see a table header and rows containing the following values in a table:

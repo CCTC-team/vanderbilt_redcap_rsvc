@@ -10,7 +10,6 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         And I create a new project named "C.3.24.0605.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
-        When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -23,10 +22,10 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         And I click on the button labeled "e-Consent"
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey              |
-            | [✓]               | Participant Consent |
+            | [x]               | Participant Consent |
 
-        When I edit "Participant Consent"
-        When I uncheck "Allow e-Consent responses to be edited by users?"
+        When I click on the icon in the column labeled "Edit settings" and the row labeled "Participant Consent"
+        When I uncheck the checkbox labeled "Allow e-Consent responses to be edited by users?"
         And I select 'part_sign "Participant signature field"' in the dropdown field labeled "Signature field #1"
         And I check the checkbox labeled "Save to specified field"
         And I select "participant_file" in the dropdown field labeled "Save to specified field:"
@@ -34,10 +33,10 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         And I click on the button labeled "Save settings"
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey              |
-            | [✓]               | Participant Consent |
+            | [x]               | Participant Consent |
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot | Custom tag/category | Notes |
-            | [✓]               | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
+            | [x]               | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
 
     Scenario: add record with consent framework
         ##ACTION: add record with consent framework
@@ -50,7 +49,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         And I click on the button labeled "Okay" in the dialog box
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
-        Then I should see "Participant Consent"
+        Then I should see "Please complete the survey"
 
         When I clear field and enter "FirstName" into the input field labeled "Name"
         And I clear field and enter "LastName" into the input field labeled "Name"
@@ -86,11 +85,12 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         ##SETUP Allow e-Consent responses to be edited by users?
         When I click on the link labeled "Designer"
         And I click on the button labeled "e-Consent"
+        And I wait for 1 second
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey              |
-            | [✓]               | Participant Consent |
+            | [x]               | Participant Consent |
 
-        When I edit "Participant Consent"
+        When I click on the icon in the column labeled "Edit settings" and the row labeled "Participant Consent"
         When I check the checkbox labeled "Allow e-Consent responses to be edited by users?"
         And I select 'part_sign "Participant signature field"' in the dropdown field labeled "Signature field #1"
         And I check the checkbox labeled "Save to specified field"
@@ -99,10 +99,10 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         And I click on the button labeled "Save settings"
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey              |
-            | [✓]               | Participant Consent |
+            | [x]               | Participant Consent |
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot | Custom tag/category | Notes |
-            | [✓]               | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
+            | [x]               | "Participant Consent" (participant_consent) | File Repository                                 |                     |       |
 
     Scenario: add record with consent framework
         ##ACTION: add record with consent framework
@@ -115,7 +115,7 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         And I click on the button labeled "Okay" in the dialog box
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
-        Then I should see "Participant Consent"
+        Then I should see "Please complete the survey"
 
         When I clear field and enter "FirstName" into the input field labeled "Name"
         And I clear field and enter "LastName" into the input field labeled "Name"
@@ -140,24 +140,24 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         When I click on the button labeled "Close survey"
         And I return to the REDCap page I opened the survey from
         And I click on the link labeled "Record Status Dashboard"
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
 
     Scenario: Test ability to for user to edit a completed consent
         ##ACTION: Test ability to for user to edit a completed consent
         When I locate the bubble for the "Participant Consent" instrument on event "Event 1" for record ID "1" and click on the bubble
         Then I should see "Survey response is editable"
 
-        When I click the bubble labeled "Edit response"
-        Then I should see "Survey response is editable (now editing)"
+        When I click on the button labeled "Edit response"
+        Then I should see "(now editing)"
 
-        When I enter "NewFirstName" into the input field labeled "First Name"
+        When I clear field and enter "NewFirstName" into the input field labeled "First Name"
         And I click on the button labeled "Save & Exit Form"
-        Then I should see "Record ID 2"
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+        Then I should see "Record ID 1"
+        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
 
-        When I locate the bubble for the "Participant Consent" instrument on event "Event 1" for record ID "1" and click on the bubble
+        When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
         Then I should see "Survey response is editable"
-        And I should see "NewFirstName" into the input field labeled "First Name"
+        And I verify "NewFirstName" is within the input field labeled "First Name" in the dialog box
 
 
     Scenario: Verification e-Consent saved and logged correctly
@@ -170,11 +170,13 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
             | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | 2000-01-01             |         | e-Consent |
 
 
-        When I click on the file link for record "1" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
-        Then I should have a pdf file with "FirstName" into the input field labeled "First Name"
+        When I click on the link labeled "pid13_formParticipantConsent_id1"
+        Then I should see the following values in the downloaded PDF for record "1" and survey "Participant Consent"
+          | \n2)First NameFirstName \n3) |
 
-        When I click on the file link for record "2" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
-        Then I should have a pdf file with "FirstName" into the input field labeled "First Name"
+        When I click on the link labeled "pid13_formParticipantConsent_id2"
+        Then I should see the following values in the downloaded PDF for record "2" and survey "Participant Consent"
+          | \n2)First NameFirstName \n3) |
         #NOTE: Edited version with "NewFirstName" is NOT in the file repository.
         #Manual: Close document
 
@@ -182,11 +184,11 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username            | Action                                     | List of Data Changes OR Fields Exported                                                                                                                    |
-            | test_admin          | Update Response 2 (Event 1 (Arm 1: Arm 1)) | first_name = 'NewFirstName'                                                                                                                                |
+            | test_admin          | Update record 1 (Event 1 (Arm 1: Arm 1))   | first_name = 'NewFirstName'                                                                                                                                |
             | [survey respondent] | Save PDF Snapshot 2                        | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument = "participant_consent"  |
             | [survey respondent] | e-Consent Certification 2                  | e-Consent Certification record = "1" identifier = "email@test.edu" consent_form_version = "1.0" event = "event_1_arm_1" instrument = "participant_consent" |
-            | [survey respondent] | Update Response 2 (Event 1 (Arm 1: Arm 1)) | first_name = 'FirstName', type_sign1 = 'MyName'                                                                                                            |
+            | [survey respondent] | Update Response 2 (Event 1 (Arm 1: Arm 1)) | last_name = 'LastName', type_sign1 = 'MyName' |
             | [survey respondent] | Save PDF Snapshot 2                        | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent"  |
             | [survey respondent] | e-Consent Certification 1                  | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent"                                                           |
-            | [survey respondent] | Update Response 1 (Event 1 (Arm 1: Arm 1)) | first_name = 'FirstName', type_sign1 = 'MyName'                                                                                                            |
+            | [survey respondent] | Update Response 1 (Event 1 (Arm 1: Arm 1)) | last_name = 'LastName', type_sign1 = 'MyName'                                                                                                            |
 #END

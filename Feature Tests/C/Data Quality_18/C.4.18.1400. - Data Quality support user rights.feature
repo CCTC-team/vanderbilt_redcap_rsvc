@@ -9,7 +9,6 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
         And I create a new project named "C.4.18.1400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project418.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
-        When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -42,14 +41,14 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
         When I click on the button labeled "All"
         Then I should see a table header and rows containing the following values in a table:
             | Rule # | Rule Name                                                                 | Rule Logic (Show discrepancy  only if...) | Total Discrepancies |
-            | A      | Blank values*                                                             | -                                         | 377                 |
+            | A      | Blank values*                                                             | -                                         | 351                 |
             | B      | Blank values* (required fields only)                                      | -                                         | 2                   |
             | C      | Field validation errors (incorrect data type)                             | -                                         | 1                   |
             | D      | Field validation errors (out of range)                                    | -                                         | 4                   |
             | E      | Outliers for numerical fields (numbers, integers, sliders, calc fields)** | -                                         | 2                   |
             | F      | Hidden fields that contain values***                                      | -                                         | 1                   |
             | G      | Multiple choice fields with invalid values                                | -                                         | 1                   |
-            | H      | Incorrect values for calculated fields                                    | -                                         | 26                  |
+            | H      | Incorrect values for calculated fields                                    | -                                         | 0                   |
             | I      | Fields containing "missing data codes"                                    | -                                         | 4                   |
             | 1      | [radio]=9.9                                                               | [radio]= '9.9'                            | 1                   |
             | 2      | [ptname]<>[name]                                                          | [ptname]<>[name]                          | 8                   |
@@ -85,7 +84,7 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
             | E      | Outliers for numerical fields (numbers, integers, sliders, calc fields)** | -                                        | 2                   |
             | F      | Hidden fields that contain values***                                      | -                                        | 1                   |
             | G      | Multiple choice fields with invalid values                                | -                                        | 1                   |
-            | H      | Incorrect values for calculated fields                                    | -                                        | 26                  |
+            | H      | Incorrect values for calculated fields                                    | -                                        | 0                   |
             | I      | Fields containing "missing data codes"                                    | -                                        | 4                   |
             | 1      | [radio]=9.9                                                               | [radio]= '9.9'                           | ERROR               |
             | 2      | [ptname]<>[name]                                                          | [ptname]<>[name]                         | ERROR               |

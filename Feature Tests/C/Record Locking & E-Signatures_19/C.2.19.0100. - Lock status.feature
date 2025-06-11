@@ -10,7 +10,6 @@ Feature: User Interface: The E-signature and Locking Management tool shall displ
         And I create a new project named "C.2.19.100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
-        When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -21,10 +20,10 @@ Feature: User Interface: The E-signature and Locking Management tool shall displ
         And I click on the button labeled "I understand. Let me make changes" in the dialog box
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
-            | [✓]                                          | Text Validation            | [ ]                                            | [text box]              |
-            | [✓]                                          | Data Types                 | [ ]                                            | [text box]              |
-            | [✓]                                          | Survey                     | [ ]                                            | [text box]              |
-            | [✓]                                          | Consent                    | [ ]                                            | [text box]              |
+            | [x]                                          | Text Validation            | [ ]                                            | [text box]              |
+            | [x]                                          | Data Types                 | [ ]                                            | [text box]              |
+            | [x]                                          | Survey                     | [ ]                                            | [text box]              |
+            | [x]                                          | Consent                    | [ ]                                            | [text box]              |
 
 
         #FUNCTIONAL REQUIREMENT
@@ -33,19 +32,19 @@ Feature: User Interface: The E-signature and Locking Management tool shall displ
         And I click on the "Save" button within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
-            | [✓]                                          | Text Validation            | [ ]                                            | Test custom text        |
-            | [✓]                                          | Data Types                 | [ ]                                            | [text box]              |
-            | [✓]                                          | Survey                     | [ ]                                            | [text box]              |
-            | [✓]                                          | Consent                    | [ ]                                            | [text box]              |
+            | [x]                                          | Text Validation            | [ ]                                            | Test custom text        |
+            | [x]                                          | Data Types                 | [ ]                                            | [text box]              |
+            | [x]                                          | Survey                     | [ ]                                            | [text box]              |
+            | [x]                                          | Consent                    | [ ]                                            | [text box]              |
 
         And I enter "Test custom text" into the textarea field labeled "Data Types"
         And I click on the "Save" button within the Record Locking Customization table for the Data Collection Instrument named "Data Types"
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
-            | [✓]                                          | Text Validation            | [ ]                                            | Test custom text        |
-            | [✓]                                          | Data Types                 | [ ]                                            | Test custom text        |
-            | [✓]                                          | Survey                     | [ ]                                            | [text box]              |
-            | [✓]                                          | Consent                    | [ ]                                            | [text box]              |
+            | [x]                                          | Text Validation            | [ ]                                            | Test custom text        |
+            | [x]                                          | Data Types                 | [ ]                                            | Test custom text        |
+            | [x]                                          | Survey                     | [ ]                                            | [text box]              |
+            | [x]                                          | Consent                    | [ ]                                            | [text box]              |
 
 
         ##VERIFY_LOG
@@ -75,10 +74,10 @@ Feature: User Interface: The E-signature and Locking Management tool shall displ
         And I click on the "Save" button within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
-            | [✓]                                          | Text Validation            | [ ]                                            | New custom text         |
-            | [✓]                                          | Data Types                 | [ ]                                            | Test custom text        |
-            | [✓]                                          | Survey                     | [ ]                                            | [text box]              |
-            | [✓]                                          | Consent                    | [ ]                                            | [text box]              |
+            | [x]                                          | Text Validation            | [ ]                                            | New custom text         |
+            | [x]                                          | Data Types                 | [ ]                                            | Test custom text        |
+            | [x]                                          | Survey                     | [ ]                                            | [text box]              |
+            | [x]                                          | Consent                    | [ ]                                            | [text box]              |
 
         And I click on the Delete icon within the Record Locking Customization table for the Data Collection Instrument named "Data Types"
 
@@ -86,10 +85,10 @@ Feature: User Interface: The E-signature and Locking Management tool shall displ
         # And I click on the button labeled "OK" in the pop-up box
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
-            | [✓]                                          | Text Validation            | [ ]                                            | New custom text         |
-            | [✓]                                          | Data Types                 | [ ]                                            | [text box]              |
-            | [✓]                                          | Survey                     | [ ]                                            | [text box]              |
-            | [✓]                                          | Consent                    | [ ]                                            | [text box]              |
+            | [x]                                          | Text Validation            | [ ]                                            | New custom text         |
+            | [x]                                          | Data Types                 | [ ]                                            | [text box]              |
+            | [x]                                          | Survey                     | [ ]                                            | [text box]              |
+            | [x]                                          | Consent                    | [ ]                                            | [text box]              |
 
 
         ##VERIFY_LOG

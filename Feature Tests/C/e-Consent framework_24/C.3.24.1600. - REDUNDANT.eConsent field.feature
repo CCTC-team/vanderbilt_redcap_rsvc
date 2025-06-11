@@ -13,27 +13,26 @@ Given This scenario is fully tested within C.3.24.1500.
 #       And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 #       And I click on the button labeled "YES, Move to Production Status" in the dialog box
 #       Then I should see Project status: "Production"
-#       When I click on the button labeled "+Add consent form" for the survey labeled "Participant Consent"
+#       When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
 #       Then I should see "Consent form version"
 #    Scenario: Add consent form version via rich text
-#       When I click on the button labeled "+Add consent form" for the survey labeled "Participant Consent"
+#       When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
 #       Then I should see "Consent form version"
 #       When I enter "test 1" into the input field labeled "Consent form version:" in the dialog box
 #       And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
 #       And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
-#       And I select "No languages defined on MLM page" for the dropdown filed labeled "Display for specific language" in the dialog box
-#       And I click on the link labeled "Consent Form (Rich Text)" in the dialog box
-#       And I enter "This is my test 1 consent form" into the input field labeled "Consent Form (Rich Text)" in the dialog box
+#       And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
+#       And I enter "This is my test 1 consent form" into the textarea field labeled "Consent Form (Rich Text)" in the dialog box
 #       And I click on the button labeled "Add new consent form" in the dialog box
-#       Then I should see "Consent form vtest 1" for the survey labeled "Participant Consent"
+#       Then I should see "vtest 1" in the row labeled "Participant Consent"
 #       #VERIFY: view all versions for Test 1
-#       When I click on the button labeled "View all versions" for the survey labeled "Participant Consent"
+#       When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
 #       Then I should see a table header and rows containing the following values in a table:
 #          | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
 #          |            | 1.0     |                    |                         | 0                           |                   |              | 20240718153905_Fake_Consent[311203].pdf |                              |
 #          | check icon | test 1  | XX/XX/XXXX XX:XXXm | Test_Admin (Admin Test) | 0                           |                   |              | " This is my test 1 consent form "      | "Set as inactive" button     |
 #       When I click on the button labeled "Close" in the dialog box
-#       Then I should see "Consent form vtest 1" for the survey labeled "Participant Consent"
+#       Then I should see "vtest 1" in the row labeled "Participant Consent"
 #       ##VERIFY_Logging
 #       When I click on the link labeled "Logging"
 #       Then I should see a table header and rows containing the following values in the logging table:
@@ -50,7 +49,7 @@ Given This scenario is fully tested within C.3.24.1500.
 #       And I click on the button labeled "Okay" in the dialog box
 #       And I click on the button labeled "Survey options"
 #       And I click on the survey option label containing "Open survey" label
-#       Then I should see "Participant Consent"
+#       Then I should see "Please complete the survey"
 #       And I should see "This is my test 1 consent form"
 #       When I clear field and enter "FirstName" into the input field labeled "First Name"
 #       And I clear field and enter "LastName" into the input field labeled "Last Name"
@@ -85,27 +84,27 @@ Given This scenario is fully tested within C.3.24.1500.
 #       When I click on the link labeled "Designer"
 #       And I click on the button labeled "e-Consent"
 #       Then I should see "Participant Consent"
-#       When I click on the button labeled "+Add consent form" for the survey labeled "Participant Consent"
+#       When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
 #       Then I should see "Consent form version"
 #       When I enter "test 2" into the input field labeled "Consent form version:" in the dialog box
 #       And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
 #       And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
-#       And I select "No languages defined on MLM page" for the dropdown filed labeled "Display for specific language" in the dialog box
-#       And I click on the link labeled "Consent Form (Inline PDF)" in the dialog box
+#       And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
+#       And I click on the button labeled "Consent Form (Inline PDF)" in the dialog box
 #       And I click on the button labeled "Choose File" in the dialog box
 #       And I select the file labeled "consent.pdf" in the dialog box
 #       And I click on the button labeled "Upload File" in the dialog box
 #       And I click on the button labeled "Add new consent form" in the dialog box
-#       Then I should see "Consent form vtest 2" for the survey labeled "Participant Consent"
+#       Then I should see "vtest 2" in the row labeled "Participant Consent"
 #       # view all versions
-#       When I click on the button labeled "View all versions" for the survey labeled "Participant Consent"
+#       When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
 #       Then I should see a table header and rows containing the following values in a table:
 #          | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
 #          |            | 1.0     |                    |                         | 0                           |                   |              | 20240718153905_Fake_Consent[311203].pdf |                              |
 #          |            | test 1  | XX/XX/XXXX XX:XXXm | Test_Admin (Admin Test) | 1                           |                   |              | " This is my test 1 consent form "      |                              |
 #          | check icon | test 2  | XX/XX/XXXX XX:XXXm | Test_Admin (Admin Test) | 1                           |                   |              | consent.pdf                             | "Set as inactive" button     |
 #       When I click on the button labeled "Close" in the dialog box
-#       Then I should see "Consent form vtest 2" for the survey labeled "Participant Consent"
+#       Then I should see "vtest 2" in the row labeled "Participant Consent"
 #       ##VERIFY_Logging
 #       When I click on the link labeled "Logging"
 #       Then I should see a table header and rows containing the following values in the logging table:
@@ -122,7 +121,7 @@ Given This scenario is fully tested within C.3.24.1500.
 #       And I click on the button labeled "Okay" in the dialog box
 #       And I click on the button labeled "Survey options"
 #       And I click on the survey option label containing "Open survey" label
-#       Then I should see "Participant Consent"
+#       Then I should see "Please complete the survey"
 #       And I should see "consent.pdf"
 #       When I clear field and enter "FirstName" into the input field labeled "First Name"
 #       And I clear field and enter "LastName" into the input field labeled "Last Name"

@@ -10,7 +10,6 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     And I click on the link labeled "A.3.24.3000.100"
 
   Scenario: #SETUP_PRODUCTION
-    When I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -59,7 +58,6 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     And I click on the link labeled "A.3.24.3000.200"
 
   Scenario: #SETUP_PRODUCTION
-    When I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -89,7 +87,7 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
-    Then I should see "Participant Consent"
+    Then I should see "Please complete the survey"
 
   Scenario:
     When I clear field and enter "FirstName" into the input field labeled "First Name"
@@ -156,7 +154,6 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     And I click on the link labeled "A.3.24.3000.300"
 
   Scenario: #SETUP_PRODUCTION
-    When I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box

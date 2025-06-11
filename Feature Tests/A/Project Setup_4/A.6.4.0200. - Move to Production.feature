@@ -26,13 +26,14 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         Given I login to REDCap with the user "Test_User1"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0200.100"
-        And I click on the link labeled "Project Setup"
+        And I click on the link labeled "Setup"
         Then I should see a button labeled "Move project to production"
 
         When I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "Yes, Request Admin to Move to Production Status" in the dialog box
         Then I should see "Request pending"
+        And I wait for 1 second
         And I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported           |
@@ -88,7 +89,7 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         Given I login to REDCap with the user "Test_User1"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0200.200"
-        And I click on the link labeled "Project Setup"
+        And I click on the link labeled "Setup"
         Then I should see a button labeled "Move project to production"
 
         Given I click on the button labeled "Move project to production"

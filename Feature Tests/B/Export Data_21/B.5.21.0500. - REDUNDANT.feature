@@ -40,20 +40,20 @@ Feature: User Interface: The system shall have the following data de-identificat
 #         When I click on the link labeled "Check For Identifiers"
 #         Then I should see a table header and rows containing the following values in a table:
 #             | Variable Name | Field Label   | Identifier? |
-#             | identifier    | Identifier    | [✓]         |
-#             | identifier_2  | Identifier  2 | [✓]         |
+#             | identifier    | Identifier    | [x]         |
+#             | identifier_2  | Identifier  2 | [x]         |
 #             | ptname        | Name          | [ ]         |
-#             | radio         | radio         | [✓]         |
+#             | radio         | radio         | [x]         |
 
 #         When I uncheck the checkbox labeled "identifier_2"
 #         And I check the checkbox labeled "ptname"
 #         And I click on the button labeled "Update Identifiers"
 #         Then I should see a table header and rows containing the following values in a table:
 #             | Variable Name | Field Label  | Identifier? |
-#             | identifier    | Identifier   | [✓]         |
+#             | identifier    | Identifier   | [x]         |
 #             | identifier_2  | Identifier 2 | [ ]         |
-#             | ptname        | Name         | [✓]         |
-#             | radio         | radio        | [✓]         |
+#             | ptname        | Name         | [x]         |
+#             | radio         | radio        | [x]         |
 
 #         ##VERIFY_CODEBOOK
 #         When I click on the link labeled "Codebook"

@@ -10,7 +10,6 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I create a new project named "C.3.24.0105.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
-        When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -49,6 +48,8 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I click on the button labeled "Okay" in the dialog box
         And I click on the button labeled "Survey options" and will leave the tab open when I return to the REDCap project
         And I click on the survey option label containing "Open survey" label
+        Then I should see "Please complete the survey"
+
         And I clear field and enter "FirstName" into the data entry form field labeled "First Name"
         And I clear field and enter "LastName" into the data entry form field labeled "Last Name"
         And I clear field and enter "email@test.edu" into the data entry form field labeled "email"
@@ -71,7 +72,6 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         When I click on the link labeled "Record Status Dashboard"
 
         ##VERIFY - Completed survey response in "Participant Consent" but no data saved within Pdfs And Combined Signatures Pdf
-        Given I click on the link labeled "Record Status Dashboard"
         Then I should see the "Completed Survey Response" icon for the "Participant Consent" instrument on event "Event 1" for record "1"
         And I should see the "Incomplete (no data saved)" icon for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record "1"
 
@@ -96,6 +96,8 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I click on the button labeled "Okay" in the dialog box
         And I click on the button labeled "Survey options" and will leave the tab open when I return to the REDCap project
         And I click on the survey option label containing "Open survey" label
+        Then I should see "Please complete the survey"
+
         And I clear field and enter "FirstName" into the data entry form field labeled "First Name"
         And I clear field and enter "LastName" into the data entry form field labeled "Last Name"
         And I clear field and enter "email@test.edu" into the data entry form field labeled "email"
@@ -110,7 +112,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I should see the pdf has loaded in the iframe
+        And I should see the consent pdf has loaded in the iframe
 
         When I check the checkbox labeled "I certify that all of my information in the document above is correct"
         And I click on the button labeled "Submit"
@@ -120,7 +122,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         ##VERIFY_RSD
         Given I return to the REDCap page I opened the survey from
         And I click on the link labeled "Record Status Dashboard"
-        Then I should see the "Completed Survey Response" icon for the "Participant Consent" instrument on event "Event 1" for record "1"
+        Then I should see the "Completed Survey Response" icon for the "Participant Consent" instrument on event "Event 1" for record "2"
 
         ##VERIFY_PDF Snapshot Specific File Location
         And I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "2" and click on the bubble
@@ -148,7 +150,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
           | pid13_formParticipantConsent_id2 | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |
 
         Given I download the PDF by clicking on the link for Record "2" and Survey "Participant Consent" in the File Repository table
-        Then I should see the following values in the downloaded PDF for Record "2" and Survey "Participant Consent"
+        Then I should see the following values in the downloaded PDF for record "2" and survey "Participant Consent"
           | PID 13 - LastName   |
           | Participant Consent |
 

@@ -9,7 +9,6 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
     And I create a new project named "A.4.8.0100.100 " by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     #SETUP_PRODUCTION
-    When I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -21,29 +20,29 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
     And I click on the link labeled "Field Validation Types"
     Then I should see "Validation Types Currently Available for Use in All Projects"
 
-    When I click on the button labeled "Disable" in the validation row labeled "Date (D-M-Y)"
+    When I click on the button labeled "Disable" in the row labeled "Date (D-M-Y)"
     Then I should see the "disabled icon" in the validation row labeled "Date (D-M-Y)"
 
-    When I click on the button labeled "Disable" in the validation row labeled "Datetime (M-D-Y H:M)"
+    When I click on the button labeled "Disable" in the row labeled "Datetime (M-D-Y H:M)"
     Then I should see the "disabled icon" in the validation row labeled "Datetime (M-D-Y H:M)"
 
-    When I click on the button labeled "Disable" in the validation row labeled "Datetime w/ seconds (Y-M-D H:M:S)"
+    When I click on the button labeled "Disable" in the row labeled "Datetime w/ seconds (Y-M-D H:M:S)"
     Then I should see the "disabled icon" in the validation row labeled "Datetime w/ seconds (Y-M-D H:M:S)"
 
-    When I click on the button labeled "Disable" in the validation row labeled "Email"
+    When I click on the button labeled "Disable" in the row labeled "Email"
     Then I should see the "disabled icon" in the validation row labeled "Email"
 
-    When I click on the button labeled "Disable" in the validation row labeled "Integer"
+    When I click on the button labeled "Disable" in the row labeled "Integer"
     Then I should see the "disabled icon" in the validation row labeled "Integer"
 
-    When I click on the button labeled "Disable" in the validation row labeled "Number"
+    When I click on the button labeled "Disable" in the row labeled "Number"
     Then I should see the "disabled icon" in the validation row labeled "Number"
 
     # ATS : Step below skipped because already disabled by the default install of REDCap ...
-    #And I click on the button labeled "Disable" in the validation row labeled "Number (1 decimal place - comma as decimal)"
+    #And I click on the button labeled "Disable" in the row labeled "Number (1 decimal place - comma as decimal)"
     And I should see the "disabled icon" in the validation row labeled "Number (1 decimal place - comma as decimal)"
 
-    When I click on the button labeled "Disable" in the validation row labeled "Time (HH:MM)"
+    When I click on the button labeled "Disable" in the row labeled "Time (HH:MM)"
     Then I should see the "disabled icon" in the validation row labeled "Time (HH:MM)"
 
 
@@ -86,28 +85,28 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
     And I click on the link labeled "Field Validation Types"
     Then I should see "Validation Types Currently Available for Use in All Projects"
 
-    When I click on the button labeled "Enable" in the validation row labeled "Date (D-M-Y)"
+    When I click on the button labeled "Enable" in the row labeled "Date (D-M-Y)"
     Then I should see the "checkmark icon" in the validation row labeled "Date (D-M-Y)"
 
-    When I click on the button labeled "Enable" in the validation row labeled "Datetime (M-D-Y H:M)"
+    When I click on the button labeled "Enable" in the row labeled "Datetime (M-D-Y H:M)"
     Then I should see the "checkmark icon" in the validation row labeled "Datetime (M-D-Y H:M)"
 
-    When I click on the button labeled "Enable" in the validation row labeled "Datetime w/ seconds (Y-M-D H:M:S)"
+    When I click on the button labeled "Enable" in the row labeled "Datetime w/ seconds (Y-M-D H:M:S)"
     Then I should see the "checkmark icon" in the validation row labeled "Datetime w/ seconds (Y-M-D H:M:S)"
 
-    When I click on the button labeled "Enable" in the validation row labeled "Email"
+    When I click on the button labeled "Enable" in the row labeled "Email"
     Then I should see the "checkmark icon" in the validation row labeled "Email"
 
-    When I click on the button labeled "Enable" in the validation row labeled "Integer"
+    When I click on the button labeled "Enable" in the row labeled "Integer"
     Then I should see the "checkmark icon" in the validation row labeled "Integer"
 
-    When I click on the button labeled "Enable" in the validation row labeled "Number"
+    When I click on the button labeled "Enable" in the row labeled "Number"
     Then I should see the "checkmark icon" in the validation row labeled "Number"
 
-    When I click on the button labeled "Enable" in the validation row labeled "Number (1 decimal place - comma as decimal)"
+    When I click on the button labeled "Enable" in the row labeled "Number (1 decimal place - comma as decimal)"
     Then I should see the "checkmark icon" in the validation row labeled "Number (1 decimal place - comma as decimal)"
 
-    When I click on the button labeled "Enable" in the validation row labeled "Time (HH:MM)"
+    When I click on the button labeled "Enable" in the row labeled "Time (HH:MM)"
     Then I should see the "checkmark icon" in the validation row labeled "Time (HH:MM)"
 
     #FUNCTIONAL REQUIREMENT

@@ -8,7 +8,6 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
     And I create a new project named "C.3.24.1200.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
 
   Scenario: #SETUP_PRODUCTION
-    When I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -22,16 +21,16 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
     And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "Enable e-Consent for a Survey" in the dialog box
     Then I should see "Enable e-Consent" in the dialog box
     And I should see "Primary settings"
+    And I select "first_name" on the dropdown field labeled "First name field"
+    And I select "last_name" on the dropdown field labeled "Last name field"
+    And I select "dob" on the dropdown field labeled "Date of birth field"
 
   Scenario:
     When I enter "PID [project-id] - [last_name]" into the input field labeled "Custom label for PDF header"
     And I click on the button labeled "Save settings"
     Then I should see a table header and rows containing the following values in a table:
-            | e-Consent active? | Survey              |
-            | [✓]               | Participant Consent |
-    Then I should see a table header and rows containing the following values in a table:
       | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
-      | [✓]               | "Participant Consent" (participant_consent) | File Repository Specified field:[event_1_arm_1][participant_file] | Participant         |       |
+      | [x]               | "Participant Consent" (participant_consent) | File Repository                                    | Participant         |       |
 
   Scenario: Add record
         ##ACTION: add record to get participant signature
@@ -45,7 +44,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
-    Then I should see "Participant Consent"
+    Then I should see "Please complete the survey"
 
   Scenario:
     When I clear field and enter "FirstName" into the input field labeled "First Name"
@@ -81,12 +80,13 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see a table header and rows containing the following values in a table:
-      | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type                  |
-      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
+      | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         | Version | Type                  |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent  |
 
   Scenario:
-    When I click on the file link for record "1" Survey "(Event 1 (Arm 1: Arm 1))"
-    Then I should have a pdf file with the following values in the header: "PID xxxx - LastName"
+    When I click on the link labeled "pid13_formParticipantConsent_id1_"
+    Then I should see the following values in the downloaded PDF for record "1" and survey "Participant Consent"
+      | PID 13 - LastName   |
         #Manual: Close document
 
   Scenario: ##VERIFY_Logging  ##e-Consent Framework not used, and PDF Snapshot is used

@@ -39,8 +39,8 @@ Feature: User Interface: The Record Locking Customization module shall provide t
 #         ##ACTION Display E-Signature or Lock option
 #         Then I should see a table header and rows containing the following values in a table:
 #             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
-#             | [✓]                                          | Text Validation            | [✓]                                            | Test custom text        |
-#             | [✓]                                          | Data Types                 |                                                | Test custom text        |
+#             | [x]                                          | Text Validation            | [x]                                            | Test custom text        |
+#             | [x]                                          | Data Types                 |                                                | Test custom text        |
 #             |                                              | Survey                     |                                                | [blank]                 |
 
 #         ##VERIFY_LOG
@@ -92,8 +92,8 @@ Feature: User Interface: The Record Locking Customization module shall provide t
 #         And click on the button labeled "Save"
 #         Then I should see a table header and rows containing the following values in a table:
 #             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
-#             | [✓]                                          | Text Validation            | [✓]                                            | Edit Test custom text   |
-#             | [✓]                                          | Data Types                 |                                                | [blank]                 |
+#             | [x]                                          | Text Validation            | [x]                                            | Edit Test custom text   |
+#             | [x]                                          | Data Types                 |                                                | [blank]                 |
 #             |                                              | Survey                     |                                                | [blank]                 |
 
 #         ##VERIFY_LOG

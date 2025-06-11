@@ -7,7 +7,6 @@ Feature: User Interface: The system shall support conditional logic integration 
     Given I login to REDCap with the user "Test_Admin"
     And I create a new project named "C.3.24.2500.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
       #SETUP_PRODUCTION
-    When I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -30,14 +29,17 @@ Feature: User Interface: The system shall support conditional logic integration 
     Then I should see "Saved!"
     Then I should see a table header and rows containing the following values in a table:
       | Active | Edit settings | Name       | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot |
-      | [✓]    | Edit Copy     | Snapshot 1 | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository                  |
+      | [x]    |               | Snapshot 1 | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository                  |
 
   Scenario: New PDF Trigger testing When the following logic becomes true (only once per record)
       ##ACTION: When the following logic becomes true (only once per record)
     When I click on the button labeled "Add new trigger"
     And I enter "Snapshot 2" into the input field labeled "Name of trigger"
     And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
-    And I enter "[participant_consent_complete]='2'" into the input field labeled "When the following logic becomes true"
+    And I click on "" in the textarea field labeled "When the following logic becomes true"
+    And I wait for 1 second
+    And I clear field and enter "[participant_consent_complete]='2'" in the textarea field labeled "Logic Editor" in the dialog box
+    And I click on the button labeled "Update & Close Editor" in the dialog box
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
     And I check the checkbox labeled "Save to File Repository"
@@ -47,8 +49,8 @@ Feature: User Interface: The system shall support conditional logic integration 
     Then I should see "Saved!"
     Then I should see a table header and rows containing the following values in a table:
       | Active | Edit settings | Name       | Type of trigger   | Save snapshot when...                                  | Scope of the snapshot | Location(s) to save the snapshot |
-      | [✓]    | Edit Copy     | Snapshot 2 | Logic-based       | Logic becomes true: [participant_consent_complete]='2' | All instruments       | File Repository                  |
-      | [✓]    | Edit Copy     | Snapshot 1 | Survey completion | Complete survey "Participant Consent"                  | All instruments       | File Repository                  |
+      | [x]    |               | Snapshot 2 | Logic-based       | Logic becomes true: [participant_consent_complete]='2' | All instruments       | File Repository                  |
+      | [x]    |               | Snapshot 1 | Survey completion | Complete survey "Participant Consent"                  | All instruments       | File Repository                  |
 
   Scenario: New PDF Trigger testing multi-form
    #C.3.24.2600.100 multi-form/survey PDF snapshots
@@ -56,7 +58,10 @@ Feature: User Interface: The system shall support conditional logic integration 
     When I click on the button labeled "Add new trigger"
     And I enter "Snapshot 3" into the input field labeled "Name of trigger"
     And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
-    And I enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the input field labeled "When the following logic becomes true"
+    And I click on "" in the textarea field labeled "When the following logic becomes true"
+    And I wait for 1 second
+    And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
+    And I click on the button labeled "Update & Close Editor" in the dialog box
     And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
     And I check the checkbox labeled "Save to File Repository"
@@ -66,9 +71,9 @@ Feature: User Interface: The system shall support conditional logic integration 
     Then I should see "Saved!"
     Then I should see a table header and rows containing the following values in a table:
       | Active | Edit settings | Name       | Type of trigger   | Save snapshot when...                                    | Scope of the snapshot | Location(s) to save the snapshot |
-      | [✓]    | Edit Copy     | Snapshot 3 | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | All instruments       | File Repository                  |
-      | [✓]    | Edit Copy     | Snapshot 2 | Logic-based       | Logic becomes true: [participant_consent_complete]='2'   | All instruments       | File Repository                  |
-      | [✓]    | Edit Copy     | Snapshot 1 | Survey completion | Complete survey "Participant Consent"                    | All instruments       | File Repository                  |
+      | [x]    |               | Snapshot 3 | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | All instruments       | File Repository                  |
+      | [x]    |               | Snapshot 2 | Logic-based       | Logic becomes true: [participant_consent_complete]='2'   | All instruments       | File Repository                  |
+      | [x]    |               | Snapshot 1 | Survey completion | Complete survey "Participant Consent"                    | All instruments       | File Repository                  |
       ##VERIFY_Logging - Manage/Designof the triggers
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
@@ -87,7 +92,7 @@ Feature: User Interface: The system shall support conditional logic integration 
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
-    Then I should see "Participant Consent"
+    Then I should see "Please complete the survey"
     When I clear field and enter "FirstName" into the input field labeled "First Name"
     And I clear field and enter "LastName" into the input field labeled "Last Name"
     And I clear field and enter "email@test.edu" into the input field labeled "email"
@@ -104,13 +109,13 @@ Feature: User Interface: The system shall support conditional logic integration 
     And I return to the REDCap page I opened the survey from
     And I click on the link labeled "Record Status Dashboard"
     Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
-    And I should see "Incomplete" icon for the Data Collection Instrument labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
+    And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "1"
     When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
     Then I should see "custom" in the field labeled "Participant Consent file"
     When I click on the file link the field labeled "Participant Consent file"
     Then I should have a pdf file with the following values "Participant Consent"
       #Manual: Close document
-      #Add Insturment 2's response
+      #Add Instrument 2's response
     When I click on the bubble labeled "Coordiantor Signature"
     Then I should see "Editing existing Record ID 1."
     

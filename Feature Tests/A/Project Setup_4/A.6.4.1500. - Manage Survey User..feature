@@ -20,7 +20,7 @@ Feature: Control Center: The system shall allow the survey feature to be enabled
     #VERIFY Disable survey feature in project setup
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.1500.100"
-    And I click on the link labeled "Project Setup"
+    And I click on the link labeled "Setup"
     Then I should NOT see "Use surveys in this project?" in the "Main project settings" section
 
     #FUNCTIONAL REQUIREMENT
@@ -34,7 +34,7 @@ Feature: Control Center: The system shall allow the survey feature to be enabled
     #VERIFY Enable survey feature in project setup
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.1500.100"
-    And I click on the link labeled "Project Setup"
+    And I click on the link labeled "Setup"
     Then I should see a button labeled "Disable" in the "Use surveys in this project?" row in the "Main project settings" section
 
     When I click on the button labeled "Disable" in the "Use surveys in this project?" row in the "Main project settings" section

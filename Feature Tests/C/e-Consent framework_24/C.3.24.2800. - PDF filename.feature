@@ -9,7 +9,6 @@ Feature: User Interface: The system shall support the customization of the file 
       And I create a new project named "C.3.24.2800.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
 
       #SETUP_PRODUCTION
-      When I click on the link labeled "Project Setup"
       And I click on the button labeled "Move project to production"
       And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
       And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -24,8 +23,10 @@ Feature: User Interface: The system shall support the customization of the file 
       And I click on the button labeled "Add new trigger"
       And I enter "Snapshot" into the input field labeled "Name of trigger"
       And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
-      And I enter "[participant_consent_complete]='2'" into the input field labeled "When the following logic becomes true"
-
+      And I click on "" in the textarea field labeled "When the following logic becomes true"
+      And I wait for 1 second
+      And I clear field and enter "[participant_consent_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
+      And I click on the button labeled "Update & Close Editor" in the dialog box
       And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
       And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
       And I check the checkbox labeled "Save to File Repository"
@@ -37,7 +38,7 @@ Feature: User Interface: The system shall support the customization of the file 
       Then I should see "Saved!"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name     | Type of trigger | Save snapshot when...                                  | Scope of the snapshot | Location(s) to save the snapshot                    |
-         | [✓]    | Edit Copy     | Snapshot | Logic-based     | Logic becomes true: [participant_consent_complete]='2' | All instruments       | File Repository Specified field: [participant_file] |
+         | [x]    |               | Snapshot | Logic-based     | Logic becomes true: [participant_consent_complete]='2' | All instruments       | File Repository Specified field: [participant_file] |
 
    Scenario: Add record
       #Add record
@@ -52,21 +53,21 @@ Feature: User Interface: The system shall support the customization of the file 
       And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
       
-        Given I click on the link labeled "Add signature"
-        And I see a dialog containing the following text: "Add signature"
-        And I draw a signature in the signature field area
-        When I click on the button labeled "Save signature" in the dialog box
-        Then I should see a link labeled "Remove signature"
+      Given I click on the link labeled "Add signature"
+      And I see a dialog containing the following text: "Add signature"
+      And I draw a signature in the signature field area
+      When I click on the button labeled "Save signature" in the dialog box
+      Then I should see a link labeled "Remove signature"
 
       And I select "Complete" from the field labeled "Complete?"
       And I click on the button labeled "Save & Exit Form"
       Then I should see "Record Home Page"
-      And I should see "Complete" status for "Event 1" insturment "Participant Consent"
-      And I should see "Incomplete (no data saved)" icon for the Data Collection Instrument labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
+      And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event 1" 
+      And I should see the "Incomplete (no data saved)" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1"
 
    Scenario: Verification pdf saved and logged correctly
       ##VERIFY specified field
-      When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
+      When I click the bubble to select a record for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1"
       Then I should see "custom" in the field labeled "Participant Consent file"
 
       When I click on the file link the field labeled "Participant Consent file"

@@ -10,7 +10,6 @@ Feature:  C.3.24.0405. User Interface: The system shall support the e-Consent Fr
         And I create a new project named "C.3.24.405.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
-        When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -22,14 +21,14 @@ Feature:  C.3.24.0405. User Interface: The system shall support the e-Consent Fr
         And I click on the button labeled "e-Consent"
         Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey                                          | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
-            | [✓]            | "Coordinator Signature" (coordinator_signature) | File Repository Specified field:[event_1_arm_1][coo_sign]         | Coordinator         |       |
-            | [✓]            | "Participant Consent" (participant_consent)     | File Repository Specified field:[event_1_arm_1][participant_file] | Participant         |       |
+            | [x]               | "Participant Consent" (participant_consent)     | File Repository Specified field:[participant_file] | Participant         |       |
+            | [x]               | "Coordinator Signature" (coordinator_signature) | File Repository Specified field:[coo_sign]         | Coordinator         |       |
 
         When I click on the link labeled "PDF Snapshots of Record"
         Then I should see a table header and rows containing the following values in a table:
             | Active | Edit settings         | Name | Type of trigger   | Save snapshot when...                   | Scope of the snapshot  | Location(s) to save the snapshot                     |
-            | [✓]    | Governed by e-Consent |      | Survey completion | Complete survey "Participant Consent"   | Single survey response | File Repository Specified field: [participant_file] |
-            | [✓]    | Governed by e-Consent |      | Survey completion | Complete survey "Coordinator Signature" | Single survey response | File Repository Specified field: [coo_sign]         |
+            | [x]    | Governed by e-Consent |      | Survey completion | Complete survey "Participant Consent"   | Single survey response | File Repository Specified field: [participant_file] |
+            | [x]    | Governed by e-Consent |      | Survey completion | Complete survey "Coordinator Signature" | Single survey response | File Repository Specified field: [coo_sign]         |
 
     Scenario: Add record
         ##ACTION: add record with consent framework
@@ -42,7 +41,7 @@ Feature:  C.3.24.0405. User Interface: The system shall support the e-Consent Fr
         And I click on the button labeled "Okay" in the dialog box
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
-        Then I should see "Participant Consent"
+        Then I should see "Please complete the survey"
 
         When I clear field and enter "FirstName" into the input field labeled "First Name"
         And I clear field and enter "LastName" into the input field labeled "Last Name"
@@ -77,9 +76,11 @@ Feature:  C.3.24.0405. User Interface: The system shall support the e-Consent Fr
             | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type                  |
             | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
 
-        When I click on the file link for record "1" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
-        Then I should have a pdf file with the following values in the header: "PID xxxx - LastName"
-        And I should have a pdf file with the following values in the footer: "Type: Participant"
+        When I click on the link labeled "pid13_formParticipantConsent_id1"
+        Then I should see the following values in the downloaded PDF for record "1" and survey "Participant Consent"
+          | PID 13 - LastName   |
+          | Participant Consent |
+
         #Manual: Close document
 
 

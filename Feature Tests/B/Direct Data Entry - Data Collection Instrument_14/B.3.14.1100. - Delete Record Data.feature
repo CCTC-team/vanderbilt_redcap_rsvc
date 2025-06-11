@@ -19,7 +19,6 @@ Feature: B.3.14.1100. The system shall allow users to delete all data in an even
     And I create a new project named "B.3.14.1100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.14.xml", and clicking the "Create Project" button
 
     #SETUP_PRODUCTION
-    When I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -39,7 +38,7 @@ Feature: B.3.14.1100. The system shall allow users to delete all data in an even
       | A | All data (all records and fields) |
 
     When I click on the button labeled "View Report"
-    Then I should see the report with 19 rows
+    Then I should see the report with 20 rows
 
     #FUNCTIONAL_REQUIREMENT
     When I click on the link labeled "Record Status Dashboard"
@@ -77,5 +76,5 @@ Feature: B.3.14.1100. The system shall allow users to delete all data in an even
 
     #Notice how we have 2 less rows than line 42 because we have removed an entire event from a Record
     When I click on the button labeled "View Report"
-    Then I should see the report with 17 rows
+    Then I should see the report with 18 rows
 #END

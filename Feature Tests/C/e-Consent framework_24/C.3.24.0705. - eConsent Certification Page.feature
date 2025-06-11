@@ -10,7 +10,6 @@ Feature: User Interface: The system shall support the e-Consent Framework to pro
         And I create a new project named "C.3.24.0705.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
-        When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -27,7 +26,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to pro
         And I click on the button labeled "Okay" in the dialog box
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
-        Then I should see "Participant Consent"
+        Then I should see "Please complete the survey"
 
         When I clear field and enter "FirstName" into the input field labeled "Name"
         And I clear field and enter "LastName" into the input field labeled "Name"
@@ -65,16 +64,17 @@ Feature: User Interface: The system shall support the e-Consent Framework to pro
             | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | 2000-01-01             |         | e-Consent |
 
 
-        When I click on the file link for record "1" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
-        Then I should have a pdf file with "FirstName" into the input field labeled "First Name"
+        When I click on the link labeled "pid13_formParticipantConsent_id1"
+        Then I should see the following values in the downloaded PDF for record "1" and survey "Participant Consent"
+          | \n2)First NameFirstName \n3)   |
 
-        When I click on the file link for record "2" Survey "Participant Consent (Event 1 (Arm 1: Arm 1))"
-        Then I should have a pdf file with "FirstName" into the input field labeled "First Name"
-        
         ##VERIFY_Logging
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
-            | Username            | Action                                     | List of Data Changes OR Fields Exported                                                          |
-            | [survey respondent] | e-Consent Certification 1                  | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent" |
-            | [survey respondent] | Update Response 1 (Event 1 (Arm 1: Arm 1)) | first_name = 'FirstName', type_sign1 = 'MyName'                                                  |
+            | Username            | Action                                     | List of Data Changes OR Fields Exported         |
+            | [survey respondent] | e-Consent                                  | e-Consent Certification                         |
+            |                     | Certification                              | record = "1"                                    |
+            |                     | 1                                          | event = "event_1_arm_1"                         |
+            |                     |                                            | instrument = "participant_consent"              |
+            | [survey respondent] | Update Response 1 (Event 1 (Arm 1: Arm 1)) | last_name = 'LastName', type_sign1 = 'MyName' |
 #END

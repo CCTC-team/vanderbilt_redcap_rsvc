@@ -27,31 +27,31 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       Then I should see "Saved!"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name     | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [✓]    | Edit Copy     | Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
 
    Scenario: Copy trigger
       ##ACTION: Copy trigger
-      When I click on the button labeled "Copy trigger" for the trigger labeled "Snapshot"
+      When I click on the button labeled "Copy trigger" in the row labeled "Snapshot"
       Then I should see "Do you wish to copy this PDF Snapshot Trigger?"
 
       When I click on the button labeled "Copy trigger"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name     | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [✓]    | Edit Copy     | Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
-         | [✓]    | Edit Copy     | Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
 
    Scenario: Edit trigger
       ##ACTION: Edit trigger
-      When I click on the button labeled "Edit trigger" for the trigger labeled "Snapshot"
+      When I click on the button labeled "Edit trigger" in the row labeled "Snapshot"
       And I enter "Hide Snapshot" into the input field labeled "Name of trigger"
       And I click on the button labeled "Save"
       Then I should see "Saved! Trigger for PDF Snapshot was successfully modified"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name          | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [✓]    | Edit Copy     | Hide Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
-         | [✓]    | Edit Copy     | Snapshot      | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Hide Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Snapshot      | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
       ##VERIFY_Logging
       When I click on the link labeled "Logging"
@@ -72,19 +72,19 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       And I click on the button labeled "Okay" in the dialog box
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
-      Then I should see "Participant Consent"
+      Then I should see "Please complete the survey"
 
       When I clear field and enter "FirstName" into the input field labeled "First Name"
       And I clear field and enter "LastName" into the input field labeled "Last Name"
       And I clear field and enter "email@test.edu" into the input field labeled "email"
       And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
-      
-        Given I click on the link labeled "Add signature"
-        And I see a dialog containing the following text: "Add signature"
-        And I draw a signature in the signature field area
-        When I click on the button labeled "Save signature" in the dialog box
-        Then I should see a link labeled "Remove signature"
+   
+      Given I click on the link labeled "Add signature"
+      And I see a dialog containing the following text: "Add signature"
+      And I draw a signature in the signature field area
+      When I click on the button labeled "Save signature" in the dialog box
+      Then I should see a link labeled "Remove signature"
 
       And I click on the button labeled "Submit"
       Then I should see "Thank you for taking the survey."
@@ -93,7 +93,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       And I return to the REDCap page I opened the survey from
       And I click on the link labeled "Record Status Dashboard"
       Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
-      And I should see "Incomplete" icon for the Data Collection Instrument labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
+      And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "1"
 
       # Verification pdf saved and logged correctly
       ##VERIFY_FiRe
@@ -117,8 +117,8 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       When I click on the button labeled "Cancel" in the dialog box
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name          | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [✓]    | Edit Copy     | Hide Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
-         | [✓]    | Edit Copy     | Snapshot      | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Hide Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Snapshot      | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
 
    Scenario: Inactivate triggers
@@ -133,14 +133,14 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       When I click on the button labeled "Set to inactive" in the dialog box
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name     | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [✓]    | Edit Copy     | Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
    Scenario: Unhide inactive
       When I uncheck the checkbox labeled "Hide inactive"
       Then I should see a table header and rows containing the following values in a table:
          | Active  | Edit settings | Name          | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [✓]     | Edit Copy     | Snapshot      | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
-         | [ ]    | Edit Copy     | Hide Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]     |               | Snapshot      | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [ ]    |               | Hide Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
    Scenario: Inactivate triggers
       When I "Disable" the pdf snapshot trigger labeled "Snapshot"
@@ -149,8 +149,8 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       When I click on the button labeled "Set to inactive" in the dialog box
       Then I should see a table header and rows containing the following values in a table:
          | Active  | Edit settings | Name          | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [ ]     | Edit Copy     | Snapshot      | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
-         | [ ]     | Edit Copy     | Hide Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [ ]     |               | Snapshot      | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [ ]     |               | Hide Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
 
    Scenario: Hide inactive
@@ -170,19 +170,19 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       And I click on the button labeled "Okay" in the dialog box
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
-      Then I should see "Participant Consent"
+      Then I should see "Please complete the survey"
 
       When I clear field and enter "FirstName" into the input field labeled "First Name"
       And I clear field and enter "LastName" into the input field labeled "Last Name"
       And I clear field and enter "email@test.edu" into the input field labeled "email"
       And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
-      
-        Given I click on the link labeled "Add signature"
-        And I see a dialog containing the following text: "Add signature"
-        And I draw a signature in the signature field area
-        When I click on the button labeled "Save signature" in the dialog box
-        Then I should see a link labeled "Remove signature"
+   
+      Given I click on the link labeled "Add signature"
+      And I see a dialog containing the following text: "Add signature"
+      And I draw a signature in the signature field area
+      When I click on the button labeled "Save signature" in the dialog box
+      Then I should see a link labeled "Remove signature"
 
       And I click on the button labeled "Submit"
       Then I should see "Thank you for taking the survey."
@@ -190,8 +190,8 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       When I click on the button labeled "Close survey"
       And I return to the REDCap page I opened the survey from
       And I click on the link labeled "Record Status Dashboard"
-      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
-      And I should see "Incomplete" icon for the Data Collection Instrument labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
+      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
+      And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "2"
 
       # Verification pdf saved and logged correctly
       ##VERIFY_FiRe
@@ -209,15 +209,15 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       And I uncheck the checkbox labeled "Hide inactive"
       Then I should see a table header and rows containing the following values in a table:
          | Active  | Edit settings | Name          | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [ ]     | Edit Copy     | Snapshot      | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
-         | [ ]     | Edit Copy     | Hide Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [ ]     |               | Snapshot      | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [ ]     |               | Hide Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
 
       When I "Enable" the pdf snapshot trigger labeled "Snapshot"
       Then I should see a table header and rows containing the following values in a table:
          | Active  | Edit settings | Name          | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [✓]     | Edit Copy     | Snapshot      | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
-         | [ ]     | Edit Copy     | Hide Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]     |               | Snapshot      | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [ ]     |               | Hide Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
    Scenario: Add record in data survey mode (pdf snapshot created)
       #Add record
@@ -230,7 +230,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       And I click on the button labeled "Okay" in the dialog box
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
-      Then I should see "Participant Consent"
+      Then I should see "Please complete the survey"
 
       When I clear field and enter "FirstName" into the input field labeled "First Name"
       And I clear field and enter "LastName" into the input field labeled "Last Name"
@@ -238,11 +238,11 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
       
-        Given I click on the link labeled "Add signature"
-        And I see a dialog containing the following text: "Add signature"
-        And I draw a signature in the signature field area
-        When I click on the button labeled "Save signature" in the dialog box
-        Then I should see a link labeled "Remove signature"
+      Given I click on the link labeled "Add signature"
+      And I see a dialog containing the following text: "Add signature"
+      And I draw a signature in the signature field area
+      When I click on the button labeled "Save signature" in the dialog box
+      Then I should see a link labeled "Remove signature"
 
       And I click on the button labeled "Submit"
       Then I should see "Thank you for taking the survey."
@@ -250,8 +250,8 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
       When I click on the button labeled "Close survey"
       And I return to the REDCap page I opened the survey from
       And I click on the link labeled "Record Status Dashboard"
-      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
-      And I should see "Incomplete" icon for the Data Collection Instrument labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
+      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "3"
+      And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "3"
 
       # Verification pdf saved and logged correctly
       ##VERIFY_FiRe

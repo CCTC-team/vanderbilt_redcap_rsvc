@@ -9,7 +9,6 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       And I create a new project named "C.3.24.2000.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
 
       #SETUP_PRODUCTION
-      When I click on the link labeled "Project Setup"
       And I click on the button labeled "Move project to production"
       And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
       And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -22,13 +21,15 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       Then I should see a checkbox labeled "Hide inactive" that is checked
       And I should see a table header and rows containing the following values in a table:
          | e-Consent active? | Survey                                      |
-         | [✓]               | "Participant Consent" (participant_consent) |
+         | [x]               | "Participant Consent" (participant_consent) |
 
       #VERIFY: Verify version enabled
-      When I click on the button labeled "View all versions" for the survey labeled "Participant Consent"
+      When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
       Then I should see a table header and rows containing the following values in a table:
          | Active?    | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-         | check icon | 1.0     |            |             | 0                           |                   |              | 20240718153905_Fake_Consent[311203].pdf | "Set as inactive" button     |
+         |            | 1.0     |            |             | 0                           |                   |              | _Fake_Consent[311203].pdf               |                              |
+      And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
+      And I click on the button labeled "Close"
 
    Scenario: #Verify eConsent Framework is active by adding a record
       ##ACTION: add record
@@ -41,7 +42,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       And I click on the button labeled "Okay" in the dialog box
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
-      Then I should see "Participant Consent"
+      Then I should see "Please complete the survey"
 
       When I clear field and enter "FirstName" into the input field labeled "First Name"
       And I clear field and enter "LastName" into the input field labeled "Last Name"
@@ -49,11 +50,11 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
       
-        Given I click on the link labeled "Add signature"
-        And I see a dialog containing the following text: "Add signature"
-        And I draw a signature in the signature field area
-        When I click on the button labeled "Save signature" in the dialog box
-        Then I should see a link labeled "Remove signature"
+      Given I click on the link labeled "Add signature"
+      And I see a dialog containing the following text: "Add signature"
+      And I draw a signature in the signature field area
+      When I click on the button labeled "Save signature" in the dialog box
+      Then I should see a link labeled "Remove signature"
 
       When I click on the button labeled "Next Page"
       Then I should see "Displayed below is a read-only copy of your survey responses."
@@ -72,17 +73,20 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       When I click on the link labeled "Designer"
       And I click on the button labeled "e-Consent"
       And I uncheck the checkbox labeled "Hide inactive"
-      And I "Inactive" the e-consent framework for survey labeled "Participant Consent"
+      And I wait for 1 second
+      And I uncheck the checkbox in the row labeled "Participant Consent"
       And I click on the button labeled "Set as inactive"
       Then I should see a table header and rows containing the following values in a table:
             | e-Consent active? | Survey              |
             | [ ]               | Participant Consent |
 
       #VERIFY: Verify version enabled
-      When I click on the button labeled "View all versions" for the survey labeled "Participant Consent"
+      When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
       Then I should see a table header and rows containing the following values in a table:
          | Active?    | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-         | check icon | 1.0     |            |             | 1                           |                   |              | 20240718153905_Fake_Consent[311203].pdf | "Set as inactive" button     |
+         |            | 1.0     |            |             | 1                           |                   |              | _Fake_Consent[311203].pdf               |                              |
+      And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
+      And I click on the button labeled "Close"
 
    Scenario: #Verify eConsent Framework is inactive by adding a record
       ##ACTION: add record
@@ -95,7 +99,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       And I click on the button labeled "Okay" in the dialog box
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
-      Then I should see "Participant Consent"
+      Then I should see "Please complete the survey"
 
       When I clear field and enter "FirstName" into the input field labeled "First Name"
       And I clear field and enter "LastName" into the input field labeled "Last Name"
@@ -103,11 +107,11 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
       
-        Given I click on the link labeled "Add signature"
-        And I see a dialog containing the following text: "Add signature"
-        And I draw a signature in the signature field area
-        When I click on the button labeled "Save signature" in the dialog box
-        Then I should see a link labeled "Remove signature"
+      Given I click on the link labeled "Add signature"
+      And I see a dialog containing the following text: "Add signature"
+      And I draw a signature in the signature field area
+      When I click on the button labeled "Save signature" in the dialog box
+      Then I should see a link labeled "Remove signature"
 
       When I click on the button labeled "Submit"
       Then I should see "Thank you for taking the survey."
@@ -115,24 +119,26 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       When I click on the button labeled "Close survey"
       And I return to the REDCap page I opened the survey from
       And I click on the link labeled "Record Status Dashboard"
-      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
 
    #FUNCTIONAL_REQUIREMENT=
    Scenario: ##ACTION: e-consent survey settings - enabled
       When I click on the link labeled "Designer"
       And I click on the button labeled "e-Consent"
       And I uncheck the checkbox labeled "Hide inactive"
-      And I "Active" the e-consent framework for survey labeled "Participant Consent"
-      Then I should see "e-Consent successfully"
+      And I wait for 1 second
+      And I check the checkbox in the row labeled "Participant Consent"
       And I should see a table header and rows containing the following values in a table:
          | e-Consent active? | Survey                                      |
-         | [✓]               | "Participant Consent" (participant_consent) |
+         | [x]               | "Participant Consent" (participant_consent) |
 
       #VERIFY: Verify version enabled
-      When I click on the button labeled "View all versions" for the survey labeled "Participant Consent"
+      When I click on the link labeled "View all versions" in the row labeled "Participant Consent"
       Then I should see a table header and rows containing the following values in a table:
          | Active?    | Version | Time added | Uploaded by | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
-         | check icon | 1.0     |            |             | 2                           |                   |              | 20240718153905_Fake_Consent[311203].pdf | "Set as inactive" button     |
+         |            | 1.0     |            |             | 2                           |                   |              | _Fake_Consent[311203].pdf               |                              |
+      And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
+      And I click on the button labeled "Close"
 
    Scenario: #Verify eConsent Framework is active by adding a record
       ##ACTION: add record
@@ -145,7 +151,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       And I click on the button labeled "Okay" in the dialog box
       And I click on the button labeled "Survey options"
       And I click on the survey option label containing "Open survey" label
-      Then I should see "Participant Consent"
+      Then I should see "Please complete the survey"
 
       When I clear field and enter "FirstName" into the input field labeled "First Name"
       And I clear field and enter "LastName" into the input field labeled "Last Name"
@@ -153,11 +159,11 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       And I clear field and enter "2000-01-01" into the input field labeled "Date of Birth"
       And I enter "MyName" into the input field labeled "Participant's Name Typed"
       
-        Given I click on the link labeled "Add signature"
-        And I see a dialog containing the following text: "Add signature"
-        And I draw a signature in the signature field area
-        When I click on the button labeled "Save signature" in the dialog box
-        Then I should see a link labeled "Remove signature"
+      Given I click on the link labeled "Add signature"
+      And I see a dialog containing the following text: "Add signature"
+      And I draw a signature in the signature field area
+      When I click on the button labeled "Save signature" in the dialog box
+      Then I should see a link labeled "Remove signature"
 
       When I click on the button labeled "Next Page"
       Then I should see "Displayed below is a read-only copy of your survey responses."
@@ -169,7 +175,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       When I click on the button labeled "Close survey"
       And I return to the REDCap page I opened the survey from
       And I click on the link labeled "Record Status Dashboard"
-      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "3"
 
    Scenario: Verification e-Consent saved and logged correctly
       ##VERIFY_FiRe
@@ -186,9 +192,9 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       When I click on the link labeled "Logging"
       Then I should see a table header and rows containing the following values in the logging table:
          | Username            | Action                    | List of Data Changes OR Fields                                                                                                                             |
-         | [survey respondent] | Save PDF Snapshot 3       | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "3" event = "event_1_arm_1" instrument = "participant_consent"" |
+         | [survey respondent] | Save PDF Snapshot 3       | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "3" event = "event_1_arm_1" instrument = "participant_consent"  |
          | [survey respondent] | e-Consent Certification 3 | e-Consent Certification record = "3"  event = "event_1_arm_1" instrument = "participant_consent"                                                           |
-         | [survey respondent] | Save PDF Snapshot 2       | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument = "participant_consent"" |  
-         | [survey respondent] | Save PDF Snapshot 1       | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent"" |
+         | [survey respondent] | Save PDF Snapshot 2       | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument = "participant_consent"  |  
+         | [survey respondent] | Save PDF Snapshot 1       | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent"  |
          | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent"                                                           |
 #END
