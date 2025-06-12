@@ -7,7 +7,6 @@ Feature: User Interface: The system shall support conditional logic integration 
     Given I login to REDCap with the user "Test_Admin"
     And I create a new project named "C.3.24.2500.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
       #SETUP_PRODUCTION
-    When I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -30,7 +29,7 @@ Feature: User Interface: The system shall support conditional logic integration 
     Then I should see "Saved!"
     Then I should see a table header and rows containing the following values in a table:
       | Active | Edit settings | Name       | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot |
-      | [✓]    |               | Snapshot 1 | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository                  |
+      | [x]    |               | Snapshot 1 | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository                  |
 
   Scenario: New PDF Trigger testing When the following logic becomes true (only once per record)
       ##ACTION: When the following logic becomes true (only once per record)
@@ -50,8 +49,8 @@ Feature: User Interface: The system shall support conditional logic integration 
     Then I should see "Saved!"
     Then I should see a table header and rows containing the following values in a table:
       | Active | Edit settings | Name       | Type of trigger   | Save snapshot when...                                  | Scope of the snapshot | Location(s) to save the snapshot |
-      | [✓]    | Edit Copy     | Snapshot 2 | Logic-based       | Logic becomes true: [participant_consent_complete]='2' | All instruments       | File Repository                  |
-      | [✓]    | Edit Copy     | Snapshot 1 | Survey completion | Complete survey "Participant Consent"                  | All instruments       | File Repository                  |
+      | [x]    |               | Snapshot 2 | Logic-based       | Logic becomes true: [participant_consent_complete]='2' | All instruments       | File Repository                  |
+      | [x]    |               | Snapshot 1 | Survey completion | Complete survey "Participant Consent"                  | All instruments       | File Repository                  |
 
   Scenario: New PDF Trigger testing multi-form
    #C.3.24.2600.100 multi-form/survey PDF snapshots
@@ -72,9 +71,9 @@ Feature: User Interface: The system shall support conditional logic integration 
     Then I should see "Saved!"
     Then I should see a table header and rows containing the following values in a table:
       | Active | Edit settings | Name       | Type of trigger   | Save snapshot when...                                    | Scope of the snapshot | Location(s) to save the snapshot |
-      | [✓]    | Edit Copy     | Snapshot 3 | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | All instruments       | File Repository                  |
-      | [✓]    | Edit Copy     | Snapshot 2 | Logic-based       | Logic becomes true: [participant_consent_complete]='2'   | All instruments       | File Repository                  |
-      | [✓]    | Edit Copy     | Snapshot 1 | Survey completion | Complete survey "Participant Consent"                    | All instruments       | File Repository                  |
+      | [x]    |               | Snapshot 3 | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | All instruments       | File Repository                  |
+      | [x]    |               | Snapshot 2 | Logic-based       | Logic becomes true: [participant_consent_complete]='2'   | All instruments       | File Repository                  |
+      | [x]    |               | Snapshot 1 | Survey completion | Complete survey "Participant Consent"                    | All instruments       | File Repository                  |
       ##VERIFY_Logging - Manage/Designof the triggers
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:

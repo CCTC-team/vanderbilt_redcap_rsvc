@@ -30,26 +30,26 @@ Feature: User Interface: The system shall support the ability to identify data a
 
 
     ##ACTION: change identifier status
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     Then I should see "Design your data collection instruments & enable your surveys"
 
     When I click on the link labeled "Check For Identifiers"
     Then I should see a table header and rows containing the following values in a table:
       | Variable Name | Field Label   | Identifier? |
-      | identifier    | Identifier    | [✓]         |
-      | identifier_2  | Identifier  2 | [✓]         |
+      | identifier    | Identifier    | [x]         |
+      | identifier_2  | Identifier  2 | [x]         |
       | ptname        | Name          | [ ]         |
-      | radio         | radio         | [✓]         |
+      | radio         | radio         | [x]         |
 
     When I uncheck the checkbox labeled "identifier_2"
     And I check the checkbox labeled "ptname"
     And I click on the button labeled "Update Identifiers"
     Then I should see a table header and rows containing the following values in a table:
       | Variable Name | Field Label  | Identifier? |
-      | identifier    | Identifier   | [✓]         |
+      | identifier    | Identifier   | [x]         |
       | identifier_2  | Identifier 2 | [ ]         |
-      | ptname        | Name         | [✓]         |
-      | radio         | radio        | [✓]         |
+      | ptname        | Name         | [x]         |
+      | radio         | radio        | [x]         |
 
     ##VERIFY_CODEBOOK
     When I click on the link labeled "Codebook"
@@ -159,7 +159,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     #FUNCTIONAL_REQUIREMENT
     ##ACTION: shift all dates
     Given I click on the link labeled "Data Exports, Reports, and Stats"
-    And I click on the "Export Data" button in the row labeled "All data (all records and fields)"
+    And I click on the button labeled "Export Data" in the row labeled "All data (all records and fields)"
 
     And I check the checkbox labeled "Shift all dates by value between 0 and 364 days" in the dialog box
     And I check the checkbox labeled "Also shift all survey completion timestamps by value between 0 and 364 days" in the dialog box

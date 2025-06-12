@@ -9,7 +9,6 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
       And I create a new project named "C.3.24.1400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
 
       #SETUP_PRODUCTION
-      When I click on the link labeled "Project Setup"
       And I click on the button labeled "Move project to production"
       And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
       And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -27,5 +26,5 @@ Feature: User Interface: The system shall support the e-Consent Framework to cre
       And I click on the button labeled "Save settings"
       Then I should see a table header and rows containing the following values in a table:
          | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes          |
-         | [✓]               | "Participant Consent" (participant_consent) | File Repository                                    | Participant         | My custom note |
+         | [x]               | "Participant Consent" (participant_consent) | File Repository                                    | Participant         | My custom note |
 #END

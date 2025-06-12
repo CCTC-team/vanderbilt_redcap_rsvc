@@ -20,7 +20,7 @@ Feature: Field Creation: The system shall support marking a data entry field as 
     Given I login to REDCap with the user "Test_User1"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "B.6.7.1700.100"
-    And I click on the link labeled "Project Setup"
+    And I click on the link labeled "Setup"
     And I click on the button labeled "Online Designer"
     Then I should see "Data Collection Instruments"
 
@@ -55,9 +55,6 @@ Feature: Field Creation: The system shall support marking a data entry field as 
     And I click on the link labeled "My Projects"
     And I create a new project named "B.6.7.1700.200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
-    When I click on the link labeled "My Projects"
-    And I click on the link labeled "B.6.7.1700.200"
-    And I click on the link labeled "Project Setup"
     And I click on the link labeled "Check For Identifiers"
     Then I should see "Check For Identifiers"
 

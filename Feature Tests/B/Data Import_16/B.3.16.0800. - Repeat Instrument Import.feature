@@ -10,7 +10,7 @@ Feature: User Interface: The system shall require the repeating instrument and i
     And I create a new project named "B.3.16.0800.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     #SETUP_PROJECTSETUP
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     When I click on the button labeled "Modify" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
     And I select "-- not repeating --" on the dropdown field labeled "Event 1 (Arm 1: Arm 1)"
     And I select "-- not repeating --" on the dropdown field labeled "Event 2 (Arm 1: Arm 1)"
@@ -35,7 +35,7 @@ Feature: User Interface: The system shall require the repeating instrument and i
     And I click on the link labeled "RETURN TO PREVIOUS PAGE"
 
     #SETUP_PROJECTSETUP
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     When I click on the button labeled "Enable" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
     And I select "Repeat Instruments (repeat independently of each other)" on the dropdown field labeled "Event 1 (Arm 1: Arm 1)"
     And for the Event Name "Event 1 (Arm 1: Arm 1)", I check the checkbox labeled "Text Validation" in the dialog box

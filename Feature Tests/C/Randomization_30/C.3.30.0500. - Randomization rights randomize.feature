@@ -17,7 +17,7 @@ Feature: C.3.30.0500. User Interface: The system shall allow user rights configu
     Then I should see 'User "Test_User1" was successfully edited' 
 
   Scenario: #SETUP Randomization (Setup project with simple Randomization)
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     Then I should see "Randomization"
 

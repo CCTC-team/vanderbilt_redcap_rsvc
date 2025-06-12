@@ -50,7 +50,7 @@ Feature: User Interface: Survey Project Settings: The system shall support surve
     Then I should see table rows containing the following values in the reports table:
       | A | All data (all records and fields) |
 
-    And I click on the "View Report" button in the row labeled "All data (all records and fields)"
+    And I click on the button labeled "View Report" in the row labeled "All data (all records and fields)"
     Then I should see a table header and rows containing the following values in the report data table:
       | Record ID | Survey Timestamp | Name        |
       | 1         | mm-dd-yyyy hh:mm | Name_survey |

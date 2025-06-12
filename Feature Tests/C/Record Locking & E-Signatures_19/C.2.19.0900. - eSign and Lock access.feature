@@ -8,7 +8,6 @@ Feature: User Interface: The system shall support the ability to limit access to
         And I create a new project named "C.2.19.900.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     Scenario: ##SETUP_PRODUCTION
-        When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -20,10 +19,10 @@ Feature: User Interface: The system shall support the ability to limit access to
         And for the Column Name "Also display E-signature option on instrument?", I check the checkbox within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
-            | [✓]                                          | Text Validation            | [✓]                                            | [text box]              |
-            | [✓]                                          | Data Types                 | [ ]                                            | [text box]              |
-            | [✓]                                          | Survey                     | [ ]                                            | [text box]              |
-            | [✓]                                          | Consent                    | [ ]                                            | [text box]              |
+            | [x]                                          | Text Validation            | [x]                                            | [text box]              |
+            | [x]                                          | Data Types                 | [ ]                                            | [text box]              |
+            | [x]                                          | Survey                     | [ ]                                            | [text box]              |
+            | [x]                                          | Consent                    | [ ]                                            | [text box]              |
 
         And I click on the link labeled "User Rights"
         And I click on the button labeled "Upload or download users, roles, and assignments"

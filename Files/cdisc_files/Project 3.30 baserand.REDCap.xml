@@ -75,12 +75,31 @@
 		<ItemRef ItemOID="fname" Mandatory="No" redcap:Variable="fname"/>
 		<ItemRef ItemOID="lname" Mandatory="No" redcap:Variable="lname"/>
 		<ItemRef ItemOID="gender" Mandatory="No" redcap:Variable="gender"/>
+		<ItemRef ItemOID="strat_1" Mandatory="No" redcap:Variable="strat_1"/>
+		<ItemRef ItemOID="strat_2" Mandatory="No" redcap:Variable="strat_2"/>
+		<ItemRef ItemOID="strat_3" Mandatory="No" redcap:Variable="strat_3"/>
+		<ItemRef ItemOID="strat_4" Mandatory="No" redcap:Variable="strat_4"/>
+		<ItemRef ItemOID="strat_5" Mandatory="No" redcap:Variable="strat_5"/>
+		<ItemRef ItemOID="strat_6" Mandatory="No" redcap:Variable="strat_6"/>
+		<ItemRef ItemOID="strat_7" Mandatory="No" redcap:Variable="strat_7"/>
+		<ItemRef ItemOID="strat_8" Mandatory="No" redcap:Variable="strat_8"/>
+		<ItemRef ItemOID="strat_9" Mandatory="No" redcap:Variable="strat_9"/>
+		<ItemRef ItemOID="strat_10" Mandatory="No" redcap:Variable="strat_10"/>
+		<ItemRef ItemOID="strat_11" Mandatory="No" redcap:Variable="strat_11"/>
+		<ItemRef ItemOID="strat_12" Mandatory="No" redcap:Variable="strat_12"/>
+		<ItemRef ItemOID="strat_13" Mandatory="No" redcap:Variable="strat_13"/>
+		<ItemRef ItemOID="strat_14" Mandatory="No" redcap:Variable="strat_14"/>
 	</ItemGroupDef>
 	<ItemGroupDef OID="demographics.demographics_complete" Name="Form Status" Repeating="No">
 		<ItemRef ItemOID="demographics_complete" Mandatory="No" redcap:Variable="demographics_complete"/>
 	</ItemGroupDef>
 	<ItemGroupDef OID="randomization.rand_group" Name="Randomization" Repeating="No">
 		<ItemRef ItemOID="rand_group" Mandatory="No" redcap:Variable="rand_group"/>
+		<ItemRef ItemOID="rand_group_2" Mandatory="No" redcap:Variable="rand_group_2"/>
+		<ItemRef ItemOID="rand_group_3" Mandatory="No" redcap:Variable="rand_group_3"/>
+		<ItemRef ItemOID="rand_group_4" Mandatory="No" redcap:Variable="rand_group_4"/>
+		<ItemRef ItemOID="rand_group_5" Mandatory="No" redcap:Variable="rand_group_5"/>
+		<ItemRef ItemOID="rand_group_6" Mandatory="No" redcap:Variable="rand_group_6"/>
 		<ItemRef ItemOID="rand_blind" Mandatory="No" redcap:Variable="rand_blind"/>
 		<ItemRef ItemOID="auto_rand" Mandatory="No" redcap:Variable="auto_rand"/>
 	</ItemGroupDef>
@@ -117,6 +136,62 @@
 		<Question><TranslatedText>Do you describe yourself as a man, a woman, or in some other way?</TranslatedText></Question>
 		<CodeListRef CodeListOID="gender.choices"/>
 	</ItemDef>
+	<ItemDef OID="strat_1" Name="strat_1" DataType="boolean" Length="1" redcap:Variable="strat_1" redcap:FieldType="yesno">
+		<Question><TranslatedText>Stratification 1</TranslatedText></Question>
+		<CodeListRef CodeListOID="strat_1.choices"/>
+	</ItemDef>
+	<ItemDef OID="strat_2" Name="strat_2" DataType="boolean" Length="1" redcap:Variable="strat_2" redcap:FieldType="yesno">
+		<Question><TranslatedText>Stratification 2</TranslatedText></Question>
+		<CodeListRef CodeListOID="strat_2.choices"/>
+	</ItemDef>
+	<ItemDef OID="strat_3" Name="strat_3" DataType="boolean" Length="1" redcap:Variable="strat_3" redcap:FieldType="yesno">
+		<Question><TranslatedText>Stratification 3</TranslatedText></Question>
+		<CodeListRef CodeListOID="strat_3.choices"/>
+	</ItemDef>
+	<ItemDef OID="strat_4" Name="strat_4" DataType="boolean" Length="1" redcap:Variable="strat_4" redcap:FieldType="yesno">
+		<Question><TranslatedText>Stratification 4</TranslatedText></Question>
+		<CodeListRef CodeListOID="strat_4.choices"/>
+	</ItemDef>
+	<ItemDef OID="strat_5" Name="strat_5" DataType="boolean" Length="1" redcap:Variable="strat_5" redcap:FieldType="yesno">
+		<Question><TranslatedText>Stratification 5</TranslatedText></Question>
+		<CodeListRef CodeListOID="strat_5.choices"/>
+	</ItemDef>
+	<ItemDef OID="strat_6" Name="strat_6" DataType="boolean" Length="1" redcap:Variable="strat_6" redcap:FieldType="yesno">
+		<Question><TranslatedText>Stratification 6</TranslatedText></Question>
+		<CodeListRef CodeListOID="strat_6.choices"/>
+	</ItemDef>
+	<ItemDef OID="strat_7" Name="strat_7" DataType="boolean" Length="1" redcap:Variable="strat_7" redcap:FieldType="yesno">
+		<Question><TranslatedText>Stratification 7</TranslatedText></Question>
+		<CodeListRef CodeListOID="strat_7.choices"/>
+	</ItemDef>
+	<ItemDef OID="strat_8" Name="strat_8" DataType="boolean" Length="1" redcap:Variable="strat_8" redcap:FieldType="yesno">
+		<Question><TranslatedText>Stratification 8</TranslatedText></Question>
+		<CodeListRef CodeListOID="strat_8.choices"/>
+	</ItemDef>
+	<ItemDef OID="strat_9" Name="strat_9" DataType="boolean" Length="1" redcap:Variable="strat_9" redcap:FieldType="yesno">
+		<Question><TranslatedText>Stratification 9</TranslatedText></Question>
+		<CodeListRef CodeListOID="strat_9.choices"/>
+	</ItemDef>
+	<ItemDef OID="strat_10" Name="strat_10" DataType="boolean" Length="1" redcap:Variable="strat_10" redcap:FieldType="yesno">
+		<Question><TranslatedText>Stratification 10</TranslatedText></Question>
+		<CodeListRef CodeListOID="strat_10.choices"/>
+	</ItemDef>
+	<ItemDef OID="strat_11" Name="strat_11" DataType="boolean" Length="1" redcap:Variable="strat_11" redcap:FieldType="yesno">
+		<Question><TranslatedText>Stratification 11</TranslatedText></Question>
+		<CodeListRef CodeListOID="strat_11.choices"/>
+	</ItemDef>
+	<ItemDef OID="strat_12" Name="strat_12" DataType="boolean" Length="1" redcap:Variable="strat_12" redcap:FieldType="yesno">
+		<Question><TranslatedText>Stratification 12</TranslatedText></Question>
+		<CodeListRef CodeListOID="strat_12.choices"/>
+	</ItemDef>
+	<ItemDef OID="strat_13" Name="strat_13" DataType="boolean" Length="1" redcap:Variable="strat_13" redcap:FieldType="yesno">
+		<Question><TranslatedText>Stratification 13</TranslatedText></Question>
+		<CodeListRef CodeListOID="strat_13.choices"/>
+	</ItemDef>
+	<ItemDef OID="strat_14" Name="strat_14" DataType="boolean" Length="1" redcap:Variable="strat_14" redcap:FieldType="yesno">
+		<Question><TranslatedText>Stratification 14</TranslatedText></Question>
+		<CodeListRef CodeListOID="strat_14.choices"/>
+	</ItemDef>
 	<ItemDef OID="demographics_complete" Name="demographics_complete" DataType="text" Length="1" redcap:Variable="demographics_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
 		<Question><TranslatedText>Complete?</TranslatedText></Question>
 		<CodeListRef CodeListOID="demographics_complete.choices"/>
@@ -124,6 +199,26 @@
 	<ItemDef OID="rand_group" Name="rand_group" DataType="text" Length="1" redcap:Variable="rand_group" redcap:FieldType="radio">
 		<Question><TranslatedText>Randomization group</TranslatedText></Question>
 		<CodeListRef CodeListOID="rand_group.choices"/>
+	</ItemDef>
+	<ItemDef OID="rand_group_2" Name="rand_group_2" DataType="text" Length="1" redcap:Variable="rand_group_2" redcap:FieldType="radio">
+		<Question><TranslatedText>Randomization group</TranslatedText></Question>
+		<CodeListRef CodeListOID="rand_group_2.choices"/>
+	</ItemDef>
+	<ItemDef OID="rand_group_3" Name="rand_group_3" DataType="text" Length="1" redcap:Variable="rand_group_3" redcap:FieldType="radio">
+		<Question><TranslatedText>Randomization group</TranslatedText></Question>
+		<CodeListRef CodeListOID="rand_group_3.choices"/>
+	</ItemDef>
+	<ItemDef OID="rand_group_4" Name="rand_group_4" DataType="text" Length="1" redcap:Variable="rand_group_4" redcap:FieldType="dropdown">
+		<Question><TranslatedText>Randomization group</TranslatedText></Question>
+		<CodeListRef CodeListOID="rand_group_4.choices"/>
+	</ItemDef>
+	<ItemDef OID="rand_group_5" Name="rand_group_5" DataType="text" Length="1" redcap:Variable="rand_group_5" redcap:FieldType="radio">
+		<Question><TranslatedText>Randomization group</TranslatedText></Question>
+		<CodeListRef CodeListOID="rand_group_5.choices"/>
+	</ItemDef>
+		<ItemDef OID="rand_group_6" Name="rand_group_6" DataType="text" Length="1" redcap:Variable="rand_group_6" redcap:FieldType="radio">
+		<Question><TranslatedText>Randomization group</TranslatedText></Question>
+		<CodeListRef CodeListOID="rand_group_6.choices"/>
 	</ItemDef>
 	<ItemDef OID="rand_blind" Name="rand_blind" DataType="text" Length="999" redcap:Variable="rand_blind" redcap:FieldType="text">
 		<Question><TranslatedText>Blinded randomization</TranslatedText></Question>
@@ -167,12 +262,93 @@ Randomization UTC Time: [ rand-utc-time ]: [rand-utc-time]
 		<CodeListItem CodedValue="1"><Decode><TranslatedText>Woman</TranslatedText></Decode></CodeListItem>
 		<CodeListItem CodedValue="2"><Decode><TranslatedText>Other</TranslatedText></Decode></CodeListItem>
 	</CodeList>
+	<CodeList OID="strat_1.choices" Name="strat_1" DataType="boolean" redcap:Variable="strat_1">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="strat_2.choices" Name="strat_2" DataType="boolean" redcap:Variable="strat_2">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="strat_3.choices" Name="strat_3" DataType="boolean" redcap:Variable="strat_3">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="strat_4.choices" Name="strat_4" DataType="boolean" redcap:Variable="strat_4">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="strat_5.choices" Name="strat_5" DataType="boolean" redcap:Variable="strat_5">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="strat_6.choices" Name="strat_6" DataType="boolean" redcap:Variable="strat_6">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="strat_7.choices" Name="strat_7" DataType="boolean" redcap:Variable="strat_7">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="strat_8.choices" Name="strat_8" DataType="boolean" redcap:Variable="strat_8">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="strat_9.choices" Name="strat_9" DataType="boolean" redcap:Variable="strat_9">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="strat_10.choices" Name="strat_10" DataType="boolean" redcap:Variable="strat_10">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="strat_11.choices" Name="strat_11" DataType="boolean" redcap:Variable="strat_11">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="strat_12.choices" Name="strat_12" DataType="boolean" redcap:Variable="strat_12">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="strat_13.choices" Name="strat_13" DataType="boolean" redcap:Variable="strat_13">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="strat_14.choices" Name="strat_14" DataType="boolean" redcap:Variable="strat_14">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
 	<CodeList OID="demographics_complete.choices" Name="demographics_complete" DataType="text" redcap:Variable="demographics_complete">
 		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
 		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
 		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
 	</CodeList>
 	<CodeList OID="rand_group.choices" Name="rand_group" DataType="text" redcap:Variable="rand_group">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Drug A</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Drug B</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>Placebo</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="rand_group_2.choices" Name="rand_group_2" DataType="text" redcap:Variable="rand_group_2">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Drug A</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Drug B</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>Placebo</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="rand_group_3.choices" Name="rand_group_3" DataType="text" redcap:Variable="rand_group_3">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Drug A</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Drug B</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>Placebo</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="rand_group_4.choices" Name="rand_group_4" DataType="text" redcap:Variable="rand_group_4">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Drug A</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Drug B</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>Placebo</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="rand_group_5.choices" Name="rand_group_5" DataType="text" redcap:Variable="rand_group_5">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Drug A</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Drug B</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>Placebo</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="rand_group_6.choices" Name="rand_group_6" DataType="text" redcap:Variable="rand_group_6">
 		<CodeListItem CodedValue="1"><Decode><TranslatedText>Drug A</TranslatedText></Decode></CodeListItem>
 		<CodeListItem CodedValue="2"><Decode><TranslatedText>Drug B</TranslatedText></Decode></CodeListItem>
 		<CodeListItem CodedValue="3"><Decode><TranslatedText>Placebo</TranslatedText></Decode></CodeListItem>

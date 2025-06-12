@@ -10,7 +10,6 @@ Feature: User Interface: The system shall support the creation, modification, an
       And I create a new project named "C.3.24.2200.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
 
       #SETUP_PRODUCTION
-      When I click on the link labeled "Project Setup"
       And I click on the button labeled "Move project to production"
       And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
       And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -44,45 +43,44 @@ Feature: User Interface: The system shall support the creation, modification, an
       Then I should see "Saved!"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name                            | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [✓]    | Edit Copy     | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
    Scenario: Cancel Copy trigger
       ##ACTION: Cancel Copy trigger
-      When I click on the button labeled "Copy trigger" for the trigger labeled "Custom Dropdown 1 Form Snapshot"
+      When I click on the button labeled "Copy trigger" in the row labeled "Custom Dropdown 1 Form Snapshot"
       Then I should see "Do you wish to copy this PDF Snapshot Trigger?"
 
       When I click on the button labeled "Cancel"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name                            | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [✓]    | Edit Copy     | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
    Scenario: Copy trigger
       ##ACTION: Copy trigger
-      When I click on the button labeled "Copy trigger" for the trigger labeled "Custom Dropdown 1 Form Snapshot"
+      When I click on the button labeled "Copy trigger" in the row labeled "Custom Dropdown 1 Form Snapshot"
       Then I should see "Do you wish to copy this PDF Snapshot Trigger?"
 
-      When I click on the button labeled "Copy trigger"
-      Then I should see a table header and rows containing the following values in a table:
-         | Active | Edit settings | Name                            | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [✓]    | Edit Copy     | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
-         | [✓]    | Edit Copy     | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+     Then I should see a table header and rows containing the following values in a table:
+         | Active | Edit settings | Name                            | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   | Snapshot ID |
+         | [x]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] | 1           |
+         | [x]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] | 2           |
 
    Scenario: Cancel Edit trigger
       ##ACTION: Cancel Edit trigger
-      When I click on the button labeled "Edit trigger" for the trigger labeled "Custom Dropdown 1 Form Snapshot"
-      Then I should see "Custom Dropdown 1 Form Snapshot" in the field labeled "Name of trigger:"
+      When I click on the second button labeled "Edit trigger"
+      Then I verify "Custom Dropdown 1 Form Snapshot" is within the field labeled "Name of trigger:"
 
       When I click on the button labeled "Cancel"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name                            | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [✓]    | Edit Copy     | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
-         | [✓]    | Edit Copy     | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
 
    Scenario: Edit trigger with Logic-based and selected instruments
       ##ACTION: Edit trigger
-      When I click on the button labeled "Edit trigger" for the trigger labeled "Custom Dropdown 1 Form Snapshot"
-      Then I should see "Custom Dropdown 1 Form Snapshot" in the field labeled "Name of trigger:"
+      When I click on the second button labeled "Edit trigger"
+      Then I verify "Custom Dropdown 1 Form Snapshot" is within the field labeled "Name of trigger:"
 
       When I enter "Edit trigger name" into the input field labeled "Name of trigger"
       And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
@@ -101,8 +99,8 @@ Feature: User Interface: The system shall support the creation, modification, an
       Then I should see "Saved! Trigger for PDF Snapshot was successfully modified"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name                            | Type of trigger   | Save snapshot when...                                    | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [✓]    | Edit Copy     | Edit trigger name               | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | Selected instruments  | File Repository Specified field: [event_1_arm_1][participant_file] |
-         | [✓]    | Edit Copy     | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent"                    | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Edit trigger name               | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | Selected instruments  | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent"                    | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
       ##VERIFY_Logging
       When I click on the link labeled "Logging"

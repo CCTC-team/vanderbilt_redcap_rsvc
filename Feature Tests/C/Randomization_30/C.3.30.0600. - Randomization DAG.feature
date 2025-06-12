@@ -42,14 +42,16 @@ Feature: User Interface: The system shall restrict users to randomizing records 
   Scenario: #SETUP Add a record 1 to DAG 1
     When I click on the link labeled "Add / Edit Records"
     And I select "1" on the dropdown field labeled "Choose an existing Record ID"
-    And I select "Assign to Data Access Group" on the dropdown field labeled "Choose action for record"
+    And I click on the button labeled "Choose action for record"
+    And I click on the link labeled "Assign to Data Access Group"
+    Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
     And I select "DAG 1" on the dropdown field labeled "Assign record "1" to one of the following Data Access Groups:"
     And I click on the button labeled "Assign to Data Access Group"
     Then I should see "DAG 1"
 
   Scenario: #SETUP Upload randomization
     When I click on the link labeled "Randomization"
-    And I click on the icon in the column labeled "Setup" in the row labeled "dag_rand"
+    And I click on the icon in the column labeled "Setup" and the row labeled "dag_rand"
     And I upload a "csv" format file located at "C.3.30.0600Allocation1.csv", by clicking the button near "Upload allocation table (CSV file) for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload File" to upload the file
     #NOTE: Automation will have different DAG group ids from manual.  .csv may need to be modified to correct Group IDs based on instance. 
     And I click on the the link labeled "Project Home"

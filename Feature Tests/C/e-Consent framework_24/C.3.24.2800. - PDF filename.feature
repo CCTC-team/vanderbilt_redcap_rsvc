@@ -9,7 +9,6 @@ Feature: User Interface: The system shall support the customization of the file 
       And I create a new project named "C.3.24.2800.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
 
       #SETUP_PRODUCTION
-      When I click on the link labeled "Project Setup"
       And I click on the button labeled "Move project to production"
       And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
       And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -39,7 +38,7 @@ Feature: User Interface: The system shall support the customization of the file 
       Then I should see "Saved!"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name     | Type of trigger | Save snapshot when...                                  | Scope of the snapshot | Location(s) to save the snapshot                    |
-         | [✓]    | Edit Copy     | Snapshot | Logic-based     | Logic becomes true: [participant_consent_complete]='2' | All instruments       | File Repository Specified field: [participant_file] |
+         | [x]    |               | Snapshot | Logic-based     | Logic becomes true: [participant_consent_complete]='2' | All instruments       | File Repository Specified field: [participant_file] |
 
    Scenario: Add record
       #Add record
@@ -68,7 +67,7 @@ Feature: User Interface: The system shall support the customization of the file 
 
    Scenario: Verification pdf saved and logged correctly
       ##VERIFY specified field
-      When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
+      When I click the bubble to select a record for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1"
       Then I should see "custom" in the field labeled "Participant Consent file"
 
       When I click on the file link the field labeled "Participant Consent file"
