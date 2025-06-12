@@ -115,7 +115,7 @@ Feature: User Interface: The system shall support conditional logic integration 
     Then I should have a pdf file with the following values "Participant Consent"
       #Manual: Close document
       #Add Instrument 2's response
-    When I click on the bubble labeled "Coordiantor Signature"
+    When I locate the bubble for the "Coordinator Signature" instrument on event "Event 1" for record ID "1" and click on the bubble
     Then I should see "Editing existing Record ID 1."
     
     Given I click on the link labeled "Add signature"
@@ -134,8 +134,8 @@ Feature: User Interface: The system shall support conditional logic integration 
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see a table header and rows containing the following values in a table:
       | Name      | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type |
-      | Snapshot3 | -                                |      1 | (Event 1 (Arm 1: Arm 1))                     |                        |         |      |
-      | Snapshot2 | -                                |      1 | (Event 1 (Arm 1: Arm 1))                     |                        |         |      |
+      | Snapshot3 | -                                |      1 |                                              |                        |         |      |
+      | Snapshot2 | -                                |      1 |                                              |                        |         |      |
       | Snapshot1 | -                                |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
       ##VERIFY_Logging
       ##e-Consent Framework not used, and PDF Snapshot is used
