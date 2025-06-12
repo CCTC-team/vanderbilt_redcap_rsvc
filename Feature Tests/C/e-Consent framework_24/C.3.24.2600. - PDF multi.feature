@@ -12,11 +12,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
     When I click on the link labeled "Designer"
     And I click on the link labeled "Participant Consent"
     And I click on the last button labeled "Add Field"
-    And I select "Multiple Choice - Radio Buttons (Single Answer)" in the dropdown field labeled "Field Type"
-    And I enter "Form 1 Trigger" into the input field labeled "Field Label"
+    And I select "Multiple Choice - Drop-down List (Single Answer)" in the dropdown field labeled "Field Type"
+    And I enter "Form 1 Trigger" into the textarea field labeled "Field Label"
     And I enter "trigger1" into the input field labeled "Variable Name"
-    And I enter "1, Data Mode" on the first row of the input field labeled "Choices (one choice per line)"
-    And I enter "2, Survey Mode" on the second row of the input field labeled "Choices (one choice per line)"
+    And I enter "1, Data Mode\n2, Survey Mode" into the textarea field labeled "Choices (one choice per line)"
     And I click on the button labeled "Save"
     Then I should see the field labeled "Form 1 Trigger"
 
@@ -24,11 +23,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
     When I click on the link labeled "Designer"
     And I click on the link labeled "Coordinator Signature"
     And I click on the last button labeled "Add Field"
-    And I select "Multiple Choice - Radio Buttons (Single Answer)" in the dropdown field labeled "Field Type"
-    And I enter "Form 2 Trigger" into the input field labeled "Field Label"
+    And I select "Multiple Choice - Drop-down List (Single Answer)" in the dropdown field labeled "Field Type"
+    And I enter "Form 2 Trigger" into the textarea field labeled "Field Label"
     And I enter "trigger2" into the input field labeled "Variable Name"
-    And I enter "1, Data Mode" on the first row of the input field labeled "Choices (one choice per line)"
-    And I enter "2, Survey Mode" on the second row of the input field labeled "Choices (one choice per line)"
+    And I enter "1, Data Mode\n2, Survey Mode" into the textarea field labeled "Choices (one choice per line)"
     And I click on the button labeled "Save"
     Then I should see the field labeled "Form 2 Trigger"
 
@@ -241,6 +239,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I return to the REDCap page I opened the survey from
 
   Scenario:
+    When I click on the link labeled "Record ID 2"
     When I click the bubble to select a record for the "Coordinator Signature" instrument on event "Event 1"
     When I select "Data Mode" on the dropdown field labeled "Form 2 Trigger"
     And I enter "Coordinator" into the input field labeled "Coordinator's Name Typed"
@@ -286,6 +285,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I return to the REDCap page I opened the survey from
 
   Scenario:
+    When I click on the link labeled "Record ID 3"
     When I click the bubble to select a record for the "Coordinator Signature" instrument on event "Event 1"
     When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
@@ -305,6 +305,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
   Scenario:
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
+    Then I click on the link labeled "Record ID 3"
     Then I should see "Record Home Page"
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
     And I should see the "Completed Survey Response" icon for the "Coordinator Signature" longitudinal instrument on event "Event 1"
@@ -335,7 +336,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     Then I should see "Record Home Page"
 
   Scenario:
-        When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
+    When I click the bubble to select a record for the "Participant Consent" instrument on event "Event Three"
     And I select "Data Mode" on the dropdown field labeled "Form 1 Trigger"
     And I clear field and enter "FirstName" into the input field labeled "First Name"
     And I clear field and enter "LastName" into the input field labeled "Last Name"
@@ -355,7 +356,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record Home Page"
     And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
-    And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event 2"
+    And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event Three"
 
   Scenario: Add record -  5 multi data form and survey different event
       #Add record
@@ -391,7 +392,8 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I return to the REDCap page I opened the survey from
 
   Scenario:
-    When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
+    When I click on the link labeled "Record ID 5"
+    When I click the bubble to select a record for the "Participant Consent" instrument on event "Event Three"
     And I select "Data Mode" on the dropdown field labeled "Form 1 Trigger"
     And I clear field and enter "FirstName" into the input field labeled "First Name"
     And I clear field and enter "LastName" into the input field labeled "Last Name"
@@ -409,7 +411,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record Home Page"
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
-    And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event 2"
+    And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event Three"
 
   Scenario: Add record -  6 multi survey different event
       #Add record
@@ -445,7 +447,11 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I return to the REDCap page I opened the survey from
 
   Scenario:
-    When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
+    When I click on the link labeled "Record ID 6"
+    When I click the bubble to select a record for the "Participant Consent" instrument on event "Event Three"
+    And I click on the button labeled "Survey options"
+    And I click on the survey option label containing "Open survey" label
+    And I should see "Please complete the survey below"
     And I select "Survey Mode" on the dropdown field labeled "Form 1 Trigger"
     And I clear field and enter "FirstName" into the input field labeled "First Name"
     And I clear field and enter "LastName" into the input field labeled "Last Name"
@@ -465,9 +471,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
   Scenario:
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
+    Then I click on the link labeled "Record ID 6"
     Then I should see "Record Home Page"
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
-    And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 2"
+    And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event Three"
 
   Scenario: Verification pdf saved and logged correctly
       ##VERIFY_FiRe
@@ -475,10 +482,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see a table header and rows containing the following values in a table:
       | Name                                 | PDF utilized e-Consent Framework | Record | Survey Completed             | Identifier (Name, DOB) | Version | Type |
-      | multidataformandsurveydifferentevent | -                                |      6 | (Event Three (Arm 1: Arm 1)) |                        |         |      |
-      | multidataformandsurveydifferentevent | -                                |      5 | (Event Three (Arm 1: Arm 1)) |                        |         |      |
-      | multidataformdifferentevent          | -                                |      4 | (Event 1 (Arm 1: Arm 1))     |                        |         |      |
-      | multisurveysameevent                 | -                                |      3 | (Event Three (Arm 1: Arm 1)) |                        |         |      |
-      | multidataformandsurveysameevent      | -                                |      2 | (Event 1 (Arm 1: Arm 1))     |                        |         |      |
-      | multidataformsameevent               | -                                |      1 | (Event 1 (Arm 1: Arm 1))     |                        |         |      |
+      | multidataformandsurveydifferentevent | -                                |      6 |                              |                        |         |      |
+      | multidataformandsurveydifferentevent | -                                |      5 |                              |                        |         |      |
+      | multidataformdifferentevent          | -                                |      4 |                              |                        |         |      |
+      | multisurveysameevent                 | -                                |      3 |                              |                        |         |      |
+      | multidataformandsurveysameevent      | -                                |      2 |                              |                        |         |      |
+      | multidataformsameevent               | -                                |      1 |                              |                        |         |      |
 #END
