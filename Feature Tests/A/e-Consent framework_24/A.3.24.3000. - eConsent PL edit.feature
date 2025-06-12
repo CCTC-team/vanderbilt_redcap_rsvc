@@ -63,14 +63,14 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
     Then I should see Project status: "Production"
 
-  Scenario: #FUNCTIONAL_REQUIREMENT Do NOT capture IP Address
-        ##ACTION: Do not capture the IP Address in the e-Consent Framework option
+  Scenario: #FUNCTIONAL_REQUIREMENT Capture IP Address
+        ##ACTION: Capture the IP Address in the e-Consent Framework option
     When I click on the link labeled "Control Center"
     And I click on the link labeled "Modules/Services Configuration"
     Then I should see "Settings pertaining to the External Module Framework"
-    When I select "Do NOT capture IP address" on the dropdown field labeled "Capture the IP address of survey participants that certify the e-Consent process, and store their IP in the File Repository table."
+    When I select "Capture IP address" on the dropdown field labeled "Capture the IP address of survey participants that certify the e-Consent process, and store their IP in the File Repository table."
     And I click on the button labeled "Save Changes"
-        ##VERIFY IP Address is not being Captured via the e-Consent Framework
+        ##VERIFY IP Address is being Captured via the e-Consent Framework
     Then I should see "Your system configuration values have now been changed!"
 
   Scenario: Add record
@@ -121,29 +121,30 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
         ##VERIFY_FiRe
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
+    And I should see "IP Address"
+    Then I should see a table header and rows containing the following values in a table:
+      | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         | IP Address      | Version | Type                  |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | 172.18.0.1      |         | e-Consent Participant |
+
+  Scenario: #FUNCTIONAL_REQUIREMENT Do NOT capture IP Address
+        ##ACTION: Do not capture the IP Address in the e-Consent Framework option
+    When I click on the link labeled "Control Center"
+    And I click on the link labeled "Modules/Services Configuration"
+    Then I should see "Settings pertaining to the External Module Framework"
+    When I select "Do NOT capture IP address" on the dropdown field labeled "Capture the IP address of survey participants that certify the e-Consent process, and store their IP in the File Repository table."
+    And I click on the button labeled "Save Changes"
+        ##VERIFY IP Address is not being Captured via the e-Consent Framework
+    Then I should see "Your system configuration values have now been changed!"
+
+  Scenario: ##VERIFY_FiRe
+    Given I click on the link labeled "My Projects"
+    And I click on the link labeled "A.3.24.3000.200"
+    When I click on the link labeled "File Repository"
+    And I click on the link labeled "PDF Snapshot Archive"
     And I should NOT see "IP Address"
     Then I should see a table header and rows containing the following values in a table:
       | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         | Version | Type                  |
       | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
-
-  Scenario: #FUNCTIONAL_REQUIREMENT Capture IP Address
-        ##ACTION: Capture the IP Address in the e-Consent Framework option
-    When I click on the link labeled "Control Center"
-    And I click on the link labeled "Modules/Services Configuration"
-    Then I should see "Settings pertaining to the External Module Framework"
-    When I select "Capture IP address" on the dropdown field labeled "Capture the IP address of survey participants that certify the e-Consent process, and store their IP in the File Repository table."
-    And I click on the button labeled "Save Changes"
-        ##VERIFY IP Address is being Captured via the e-Consent Framework
-    Then I should see "Your system configuration values have now been changed!"
-
-  Scenario: ##VERIFY_FiRe
-    When I click on the link labeled "File Repository"
-    And I click on the link labeled "PDF Snapshot Archive"
-    And I should see "IP Address"
-    Then I should see a table header and rows containing the following values in a table:
-      | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         | IP Address      | Version | Type                  |
-      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | xxx.xxx.xxx.xxx |         | e-Consent Participant |
-#END
 
   Scenario: A.3.24.3000.300 Add a custom message via e-Consent Framework in the Control Center
         #SETUP
@@ -164,13 +165,15 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     When I click on the link labeled "Control Center"
     And I click on the link labeled "Modules/Services Configuration"
     Then I should see "Settings pertaining to the External Module Framework"
-    When I enter "If you are using the e-Consent Framework, the IRB must see you final version and you must use the stamped version of the IRB Approval" into the input field labeled "Custom message for e-Consent Framework settings (optional)"
+    When I enter "If you are using the e-Consent Framework, the IRB must see you final version and you must use the stamped version of the IRB Approval" into the textarea field labeled "Custom message for e-Consent Framework settings (optional)"
     And I click on the button labeled "Save Changes"
 
   Scenario: ##VERIFY I Custom message appears at the bottom of the Modify Setting window  in the e-Consent Framework
     Then I should see "Your system configuration values have now been changed!"
+    And I click on the link labeled "My Projects"
+    And I click on the link labeled "A.3.24.3000.300"
     When I click on the link labeled "Designer"
     And I click on the button labeled "e-Consent"
-    And I click on the icon to edit the "Participant Consent"
+    And I click on the icon in the column labeled "Edit settings" and the row labeled "Participant Consent"
     Then I should see " If you are using the e-Consent Framework, the IRB must see you final version and you must use the stamped version of the IRB Approval"
 #END
