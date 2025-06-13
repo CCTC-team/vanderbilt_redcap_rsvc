@@ -62,8 +62,14 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       And I click on the button labeled "Save"
       Then I should see "Saved!"
       Then I should see a table header and rows containing the following values in a table:
-         | Active | Edit settings | Name     | Type of trigger | Save snapshot when...                                  | Scope of the snapshot | Location(s) to save the snapshot                    |
-         | [x]    |               | Snapshot | Logic-based     | Logic becomes true: [participant_consent_complete]='2' | All instruments       | File Repository Specified field: [participant_file] |
+         | Active | Edit settings         | Name     | Type of trigger       | Save snapshot when...                                  | Scope of the snapshot  | Location(s) to save the snapshot                                   |
+         | [x]    |                       | Snapshot | Logic-based           | Logic becomes true: [participant_consent_complete]='2' | All instruments        | File Repository                                                    |
+         | [x]    | Governed by e-Consent |          | Survey completion     | Complete survey "Participant Consent"                  | Single survey response | File Repository Specified field: [event_1_arm_1][participant_file] |
+
+      When I click on the link labeled "e-Consent Framework"
+      Then I should see a table header and rows containing the following values in a table:
+         | e-Consent active? | Edit settings | Survey              | Location(s) to save the signed consent snapshot                    |
+         | [x]               |               | Participant Consent | File Repository Specified field: [event_1_arm_1][participant_file] |
 
    Scenario: Add record for snapshot
       #Add record
@@ -84,7 +90,7 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       When I click on the button labeled "Save signature" in the dialog box
       Then I should see a link labeled "Remove signature"
 
-      And I select "Complete" from the field labeled "Complete?"
+      And I select "Complete" on the dropdown field labeled "Complete?"
       And I click on the button labeled "Save & Exit Form"
       Then I should see "Record Home Page"
       And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event 1" 
@@ -125,23 +131,21 @@ Feature: User Interface: The system shall support audit trails for e-Consent Cer
       When I click on the button labeled "Close survey"
       And I return to the REDCap page I opened the survey from
       And I click on the link labeled "Record Status Dashboard"
-      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
-      And I should see an Incomplete Survey Response icon for the Data Collection Instrument labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
-
-      When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
-      Then I should see "Participant Consent file."
-      And I should see a file uploaded to the field labeled "Pdfs And Combined Signatures Pdf."
-      And I see "econsent"
+      Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "2"
+      And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record "2"
+      When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "2" and click on the bubble
+      Then I should see "Editing existing Record ID 2."
+      And I should see a link labeled "eConsent" in the row labeled "Participant Consent file"
 
    Scenario: Verification e-Consent saved and logged correctly
       ##VERIFY_FiRe
       When I click on the link labeled "File Repository"
       And I click on the link labeled "PDF Snapshot Archive"
       Then I should see a table header and rows containing the following values in a table:
-         | Name     | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        |
-         | Snapshot |                                  | 2      | (Event 1 (Arm 1: Arm 1))                     |                               |
+         | Name     | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         |
+         | Snapshot |                                  | 2      |                                              |                                |
          | eConsent |                                  | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |
-         | Snapshot | -                                | 1      | (Event 1 (Arm 1: Arm 1))                     |                               |
+         | Snapshot | -                                | 1      |                                              |                                |
 
       ##VERIFY_Logging
       ##e-Consent Framework not used, and PDF Snapshot is used
