@@ -107,14 +107,16 @@ Feature: User Interface: The system shall support conditional logic integration 
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
     And I click on the link labeled "Record Status Dashboard"
-    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
-    And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "1"
-    When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
-    Then I should see "custom" in the field labeled "Participant Consent file"
-    When I click on the file link the field labeled "Participant Consent file"
-    Then I should have a pdf file with the following values "Participant Consent"
+    Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "1"
+    And I should see the "Incomplete (no data saved)" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "1"
+    When I click on the link labeled "File Repository"
+    Then I click on the link labeled "PDF Snapshot Archive"
+    When I click on the link labeled "Snapshot1_" in the row labeled "Participant Consent"
+    Then I should see the following values in the last file downloaded
+        | Page 1\nParticipant Consent |
       #Manual: Close document
       #Add Instrument 2's response
+    Given I click on the link labeled "Record Status Dashboard"
     When I locate the bubble for the "Coordinator Signature" instrument on event "Event 1" for record ID "1" and click on the bubble
     Then I should see "Editing existing Record ID 1."
     
@@ -142,8 +144,8 @@ Feature: User Interface: The system shall support conditional logic integration 
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Username            | Action                                   | List of Data Changes OR Fields Exported                                                                                                                                 |
-      | test_admin          | Save PDF Snapshot 1                      | Save PDF Snapshot to File Repository record = "1" event = "event_1_arm_1" instrument = "coordinator_signature" snapshot_id =                                            |
-      | [survey respondent] | Save PDF Snapshot 1                      | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id = |
-      | [survey respondent] | Save PDF Snapshot 1                      | Save PDF Snapshot to File Repository record = "1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id =                                              |
+      | test_admin          | Save PDF Snapshot 1                      | Save PDF Snapshot to File Repository record = "1" event = "event_1_arm_1" instrument = "coordinator_signature" snapshot_id = "3"                                        |
+      | [survey respondent] | Save PDF Snapshot 1                      | Save PDF Snapshot to File Repository record = "1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id = "2"                                          |
+      | [survey respondent] | Save PDF Snapshot 1                      | Save PDF Snapshot to File Repository record = "1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id = "1"                                          |
       | test_admin          | Create record 1 (Event 1 (Arm 1: Arm 1)) | record_id = '1'                                                                                                                                                         |
 #END
