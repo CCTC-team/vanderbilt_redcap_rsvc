@@ -362,7 +362,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
       #Add record
     When I click on the link labeled "Add / Edit Records"
     And I click on the button labeled "Add new record for the arm selected above"
-    And I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
+    And I click the bubble to select a record for the "Participant Consent" instrument on event "Event Three"
     Then I should see "Adding new Record ID 5."
 
   Scenario:
@@ -393,7 +393,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
 
   Scenario:
     When I click on the link labeled "Record ID 5"
-    When I click the bubble to select a record for the "Participant Consent" instrument on event "Event Three"
+    When I click the bubble to select a record for the "Participant Consent" instrument on event "Event 1"
     And I select "Data Mode" on the dropdown field labeled "Form 1 Trigger"
     And I clear field and enter "FirstName" into the input field labeled "First Name"
     And I clear field and enter "LastName" into the input field labeled "Last Name"
@@ -410,8 +410,8 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I select "Complete" on the dropdown field labeled "Complete?"
     And I click on the button labeled "Save & Exit Form"
     Then I should see "Record Home Page"
-    And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
-    And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event Three"
+    And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event Three"
+    And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
 
   Scenario: Add record -  6 multi survey different event
       #Add record
