@@ -167,16 +167,19 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
             | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1))   | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
 
         When I click on the link labeled "pid13_formParticipantConsent_id1_"
+        And I wait for 1 second
         Then I should see the following values in the last file downloaded
           | PID 13 - LastName   |
           | Participant Consent |
 
         When I click on the second link labeled "pid13_formCoordinatorSignature_id1_"
+        And I wait for 1 second
         Then I should see the following values in the last file downloaded
           | PID 13 - LastName   |
           | Coordinator Signature |
 
         When I click on the first link labeled "pid13_formCoordinatorSignature_id1_"
+        And I wait for 1 second
         Then I should see the following values in the last file downloaded
           | PID 13 - LastName   |
           | Participant Consent |
