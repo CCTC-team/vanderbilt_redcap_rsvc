@@ -150,7 +150,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
           | pid13_formParticipantConsent_id2 | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |
 
         Given I download the PDF by clicking on the link for Record "2" and Survey "Participant Consent" in the File Repository table
-        Then I should see the following values in the downloaded PDF for record "2" and survey "Participant Consent"
+        Then I should see the following values in the last file downloaded
           | PID 13 - LastName   |
           | Participant Consent |
 

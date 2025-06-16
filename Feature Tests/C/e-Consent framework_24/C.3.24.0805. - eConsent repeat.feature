@@ -17,17 +17,16 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario:
     When I click on the link labeled "Arm 2"
-    And I click on the link labeled "Arm 1"
     Then I should see a table header and rows containing the following values in a table:
       | Event # [event-number] | Days Offset | Offset Range Min / Max | Event Label [event-label] | Custom Event Label | Unique event name  (auto-generated) [event-name] |
-      |                      1 |           1 |                  -0/+0 | Event 1                   |                    | event_1_arm_1                                    |
+      |                      1 |           1 |                  -0/+0 | Event 1                   |                    | event_1_arm_2                                    |
     When I click on the link labeled "Designate Instruments for My Events"
     And I click on the link labeled "Arm 1"
     Then I should see a table header and rows containing the following values in a table:
       | Data Collection Instrument       | Event 1 (1) | Event 2 (2) | Event Three (3) |
-      | Participant Consent(survey)      | [✓]         |             | [✓]            |
-      | Coordinator Signature(survey)    | [✓]         |             | [✓]            |
-      | Pdfs And Combined Signatures Pdf | [✓]         |             | [✓]            |
+      | Participant Consent(survey)      | [x]         |             | [x]            |
+      | Coordinator Signature(survey)    | [x]         |             | [x]            |
+      | Pdfs And Combined Signatures Pdf | [x]         |             | [x]            |
 
   Scenario:
     When I click on the link labeled "Arm Two"
@@ -36,7 +35,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I click on the button labeled "Save"
     Then I should see a table header and rows containing the following values in a table:
       | Data Collection Instrument  | Event 1 (1) |
-      | Participant Consent(survey) | [✓]         |
+      | Participant Consent(survey) | [x]         |
         #Verify Repeatable
 
   Scenario:
@@ -99,7 +98,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
     And I click on the link labeled "Record Status Dashboard"
-    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+    Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "1"
 
   Scenario: add instance 2 for record with consent framework in Arm 1 Event 1  (repeatable event)
         ##ACTION: add instance 2 for record with consent framework in Arm 1 Event 1  (repeatable event)
@@ -140,7 +139,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
     And I click on the link labeled "Record Status Dashboard"
-    Then I should see the "Many Completed Survey Responses" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+    Then I should see the "Many Completed Survey Responses" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "1"
 
   Scenario: add instance 1 for record with consent framework in Arm 1 Event Three  (repeatable instance)
         ##ACTION: add instance 1 for record with consent framework in Arm 1 Event Three  (repeatable instance)
@@ -173,14 +172,14 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
     When I click on the link labeled "Record Status Dashboard"
-    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event Three" for record "1"
+    Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event Three" for record "1"
 
   Scenario: add instance 2 for record with consent framework in Arm 1 Event Three  (repeatable instance)
         ##ACTION: add instance 2 for record with consent framework in Arm 1 Event Three  (repeatable instance)
     Given I click on the link labeled "Add / Edit Records"
     And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
     And I wait for 1 second
-    When I click on the second button labeled "Add new"
+    When I click on the button labeled "Add new" in the row labeled "Participant Consent"
     And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
@@ -213,7 +212,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
     And I click on the link labeled "Record Status Dashboard"
-    Then I should see the "Many Completed Survey Responses" icon for the "Consent" longitudinal instrument on event "Event Three" for record "1"
+    Then I should see the "Many Completed Survey Responses" icon for the "Participant Consent" longitudinal instrument on event "Event Three" for record "1"
 
   Scenario: add record in arm 2 with consent framework
         ##ACTION: add record with consent framework in Arm 1 Event 1  (repeatable event)
@@ -256,7 +255,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I click on the link labeled "Record Status Dashboard"
     And I click on the link labeled "Arm 2"
     And I wait for 1 second
-    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
+    Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "2"
 
   Scenario: add instance 2 for record with consent framework in Arm 2 Event 1  (repeatable event)
         ##ACTION: add instance 2 for record with consent framework in Arm 1 Event 1  (repeatable event)
@@ -295,7 +294,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
     And I click on the link labeled "Record Status Dashboard"
-    Then I should see the "Many Completed Survey Responses" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
+    Then I should see the "Many Completed Survey Responses" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "2"
 
   Scenario: Verification e-Consent saved and logged correctly
         ##VERIFY_FiRe

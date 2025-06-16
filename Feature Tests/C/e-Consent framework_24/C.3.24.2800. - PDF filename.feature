@@ -19,7 +19,6 @@ Feature: User Interface: The system shall support the customization of the file 
 
    Scenario: New PDF Trigger for survey completion all instruments
       ##ACTION: New PDF Trigger
-      When I click on the link labeled "PDF Snapshots of Record"
       And I click on the button labeled "Add new trigger"
       And I enter "Snapshot" into the input field labeled "Name of trigger"
       And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
@@ -59,27 +58,26 @@ Feature: User Interface: The system shall support the customization of the file 
       When I click on the button labeled "Save signature" in the dialog box
       Then I should see a link labeled "Remove signature"
 
-      And I select "Complete" from the field labeled "Complete?"
+      And I select "Complete" on the dropdown field labeled "Complete?"
       And I click on the button labeled "Save & Exit Form"
       Then I should see "Record Home Page"
       And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event 1" 
-      And I should see the "Incomplete (no data saved)" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1"
+      And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1"
 
    Scenario: Verification pdf saved and logged correctly
       ##VERIFY specified field
       When I click the bubble to select a record for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1"
-      Then I should see "custom" in the field labeled "Participant Consent file"
-
-      When I click on the file link the field labeled "Participant Consent file"
-      Then I should have a pdf file with the following values "Participant Consent"
+      When I click on the link labeled "Custom_" in the row labeled "Participant Consent file"
+      Then I should see the following values in the last file downloaded
+        | Page 1\nParticipant Consent |
       #Manual: Close document
 
       ##VERIFY_FiRe
       When I click on the link labeled "File Repository"
       And I click on the link labeled "PDF Snapshot Archive"
       Then I should see a table header and rows containing the following values in a table:
-         | Name   | PDF utilized e-Consent Framework | Record | Survey Completed         | Identifier (Name, DOB) | Version | Type |
-         | custom | -                                | 1      | (Event 1 (Arm 1: Arm 1)) |                        |         |      |
+         | Name    | PDF utilized e-Consent Framework | Record | Survey Completed         | Identifier (Name, DOB) | Version | Type |
+         | Custom_ | -                                | 1      |                          |                        |         |      |
 
 
       ##VERIFY_Logging

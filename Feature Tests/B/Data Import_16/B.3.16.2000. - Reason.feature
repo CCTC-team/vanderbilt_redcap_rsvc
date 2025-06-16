@@ -26,7 +26,7 @@ Feature: User Interface: The system shall provide the ability to require a reaso
         Then I should see "Your document was uploaded successfully and is ready for review"
         Then I should see "Please supply a reason for the data changes for EACH existing record in the text boxes"
 
-        And I enter "because I said so" into the first textarea field labeled "Please supply a reason for the data changes for EACH existing record in the text boxes"
+        And I enter "because I said so" into the first textarea field labeled "Copy to all"
         And I click on the first link labeled "Copy to all"
         And I click on the button labeled "Import Data"
         Then I should see "Import Successful!"

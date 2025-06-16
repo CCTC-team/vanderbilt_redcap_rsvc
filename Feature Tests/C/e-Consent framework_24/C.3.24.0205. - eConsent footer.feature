@@ -123,7 +123,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         When I click on the button labeled "Close survey"
         And I return to the REDCap page I opened the survey from
         And I click on the link labeled "Record Status Dashboard"
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+        Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "1"
 
         ##ACTION: add Coordinator Signature
         When I locate the bubble for the "Coordinator Signature" instrument on event "Event 1" for record ID "1" and click on the bubble
@@ -151,6 +151,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "1"
 
         When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
+        And I wait for 3 seconds
         Then I should see a link labeled "Remove file" in the row labeled "Participant Consent file"
         And I should see a link labeled "Remove file" in the row labeled "Coordinator Signature file"
         And I should see a link labeled "Remove file" in the row labeled "Combine both files together"
@@ -166,17 +167,20 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
             | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1))   | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
 
         When I click on the link labeled "pid13_formParticipantConsent_id1_"
-        Then I should see the following values in the downloaded PDF for record "1" and survey "Participant Consent"
+        And I wait for 1 second
+        Then I should see the following values in the last file downloaded
           | PID 13 - LastName   |
           | Participant Consent |
 
         When I click on the second link labeled "pid13_formCoordinatorSignature_id1_"
-        Then I should see the following values in the downloaded PDF for record "1" and survey "Coordinator Signature"
+        And I wait for 1 second
+        Then I should see the following values in the last file downloaded
           | PID 13 - LastName   |
           | Coordinator Signature |
 
         When I click on the first link labeled "pid13_formCoordinatorSignature_id1_"
-        Then I should see the following values in the downloaded PDF for record "1" and survey "Coordinator Signature"
+        And I wait for 1 second
+        Then I should see the following values in the last file downloaded
           | PID 13 - LastName   |
           | Participant Consent |
           | Coordinator Signature |

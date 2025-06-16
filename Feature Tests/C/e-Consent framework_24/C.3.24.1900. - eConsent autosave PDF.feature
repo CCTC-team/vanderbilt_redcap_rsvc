@@ -7,7 +7,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to opt
       #REDUNDANT - Auto-save PDF to specified field Tested in C.3.24.0205
       #SETUP
       Given I login to REDCap with the user "Test_Admin"
-      And I create a new project named "C.3.24.0205.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
+      And I create a new project named "C.3.24.1900.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
 
       #SETUP_PRODUCTION
       And I click on the button labeled "Move project to production"
@@ -86,10 +86,11 @@ Feature: User Interface: The system shall support the e-Consent Framework to opt
       When I click on the button labeled "Close survey"
       And I return to the REDCap page I opened the survey from
       And I click on the link labeled "Record Status Dashboard"
-      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+      Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "1"
 
       #Verify Auto-Save in specified field
       When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
+      And I wait for 3 seconds
       Then I should see a link labeled "Remove file" in the row labeled "Participant Consent file"
 
    Scenario: Verification e-Consent saved and logged correctly
@@ -101,7 +102,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to opt
          | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
 
       When I click on the link labeled "pid13_formParticipantConsent_id1"
-      Then I should see the following values in the downloaded PDF for record "1" and survey "Participant Consent"
+      Then I should see the following values in the last file downloaded
         | PID 13 - LastName   |
         | Participant Consent |
       #Manual: Close document
