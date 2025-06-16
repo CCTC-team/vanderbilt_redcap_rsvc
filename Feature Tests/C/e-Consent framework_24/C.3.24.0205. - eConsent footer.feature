@@ -177,8 +177,6 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
           | Coordinator Signature |
 
         When I click on the first link labeled "pid13_formCoordinatorSignature_id1_"
-        # Make sure we wait to make sure the new file is downloaded before checking it
-        And I wait for 3 seconds
         Then I should see the following values in the last file downloaded
           | PID 13 - LastName   |
           | Participant Consent |
