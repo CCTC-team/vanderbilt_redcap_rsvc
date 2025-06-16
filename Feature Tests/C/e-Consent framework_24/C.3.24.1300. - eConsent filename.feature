@@ -106,6 +106,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "1"
     And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "1"
     When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
+    And I should see "Editing existing Record ID 1."
     Then I should see "Custom_" in the row labeled "Participant Consent file"
     Then I should see "pid13_formCoordinatorSign..."
 
