@@ -106,7 +106,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "1"
     And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "1"
     When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
-    Then I should see "pid13_formParticipantCons..."
+    Then I should see "Custom_" in the row labeled "Participant Consent file"
     Then I should see "pid13_formCoordinatorSign..."
 
   Scenario: Verification e-Consent saved and logged correctly
@@ -115,11 +115,11 @@ Feature: User Interface: The system shall support the e-Consent Framework to cus
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see a table header and rows containing the following values in a table:
       | Name                                    | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type                  |
-      | pid13_formParticipantConsent_id1Custom_ |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         | e-Consent |
+      | Custom_ |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         | e-Consent |
       ##VERIFY_Logging
       ##e-Consent Framework not used, and PDF Snapshot is used
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Username            | Action                    | List of Data Changes OR Fields Exported                                                                                                         |
-      | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent" snapshot_file = "pid13_formParticipantConsent_id1Custom_ |
+      | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent" snapshot_file = "Custom_ |
 #END
