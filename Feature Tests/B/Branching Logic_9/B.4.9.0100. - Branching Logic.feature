@@ -57,6 +57,7 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         And I click on the instrument labeled "Data Types"
         And I click on the Branching Logic icon for the variable "ptname"
         And I click on "[record_id] = '999'" in the textarea field labeled "Advanced Branching Logic Syntax" in the dialog box
+        And I wait for 1 second
         And I clear field and enter "[record_id] <> '999'" in the textarea field labeled "Logic Editor" in the dialog box
         And I click on the button labeled "Update & Close Editor" in the dialog box
         And I click on the button labeled "Save" in the dialog box
@@ -67,6 +68,7 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         ##ACTION: change branching logic for all
         When I click on the Branching Logic icon for the variable "text2"
         And I click on "[record_id] = '999'" in the textarea field labeled "Advanced Branching Logic Syntax" in the dialog box
+        And I wait for 1 second
         And I clear field and enter "[record_id] <> '999'" in the textarea field labeled "Logic Editor" in the dialog box
         And I click on the button labeled "Update & Close Editor" in the dialog box
         And I click on the button labeled "Save" in the dialog box
