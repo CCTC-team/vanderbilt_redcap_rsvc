@@ -199,7 +199,7 @@ Feature: User Interface: The system shall support the creation, modification, an
 
       #Add Instrument 2's response
       When I click on the link labeled "Coordinator Signature"
-      Then I should see "Editing existing Record ID 2."
+      Then I should see "Coordinator's Name Typed"
 
       When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
       And I click on the button labeled "Okay" in the dialog box
