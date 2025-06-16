@@ -130,7 +130,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
     And I click on the link labeled "Record Status Dashboard"
-    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+    Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "1"
 
   Scenario: ##ACTION: add DAG1 record
       ##ACTION: add DAG1 record
@@ -187,7 +187,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
     And I click on the link labeled "Record Status Dashboard"
-    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
+    Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "2"
 
   Scenario: ##ACTION: add DAG2 record
       ##ACTION: add DAG2 record
@@ -242,7 +242,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to lim
     When I click on the button labeled "Close survey"
     And I return to the REDCap page I opened the survey from
     And I click on the link labeled "Record Status Dashboard"
-    Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "3"
+    Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "3"
 
   Scenario: # Verification e-Consent saved and logged correctly
       #Verification e-Consent saved and logged correctly

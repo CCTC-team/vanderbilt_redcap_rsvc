@@ -200,7 +200,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         Then I should see "Record Status Dashboard (all records)"
         When I click on the link labeled exactly "1-1"
         And I wait for 1 seconds
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+        Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
         And I should see "TestGroup1"
 
     #FUNCTIONAL_REQUIREMENT
@@ -351,7 +351,7 @@ Feature: User Interface: The system shall support limiting file repository user 
 
         When I click on the link labeled "2-1"
         And I wait for 1 second
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
+        Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
         And I should see "TestGroup2"
 
     #FUNCTIONAL_REQUIREMENT
