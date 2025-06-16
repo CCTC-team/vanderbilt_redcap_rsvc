@@ -14,7 +14,7 @@ Feature: C.3.30.0200 User Interface: The system shall allow enabling/disabling R
     Then I should see "test_user1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
   Scenario: C.3.30.0200.0100. Enabling adds randomization module to project setup.
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     And I click on the button labeled "Enable" in the "Randomization module" row in the "Enable optional modules and customizations" section
      ##VERIFY Enabling adds randomization module to project setup.
     And I should see a button labeled "Disable" in the "Randomization module" row in the "Enable optional modules and customizations" section
@@ -27,7 +27,7 @@ Feature: C.3.30.0200 User Interface: The system shall allow enabling/disabling R
       | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Modify project settings                 |
 
   Scenario: C.3.30.0200.0200. Enabling adds randomization module to application box
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     Then I should see a button labeled "Set up randomization"
 
      #VERIFY Enabling adds randomization module to application box
@@ -62,7 +62,7 @@ Feature: C.3.30.0200 User Interface: The system shall allow enabling/disabling R
       | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Modify project settings                 |
 
   Scenario: C.3.30.0200.0500. Disabling removes randomization module from application box.
-    When I click on the link labeled "Project Setup"
+    When I click on the link labeled "Setup"
     Then I should see a button labeled "Enable" in the "Randomization module" row in the "Enable optional modules and customizations" section
      #VERIFY Disabling removes randomization module from application box.
     And I should NOT see a link labeled "Randomization"
