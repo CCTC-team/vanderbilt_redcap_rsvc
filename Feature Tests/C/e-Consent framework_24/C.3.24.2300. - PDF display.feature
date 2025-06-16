@@ -210,7 +210,7 @@ Feature: User Interface: The system shall support the hide/unhide active and ina
    Scenario: Reactivate triggers
       When I click on the link labeled "Designer"
       And I click on the button labeled "PDF Snapshot"
-       And I uncheck the checkbox labeled "Hide inactive"
+      And I uncheck the checkbox labeled "Hide inactive"
       Then I should see a table header and rows containing the following values in a table:
          | Active  | Edit settings | Name          | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
          | [ ]     |               | Snapshot      | Survey completion | Complete survey "Participant Consent" |                       |                                                                    |
