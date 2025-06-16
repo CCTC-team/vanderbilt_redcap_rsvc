@@ -107,7 +107,7 @@ Feature: E.128.3400 - NonLongitudinal_NonRepeatingInstruments_noDAGS
       | Field             | Field value | Query response [comment] | Reply | Query  |
       | ptname            |             |                          |       | Query1 |
       | notesbox          |             |                          |       | Query2 |
-      | checkbox          | Array       |                          |       | Query3 |
+      | checkbox          | [ 0, 0, 0 ] |                          |       | Query3 |
     
     And I should see the monitoring status "Verification in progress"
     And I should see "Monitor query status: OPEN"
@@ -124,7 +124,7 @@ Feature: E.128.3400 - NonLongitudinal_NonRepeatingInstruments_noDAGS
       | Field             | Field value | Query  |
       | ptname            |             | Query1 |
       | notesbox          |             | Query2 |
-      | checkbox          | Array       | Query3 |
+      | checkbox          | [ 0, 0, 0 ] | Query3 |
 
     And I should see the monitoring status "Verification in progress"
     And I should see "Monitor query status: OPEN"
@@ -152,7 +152,7 @@ Feature: E.128.3400 - NonLongitudinal_NonRepeatingInstruments_noDAGS
       | Field             | Field value | Query response [comment]          |
       | ptname            |             | accepted-updated                  |
       | notesbox          |             | accepted-unresolvable [Response1] |
-      | checkbox          | Array       | rejected-error [Response2]        |
+      | checkbox          | [ 0, 0, 0 ] | rejected-error [Response2]        |
 
     When I click on the button labeled "Close as verified"
     Then I should see the monitoring status "Verified"
