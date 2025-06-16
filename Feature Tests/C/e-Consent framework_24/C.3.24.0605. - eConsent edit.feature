@@ -171,11 +171,11 @@ Feature: User Interface: The e-Consent framework shall support editing of respon
 
 
         When I click on the link labeled "pid13_formParticipantConsent_id1"
-        Then I should see the following values in the downloaded PDF for record "1" and survey "Participant Consent"
+        Then I should see the following values in the last file downloaded
           | \n2)First NameFirstName \n3) |
 
         When I click on the link labeled "pid13_formParticipantConsent_id2"
-        Then I should see the following values in the downloaded PDF for record "2" and survey "Participant Consent"
+        Then I should see the following values in the last file downloaded
           | \n2)First NameFirstName \n3) |
         #NOTE: Edited version with "NewFirstName" is NOT in the file repository.
         #Manual: Close document

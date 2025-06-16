@@ -102,7 +102,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to opt
          | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
 
       When I click on the link labeled "pid13_formParticipantConsent_id1"
-      Then I should see the following values in the downloaded PDF for record "1" and survey "Participant Consent"
+      Then I should see the following values in the last file downloaded
         | PID 13 - LastName   |
         | Participant Consent |
       #Manual: Close document

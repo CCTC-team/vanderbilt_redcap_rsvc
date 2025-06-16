@@ -65,7 +65,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to pro
 
 
         When I click on the link labeled "pid13_formParticipantConsent_id1"
-        Then I should see the following values in the downloaded PDF for record "1" and survey "Participant Consent"
+        Then I should see the following values in the last file downloaded
           | \n2)First NameFirstName \n3)   |
 
         ##VERIFY_Logging

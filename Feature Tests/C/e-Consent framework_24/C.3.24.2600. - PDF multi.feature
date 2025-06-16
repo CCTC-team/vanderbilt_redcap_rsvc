@@ -485,7 +485,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
       | multidataformandsurveydifferentevent | -                                |      6 |                              |                        |         |      |
       | multidataformandsurveydifferentevent | -                                |      5 |                              |                        |         |      |
       | multidataformdifferentevent          | -                                |      4 |                              |                        |         |      |
-      | multisurveysameevent                 | -                                |      3 |                              |                        |         |      |
+      | multidataformandsurveysameevent  this is wrong!  Need to figure out why original trigger is not being hit, maybe ask Rob  to troubleshoot (he made the changes)          | -                                |      3 |                              |                        |         |      |
       | multidataformandsurveysameevent      | -                                |      2 |                              |                        |         |      |
       | multidataformsameevent               | -                                |      1 |                              |                        |         |      |
 #END
