@@ -4,7 +4,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to opt
    I want to see that eConsent is functioning as expected
 
    Scenario: C.3.24.1900.100 Auto-save PDF to specified field
-      #REDUNDANT - Auto-save PDF to specified field Tested in C.3.24.1900
+      #REDUNDANT - Auto-save PDF to specified field Tested in C.3.24.0205
       #SETUP
       Given I login to REDCap with the user "Test_Admin"
       And I create a new project named "C.3.24.1900.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
