@@ -54,12 +54,6 @@ Feature: E.124.1300 - The system shall support the ability to view excluded data
     And I select "DataManager" on the dropdown field labeled "Select Role" on the role selector dropdown
     And I click on the button labeled exactly "Assign" on the role selector dropdown
     Then I should see "Test User2" within the "DataManager" row of the column labeled "Username" of the User Rights table
-
-    When I click on the link labeled "DataManager"
-    Then I should see 'Editing existing user role "DataManager"'
-    And I select the User Right named Data Resolution Workflow and choose Open, close, and respond to queries
-    And I check the User Right named "Data Quality - Execute rules"
-    And I click on the button labeled "Save Changes"
     And I logout
 
   Scenario: Exclude DQR referencing fields from two CRFs
