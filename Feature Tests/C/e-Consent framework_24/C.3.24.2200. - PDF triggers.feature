@@ -20,7 +20,6 @@ Feature: User Interface: The system shall support the creation, modification, an
 
    Scenario: Cancel New PDF Trigger
       ##ACTION: New PDF Trigger
-      When I click on the link labeled "PDF Snapshots of Record"
       And I click on the button labeled "Add new trigger"
       And I click on the button labeled "Cancel"
       Then I should see a table header and rows containing the following values in a table:
@@ -28,7 +27,6 @@ Feature: User Interface: The system shall support the creation, modification, an
 
    Scenario: New PDF Trigger for survey completion all instruments
       ##ACTION: New PDF Trigger
-      When I click on the link labeled "PDF Snapshots of Record"
       And I click on the button labeled "Add new trigger"
       And I enter "Custom Dropdown 1 Form Snapshot" into the input field labeled "Name of trigger"
       And I select '"Participant Consent" - [Any Event]' on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
@@ -41,6 +39,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       And I enter "Custom" into the input field labeled "File name:"
       And I click on the button labeled "Save"
       Then I should see "Saved!"
+      Then I click on the button labeled "OK"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name                            | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   |
          | [x]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent" | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
@@ -59,6 +58,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       ##ACTION: Copy trigger
       When I click on the button labeled "Copy trigger" in the row labeled "Custom Dropdown 1 Form Snapshot"
       Then I should see "Do you wish to copy this PDF Snapshot Trigger?"
+      And I click on the button labeled "Copy trigger"
 
      Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name                            | Type of trigger   | Save snapshot when...                 | Scope of the snapshot | Location(s) to save the snapshot                                   | Snapshot ID |
@@ -88,18 +88,23 @@ Feature: User Interface: The system shall support the creation, modification, an
       And I wait for 1 second
       And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
       And I click on the button labeled "Update & Close Editor" in the dialog box  
-      And I click "Particpant Consent" and "Coordinator Siganture" from "[Any Event]" located in "Arm 1: Arm 1"
+      And I click on the icon labeled '[All instruments]'
+      And I click on the link labeled 'deselect all'
+      And I check the first checkbox labeled 'Participant Consent'
+      And I check the first checkbox labeled 'Coordinator Signature'
+      And I click on the button labeled "Update"
       And I check the checkbox labeled "Save as Compact PDF (includes only fields with saved data)"
       And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
       And I check the checkbox labeled "Save to File Repository"
       And I check the checkbox labeled "Save to specified field:"
-      And I select "coo_sign" on the event name "Event 1 (Arm 1: Arm 1)" on the dropdown field labeled "select a File Upload field" in the dialog box
+      And I select "combo_file" in the dropdown field labeled "Save to specified field:"
+      And I select "Event 1 (Arm 1: Arm 1)" in the dropdown field labeled "Save to specified field:"
       And I enter "Custom" into the input field labeled "File name:"
       And I click on the button labeled "Save"
-      Then I should see "Saved! Trigger for PDF Snapshot was successfully modified"
+      Then I should see "Trigger for PDF Snapshot was successfully modified"
       Then I should see a table header and rows containing the following values in a table:
          | Active | Edit settings | Name                            | Type of trigger   | Save snapshot when...                                    | Scope of the snapshot | Location(s) to save the snapshot                                   |
-         | [x]    |               | Edit trigger name               | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | Selected instruments  | File Repository Specified field: [event_1_arm_1][participant_file] |
+         | [x]    |               | Edit trigger name               | Logic-based       | Logic becomes true: [participant_consent_complete]='2... | Selected instruments  | File Repository Specified field: [event_1_arm_1][combo_file]       |
          | [x]    |               | Custom Dropdown 1 Form Snapshot | Survey completion | Complete survey "Participant Consent"                    | All instruments       | File Repository Specified field: [event_1_arm_1][participant_file] |
 
       ##VERIFY_Logging
@@ -129,7 +134,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I click on the button labeled "Save signature" in the dialog box
       Then I should see a link labeled "Remove signature"
 
-      And I select "Complete" from the field labeled "Complete?"
+      And I select "Complete" on the dropdown field labeled "Complete?"
       And I click on the button labeled "Save & Exit Form"
       Then I should see "Record Home Page"
       And I should see the "Complete" icon for the "Participant Consent" longitudinal instrument on event "Event 1" 
@@ -149,7 +154,7 @@ Feature: User Interface: The system shall support the creation, modification, an
          | Username   | Action                                   | List of Data Changes OR Fields Exported |
          | test_admin | Create record 1 (Event 1 (Arm 1: Arm 1)) | record_id = '1'                         |
 
-   Scenario: Add record in data survey mode (pdf snapshot created)
+   Scenario: Add record in survey mode (pdf snapshot created)
       #Add record in data survey mode (pdf snapshot created)
       When I click on the link labeled "Add / Edit Records"
       And I click on the button labeled "Add new record for the arm selected above"
@@ -180,19 +185,21 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I click on the button labeled "Close survey"
       And I return to the REDCap page I opened the survey from
       And I click on the link labeled "Record Status Dashboard"
-      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
+      Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "2"
       And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "2"
 
-      When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
-      Then I should see "custom" in the field labeled "Participant Consent file"
+      When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "2" and click on the bubble
+      Then I should see "Editing existing Record ID 2."
+      Then I should see "Custom_" in the row labeled "Participant Consent file"
 
-      When I click on the file link the field labeled "Participant Consent file"
-      Then I should have a pdf file with the following values "Participant Consent"
+      When I click on the link "Custom_"
+      Then I should see the following values in the last file downloaded
+        | Page 1\nParticipant Consent |
       #Manual: Close document
 
       #Add Instrument 2's response
-      When I click on the bubble labeled "Coordiantor Signature"
-      Then I should see "Editing existing Record ID 2."
+      When I click on the link labeled "Coordinator Signature"
+      Then I should see "Coordinator's Name Typed"
 
       When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
       And I click on the button labeled "Okay" in the dialog box
@@ -213,18 +220,20 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I click on the button labeled "Close survey"
       And I return to the REDCap page I opened the survey from
       And I click on the link labeled "Record Status Dashboard"
-      Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
+      Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "2"
       Then I should see the "Completed Survey Response" icon for the "Coordinator Signature" longitudinal instrument on event "Event 1" for record "2"
       And I should see the "Incomplete" icon for the "Pdfs And Combined Signatures Pdf" longitudinal instrument on event "Event 1" for record "2"
 
 
-      When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "1" and click on the bubble
-      Then I should see "custom" in the field labeled "Participant Consent file"
-      And I should see "custom" in the field labeled "Coordinator Signature file"
+      When I locate the bubble for the "Pdfs And Combined Signatures Pdf" instrument on event "Event 1" for record ID "2" and click on the bubble
+      Then I should see "Editing existing Record ID 2."
+      Then I should see "Custom_" in the row labeled "Participant Consent file"
+      And I should see "Custom_" in the row labeled "Combine both files together"
 
-      When I click on the file link the field labeled "Coordinator Signature file"
-      Then I should have a pdf file with the following values "Participant Consent"
-      And I should have a pdf file with the following values "Coordinator Signature"
+      When I click on the link "Custom_" in the row labeled "Combine both files together"
+      And I should see the following values in the last file downloaded
+        | Page 1\nParticipant Consent |
+        | Page 3\nCoordinator Signature |
    #Manual: Close document
 
 
@@ -234,15 +243,15 @@ Feature: User Interface: The system shall support the creation, modification, an
       And I click on the link labeled "PDF Snapshot Archive"
       Then I should see a table header and rows containing the following values in a table:
          | Name       | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type |
-         | Custom.pdf | -                                | 2      | (Event 1 (Arm 1: Arm 1))                     |                        |         |      |
-         | Custom.pdf | -                                | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
+         | Custom_    | -                                | 2      | (Event 1 (Arm 1: Arm 1))                     |                        |         |      |
+         | Custom_    | -                                | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
 
       ##VERIFY_Logging
       ##e-Consent Framework not used, and PDF Snapshot is used
       When I click on the link labeled "Logging"
       Then I should see a table header and rows containing the following values in the logging table:
          | Username            | Action                                   | List of Data Changes OR Fields Exported                                                                                                                                 |
-         | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Upload Field field =  "coo_sign (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument =  "coordinator_signature" snapshot_id =     |
+         | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Upload Field field =  "combo_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument =  "coordinator_signature" snapshot_id =     |
          | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Repository record = "2" event = "event_1_arm_1" instrument = "coordinator_signature" snapshot_id =                                            |
          | test_admin          | Create record 1 (Event 1 (Arm 1: Arm 1)) | record_id = '1'                                                                                                                                                         |
          | [survey respondent] | Save PDF Snapshot 2                      | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id = |

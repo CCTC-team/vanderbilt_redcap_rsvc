@@ -70,7 +70,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         When I click on the button labeled "Close survey"
         And I return to the REDCap page I opened the survey from
         And I click on the link labeled "Record Status Dashboard"
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+        Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "1"
 
     Scenario: Test previous page erase signature
         ##ACTION: Test previous page button on certification page with signature erase
@@ -117,7 +117,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
 
         When I return to the REDCap page I opened the survey from
         And I click on the link labeled "Record Status Dashboard"
-        Then I should see the "Partial Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "2"
+        Then I should see the "Partial Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "2"
 
     Scenario: Test reopen partially completed this survey and start over
         ##ACTION: Test reopen partially completed this survey and start over
@@ -154,7 +154,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         When I click on the button labeled "Close survey"
         And I return to the REDCap page I opened the survey from
         And I click on the link labeled "Record Status Dashboard"
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+        Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "1"
 
     Scenario: Verification e-Consent saved and logged correctly
         ##VERIFY_FiRe

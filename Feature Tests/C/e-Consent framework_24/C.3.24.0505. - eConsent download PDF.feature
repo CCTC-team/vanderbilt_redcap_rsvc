@@ -68,7 +68,7 @@ Feature: C.3.24.0505. User Interface: The system shall support the e-Consent Fra
         When I click on the button labeled "Close survey"
         And I return to the REDCap page I opened the survey from
         And I click on the link labeled "Record Status Dashboard"
-        Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1" for record "1"
+        Then I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1" for record "1"
 
     Scenario: Verification e-Consent saved and logged correctly
         ##VERIFY_FiRe
@@ -79,7 +79,7 @@ Feature: C.3.24.0505. User Interface: The system shall support the e-Consent Fra
             | .pdf |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
 
         When I click on the link labeled "pid13_formParticipantConsent_id1"
-        Then I should see the following values in the downloaded PDF for record "1" and survey "Participant Consent"
+        Then I should see the following values in the last file downloaded
           | PID 13 - LastName   |
           | Participant Consent |
         #Manual: Close document
