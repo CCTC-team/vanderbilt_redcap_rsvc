@@ -5,9 +5,11 @@ if [ -f .env ]; then
   source .env
 fi
 
-if [ -z "$REDCAP_API_TOKEN" ]; then
-  echo "Environment variable REDCAP_API_TOKEN is not set. Exiting."
-  exit 1
+if [ "$upload" = true ]; then
+  if [ -z "$REDCAP_API_TOKEN" ]; then
+    echo "Environment variable REDCAP_API_TOKEN is not set. Exiting."
+    exit 1
+  fi
 fi
 
 # Default values
