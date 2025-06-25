@@ -1,4 +1,4 @@
-Feature: D.3.28.0700. External Storage Verification for File Repository
+Feature: D.3.28.0700. The system shall ensure that PDF snapshots stored in the File Repository are saved to the configured file storage location (local or external) as specified in the Control Center settings.
   The system shall ensure that files uploaded to the File Repository are saved in the configured external file storage location.
 
   As a local REDCap administrator
