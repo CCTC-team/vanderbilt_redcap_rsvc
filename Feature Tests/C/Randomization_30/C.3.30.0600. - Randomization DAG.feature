@@ -43,7 +43,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
     #Adding Allocation table
-    When I upload a "csv" format file located at "import_files/AllocationTblC.3.30.0600_2.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+    When I upload a "csv" format file located at "import_files/AllocationTblC.3.30.0600.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
     Then I should see " Success! The randomization allocation table was created!"
 
 
