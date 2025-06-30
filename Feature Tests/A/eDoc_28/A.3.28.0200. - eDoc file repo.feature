@@ -13,56 +13,79 @@ Feature: Control Center: The system shall allow administrators to configure the 
     #ACTION: Disable File Repository
     When I click on the link labeled "Control Center"
     And I click on the link labeled "File Upload Settings"
-    And I select "Disabled" on the dropdown field labeled "Enable file uploading for the File Repository module"
+    And I select "Disabled" on the dropdown field labeled "ENABLE FILE UPLOADING FOR THE FILE REPOSITORY MODULE"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed!"
 
     #VERIFY: Upload interface not visible
-    When I navigate to any project and click on the link labeled "File Repository"
+    And I create a new project named "A.3.28.0200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
+    When I click on the link labeled "File Repository"
     Then I should NOT see the button labeled "Select files to upload"
 
   Scenario: A.3.28.0200.200 Enable manual uploads to the File Repository
     #ACTION: Enable File Repository
     When I click on the link labeled "Control Center"
     And I click on the link labeled "File Upload Settings"
-    And I select "Enabled" on the dropdown field labeled "Enable file uploading for the File Repository module"
+    And I select "Enabled" on the dropdown field labeled "ENABLE FILE UPLOADING FOR THE FILE REPOSITORY MODULE"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed!"
 
     #VERIFY: Upload interface is visible and functional
-    When I navigate to a project and click on the link labeled "File Repository"
+    When I click on the link labeled "My Projects"
+    And I click on the link labeled "A.3.28.0200"
+    When I click on the link labeled "File Repository"
     Then I should see the button labeled "Select files to upload"
-    When I upload the file "import_files/testusers_bulkupload.csv"
-    Then I should see the file name in the File Repository table
+    When I click the button labeled "Select files to upload" to select and upload the following file to the File Repository:
+      | /import_files/testusers_bulkupload.csv |
+    Then I should see a table header and rows containing the following values in the file repository table:
+      | Name                        | Time Uploaded    | Comments                |
+      | testusers_bulkupload.csv    | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
 
   Scenario: A.3.28.0200.300 Enforce max file size for uploads to File Repository
     #SETUP: Set small file size limit
     When I click on the link labeled "Control Center"
     And I click on the link labeled "File Upload Settings"
-    And I enter "1" into the field labeled "File Repository upload max file size (MB)"
+    And I enter "1" into the field labeled "File Repository upload max file size"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed!"
 
     #VERIFY: Blocked upload for large file
-    When I attempt to upload a file larger than 1 MB to the File Repository
-    Then I should see an error message indicating file exceeds allowed size
+    When I click on the link labeled "My Projects"
+    And I click on the link labeled "A.3.28.0200"
+    When I click on the link labeled "File Repository"
+    When I click the button labeled "Select files to upload" to select and upload "/import_files/RandomizationAllocationTemplate_new.csv" to File Repository and see that the upload failed
+    Then I should see "File could not be loaded because it is too large"
 
     #VERIFY: Successful upload for small file
-    When I upload a file smaller than 1 MB
-    Then I should see the file name in the File Repository table
+    When I click the button labeled "Select files to upload" to select and upload the following file to the File Repository:
+      | /import_files/testusers_bulkupload.csv |
+    Then I should see a table header and rows containing the following values in the file repository table:
+      | Name                         | Time Uploaded    | Comments                |
+      | testusers_bulkupload (1).csv             | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
 
   Scenario: A.3.28.0200.400 Enforce per-project storage limit
     #SETUP: Set low project storage limit
     When I click on the link labeled "Control Center"
     And I click on the link labeled "File Upload Settings"
-    And I enter "2" into the field labeled "File Repository: File storage limit (MB) for all projects"
+    And I enter "2" into the field labeled "File Repository: File storage limit (in MB) for all projects"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed!"
 
     #ACTION: Upload until limit reached
-    When I navigate to a project File Repository
-    And I upload files totaling 2 MB
-
+    When I click on the link labeled "My Projects"
+    And I click on the link labeled "A.3.28.0200"
+    When I click on the link labeled "File Repository"
+    When I click the button labeled "Select files to upload" to select and upload the following file to the File Repository:
+      | /import_files/BigDataTestProjectDATA2100.csv |
+    Then I should see a table header and rows containing the following values in the file repository table:
+      | Name                               | Time Uploaded    | Comments                |
+      | BigDataTestProjectDATA2100.csv     | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
+    When I click the button labeled "Select files to upload" to select and upload the following file to the File Repository:
+      | /import_files/BigDataTestProjectDATA2100.csv |
+    Then I should see a table header and rows containing the following values in the file repository table:
+      | Name                               | Time Uploaded    | Comments                |
+      | BigDataTestProjectDATA2100 (1).csv | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
+    
     #VERIFY: Upload blocked beyond limit
-    When I attempt to upload one more file
-    Then I should see an error message about exceeding the storage limit
+    When I click the button labeled "Select files to upload" to select and upload "/import_files/BigDataTestProjectDATA2100.csv" to File Repository and see that the upload failed
+    Then I should see "You can not upload the file because doing so will exceed the project storage limit"
