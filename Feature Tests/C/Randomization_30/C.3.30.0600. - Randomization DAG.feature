@@ -2,147 +2,129 @@ Feature: User Interface: The system shall restrict users to randomizing records 
   As a REDCap end user
   I want to see that Randomization is functioning as expected
 
-  Scenario: #SETUP project with no randomization enabled - "C.3.30 AllRandOptions.xml"
+ Scenario: #SETUP project with randomization enabled
     Given I login to REDCap with the user "Test_User1"
-    And I create a new project named "C.3.30.0600" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "C.3.30 AllRandOptions.xml", and clicking the "Create Project" button
-
-  Scenario: #SETUP Randomization User Rights for User 1 (Give User all Rand Rights and Add User 2)
+    And I create a new project named "C.3.30.0600." by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project 3.30 baserand.REDCap.xml", and clicking the "Create Project" button
+    #Adding user rights Test_User1
     When I click on the link labeled "User Rights"
-    And I click on the link labeled "Test User1"
-    And I click on the button labeled "Edit User Privileges"
-    And I check the User Right named "Data Access Groups"
-    And I check the User Right named "Setup"
-    And I check the User Right named "Dashboard"
-    And I check the User Right named "Randomize"
-    And I save changes within the context of User Rights
-    Then I should see a table header and rows containing the following values in a table:
-      | Role name | Username   | Data Access Group |
-      | —         | test_user1 |                   |
-
-  Scenario: #SETUP Randomization User Rights User 2
-    When I enter "Test_User2" into the input field labeled "Add with custom rights"
+    And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+    And I click on the button labeled "Assign to role"
+    And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
+    When I click on the button labeled exactly "Assign" on the role selector dropdown
+    Then I should see "test_user1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
+    #Adding user Test_User2 (No randomization rights)
+    When I click on the link labeled "User Rights"
+    And I enter "Test_User2" into the field with the placeholder text of "Add new user"
     And I click on the button labeled "Add with custom rights"
-    And I check the User Right named "Randomize"
-    And I save changes within the context of User Rights
-    Then I should see a table header and rows containing the following values in a table:
-      | Role name | Username   | Data Access Group |
-      | —         | test_user1 |                   |
-      | —         | test_user2 |                   |
-
-  Scenario: #SETUP DAG with user 2
+    And I click on the checkbox labeled "Project Design and Setup"
+    And I click on the button labeled "Add user"
+    Then I should see 'User "Test_User2" was successfully added'
+    #Adding DAG
     When I click on the link labeled "DAGs"
-    And I select "Test_User2" on the dropdown field labeled "Assign user"
+    Then I should see "Create new groups"
+    When I enter "DAG 1" into the field with the placeholder text of "Enter new group name"
+    And I click on the button labeled "Add Group"
+    #Assign User to DAG
+    Given I click on the link labeled "DAGs"
+    When I select "test_user2 (Test User2)" on the dropdown field labeled "Assign user"
     And I select "DAG 1" on the dropdown field labeled "to"
     And I click on the button labeled "Assign"
     Then I should see a table header and rows containing the following values in data access groups table:
       | Data Access Groups        | Users in group          |
-      | DAG 1                     | test_user2              |
+      | DAG 1                     | test_user2 (Test User2) |
       | [Not assigned to a group] | test_user1 (Test User1) |
+    #Adding randomization strategy and allocation table
+    When I click on the link labeled "Project Setup"
+    And I click on the button labeled "Set up randomization"
+    And I click on the button labeled "Add new randomization model"
+    And I check the checkbox labeled "B) Randomize by group/site"
+    And I click on the radio labeled "Use Data Access Groups"
+    And I select "rand_group_2 (Randomization group)" on the second dropdown field labeled "- select a field -"
+    And I click on the button labeled "Save randomization model"
+    Then I should see "Success! The randomization model has been saved!"
+    #Adding Allocation table
+    When I upload a "csv" format file located at "import_files/AllocationTblC.3.30.0600.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+    Then I should see " Success! The randomization allocation table was created!"
 
-  Scenario: #SETUP Add a record 1 to DAG 1
-    When I click on the link labeled "Add / Edit Records"
-    And I select "1" on the dropdown field labeled "Choose an existing Record ID"
-    And I click on the button labeled "Choose action for record"
-    And I click on the link labeled "Assign to Data Access Group"
-    Then I should see a dialog containing the following text: "Assign record to a Data Access Group?"
-    And I select "DAG 1" on the dropdown field labeled "Assign record "1" to one of the following Data Access Groups:"
-    And I click on the button labeled "Assign to Data Access Group"
-    Then I should see "DAG 1"
-
-  Scenario: #SETUP Upload randomization
-    When I click on the link labeled "Randomization"
-    And I click on the icon in the column labeled "Setup" and the row labeled "dag_rand"
-    And I upload a "csv" format file located at "C.3.30.0600Allocation1.csv", by clicking the button near "Upload allocation table (CSV file) for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload File" to upload the file
-    #NOTE: Automation will have different DAG group ids from manual.  .csv may need to be modified to correct Group IDs based on instance. 
-    And I click on the the link labeled "Project Home"
-    And I logout
-
-  Scenario: #SETUP Login to Test User 2
-    Given I login to REDCap with the user "Test_User2"
-    And I click "My Projects" on the menu bar
-    And I click the link labeled "C.3.30.0600"
 
   Scenario: #FUNCTIONAL_REQUIREMENT C.3.30.0600.0100. Users within a DAG can randomize records only within their assigned DAG, ensuring they cannot view or randomize records outside their group.
-#Users in a DAG can randomize records in their DAG
-    When I click on the link labeled "Add / Edit Records"
-    And I click the button "Add new record"
-    And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
-    And I click on the button labeled "Randomize" for the field labeled "Stratified by DAG Randomization"
-    Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
-    And I click on the button labeled "Randomize"
-    Then I should see a dialog containing the following text: "Randomizing Record ID"
-    And I click on the button labeled "Close"
-    Then I should see the radio field labeled "Stratified by DAG Randomization" with the option "Group 1" selected
-    And I should see "Already Randomized" near the radio field labeled "Stratified by DAG Randomization"
-
-  Scenario: #Users in a DAG can view randomization in their DAG
-    When I click on the link labeled "Add / Edit Records"
-    And I select "1" on the dropdown field labeled "Choose an existing Record ID"
-    And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
-    Then I should see "Drug A" in the data entry form field "Randomization Group"
-    And I should see "1" in the data entry form field "Blinded randomization"
-    And I should see "Group 1" in the data entry form field "Automatic Randomization"
-
-  Scenario: #Users in a DAG cannot view or randomize outside their DAG
-    When I click on the link labeled "Add / Edit Records"
-    And I click on the dropdown field labeled "Choose an existing Record ID"
-    Then I should see the radio field labeled "Choose an existing Record ID" with the options below
-      | "1"   |
-      | "1-1" |
-    And I should NOT see the radio field labeled "Choose an existing Record ID" WITHOUT the options below
-      | "2" |
-      | "3" |
-      | "4" |
-      | "5" |
-
-  Scenario: #FUNCTIONAL_REQUIREMENT C.3.30.0600.0200: The randomization model shall support stratification by DAG, allowing independent randomization assignments within each DAG.
-#Randomize a second record to DAG 1 (Group 2 is expected)
-    When I click on the link labeled "Add / Edit Records"
-    And I click the button "Add new record"
-    And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
-    And I click on the button labeled "Randomize" for the field labeled "Stratified by DAG Randomization"
-    Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID "1-2" on the field Stratified by DAG Randomization (dag_rand)"
-    And I click on the button labeled "Randomize"
-    Then I should see a dialog containing the following text: "Record ID "1-2" was randomized for the field "Randomization group" and assigned the value "Group 2"(1)"
-    And I click on the button labeled "Close"
-    Then I should see the radio field labeled "Stratified by DAG Randomization" with the option "Group 2" selected
-    And I should see "Already Randomized" near the radio field labeled "Stratified by DAG Randomization"
-    And I logout
-
-  Scenario: #Log in as Test User 1 and Randomize record 2 to DAG 2 - Group 3 is expected
-    Given I login to REDCap with the user "Test_User1"
-    And I click "My Projects" on the menu bar
-    And I click the link labeled "C.3.30.0600"
+    Given I logout
+    And I login to REDCap with the user "Test_User2"
+    When I click on the link labeled "My Projects"
+    And I click on the link labeled "C.3.30.0600."
+    And I click on the link labeled "Project Setup"
     And I click on the link labeled "Add / Edit Records"
-    And I select "2" on the dropdown field labeled "Choose an existing Record ID"
-    And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
-    And I click on the button labeled "Randomize" for the field labeled "Stratified by DAG Randomization"
+    And I click on the button labeled "Add new record"
+    And I click the bubble for the row labeled "Demographics" on the column labeled "Status"
+    And I select the radio option "Yes" for the field labeled "Stratification 1"
+    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    Then I should see "Record ID 1-1 successfully added."
+    
+    When I click the bubble for the row labeled "Randomization" on the column labeled "Status"
+    And I click on the button labeled "Randomize" 
     Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
-    And I select "DAG 2" on the dropdown field labeled "Assign record to a Data Access Group?"
-    And I click on the button labeled "Randomize" for the field labeled "Stratified by DAG Randomization"
-    Then I should see the dropdown field labeled "DAG 2" with the option "Group 3" selected
-    And I click on the button labeled "Randomize"
-    Then I should see a dialog containing the following text: "Record ID" was randomized for the field "Stratified by DAG Randomization" and assigned the value "Group 3" (3)."
-    And I click on the button labeled "Close"
+    And I click on the button labeled "Randomize" in the dialog box
+    Then I should see "was randomized for the field" in the dialog box
+    And I click on the button labeled "Close" in the dialog box
+    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    Then I should see "Record ID 1-1 successfully edited."
 
-  Scenario: #Test User 1 and Randomize record 3 to DAG 2 - Group 2 is expected
-    When I click on the link labeled "Add / Edit Records"
-    And I select "3" on the dropdown field labeled "Choose an existing Record ID"
-    And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
-    And I click on the button labeled "Randomize" for the field labeled "Stratified by DAG Randomization"
-    Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
-    And I select "DAG 2" on the dropdown field labeled "Assign record to a Data Access Group?"
-    And I click on the button labeled "Randomize" for the field labeled "Stratified by DAG Randomization"
-    Then I should see the dropdown field labeled "DAG 2" with the option "Group 3" selected
-    And I click on the button labeled "Randomize"
-    Then I should see a dialog containing the following text: "Record ID" was randomized for the field "Stratified by DAG Randomization" and assigned the value "Group 2" (2)."
-    And I click on the button labeled "Close"
+      #VERIFY Randomization value was saved and field now has a value.
+    When I click the bubble for the row labeled "Randomization" on the column labeled "Status"
+    Then I should see "Already randomized" 
 
-  Scenario: ##VERIFY_LOG
+      #VERIFY access restriction | Test_User2 doesn't have access to records outside of their dag.
+    When I click on the link labeled "Record Status Dashboard"
+    Then I should see a table header and rows containing the following values in the record status dashboard table:
+      | Record ID |
+      | 1-1       |
+
+      #Verification that user does not have access to record 2. Ensuring they cannot view or randomize records outside their group is fully covered by B.2.10.0400. User Interface: The system shall provide the ability to restrict a user who has been assigned to a DAG.
+    And I should NOT see "2" 
+    
+      #VERIFY Record Randomization was added to the randomization dashboard.
+    Given I logout
+    And I login to REDCap with the user "Test_User1"
+    When I click on the link labeled "My Projects"
+    And I click on the link labeled "C.3.30.0600."
+    And I click on the link labeled "Project Setup"
+    And I click on the button labeled "Set up randomization"
+    And I click on the icon in the column labeled "Dashboard" and the row labeled "1"
+    Then I should see a table header and rows containing the following values in a table:
+                 | Used    | Not Used | Allocated records   | Data Access Group  redcap_data_access_group|Randomization group  rand_group_2|
+                 | 1       |     0    |     1-1             | Dag 1 (1)                                  | Drug A (1)        | 
+	            	
+      #VERIFY_log Randomization at project level enabled recorded in logging table
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
-      | Username   | Action           | List of Data Changes OR Fields Exported |
-      | test_user1 | Randomize Record | Randomize record                        |
-      | test_user2 | Randomize Record | Randomize record                        |
-    And I logout
+            | Time / Date      | Username   | Action              | List of Data Changes OR Fields Exported           |
+            | mm/dd/yyyy hh:mm | test_user2 | Randomize Record 1-1|Randomize record|
+            | mm/dd/yyyy hh:mm | test_user2 | Update record 1-1   |Assign record to Data Access Group (redcap_data_access_group = 'dag_1')|
+            | mm/dd/yyyy hh:mm | test_user2 | Create record 1-1   |strat_1 = '1', demographics_complete = '0', record_id = '1-1'|
+
+  
+  Scenario: FUNCTIONAL_REQUIREMENT C.3.30.0600.0200: The randomization model shall support stratification by DAG, allowing independent randomization assignments within each DAG.
+    When I click on the link labeled "Add / Edit Records"
+    And I click on the button labeled "Add new record"
+    And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
+    And I click on the button labeled "Randomize"
+    Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
+    When I select "DAG 1" on the dropdown field labeled "Assign this record to a Data Access Group"
+    And I click on the button labeled "Randomize"
+    Then I should see "was randomized for" in the dialog box
+    And I click on the button labeled "Close" in the dialog box
+    And I should see "Already randomized" 
+    And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+    Then I should see "Record ID 6 successfully edited."
+
+      #VERIFY Logging
+    When I click on the link labeled "Logging"
+    Then I should see a table header and rows containing the following values in the logging table:
+           |Time / Date        | Username   | Action              | List of Data Changes OR Fields Exported      |
+           | mm/dd/yyyy hh:mm  | test_user1 | Update record 6     |  |
+           | mm/dd/yyyy hh:mm  | test_user1 | Randomize Record 6  | Randomize record  |
+           | mm/dd/yyyy hh:mm  | test_user1 | Update record 6     | Assign record to Data Access Group (redcap_data_access_group = 'dag_1') |
+           | mm/dd/yyyy hh:mm  | test_user1 | Create record 6     | record_id = '6', rand_group_2 = '1', randomization_complete = '0' |
+
+And I logout
 #END
