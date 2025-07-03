@@ -37,20 +37,51 @@ Feature: Control Center: The system shall allow administrators to configure uplo
     #SETUP: Enable with limit
     When I click on the link labeled "Control Center"
     And I click on the link labeled "File Upload Settings"
-    And I set the value "2" in the field labeled "Upload max file size for general file attachments (MB)"
+    And I enter "1" into the field labeled "Upload max file size for general file attachments"
+    When I select "Enabled" on the dropdown field labeled "Allow file attachments to be uploaded for data queries in the Data Resolution Workflow"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed!"
 
     #VERIFY: Successful upload in Descriptive field
-    When I navigate to a project and upload a file smaller than 2 MB in a Descriptive field
-    Then I should see the file name and a confirmation of upload
+    When I click on the link labeled "My Projects"
+    And I click on the link labeled "A.3.28.0500"
+    And I click on the link labeled "Designer"
+    And I click on the link labeled "Data Types"
+    And I click on the Edit image for the field named "Descriptive Text with File"
+    And I click on the link labeled "Upload file"
+    And I upload a "csv" format file located at "import_files/testusers_bulkupload.csv", by clicking the button near "Select a file then click the 'Upload File' button" to browse for the file
+    And I click on the button labeled "Upload file"
+    And I should see "Document was successfully uploaded"
+    And I should see "testusers_bulkupload.csv"
 
     #VERIFY: Upload fails if file exceeds limit
-    When I attempt to upload a file larger than 2 MB in a Descriptive field
-    Then I should see an error message indicating the file exceeds the allowed size
+    And I click on the link labeled "Remove"
+    And I click on the button labeled "Delete"
+    And I click on the link labeled "Upload file"
+    And I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate_new.csv", by clicking the button near "Select a file then click the 'Upload File' button" to browse for the file
+    And I click on the button labeled "Upload file"
+    And I should see an alert box with the following text: "thus exceeding the maximum file size limit of 1 MB"
+    And I should see "There was an error uploading your file."
+    And I click on the button labeled "Close"
+    And I click on the button labeled "Cancel"
+
+
+    #VERIFY: Upload and fail in DRW
+    And I click on the link labeled "Resolve Issues"
+    And I click on the button labeled "1 comment" in the row labeled "Name"
+    And I click on the link labeled "Upload file"
+    And I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate_new.csv", by clicking the button near "Select a file then click the 'Upload File' button" to browse for the file
+    And I click on the button labeled "Upload document"
+    And I should see an alert box with the following text: "thus exceeding the maximum file size limit of 1 MB"
+    And I should see "There was an error during file upload"
+    And I click on the button labeled "Close"
 
     #VERIFY: Upload and view in DRW
-    When I respond to a data query and attach a file smaller than 2 MB
-    Then I should see the file attached in the query response
+    And I click on the link labeled "Upload file"
+    And I upload a "csv" format file located at "import_files/testusers_bulkupload.csv", by clicking the button near "Select a file then click the 'Upload File' button" to browse for the file
+    And I click on the button labeled "Upload document"
+    And I should see "Document was successfully uploaded"
+    And I click on the button labeled "Close"
+    And I should see "testusers_bulkupload.csv"
 
 #END
