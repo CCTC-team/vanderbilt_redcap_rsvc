@@ -18,6 +18,7 @@ Feature: Project Settings: The system shall allow project-level enabling or disa
     Then I should see "Your changes have been saved"
     #ACTION: Add a new record with a completed e-Consent
     When I click on the link labeled "My Projects"
+    And I should see "Listed below are the REDCap projects"
     And I click on the link labeled "A.3.28.0600.100"
     And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
