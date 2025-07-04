@@ -31,7 +31,7 @@ Feature: Control Center: The system shall allow administrators to configure uplo
     And I click on the button labeled "Open query"
     And I click on the link labeled "Resolve Issues"
     And I click on the button labeled "1 comment" in the row labeled "Name"
-    Then I should NOT see the option to attach a file
+    Then I should NOT see the option to attach a file # REDCap currently allows uploads but hangs rather than reporting an error.  This has been reported as a bug.  We'll update this step once it is fixed.
 
   Scenario: A.3.28.0500.200 Enable general file attachments with file size limit
     #SETUP: Enable with limit
