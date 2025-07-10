@@ -13,201 +13,234 @@ As a REDCap administrator
   Scenario: A.3.28.0100.0100. Configure Local File Storage
 # Default REDCap configuration storing files in /edocs/ or another local path. No external setup or credentials required. 
       #SETUP 
-    Given I log in to REDCap with the user "Test_Admin"
-    And I navigate to the "Control Center"
-    And I click the link labeled "File Upload Settings"
-    Then I should see the option "Set Local File Storage Location"
-   #ACTION: Leave the storage path blank (use default /edocs/) 
-    When I leave the local storage path blank
+    Given I login to REDCap with the user "Test_Admin"
+    And I click on the link labeled "Control Center"
+    And I click on the link labeled "File Upload Settings"
+    And I select "Local (on REDCap web server)" on the dropdown field labeled "STORAGE LOCATION OF UPLOADED FILES"
+    Then I enter "" into the input field labeled "SET LOCAL FILE STORAGE LOCATION"
     And I click on the button labeled "Save Changes"
-    Then I should see the message "Your configuration values have now been changed"
-#SETUP: Create project and complete consent form to generate file 
-    When I create a new project named "A.3.28.0100.100" by clicking "New Project", selecting "Practice / Just for fun", uploading file "24ConsentWithSetup.xml", and clicking "Create Project"
-    And I click the link labeled "Add/Edit Records"
-    And I click the button labeled "Add new record for the arm selected above"
-    And I click the bubble labeled "Participant Consent" for event "Event 1"
-    Then I should see "Adding new Record ID 1"
+    Then I should see "Your system configuration values have now been changed"
+    When I create a new project named "A.3.28.0100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
+    And I click on the link labeled "Survey Distribution Tools"
+    And I click on the button labeled "Open public survey"
     Then I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I enter "LastNameLocal" into the input field labeled "Last Name"
+    And I enter "email@test.edu" into the input field labeled "email"
+    And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
-    And I draw a signature in the "Participant signature field"
-    And I click the button labeled "Submit"
+    Given I click on the link labeled "Add signature" in the row labeled "Participant signature field"
+    And I see a dialog containing the following text: "Add signature"
+    And I draw a signature in the signature field area
+    When I click on the button labeled "Save signature" in the dialog box
+    Then I should see a link labeled "Remove signature"
+    And I click on the button labeled "Next Page"
+    When I check the checkbox labeled "I certify that all of my information in the document above is correct."
+    And I click on the button labeled "Submit"
     Then I should see "Close survey"
-    When I click the button labeled "Close survey"
-    And I click the button labeled "Leave without saving changes"
+    When I click on the button labeled "Close survey"
+    And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
-    Then I should see "Record Home Page"
-    And I should see the "Completed Survey Response" icon for "Participant Consent" for event "Event 1"
+    Given I click on the link labeled "Add / Edit Records"
+    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"
-    Then I should see a table with a PDF snapshot for Record ID 1
-    When I click the link in the "PDF Survey Archive"
-    And I click the link to view the PDF for Record ID 1
-    Then I should have a PDF file with header containing "PID xxxx - LastName"
-    And the footer should contain "Type: Participant"
+    And I click on the link labeled "PDF Snapshot Archive"
+    Then I should see "pid13_formParticipantConsent_id1_"
+    Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
+    Then I should see the following values in the last file downloaded
+      | PID 13 - LastNameLocal |
+      | Type: Participant     |
       #Manual: Close document 
 #VERIFY Confirm file exists in local server directory 
  # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
-    Given I completed scenario A.3.28.0100.0100
-    Then I confirm that a PDF file corresponding to Record ID 1 exists in the local storage path
+    # Assuming Baker likes this "latest file" language, we should be good.  If we switch to something different, we should consider whether we need to clear the edocs folder between test runs
+    Then I should see the following values in the most recent file in the local storage path
+      | PID 13 - LastNameLocal |
+      | Type: Participant      |
 
   Scenario: A.3.28.0100.0200 – Configure Microsoft Azure Blob Storage
 # Requires Azure storage account name, key, container, and environment. Site must confirm that uploaded files are routed to the Azure container. 
 #SETUP 
-    Given I navigate to the "Control Center"
-    And I click the link labeled "File Upload Settings"
-    Then I should see the option "Microsoft Azure Blob Storage"
-#ACTION: Configure Azure Blob Storage When I select "Microsoft Azure Blob Storage" from the storage options And I enter the following values: | Azure storage account name | [Azure_Account_Name] | | Azure storage account key | [Azure_Account_Key] | | Azure blob container name | [Azure_Container] | And I select "Azure Commercial/Global" from the dropdown labeled "Azure environment"  
-    And I click the button labeled "Save Changes"
-    Then I should see the message "Your configuration values have now been changed"
-#SETUP: Create project and complete consent form to generate file 
-    When I create a new project named "A.3.28.0100.100" by clicking "New Project", selecting "Practice / Just for fun", uploading file "24ConsentWithSetup.xml", and clicking "Create Project"
-    And I click the link labeled "Add/Edit Records"
-    And I click the button labeled "Add new record for the arm selected above"
-    And I click the bubble labeled "Participant Consent" for event "Event 1"
-    Then I should see "Adding new Record ID 1"
+    Given I click on the link labeled "Control Center"
+    And I click on the link labeled "File Upload Settings"
+    And I select "Microsoft Azure Blob Storage" on the dropdown field labeled "STORAGE LOCATION OF UPLOADED FILES"
+    And I click on the button labeled "Save Changes"
+    Then I should see "Your system configuration values have now been changed"
+    When I click on the link labeled "My Projects"
+    And I click on the link labeled "A.3.28.0100"
+    And I click on the link labeled "Survey Distribution Tools"
+    And I click on the button labeled "Open public survey"
     Then I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I enter "LastNameAzure" into the input field labeled "Last Name"
+    And I enter "email@test.edu" into the input field labeled "email"
+    And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
-    And I draw a signature in the "Participant signature field"
-    And I click the button labeled "Submit"
+    Given I click on the link labeled "Add signature" in the row labeled "Participant signature field"
+    And I see a dialog containing the following text: "Add signature"
+    And I draw a signature in the signature field area
+    When I click on the button labeled "Save signature" in the dialog box
+    Then I should see a link labeled "Remove signature"
+    And I click on the button labeled "Next Page"
+    When I check the checkbox labeled "I certify that all of my information in the document above is correct."
+    And I click on the button labeled "Submit"
     Then I should see "Close survey"
-    When I click the button labeled "Close survey"
-    And I click the button labeled "Leave without saving changes"
+    When I click on the button labeled "Close survey"
+    And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
-    Then I should see "Record Home Page"
-    And I should see the "Completed Survey Response" icon for "Participant Consent" for event "Event 1"
+    Given I click on the link labeled "Add / Edit Records"
+    And I select record ID "2" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"
-    Then I should see a table with a PDF snapshot for Record ID 1
-    When I click the link in the "PDF Survey Archive"
-    And I click the link to view the PDF for Record ID 1
-    Then I should have a PDF file with header containing "PID xxxx - LastName"
-    And the footer should contain "Type: Participant"
+    And I click on the link labeled "PDF Snapshot Archive"
+    Then I should see "pid13_formParticipantConsent_id2_"
+    Given I download the PDF by clicking on the link for Record "2" and Survey "Participant Consent" in the File Repository table
+    Then I should see the following values in the last file downloaded
+      | PID 13 - LastNameAzure |
+      | Type: Participant     |
       #Manual: Close document 
  #VERIFY Confirm file exists in Azure Blob Storage 
  # Site must verify that the PDF file was saved in the configured Microsoft Azure Blob Storage container 
    # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
-    Given I completed scenario A.3.28.0100.0200
-    Then I confirm that a PDF file corresponding to Record ID 1 exists in the specified Azure Blob container
+    Then I should see the following values in the most recent file in the Azure Blob Storage container
+      | PID 13 - LastNameAzure   |
+      | Type: Participant |
 
   Scenario: A.3.28.0100.0300 – Configure Amazon S3 Storage
 # Requires AWS access key, secret key, bucket name, and region. # Site must verify file appearance in the configured S3 bucket. 
-#SETUP: Create project and complete consent form to generate file 
-    When I create a new project named "A.3.28.0100.100" by clicking "New Project", selecting "Practice / Just for fun", uploading file "24ConsentWithSetup.xml", and clicking "Create Project"
-    And I click the link labeled "Add/Edit Records"
-    And I click the button labeled "Add new record for the arm selected above"
-    And I click the bubble labeled "Participant Consent" for event "Event 1"
-    Then I should see "Adding new Record ID 1"
+    Given I click on the link labeled "Control Center"
+    And I click on the link labeled "File Upload Settings"
+    And I select "Amazon S3" on the dropdown field labeled "STORAGE LOCATION OF UPLOADED FILES"
+    And I click on the button labeled "Save Changes"
+    Then I should see "Your system configuration values have now been changed"
+    When I click on the link labeled "My Projects"
+    And I click on the link labeled "A.3.28.0100"
+     And I click on the link labeled "Survey Distribution Tools"
+    And I click on the button labeled "Open public survey"
     Then I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I enter "LastNameS3" into the input field labeled "Last Name"
+    And I enter "email@test.edu" into the input field labeled "email"
+    And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
-    And I draw a signature in the "Participant signature field"
-    And I click the button labeled "Submit"
+    Given I click on the link labeled "Add signature" in the row labeled "Participant signature field"
+    And I see a dialog containing the following text: "Add signature"
+    And I draw a signature in the signature field area
+    When I click on the button labeled "Save signature" in the dialog box
+    Then I should see a link labeled "Remove signature"
+    And I click on the button labeled "Next Page"
+    When I check the checkbox labeled "I certify that all of my information in the document above is correct."
+    And I click on the button labeled "Submit"
     Then I should see "Close survey"
-    When I click the button labeled "Close survey"
-    And I click the button labeled "Leave without saving changes"
+    When I click on the button labeled "Close survey"
+    And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
-    Then I should see "Record Home Page"
-    And I should see the "Completed Survey Response" icon for "Participant Consent" for event "Event 1"
+    Given I click on the link labeled "Add / Edit Records"
+    And I select record ID "3" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"
-    Then I should see a table with a PDF snapshot for Record ID 1
-    When I click the link in the "PDF Survey Archive"
-    And I click the link to view the PDF for Record ID 1
-    Then I should have a PDF file with header containing "PID xxxx - LastName"
-    And the footer should contain "Type: Participant"
+    And I click on the link labeled "PDF Snapshot Archive"
+    Then I should see "pid13_formParticipantConsent_id3_"
+    Given I download the PDF by clicking on the link for Record "3" and Survey "Participant Consent" in the File Repository table
+    Then I should see the following values in the last file downloaded
+      | PID 13 - LastNameS3 |
+      | Type: Participant     |
       #Manual: Close document 
 #VERIFY Confirm file exists in Amazon S3 Storage 
 # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
-    Given I completed scenario A.3.28.0100.0300
-    Then I confirm that a PDF file corresponding to Record ID 3 exists in the specified Amazon S3 bucket
+    Then I should see the following values in the most recent file in the Amazon S3 bucket
+      | PID 13 - LastNameS3   |
+      | Type: Participant |
 
   Scenario: A.3.28.0100.0400 – Configure Google Cloud Storage
 # Supports GCS via API or App Engine configuration. Site must confirm file appears in the correct Google Cloud bucket. 
-#SETUP: Create project and complete consent form to generate file 
-    When I create a new project named "A.3.28.0100.100" by clicking "New Project", selecting "Practice / Just for fun", uploading file "24ConsentWithSetup.xml", and clicking "Create Project"
-    And I click the link labeled "Add/Edit Records"
-    And I click the button labeled "Add new record for the arm selected above"
-    And I click the bubble labeled "Participant Consent" for event "Event 1"
-    Then I should see "Adding new Record ID 1"
+    Given I click on the link labeled "Control Center"
+    And I click on the link labeled "File Upload Settings"
+    And I select "Google Cloud Storage using API Service Account" on the dropdown field labeled "STORAGE LOCATION OF UPLOADED FILES"
+    And I click on the button labeled "Save Changes"
+    Then I should see "Your system configuration values have now been changed"
+    When I click on the link labeled "My Projects"
+    And I click on the link labeled "A.3.28.0100"
+    And I click on the link labeled "Survey Distribution Tools"
+    And I click on the button labeled "Open public survey"
     Then I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I enter "LastNameGCS" into the input field labeled "Last Name"
+    And I enter "email@test.edu" into the input field labeled "email"
+    And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
-    And I draw a signature in the "Participant signature field"
-    And I click the button labeled "Submit"
+    Given I click on the link labeled "Add signature" in the row labeled "Participant signature field"
+    And I see a dialog containing the following text: "Add signature"
+    And I draw a signature in the signature field area
+    When I click on the button labeled "Save signature" in the dialog box
+    Then I should see a link labeled "Remove signature"
+    And I click on the button labeled "Next Page"
+    When I check the checkbox labeled "I certify that all of my information in the document above is correct."
+    And I click on the button labeled "Submit"
     Then I should see "Close survey"
-    When I click the button labeled "Close survey"
-    And I click the button labeled "Leave without saving changes"
+    When I click on the button labeled "Close survey"
+    And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
-    Then I should see "Record Home Page"
-    And I should see the "Completed Survey Response" icon for "Participant Consent" for event "Event 1"
+    Given I click on the link labeled "Add / Edit Records"
+    And I select record ID "4" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"
-    Then I should see a table with a PDF snapshot for Record ID 1
-    When I click the link in the "PDF Survey Archive"
-    And I click the link to view the PDF for Record ID 1
-    Then I should have a PDF file with header containing "PID xxxx - LastName"
-    And the footer should contain "Type: Participant"
+    And I click on the link labeled "PDF Snapshot Archive"
+    Then I should see "pid13_formParticipantConsent_id4_"
+    Given I download the PDF by clicking on the link for Record "4" and Survey "Participant Consent" in the File Repository table
+    Then I should see the following values in the last file downloaded
+      | PID 13 - LastNameGCS |
+      | Type: Participant     |
       #Manual: Close document 
 #VERIFY Confirm file exists in Google Cloud Storage 
 # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
-    Given I completed scenario A.3.28.0100.0400
-    Then I confirm that a PDF file corresponding to Record ID 4 exists in the specified Google Cloud Storage bucket
+    Then I should see the following values in the most recent file in the Google Cloud Storage bucket
+      | PID 13 - LastNameGCS   |
+      | Type: Participant |
 
   Scenario: A.3.28.0100.0500 – Configure WebDAV Storage
 # Uses a WebDAV-accessible path preconfigured on the REDCap server. Site must verify storage access and permissions. 
-#SETUP: Create project and complete consent form to generate file 
-    When I create a new project named "A.3.28.0100.100" by clicking "New Project", selecting "Practice / Just for fun", uploading file "24ConsentWithSetup.xml", and clicking "Create Project"
-    And I click the link labeled "Add/Edit Records"
-    And I click the button labeled "Add new record for the arm selected above"
-    And I click the bubble labeled "Participant Consent" for event "Event 1"
-    Then I should see "Adding new Record ID 1"
+    Given I click on the link labeled "Control Center"
+    And I click on the link labeled "File Upload Settings"
+    And I select "External server using WebDAV" on the dropdown field labeled "STORAGE LOCATION OF UPLOADED FILES"
+    And I click on the button labeled "Save Changes"
+    Then I should see "Your system configuration values have now been changed"
+    When I click on the link labeled "My Projects"
+    And I click on the link labeled "A.3.28.0100"
+    And I click on the link labeled "Survey Distribution Tools"
+    And I click on the button labeled "Open public survey"
     Then I enter "FirstName" into the input field labeled "First Name"
-    And I enter "LastName" into the input field labeled "Last Name"
-    And I enter "email@test.edu" into the input field labeled "Email"
-    And I enter "2000-01-01" into the input field labeled "DOB"
+    And I enter "LastNameWebDAV" into the input field labeled "Last Name"
+    And I enter "email@test.edu" into the input field labeled "email"
+    And I enter "2000-01-01" into the input field labeled "Date of Birth"
     And I enter "MyName" into the input field labeled "Participant's Name Typed"
-    And I draw a signature in the "Participant signature field"
-    And I click the button labeled "Submit"
+    Given I click on the link labeled "Add signature" in the row labeled "Participant signature field"
+    And I see a dialog containing the following text: "Add signature"
+    And I draw a signature in the signature field area
+    When I click on the button labeled "Save signature" in the dialog box
+    Then I should see a link labeled "Remove signature"
+    And I click on the button labeled "Next Page"
+    When I check the checkbox labeled "I certify that all of my information in the document above is correct."
+    And I click on the button labeled "Submit"
     Then I should see "Close survey"
-    When I click the button labeled "Close survey"
-    And I click the button labeled "Leave without saving changes"
+    When I click on the button labeled "Close survey"
+    And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
-    Then I should see "Record Home Page"
-    And I should see the "Completed Survey Response" icon for "Participant Consent" for event "Event 1"
+    Given I click on the link labeled "Add / Edit Records"
+    And I select record ID "5" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"
-    Then I should see a table with a PDF snapshot for Record ID 1
-    When I click the link in the "PDF Survey Archive"
-    And I click the link to view the PDF for Record ID 1
-    Then I should have a PDF file with header containing "PID xxxx - LastName"
-    And the footer should contain "Type: Participant"
+    And I click on the link labeled "PDF Snapshot Archive"
+    Then I should see "pid13_formParticipantConsent_id5_"
+    Given I download the PDF by clicking on the link for Record "5" and Survey "Participant Consent" in the File Repository table
+    Then I should see the following values in the last file downloaded
+      | PID 13 - LastNameWebDAV |
+      | Type: Participant     |
       #Manual: Close document 
 #VERIFY Confirm file exists in WebDAV storage location 
 # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
-    Given I completed scenario A.3.28.0100.0500
-    Then I confirm that a PDF file corresponding to Record ID 5 exists in the configured WebDAV directory
-
-  Scenario: D.3.28.0100.0600. Confirm file exists in configured file storage location (general)
-
-Site must verify that the PDF file was saved in the configured location—whether local, Microsoft Azure Blob Storage, Amazon S3, Google Cloud Storage, or WebDAV. 
-
-#VERIFY Confirm file exists in configured file storage location 
-# FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
-    Given I completed one of the following configuration scenarios:
-      | Scenario ID                  |
-      | A.3.28.0100.0100 (Local)     |
-      | A.3.28.0100.0200 (Azure)     |
-      | A.3.28.0100.0300 (Amazon S3) |
-      | A.3.28.0100.0400 (GCS)       |
-      | A.3.28.0100.0500 (WebDAV)    |
-    Then I confirm that a PDF file corresponding to the submitted record exists in the designated file storage path, container, bucket, or directory
+    Then I should see the following values in the most recent file in the WebDAV server
+      | PID 13 - LastNameWebDAV |
+      | Type: Participant |
