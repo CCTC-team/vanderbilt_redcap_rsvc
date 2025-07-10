@@ -45,8 +45,9 @@ And I should see a checkbox labeled "A) Use stratified randomization?" that is c
 #Verify unable to change randomize by group/site
 And I should see a checkbox labeled "B) Randomize by group/site?" that is in the disabled state
 
+
 #verify unable to change randomization field
-And I verify I cannot select "rand_group (Randomization group)" on the second dropdown field labeled "rand_group (Randomization group)"
+And I should see the dropdown labeled "rand_group (Randomization group)" is disabled
 
 #verify unable to upload or download allocation table for use in Development
 And I should see a button labeled "Download table" that is disabled 
@@ -80,13 +81,10 @@ And I should see a checkbox labeled "A) Use stratified randomization?" that is c
 And I should see a checkbox labeled "B) Randomize by group/site?" that is in the disabled state
 
 #verify unable to change randomization field
-And I verify I cannot select "rand_group (Randomization group)" on the second dropdown field labeled "rand_group (Randomization group)"
+And I should see the dropdown labeled "rand_group (Randomization group)" is disabled
 
 #verify unable to upload or download allocation table for use in Development
 And I should see a button labeled "Download table" that is disabled 
-
-#verify unable to upload or download allocation table for use in Production
-And I verify I cannot click on the button labeled "Download table" on the first button labeled "Download table"
 
 Scenario: C.3.30.0900.0400. Admin can download existing allocation table in production.  
 #verify able to download allocation table for use in Production
