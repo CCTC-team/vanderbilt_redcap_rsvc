@@ -49,6 +49,7 @@ Feature: Project Settings: The system shall allow project-level enabling or disa
     #ACTION: Configure external storage location
     When I click on the link labeled "Modules/Services Configuration"
     And I select "SFTP" on the second dropdown field labeled "Enable the external storage device and choose storage method"
+    #Manual: The following hostname & credentials will only work for automation.  To test this manually you'll need access to an STFP server at your site.
     And I enter "redcap_docker-sftp-1" into the third input field labeled "Server hostname"
     And I enter "sftp-user" into the third input field labeled "Server username"
     And I enter "sftp-password" into the third input field labeled "Server password"
