@@ -59,6 +59,9 @@ As a REDCap administrator
       | PID 13 - LastNameLocal |
       | Type: Participant      |
 
+  Scenario: Start external storage services
+    Then if running via automation, start external storage services
+
   Scenario: A.3.28.0100.0200 – Configure Microsoft Azure Blob Storage
 # Requires Azure storage account name, key, container, and environment. Site must confirm that uploaded files are routed to the Azure container. 
 #SETUP 
@@ -251,3 +254,6 @@ As a REDCap administrator
     Then I should see the following values in the most recent file in the WebDAV server
       | PID 17 - LastNameWebDAV |
       | Type: Participant |
+
+  Scenario: Stop external storage services
+    Then if running via automation, stop external storage services
