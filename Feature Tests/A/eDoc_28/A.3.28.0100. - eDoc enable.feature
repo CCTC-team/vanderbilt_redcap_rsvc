@@ -114,6 +114,10 @@ As a REDCap administrator
     Given I click on the link labeled "Control Center"
     And I click on the link labeled "File Upload Settings"
     And I select "Amazon S3" on the dropdown field labeled "STORAGE LOCATION OF UPLOADED FILES"
+    And I enter "minioadmin" into the input field labeled "AWS Access Key"
+    And I enter "minioadmin" into the input field labeled "AWS Secret Key"
+    And I enter "mybucket" into the input field labeled "Bucket"
+    And I enter "http://minio.local:9000" into the input field labeled "S3 Custom Endpoint"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed"
     When I create a new project named "A.3.28.0100.0300" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
