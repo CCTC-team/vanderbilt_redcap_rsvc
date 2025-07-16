@@ -10,6 +10,10 @@ As a REDCap administrator
 ## Sites should only run the scenarios relevant to their environment. 
 ## REDCap does not confirm external file receipt; verification of external storage must be done at the site level (D). 
 
+  Scenario: Start external storage services
+    # Start these right away to give them plenty of time to spin up before we need them
+    Then if running via automation, start external storage services
+
   Scenario: A.3.28.0100.0100. Configure Local File Storage
 # Default REDCap configuration storing files in /edocs/ or another local path. No external setup or credentials required. 
       #SETUP 
@@ -58,9 +62,6 @@ As a REDCap administrator
     Then I should see the following values in the most recent file in the local storage path
       | PID 13 - LastNameLocal |
       | Type: Participant      |
-
-  Scenario: Start external storage services
-    Then if running via automation, start external storage services
 
   Scenario: A.3.28.0100.0200 – Configure Microsoft Azure Blob Storage
 # Requires Azure storage account name, key, container, and environment. Site must confirm that uploaded files are routed to the Azure container. 
