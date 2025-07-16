@@ -20,7 +20,7 @@ As a REDCap administrator
     Then I enter "" into the input field labeled "SET LOCAL FILE STORAGE LOCATION"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed"
-    When I create a new project named "A.3.28.0100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
+    When I create a new project named "A.3.28.0100.0100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
     And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
     Then I enter "FirstName" into the input field labeled "First Name"
@@ -70,8 +70,7 @@ As a REDCap administrator
     And I enter "mycontainer" into the input field labeled "Azure storage blob container"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed"
-    When I click on the link labeled "My Projects"
-    And I click on the link labeled "A.3.28.0100"
+    When I create a new project named "A.3.28.0100.0200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
     And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
     Then I enter "FirstName" into the input field labeled "First Name"
@@ -92,22 +91,22 @@ As a REDCap administrator
     And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
     Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "2" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
-    Then I should see "pid13_formParticipantConsent_id2_"
-    Given I download the PDF by clicking on the link for Record "2" and Survey "Participant Consent" in the File Repository table
+    Then I should see "pid14_formParticipantConsent_id1_"
+    Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
     Then I should see the following values in the last file downloaded
-      | PID 13 - LastNameAzure |
+      | PID 14 - LastNameAzure |
       | Type: Participant     |
       #Manual: Close document 
  #VERIFY Confirm file exists in Azure Blob Storage 
  # Site must verify that the PDF file was saved in the configured Microsoft Azure Blob Storage container 
    # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
     Then I should see the following values in the most recent file in the Azure Blob Storage container
-      | PID 13 - LastNameAzure   |
+      | PID 14 - LastNameAzure   |
       | Type: Participant |
 
   Scenario: A.3.28.0100.0300 – Configure Amazon S3 Storage
@@ -117,9 +116,8 @@ As a REDCap administrator
     And I select "Amazon S3" on the dropdown field labeled "STORAGE LOCATION OF UPLOADED FILES"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed"
-    When I click on the link labeled "My Projects"
-    And I click on the link labeled "A.3.28.0100"
-     And I click on the link labeled "Survey Distribution Tools"
+    When I create a new project named "A.3.28.0100.0300" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
+    And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
     Then I enter "FirstName" into the input field labeled "First Name"
     And I enter "LastNameS3" into the input field labeled "Last Name"
@@ -139,21 +137,21 @@ As a REDCap administrator
     And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
     Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "3" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
-    Then I should see "pid13_formParticipantConsent_id3_"
-    Given I download the PDF by clicking on the link for Record "3" and Survey "Participant Consent" in the File Repository table
+    Then I should see "pid15_formParticipantConsent_id1_"
+    Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
     Then I should see the following values in the last file downloaded
-      | PID 13 - LastNameS3 |
+      | PID 15 - LastNameS3 |
       | Type: Participant     |
       #Manual: Close document 
 #VERIFY Confirm file exists in Amazon S3 Storage 
 # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
     Then I should see the following values in the most recent file in the Amazon S3 bucket
-      | PID 13 - LastNameS3   |
+      | PID 15 - LastNameS3   |
       | Type: Participant |
 
   Scenario: A.3.28.0100.0400 – Configure Google Cloud Storage
@@ -163,8 +161,7 @@ As a REDCap administrator
     And I select "Google Cloud Storage using API Service Account" on the dropdown field labeled "STORAGE LOCATION OF UPLOADED FILES"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed"
-    When I click on the link labeled "My Projects"
-    And I click on the link labeled "A.3.28.0100"
+    When I create a new project named "A.3.28.0100.0400" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
     And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
     Then I enter "FirstName" into the input field labeled "First Name"
@@ -185,21 +182,21 @@ As a REDCap administrator
     And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
     Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "4" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
-    Then I should see "pid13_formParticipantConsent_id4_"
-    Given I download the PDF by clicking on the link for Record "4" and Survey "Participant Consent" in the File Repository table
+    Then I should see "pid16_formParticipantConsent_id1_"
+    Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
     Then I should see the following values in the last file downloaded
-      | PID 13 - LastNameGCS |
+      | PID 16 - LastNameGCS |
       | Type: Participant     |
       #Manual: Close document 
 #VERIFY Confirm file exists in Google Cloud Storage 
 # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
     Then I should see the following values in the most recent file in the Google Cloud Storage bucket
-      | PID 13 - LastNameGCS   |
+      | PID 16 - LastNameGCS   |
       | Type: Participant |
 
   Scenario: A.3.28.0100.0500 – Configure WebDAV Storage
@@ -209,8 +206,7 @@ As a REDCap administrator
     And I select "External server using WebDAV" on the dropdown field labeled "STORAGE LOCATION OF UPLOADED FILES"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed"
-    When I click on the link labeled "My Projects"
-    And I click on the link labeled "A.3.28.0100"
+    When I create a new project named "A.3.28.0100.0500" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
     And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
     Then I enter "FirstName" into the input field labeled "First Name"
@@ -231,19 +227,19 @@ As a REDCap administrator
     And I return to the REDCap page I opened the survey from
       #VERIFY_RSD 
     Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "5" from arm name "Arm 1: Arm 1" on the Add / Edit record page
+    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
     And I should see the "Completed Survey Response" icon for the "Participant Consent" longitudinal instrument on event "Event 1"
    #VERIFY_FiRe 
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
-    Then I should see "pid13_formParticipantConsent_id5_"
-    Given I download the PDF by clicking on the link for Record "5" and Survey "Participant Consent" in the File Repository table
+    Then I should see "pid17_formParticipantConsent_id1_"
+    Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
     Then I should see the following values in the last file downloaded
-      | PID 13 - LastNameWebDAV |
+      | PID 17 - LastNameWebDAV |
       | Type: Participant     |
       #Manual: Close document 
 #VERIFY Confirm file exists in WebDAV storage location 
 # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
     Then I should see the following values in the most recent file in the WebDAV server
-      | PID 13 - LastNameWebDAV |
+      | PID 17 - LastNameWebDAV |
       | Type: Participant |
