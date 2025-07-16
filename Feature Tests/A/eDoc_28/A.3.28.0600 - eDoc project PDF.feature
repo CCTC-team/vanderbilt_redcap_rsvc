@@ -12,6 +12,7 @@ Feature: Project Settings: The system shall allow project-level enabling or disa
     Then I should see the dropdown field labeled "Store non-e-Consent governed PDF Snapshots on the External Storage server" with the option "Enabled" selected
 
   Scenario: A.3.28.0600.200 Disable External Storage for non-e-Consent governed snapshots
+    Then if running via automation, start sftp server
     #ACTION: Disable setting
     And I select "Disabled" on the dropdown field labeled "Store non-e-Consent governed PDF Snapshots on the External Storage server"
     And I click on the button labeled "Save Changes"
@@ -78,4 +79,5 @@ Feature: Project Settings: The system shall allow project-level enabling or disa
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see "pid13_formParticipantConsent_id2_"
     Then I should see a file on the External Storage server whose name contains "pid13_formParticipantConsent_id2_"
+    And if running via automation, stop sftp server
 #END
