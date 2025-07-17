@@ -221,6 +221,7 @@ As a REDCap administrator
     #Manual: These settings will only work for automation.  Manual testing will require an account specific to your site.
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed"
+    And I populate "webdav_connection.php" with the appropriate WebDAV credentials
     When I create a new project named "A.3.28.0100.0500" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
     And I click on the link labeled "Survey Distribution Tools"
     And I click on the button labeled "Open public survey"
