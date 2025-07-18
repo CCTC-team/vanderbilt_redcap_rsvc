@@ -82,7 +82,9 @@ Feature: C.3.30.1100.	User Interface: The system shall ensure users with Randomi
     And I select "2" on the dropdown field labeled "Choose an existing Record ID"
     And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
     Then I should see "Already randomized"
-    And I should see a radio labeled "Drug A" that is in the disabled state
+    And I should see a radio labeled "Drug A" in the row labeled "Already randomized" that is disabled
+    And I should see a radio labeled "Drug B" in the row labeled "Already randomized" that is disabled
+    And I should see a radio labeled "Placebo" in the row labeled "Already randomized" that is disabled
 
 Given I logout
 #End
