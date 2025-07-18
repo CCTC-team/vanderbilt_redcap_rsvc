@@ -50,10 +50,10 @@ And I should see a checkbox labeled "B) Randomize by group/site?" that is in the
 And I should see the dropdown labeled "rand_group (Randomization group)" is disabled
 
 #verify unable to upload or download allocation table for use in Development
-And I should see a button labeled "Download table" that is disabled 
+And I should see a button labeled "Download table" in the row labeled "for use in DEVELOPMENT status" that is disabled
 
 #verify unable to upload or download allocation table for use in Production 
-And I verify I cannot click on the button labeled "Download table" on the second button labeled "Download table"
+And I should see a button labeled "Download table" in the row labeled "for use in PRODUCTION status" that is disabled
 
 And I logout
 
