@@ -24,8 +24,8 @@ Feature: Design forms Using Data Dictionary and Online Designer
             | Instrument name | Fields |
             | Text Validation | 3      |
             | Data Types      | 45     |
-            | Survey          | 2      |
-            | Consent         | 4      |
+            | Survey          | 3      |
+            | Consent         | 5      |
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION
@@ -42,8 +42,8 @@ Feature: Design forms Using Data Dictionary and Online Designer
             | Instrument name   | Fields |
             | Text Validation   | 3      |
             | Data Types        | 45     |
-            | Survey            | 2      |
-            | Consent           | 4      |
+            | Survey            | 3      |
+            | Consent           | 5      |
             | Text Validation 2 | 2      |
 
         ##VERIFY INSTRUMENT
