@@ -23,7 +23,7 @@ Feature: User Interface: The system shall require the event name in the csv file
     And I click on the link labeled "RETURN TO PREVIOUS PAGE"
 
     When I upload a "csv" format file located at "import_files/B316700100_DATA_ACCURATE.csv", by clicking the button near "Select your CSV data file" to browse for the file, and clicking the button labeled "Upload File" to upload the file
-    Then I should see "Your document was uploaded successfully and is ready for review"
+    Then I should see "The data you uploaded from the file is displayed in the Data Display Table below"
 
     When I click on the button labeled "Import Data"
     Then I should see "Import Successful!"

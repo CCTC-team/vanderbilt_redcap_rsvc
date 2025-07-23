@@ -35,8 +35,8 @@ Feature: Design forms Using Data Dictionary and Online Designer
             | Instrument name | Fields |
             | Text Validation | 3      |
             | Data Types      | 45     |
-            | Survey          | 2      |
-            | Consent         | 4      |
+            | Survey          | 3      |
+            | Consent         | 5      |
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION
@@ -61,8 +61,8 @@ Feature: Design forms Using Data Dictionary and Online Designer
         Then I should see a table header and rows containing the following values in a table:
             | Instrument name | Fields |
             | Data Types      | 46     |
-            | Survey          | 2      |
-            | Consent         | 4      |
+            | Survey          | 3      |
+            | Consent         | 5      |
 
         And I should NOT see "Text Validation"
 
