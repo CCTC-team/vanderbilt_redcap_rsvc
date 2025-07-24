@@ -74,9 +74,8 @@ class Results {
   }
 
   async handleResults(cloudResults) {
-    const localResults = {}
+    const combinedResults = {}
     ;(await this.getFiles('Feature Tests')).forEach((path) => {
-      path = path.replace('redcap_cypress/', '');
       if(path.startsWith('Feature Tests/D') || path.includes('REDUNDANT')){
         return  
       }
@@ -86,10 +85,19 @@ class Results {
         result = 'DID NOT RUN'
       }
 
-      localResults[path] = result
+      combinedResults[path] = result
     })
 
-    console.log(localResults)
+    for(let cloudPath in cloudResults){
+      let localPath = cloudPath.replace('redcap_rsvc/', '');
+      if(combinedResults[localPath] === undefined){
+        combinedResults[localPath] = cloudResults[cloudPath]
+      }
+    }
+
+    Object.keys(combinedResults).sort().forEach(key => {
+      console.log(JSON.stringify([key, combinedResults[key]]) + ',')
+    })
   }
 
   async getFiles(dir) {
