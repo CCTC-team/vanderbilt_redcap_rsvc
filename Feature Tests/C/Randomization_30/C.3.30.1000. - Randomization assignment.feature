@@ -76,7 +76,7 @@ Then I should see a dialog containing the following text: 'Record ID "8" was ran
 And I click on the button labeled "Close"
 And I click on the button labeled "Save & Exit Form"
 
-# Scenario: # C.3.30.1000.0200: The system shall assign the next available allocation entry sequentially to each new record.
+Scenario: # C.3.30.1000.0200: The system shall assign the next available allocation entry sequentially to each new record.
 # Test: Upload a table with duplicate values or text labels in redcap_randomization_number. Confirm that upload succeeds and assignments function correctly.
 #Setup automatic randomization with duplicate, non numerical values.
 Given I click on the link labeled "Setup"
@@ -102,7 +102,7 @@ And I click the bubble for the row labeled "Randomization" instrument on the col
 And I click on a second button labeled "Randomize" 
 And I select "Man" on the radio field labeled "Do you describe yourself as a man, a woman, or in some other way?"
 And I click on the button labeled "Randomize"
-Then I should see a dialog containing the following text: 'Record ID "10" was randomized for the field "Automatic Randomization" and assigned the value "Group 1" (A).'
+Then I should see a dialog containing the following text: 'Record ID "10" was randomized for the field "Automatic Randomization" and assigned the value "Group 2" (B).'
 And I click on the button labeled "Close"
 And I click on the button labeled "Save & Exit Form"
 
