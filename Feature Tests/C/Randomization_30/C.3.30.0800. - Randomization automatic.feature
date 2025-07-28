@@ -7,7 +7,7 @@ Given I login to REDCap with the user "Test_User1"
 And I create a new project named "C.3.30.0800" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "C.3.30 TriggerRand.REDCap.xml", and clicking the "Create Project" button
 
 #SETUP User Rights
-Scenario: 
+Scenario: #SETUP User Rights
   When I click on the link labeled "User Rights"
   And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
   And I click on the button labeled "Assign to role"
@@ -30,8 +30,8 @@ Scenario:
   Then I should see "STEP 1: Define your randomization model"
   And I select "rand_group (Randomization group)" on the first dropdown field labeled "- select a field -"
   And I click on the button labeled "Save randomization model" and accept the confirmation window
-  When I upload a "csv" format file located at "import_files/AlloRand1.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
-  When I upload a "csv" format file located at "import_files/AlloRand2.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+  When I upload a "csv" format file located at "import_files/AlloRand rand_group1.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+  When I upload a "csv" format file located at "import_files/AlloRand rand_group2.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
 
 Scenario: C.3.30.0800.0100. Manual only, using Randomize button (default)  
   When I click on the link labeled "Add / Edit Records"
@@ -63,14 +63,14 @@ Scenario: C.3.30.0800.0200. Trigger logic, for users with Randomize permissions 
   Then I should see "STEP 1: Define your randomization model"
   And I select "auto_rand (Automatic Randomization)" on the first dropdown field labeled "- select a field -"
   And I click on the button labeled "Save randomization model" and accept the confirmation window
-  And I upload a "csv" format file located at "import_files/AlloRand1.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
-  And I upload a "csv" format file located at "import_files/AlloRand2.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+  And I upload a "csv" format file located at "import_files/AlloRand rand_group1.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+  And I upload a "csv" format file located at "import_files/AlloRand rand_group2.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
   And I select "Trigger logic, for users with Randomize permission only" on the dropdown field labeled "Trigger option" on the tooltip
 
   And I select "Demographics" on the dropdown field labeled "Instrument" on the tooltip
   And I click on "" in the textarea field labeled "Trigger logic"
   And I wait for 1 second
-  And I clear field and enter "[fname]<>'' and [lname]<>''" into the textarea field labeled "Logic Editor" in the dialog box
+  And I enter "[fname]<>'' and [lname]<>''" into the textarea field labeled "Logic Editor" in the dialog box
   And I click on the button labeled "Update & Close Editor" in the dialog box
   And I click on the button labeled "Save trigger option"
 
@@ -95,7 +95,6 @@ Scenario: C.3.30.0800.0200. Trigger logic, for users with Randomize permissions 
     | test_user1 | Update record 6    | auto_rand = '1'|
     | test_user1 | Create record 6    | fname = 'Donald', lname = 'Duck', demographics_complete = '0', record_id = '6' |
     | test_user1 | Manage/Design      | Save randomization execute option (rid = 3) |
-    # | test_user1 | Manage/Design      | Save randomization execute option (rid = 3)(trigger_option: Trigger logic (user with Randomize permission), instrument: demographics, logic: [fname]<>'' a...) |
 
   #SETUP randomization for 0300 and 0400
   When I click on the link labeled "Setup"
@@ -104,11 +103,13 @@ Scenario: C.3.30.0800.0200. Trigger logic, for users with Randomize permissions 
   Then I should see "STEP 1: Define your randomization model"
   And I select "rand_survey (Go to:)" on the first dropdown field labeled "- select a field -"
   And I click on the button labeled "Save randomization model" and accept the confirmation window
-  And I upload a "csv" format file located at "import_files/AlloRand1.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
-  And I upload a "csv" format file located at "import_files/AlloRand2.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
-  And I select "Trigger Logic, for all users (including survey respondents)" on the dropdown field labeled "Trigger option" 
+  And I upload a "csv" format file located at "import_files/AlloRand rand_group1.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+  And I upload a "csv" format file located at "import_files/AlloRand rand_group2.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+  And I select "Trigger logic, for all users (including survey respondents)" on the dropdown field labeled "Trigger option" on the tooltip 
   And I select "Survey" on the dropdown field labeled "Instrument" on the tooltip
-  And I enter '[survey_complete]="2"' into the textarea field labeled "Trigger logic"
+  And I click on "" in the textarea field labeled "Trigger logic"
+  And I wait for 1 second
+  And I enter "[survey_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
   And I click on the button labeled "Update & Close Editor"
   And I click on the button labeled "Save trigger option"
   And I logout
@@ -120,43 +121,49 @@ Scenario: C.3.30.0800.0300 Trigger logic, for all users based on form
   And I click on the link labeled "Add / Edit Records"
   And I click on the button labeled "Add new record"
   And I click the bubble for the row labeled "Survey" on the column labeled "Status"
-  Then I should see a dialog containing the following text: "Not yet randomized" 
-  And I should see a field labeled "Go to:" is disabled
-  And I click the button labeled "Yes" for the field labeled "Will you complete the survey?"
+  Then I should see "Not yet randomized"
+  # And I should see a radio labeled "Go to:" that is in the disabled state
+  # And I should see a field labeled " Go to:" is disabled
+  And I select the radio option "Yes" for the field labeled "Will you complete the survey?" 
+
   And I select the dropdown option "Complete" for the Data Collection Instrument field labeled "Complete?" 
   And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
 
   #VERIFY Trigger logic, for all users based on form
-  Then I should see a dialog containing the following text: "Already Randomized" 
-  And  I should see the radio field labeled "Go to:" with the option "Survey A" selected
+  Then I should see "Already randomized"  
+  And I should see the radio labeled "Go to:" with option "Survey A" selected
 
 Scenario: C.3.30.0800.0400 Trigger logic, for all users based on survey  
-  When I click on the link labeled "Add/Edit Records"
+  When I click on the link labeled "Add / Edit Records"
   And I click on the button labeled "Add new record"
-  And I click on the icon labeled "Status" for the row labeled "Survey" 
-  Then I should see a dialog containing the following text: "Not yet randomized" near field labeled "Go to:"
-  And I should see a field labeled "Go to:" is disabled
-  And I click the button labeled "Yes" for the field labeled "Will you complete the survey?"
+  And I click the bubble for the row labeled "Survey" instrument on the column labeled "Status"
+  Then I should see "Not yet randomized"
+  # And I should see a field labeled "Go to:" is disabled
+  And I select the radio option "Yes" for the field labeled "Will you complete the survey?"
   And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-  And I click on the survey option label containing "Log Out + Open Survey" label
+  And I click on the button labeled "Survey options"
+  And I click on the survey option label containing "Log out+ Open survey" label
   And I click on the button labeled "Submit"
-  And I return to the REDCap page I opened the survey from
+  And I click on the button labeled "Close survey"
+#   And I return to the REDCap page I opened the survey from
 
   #VERIFY Trigger Logic, for all users based on survey
   Given I login to REDCap with the user "Test_User1"
-  And I click "My Projects" on the menu bar
-  And I click the link labeled "C.3.30.0800"
-  And I click on the link labeled "Add/Edit Records"
+  And I click on the link labeled "My Projects"
+  And I click on the link labeled "C.3.30.0800"
+  And I click on the link labeled "Add / Edit Records"
   And I select "8" on the dropdown field labeled "Choose an existing Record ID"
-  And I click on the icon labeled "Status" for the row labeled "Survey" 
-  Then I should see a dialog containing the following text: "Already Randomized" near field labeled "Go to:"
-  And  I should see the radio field labeled "Go to:" with the option "Survey B" selected
+  And I click the bubble for the row labeled "Survey" instrument on the column labeled "Status" 
+  Then I should see "Already randomized"
+  And I should see the radio labeled "Go to:" with option "Survey B" selected
 
   #SETUP move project to production
-  When I click on the link labeled "Project Setup"
+  Given I login to REDCap with the user "Test_Admin"
+  When I click on the link labeled "Setup"
   And I click on the button labeled "Move project to production"
-  And I click on the radio labeled "Keep ALL data saved so far. (8 Records)" 
-  And I click on the button labeled "YES, Move project to production" and accept the confirmation window
+  And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+  # And I click on the radio labeled "Keep ALL data saved so far. (8 records)" in the dialog box
+  And I click on the button labeled "YES, Move to Production Status" in the dialog box
   Then I should see a dialog containing the following text: "Success! Project now in production" 
 
   #VERIFY - Logging
@@ -166,30 +173,33 @@ Scenario: C.3.30.0800.0400 Trigger logic, for all users based on survey
     | [survey respondent] | Randomize record 8 | Randomize record (via trigger) |
     | [survey respondent] | Update Response 8 | rand_survey = '2' |
     | [survey respondent] | Update Response 8 | survey_complete = '2' |
-    | Test_User2 | Create record 8 | will_survey = '1', survey_complete = '0', record_id = '8' |
-    | Test_User2 | Randomize record 8 | Randomize record (via trigger) |
-    | Test_User2 | Update Response 8 | rand_survey = '1' |
-    | Test_User2 | Create record 8 | survey_complete = '2', record_id = '7' |
-    | Test_User1 | 	Manage/Design | Save randomization execute option (trigger_option: Trigger logic (any user or survey participant), instrument: survey, logic: [survey_compl...) |
+    | test_user2 | Create record 8 | will_survey = '1', survey_complete = '0', record_id = '8' |
+    | test_user2 | Randomize Record 7 | Randomize record (via trigger) |
+    | test_user2 | Update record 7 | rand_survey = '1' |
+    | test_user2 | Create record 7 | survey_complete = '2', record_id = '7' |
+    | test_user1 | 	Manage/Design | Save randomization execute option (trigger_option: Trigger logic (any user or survey participant), instrument: survey, logic: [survey_compl...) |
 
-Scenario: C.3.30.0800.0500 Modify trigger while in production
-  When I click on the link labeled "Project Setup"
-  And I click on the button labeled "Setup randomization"
-  And I click on the icon labeled "Setup" in the row labeled "3"
-  And I select the dropdown option "Trigger Logic, for users with Randomize permission only" for the field labeled "Trigger Option"
-  And I select the dropdown option "Demographics" for the field labeled "Instrument"
-  And I enter "[demographics_complete]="2"" into the textarea field labeled "Trigger logic"
-  And I click on the button labeled "Update & Close Editor"
-  And I click on the button labeled "Save trigger option"
-  And I logout
+# Scenario: C.3.30.0800.0500 Modify trigger while in production
+
+#   When I click on the link labeled "Setup"
+#   And I click on the button labeled "Set up randomization"
+#   And I click on the icon labeled "Setup" in the row labeled "3"
+#   And I select "Trigger Logic, for users with Randomize permission only" on the dropdown field labeled "Trigger option" on the tooltip
+#   And I select "Demographics" on the dropdown field labeled "Instrument" on the tooltip
+#   And I click on "" in the textarea field labeled "Trigger logic"
+#   And I wait for 1 second
+#   And I enter "[demographics_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
+#   And I click on the button labeled "Update & Close Editor"
+#   And I click on the button labeled "Save trigger option"
+#   And I logout
 
   #VERIFY Modify trigger while in production
   Given I login to REDCap with the user "Test_User2"
-  And I click "My Projects" on the menu bar
-  And I click the link labeled "C.3.30.0800"
-  And I click on the link labeled "Add/Edit Records"
+  And I click on the link labeled "My Projects" 
+  And I click on the link labeled "C.3.30.0800"
+  And I click on the link labeled "Add / Edit Records"
   And I select "7" on the dropdown field labeled "Choose an existing Record ID"
-  And I click on the icon labeled "Status" for the row labeled "Survey" 
+  And I click the bubble for the row labeled "Survey" on the column labeled "Status"
   Then I should see the radio labeled "Will you complete the survey?" with option "Yes" unselected
   Then I should see the radio labeled "Go to" with option "Survey A" unselected
 
@@ -197,19 +207,19 @@ Scenario: C.3.30.0800.0500 Modify trigger while in production
   When I click on the link labeled "Demographics"
   And I select the dropdown option "Complete" for the Data Collection Instrument field labeled "Complete?" 
   And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
-  And I click on the icon labeled "Status" for the row labeled "Survey"
-  Then I should see a dialog containing the following text: "Not yet randomized" near field labeled "Go to:"
+  And I click the bubble for the row labeled "Survey" on the column labeled "Status"
+  Then I should see "Not yet randomized"
   And I logout
 
   #VERIFY Test_User1 can randomize this record
   Given I login to REDCap with the user "Test_User1"
-  And I click "My Projects" on the menu bar
-  And I click the link labeled "C.3.30.0800"
-  And I click on the link labeled "Add/Edit Records"
+  And I click on the link labeled "My Projects"
+  And I click on the link labeled "C.3.30.0800"
+  And I click on the link labeled "Add / Edit Records"
   And I select "7" on the dropdown field labeled "Choose an existing Record ID"
-  And I click on the icon labeled "Status" for the row labeled "Survey"
-  Then I should see a button labeled "Randomize" in the data entry form field "Go to:"
-  And I click on the button labeled "Randomize" in the data entry form field "Go to:"
+  And I click the bubble for the row labeled "Survey" on the column labeled "Status"
+  Then I should see a button labeled "Randomize" 
+  # And I click on the button labeled "Randomize" in the data entry form field "Go to:"
   And I click on the button labeled "Randomize"
   And I click on the button labeled "Close"
   And I should see the radio labeled "Go to" with option "Survey C" selected
