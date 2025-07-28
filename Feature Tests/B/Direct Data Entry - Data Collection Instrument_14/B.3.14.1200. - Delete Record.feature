@@ -69,5 +69,5 @@ Feature: B.3.14.1200. The system shall allow users to delete a record from the R
             | A | All data (all records and fields) |
 
         When I click on the button labeled "View Report"
-        Then I should see the report with 15 rows
+        Then I should see the report with 14 rows
 #END
