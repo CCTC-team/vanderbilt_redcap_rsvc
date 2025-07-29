@@ -74,6 +74,23 @@ Feature: C.3.30.1100.	User Interface: The system shall ensure users with Randomi
     And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 2 successfully edited."
 
+    #Verify "Randomization group" field is populated with an expected value (i.e., what was selected from the allocation table).
+    When I click on the link labeled "Add / Edit Records"
+    And I select "2" on the dropdown field labeled "Choose an existing Record ID"
+    And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
+    Then I should see "Already randomized"
+    And I should see a radio labeled "Drug A" in the row labeled "Already randomized" that is disabled
+    And I should see a radio labeled "Drug B" in the row labeled "Already randomized" that is disabled
+    And I should see a radio labeled "Placebo" in the row labeled "Already randomized" that is disabled
+
+    When I click on the link labeled "Setup"
+    And I click on the button labeled "Set up randomization"
+    And I click on the icon in the column labeled "Dashboard" and the row labeled "1"
+    Then I should see a table header and rows containing the following values in a table:
+            |       | Used    | Not Used | Allocated records | Stratification 1 |Randomization group|
+            |       | 0       |     1    |                   | No (0)           | Drug B (2)        |   
+	          |       | 1       |     0    |     2             | Yes (1)          | Drug A (1)        | 
+
   Scenario: C.3.30.1100.0300. Record's randomized value matches allocation table.  
     # This feature test is REDUNDANT and can be viewed in C.3.30.0200 and C.3.30.0300
 
