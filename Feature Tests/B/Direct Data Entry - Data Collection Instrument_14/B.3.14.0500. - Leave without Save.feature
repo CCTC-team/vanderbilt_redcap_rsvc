@@ -48,7 +48,7 @@ Feature: Saving Data: The system shall support the prompt to save when a user at
         ##VERIFY_LOG:
         # We should not see any evidence in the log that a record was created
         When I click on the link labeled "Logging"
-        Then I should NOT see "Create record"
+        Then I should NOT see "record_id = '7'"
 
         #FUNCTIONAL_REQUIREMENT
         Given I click on the link labeled "Add / Edit Records"

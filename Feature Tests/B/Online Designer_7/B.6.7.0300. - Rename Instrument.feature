@@ -23,8 +23,8 @@ Feature: Design forms Using Data Dictionary and Online Designer
       | Instrument name | Fields |
       | Text Validation | 3      |
       | Data Types      | 45     |
-      | Survey          | 2      |
-      | Consent         | 4      |
+      | Survey          | 3      |
+      | Consent         | 5      |
 
     Given I click on the first button labeled "Choose action"
     And I click on the link labeled "Rename" in the action popup
@@ -37,8 +37,8 @@ Feature: Design forms Using Data Dictionary and Online Designer
       | Instrument name        | Fields |
       | Text Validation Rename | 3      |
       | Data Types             | 45     |
-      | Survey                 | 2      |
-      | Consent                | 4      |
+      | Survey                 | 3      |
+      | Consent                | 5      |
 
     ##VERIFY_CODEBOOK
     When I click on the link labeled "Codebook"
@@ -66,8 +66,8 @@ Feature: Design forms Using Data Dictionary and Online Designer
       | Instrument name        | Fields |
       | Text Validation Rename | 3      |
       | Data Types             | 45     |
-      | Survey                 | 2      |
-      | Consent                | 4      |
+      | Survey                 | 3      |
+      | Consent                | 5      |
 
     ##ACTION: Rename instrument and Keep old instrument variable name
     Given I click on the first button labeled "Choose action"
@@ -80,8 +80,8 @@ Feature: Design forms Using Data Dictionary and Online Designer
       | Instrument name          | Fields |
       | Text Validation Rename 2 | 3      |
       | Data Types               | 45     |
-      | Survey                   | 2      |
-      | Consent                  | 4      |
+      | Survey                   | 3      |
+      | Consent                  | 5      |
 
     When I click on the button labeled "Submit Changes for Review"
     And I click on the button labeled "Submit" in the dialog box

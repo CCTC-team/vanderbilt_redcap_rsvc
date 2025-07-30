@@ -35,7 +35,7 @@ Feature: B.3.16.1300. User Interface: The system shall provide the ability to as
 
         Given I click on the link labeled "Data Import Tool"
         And I upload a "csv" format file located at "import_files/B.3.16.1300_DataImport_Rows.csv", by clicking the button near "Select your CSV data file" to browse for the file, and clicking the button labeled "Upload File" to upload the file
-        Then I should see "Your document was uploaded successfully and is ready for review"
+        Then I should see "The data you uploaded from the file is displayed in the Data Display Table below"
 
         When I click on the button labeled "Import Data"
         Then I should see "Import Successful!"

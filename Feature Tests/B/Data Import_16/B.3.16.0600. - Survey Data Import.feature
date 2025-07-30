@@ -21,9 +21,9 @@ Feature: User Interface: The system shall ignore survey identifier and timestamp
         Then I should see "DATA DISPLAY TABLE"
         And I should see a table header and rows containing the following values in the import data display table:
             | record_id | redcap_survey_identifier | data_types_timestamp | ptname    |
-            | 4         | Joe                      | 8/18/23 12:53        | My Name   |
-            | 5         | Jane                     | 8/18/23 12:54        | Your Name |
-            | 6         | John                     | 8/18/23 12:54        | That name |
+            | 4         | Joe                      | 2023-08-18 12:53        | My Name   |
+            | 5         | Jane                     | 2023-08-18 12:54        | Your Name |
+            | 6         | John                     | 2023-08-18 12:54        | That name |
 
         Given I click on the button labeled "Import Data"
         Then I should see "Import Successful!"

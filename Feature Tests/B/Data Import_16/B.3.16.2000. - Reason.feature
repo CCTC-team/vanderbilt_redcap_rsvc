@@ -23,7 +23,7 @@ Feature: User Interface: The system shall provide the ability to require a reaso
         ##ACTION
         When I click on the link labeled "Data Import Tool"
         And I upload a "csv" format file located at "import_files/B.3.16.2000.100data.csv", by clicking the button near "Select your CSV data file" to browse for the file, and clicking the button labeled "Upload File" to upload the file
-        Then I should see "Your document was uploaded successfully and is ready for review"
+        Then I should see "The data you uploaded from the file is displayed in the Data Display Table below"
         Then I should see "Please supply a reason for the data changes for EACH existing record in the text boxes"
 
         And I enter "because I said so" into the first textarea field labeled "Copy to all"

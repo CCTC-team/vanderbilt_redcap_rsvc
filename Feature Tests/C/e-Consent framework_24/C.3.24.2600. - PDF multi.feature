@@ -89,7 +89,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
     And I check the checkbox labeled "Save to File Repository"
     And I uncheck the checkbox labeled "Save to specified field:"
-    And I enter "multi data form and survey same event" into the input field labeled "File name:"
+    And I enter "multi survey same event" into the input field labeled "File name:"
     And I click on the button labeled "Save"
     Then I should see "Saved!"
     Then I should see a table header and rows containing the following values in a table:
@@ -154,7 +154,7 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I uncheck the checkbox labeled "Store the translated version of the PDF(if using Multi-language Management)"
     And I check the checkbox labeled "Save to File Repository"
     And I uncheck the checkbox labeled "Save to specified field:"
-    And I enter "multi data form and survey different event" into the input field labeled "File name:"
+    And I enter "multi survey different event" into the input field labeled "File name:"
     And I click on the button labeled "Save"
     Then I should see "Saved!"
       | Active | Edit settings | Name                                         | Type of trigger | Save snapshot when...                                    | Scope of the snapshot | Location(s) to save the snapshot |
@@ -482,10 +482,10 @@ Feature: User Interface: The system shall support the capture and storage of mul
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see a table header and rows containing the following values in a table:
       | Name                                 | PDF utilized e-Consent Framework | Record | Survey Completed             | Identifier (Name, DOB) | Version | Type |
-      | multidataformandsurveydifferentevent | -                                |      6 |                              |                        |         |      |
+      | multisurveydifferentevent            | -                                |      6 |                              |                        |         |      |
       | multidataformandsurveydifferentevent | -                                |      5 |                              |                        |         |      |
       | multidataformdifferentevent          | -                                |      4 |                              |                        |         |      |
-      | multidataformandsurveysameevent  this is wrong!  Need to figure out why original trigger is not being hit, maybe ask Rob  to troubleshoot (he made the changes)          | -                                |      3 |                              |                        |         |      |
+      | multisurveysameevent                 | -                                |      3 |                              |                        |         |      |
       | multidataformandsurveysameevent      | -                                |      2 |                              |                        |         |      |
       | multidataformsameevent               | -                                |      1 |                              |                        |         |      |
 #END
