@@ -25,17 +25,19 @@ And I click on the button labeled "Add new randomization model"
 And I select "rand_group (Randomization group)" on the first dropdown field labeled "- select a field -"
 And I click on the button labeled "Save randomization model"
 Then I should see "Success! The randomization model has been saved!"
-And I upload a "csv" format file located at "import_files/AlloRand_open1.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+And I upload a "csv" format file located at "import_files/AlloRand open1.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
 
 Scenario: #C.3.30.1200.0100. Logging of record's randomization includes user and timestamp.  
 Given I click on the link labeled "Add / Edit Records"
 And I click on the button labeled "Add new record"
 And I click the bubble for the row labeled "Randomization" instrument on the column labeled "Status"
 And I click on the first button labeled "Randomize"
+And I should see "Below you may perform randomization"
 And I click on the button labeled "Randomize"
 Then I should see a dialog containing the following text: 'Record ID "6" was randomized for the field "Randomization group" and assigned the value "Drug A" (1).'
 And I click on the button labeled "Close"
 And I click on the button labeled "Randomize"
+And I should see "Below you may perform randomization"
 And I click on the button labeled "Randomize"
 Then I should see a dialog containing the following text: 'Record ID "6" was randomized for the field "Blinded randomization" and assigned the value "1".'
 And I click on the button labeled "Close"
