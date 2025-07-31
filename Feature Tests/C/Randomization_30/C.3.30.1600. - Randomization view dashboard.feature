@@ -23,7 +23,10 @@ Scenario: #SETUP project with randomization enabled
     And I uncheck the checkbox labeled "Dashboard"
     And I click on the button labeled "Add user"
     Then I should see 'User "Test_User2" was successfully added'
-    
+    And I should see a table header and rows containing the following values in a table:
+            | Role name               | Username            | Randomization |
+            | —                       | test_user2          | Setup Randomize |
+
     #SETUP Creating randomiztion stategy and adding allocation table.
     When I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
@@ -55,13 +58,16 @@ Scenario: #SETUP project with randomization enabled
     Then I should see "Record ID 2 successfully edited."
 
 Scenario: #C.3.30.1600.0200 ensures that access is granted when the user has the correct dashboard rights. 
-    When I click on the link labeled "Setup"
+    Given I login to REDCap with the user "Test_User1"
+    And I click on the link labeled "My Projects"
+    And I click on the link labeled "C.3.30.1600."
+    And I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Dashboard" and the row labeled "1"
     Then I should see a table header and rows containing the following values in a table:
             |       | Used    | Not Used | Allocated records | Stratification 1 |Randomization group|
             |       | 0       |     1    |                   | No (0)           | Drug B (2)        |   
-	          |       | 1       |     0    |     1             | Yes (1)          | Drug A (1)        | 
+            |       | 1       |     0    |     1             | Yes (1)          | Drug A (1)        | 
 
 Scenario: #C.3.30.1600.0100 ensures that access is denied when the user lacks the appropriate permission.
     Given I login to REDCap with the user "Test_User2"
@@ -72,7 +78,7 @@ Scenario: #C.3.30.1600.0100 ensures that access is denied when the user lacks th
     Then I should see a table header and rows containing the following values in a table:
             | #      | Target     | Allocation Type | Stratification | Total Allocation (Development) |Total Allocation (Production)| Setup | Randomization ID |
             | 1      | rand_group |                 | strat_1        | 2                              | 0                           |       | 2                |
-
+    
     And I should NOT see a button labeled "Dashboard"
 
     #Given I logout
