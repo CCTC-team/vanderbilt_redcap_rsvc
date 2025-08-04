@@ -63,7 +63,7 @@ Feature: User Interface: The system shall require changes made to data collectio
 
     ##VERIFY INSTRUMENT
     Given I click on the link labeled "Record Status Dashboard"
-    And I locate the bubble for the "Data Types" instrument on event "Event 2" for record ID "1" and click on the bubble
-    And I click on the icon in the row labeled "Instance #1"
+    And I click on the link labeled "1" in the column labeled "Record ID" and the row labeled "1" 
+    And I click on the icon in the column labeled "Event 2" and the row labeled "Data Types" 
     Then I should see "Choice102"
 #END
