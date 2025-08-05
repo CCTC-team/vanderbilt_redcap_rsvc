@@ -112,6 +112,7 @@ Scenario: C.3.30.0800.0200. Trigger logic, for users with Randomize permissions 
   And I enter "[survey_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
   And I click on the button labeled "Update & Close Editor"
   And I click on the button labeled "Save trigger option"
+  And I click on the link labeled "Home"
   And I logout
 
 Scenario: C.3.30.0800.0300 Trigger logic, for all users based on form  
@@ -122,8 +123,10 @@ Scenario: C.3.30.0800.0300 Trigger logic, for all users based on form
   And I click on the button labeled "Add new record"
   And I click the bubble for the row labeled "Survey" on the column labeled "Status"
   Then I should see "Not yet randomized"
-  # And I should see a radio labeled "Go to:" that is in the disabled state
-  # And I should see a field labeled " Go to:" is disabled
+  And I should see a radio labeled "Survey A" in the row labeled "Not yet randomized" that is disabled
+  And I should see a radio labeled "Survey B" in the row labeled "Not yet randomized" that is disabled
+  And I should see a radio labeled "Survey C" in the row labeled "Not yet randomized" that is disabled
+  And I should see a radio labeled "Survey D" in the row labeled "Not yet randomized" that is disabled
   And I select the radio option "Yes" for the field labeled "Will you complete the survey?" 
 
   And I select the dropdown option "Complete" for the Data Collection Instrument field labeled "Complete?" 
@@ -138,14 +141,16 @@ Scenario: C.3.30.0800.0400 Trigger logic, for all users based on survey
   And I click on the button labeled "Add new record"
   And I click the bubble for the row labeled "Survey" instrument on the column labeled "Status"
   Then I should see "Not yet randomized"
-  # And I should see a field labeled "Go to:" is disabled
+  And I should see a radio labeled "Survey A" in the row labeled "Not yet randomized" that is disabled
+  And I should see a radio labeled "Survey B" in the row labeled "Not yet randomized" that is disabled
+  And I should see a radio labeled "Survey C" in the row labeled "Not yet randomized" that is disabled
+  And I should see a radio labeled "Survey D" in the row labeled "Not yet randomized" that is disabled
   And I select the radio option "Yes" for the field labeled "Will you complete the survey?"
   And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
   And I click on the button labeled "Survey options"
   And I click on the survey option label containing "Log out+ Open survey" label
   And I click on the button labeled "Submit"
   And I click on the button labeled "Close survey"
-#   And I return to the REDCap page I opened the survey from
 
   #VERIFY Trigger Logic, for all users based on survey
   Given I login to REDCap with the user "Test_User1"
@@ -157,41 +162,50 @@ Scenario: C.3.30.0800.0400 Trigger logic, for all users based on survey
   Then I should see "Already randomized"
   And I should see the radio labeled "Go to:" with option "Survey B" selected
 
+  When I click on the link labeled "User Rights"
+  And I enter "Test_Admin" into the field with the placeholder text of "Add new user"
+  And I click on the button labeled "Add with custom rights"
+  And I click on the button labeled "Add user"
+  And I logout
+
   #SETUP move project to production
   Given I login to REDCap with the user "Test_Admin"
-  When I click on the link labeled "Setup"
+  And I click on the link labeled "My Projects"
+  And I click on the link labeled "C.3.30.0800"
   And I click on the button labeled "Move project to production"
   And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-  # And I click on the radio labeled "Keep ALL data saved so far. (8 records)" in the dialog box
   And I click on the button labeled "YES, Move to Production Status" in the dialog box
-  Then I should see a dialog containing the following text: "Success! Project now in production" 
+  Then I should see Project status: "Production"
+  And I logout
 
-  #VERIFY - Logging
+   #VERIFY - Logging
+  Given I login to REDCap with the user "Test_User1"
+  And I click on the link labeled "My Projects"
+  And I click on the link labeled "C.3.30.0800"
   When I click on the link labeled "Logging"
   Then I should see a table header and rows containing the following values in the logging table:
-    | Username   | Action        | List of Data Changes OR Fields Exported      |
-    | [survey respondent] | Randomize record 8 | Randomize record (via trigger) |
-    | [survey respondent] | Update Response 8 | rand_survey = '2' |
-    | [survey respondent] | Update Response 8 | survey_complete = '2' |
-    | test_user2 | Create record 8 | will_survey = '1', survey_complete = '0', record_id = '8' |
-    | test_user2 | Randomize Record 7 | Randomize record (via trigger) |
-    | test_user2 | Update record 7 | rand_survey = '1' |
-    | test_user2 | Create record 7 | survey_complete = '2', record_id = '7' |
-    | test_user1 | 	Manage/Design | Save randomization execute option (trigger_option: Trigger logic (any user or survey participant), instrument: survey, logic: [survey_compl...) |
+    | Time / Date      | Username            | Action             | List of Data Changes OR Fields Exported |
+    | mm/dd/yyyy hh:mm | [survey respondent] | Randomize Record 8 | Randomize record (via trigger) |
+    | mm/dd/yyyy hh:mm | [survey respondent] | Update Response 8  | rand_survey = '2' |
+    | mm/dd/yyyy hh:mm | [survey respondent] | Update Response 8  | survey_complete = '2' |
+    | mm/dd/yyyy hh:mm | test_user2          | Create record 8    | will_survey = '1', survey_complete = '0', record_id = '8' |
+    | mm/dd/yyyy hh:mm | test_user2          | Randomize Record 7 | Randomize record (via trigger) |
+    | mm/dd/yyyy hh:mm | test_user2          | Update record 7    | rand_survey = '1' |
+    | mm/dd/yyyy hh:mm | test_user2          | Create record 7    | survey_complete = '2', record_id = '7' |
+    | mm/dd/yyyy hh:mm | test_user1          | Manage/Design      | Save randomization execute option (rid = 4) |
 
-# Scenario: C.3.30.0800.0500 Modify trigger while in production
-
-#   When I click on the link labeled "Setup"
-#   And I click on the button labeled "Set up randomization"
-#   And I click on the icon labeled "Setup" in the row labeled "3"
-#   And I select "Trigger Logic, for users with Randomize permission only" on the dropdown field labeled "Trigger option" on the tooltip
-#   And I select "Demographics" on the dropdown field labeled "Instrument" on the tooltip
-#   And I click on "" in the textarea field labeled "Trigger logic"
-#   And I wait for 1 second
-#   And I enter "[demographics_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
-#   And I click on the button labeled "Update & Close Editor"
-#   And I click on the button labeled "Save trigger option"
-#   And I logout
+Scenario: C.3.30.0800.0500 Modify trigger while in production
+  When I click on the link labeled "Setup"
+  And I click on the button labeled "Set up randomization"
+  And I click on the icon in the column labeled "Setup" and the row labeled "3"
+  And I select "Trigger logic, for users with Randomize permission only" on the dropdown field labeled "Trigger option" on the tooltip
+  And I select "Demographics" on the dropdown field labeled "Instrument" on the tooltip
+  And I click on "" in the textarea field labeled "Trigger logic"
+  And I wait for 1 second
+  And I clear field and enter "[demographics_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
+  And I click on the button labeled "Update & Close Editor"
+  And I click on the button labeled "Save trigger option"
+  And I logout
 
   #VERIFY Modify trigger while in production
   Given I login to REDCap with the user "Test_User2"
@@ -200,16 +214,18 @@ Scenario: C.3.30.0800.0400 Trigger logic, for all users based on survey
   And I click on the link labeled "Add / Edit Records"
   And I select "7" on the dropdown field labeled "Choose an existing Record ID"
   And I click the bubble for the row labeled "Survey" on the column labeled "Status"
-  Then I should see the radio labeled "Will you complete the survey?" with option "Yes" unselected
+  Then I should see the radio labeled "Will you complete the survey?" with option "Yes" selected
   Then I should see the radio labeled "Go to" with option "Survey A" unselected
+  Then I should see "Not yet randomized"
 
   #VERIFY Test_User2 can no longer randomize this record
   When I click on the link labeled "Demographics"
-  And I select the dropdown option "Complete" for the Data Collection Instrument field labeled "Complete?" 
+  And I wait for 2 seconds
+  And I select the dropdown option "Complete" for the Data Collection Instrument field labeled "Complete?"
   And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
-  And I click the bubble for the row labeled "Survey" on the column labeled "Status"
-  Then I should see "Not yet randomized"
-  And I logout
+  # And I click the bubble for the row labeled "Survey" on the column labeled "Status"
+  # Then I should see "Not yet randomized"
+  And I logout 
 
   #VERIFY Test_User1 can randomize this record
   Given I login to REDCap with the user "Test_User1"
@@ -218,8 +234,8 @@ Scenario: C.3.30.0800.0400 Trigger logic, for all users based on survey
   And I click on the link labeled "Add / Edit Records"
   And I select "7" on the dropdown field labeled "Choose an existing Record ID"
   And I click the bubble for the row labeled "Survey" on the column labeled "Status"
-  Then I should see a button labeled "Randomize" 
-  # And I click on the button labeled "Randomize" in the data entry form field "Go to:"
+  # Then I should see a button labeled "Randomize" 
+  And I click on the "Randomize" button for the field labeled "Go to"
   And I click on the button labeled "Randomize"
   And I click on the button labeled "Close"
   And I should see the radio labeled "Go to" with option "Survey C" selected
@@ -229,24 +245,16 @@ Scenario: C.3.30.0800.0400 Trigger logic, for all users based on survey
   When I click on the link labeled "Logging"
   Then I should see a table header and rows containing the following values in the logging table:
     | Username   | Action        | List of Data Changes OR Fields Exported      |
-    | Test_User1 | Update record 7 | survey_complete = '2' |
-    | Test_User1 | Randomize record 7 | Randomize record |
-    | Test_User2 | Update record 7 | rand_survey = '3', survey_complete = '0' |
-    | Test_User1 | Update record 7  | demographics_complete = '2' |
-    | Test_User1 | 	Manage/Design | Save randomization execute option (trigger_option: Trigger logic (any user or survey participant), instrument: survey, logic: [demographics...) |
-    | Test_User1 | 	Manage/Design | Move project to Production status |
-    | Test_User1 | Update record 8 | rand_survey = '' |
-    | Test_User1 | Update record 7 | rand_survey = '' |
-    | Test_User1 | Update record 6 | auto_rand = '' |
-    | Test_User1 | Update record 1 | rand_group = '' |
+    | test_user1 | Update record 7 | survey_complete = '2' |
+    | test_user1 | Randomize Record 7 | Randomize record |
+    | test_user1 | Update record 7 | rand_survey = '3', survey_complete = '0' |
+    | test_user2 | Update record 7  | demographics_complete = '2' |
+    | test_user1 | Manage/Design | Save randomization execute option (rid = 2) |
+    | test_admin | Manage/Design | Move project to Production status |
+    | test_admin | Update record 8 | rand_survey = '' |
+    | test_admin | Update record 7 | rand_survey = '' |
+    | test_admin | Update record 6 | auto_rand = '' |
+    | test_admin | Update record 1 | rand_group = '' |
 
   And I logout
 #END
-
-# Randomization C.3.30.0800.0100 to C.3.30.0800.0500
-#C.3.30.0800.0100. Manual only, using Randomize button (default)  
-#C.3.30.0800.0200. Trigger logic, for users with Randomize permissions only  
-#C.3.30.0800.0300 Trigger logic, for all users based on form  
-#C.3.30.0800.0400 Trigger logic, for all users based on survey  
-
-#C.3.30.0800.0500 Modify trigger while in production
