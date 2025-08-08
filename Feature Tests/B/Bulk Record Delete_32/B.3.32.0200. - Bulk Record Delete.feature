@@ -135,6 +135,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         When I click on the radio labeled exactly "Delete entire records"
         And I click on the radio labeled exactly "Select records from a list"
         Then I should see "Step 3: Select records to delete"
+        And I wait for 2 seconds
 
         #Note: We need the space before the digits because REDCap has them in the label
         Given I click on the checkbox labeled exactly " 2"
