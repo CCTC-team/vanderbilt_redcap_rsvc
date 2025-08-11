@@ -8,7 +8,7 @@ Feature: A.2.19.1000 PIN usage instead of password
         Given I login to REDCap with the user "Test_Admin"
         And I create a new project named "A.2.19.1000" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button 
 
-    Scenario: A.2.19.1000.0100. Disable Security & Authentication Configuration "When e-signing, allow users to provide their 6-digit PIN..."     
+    Scenario: A.2.19.1000.0100. Disable Security & Authentication Configuration – Password only   
         When I click on the link labeled "Control Center"
         And I click on the link labeled "Modules/Services Configuration"
         And I select "Enabled using SFTP" on the dropdown field labeled "Enable this system-level setting for password verification for File Upload fields AND enable the external storage device?"
@@ -46,7 +46,7 @@ Feature: A.2.19.1000 PIN usage instead of password
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
         Then I should see "Record ID 1 successfully edited."
 
-    Scenario: A.2.19.1000.0200. Enable Security & Authentication Configuration "When e-signing, allow users to provide their 6-digit PIN..."
+    Scenario: A.2.19.1000.0200. Enable Security & Authentication Configuration – PIN instead of password
     #Enable 6-digit PIN setting
         When I click on the link labeled "Control Center"
         And I click on the link labeled "Security & Authentication"
