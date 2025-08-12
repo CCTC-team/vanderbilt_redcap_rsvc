@@ -177,6 +177,7 @@ Scenario: C.3.30.0800.0400 Trigger logic, for all users based on survey
   And I click on the button labeled "YES, Move to Production Status" in the dialog box
   Then I should see Project status: "Production"
   And I logout
+  
 
    #VERIFY - Logging
   Given I login to REDCap with the user "Test_User1"
