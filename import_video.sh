@@ -39,3 +39,17 @@ $CURL -H "Accept: application/json" \
       -F "filename=$FILENAME" \
       -F "file=@\"$VIDEO_FILE\"" \
       $REDCAP_API_URL
+
+#Set a few fields in the REDCap project
+$CURL -X POST \
+      -F "token=$REDCAP_API_TOKEN" \
+      -F "content=record" \
+      -F "action=import" \
+      -F "format=json" \
+      -F "type=flat" \
+      -F "overwriteBehavior=normal" \
+      -F "forceAutoNumber=false" \
+      -F "returnContent=count" \
+      -F "returnFormat=json" \
+      -F "data=[{\"record_id\": \"$ID\", \"result_feature\": 1, \"feature_test_outcome\": 1, \"time_test\": \"$PASSING_DURATION\", \"date_test_run\": \"`date +"%Y-%m-%d"`\"}]" \
+      $REDCAP_API_URL
