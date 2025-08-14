@@ -8,18 +8,6 @@ VIDEO_FILE=$1
 FILENAME=$2
 FOLDER_ID=$3
 
-ID=`echo $VIDEO_FILE | rev | cut -d/ -f 1 | rev | cut -d' ' -f 1`
-PASSING_DURATION=`grep "file=\"redcap_rsvc.*$ID" ../coverage/test-results  -r --before-context=1 | grep 'tests="1" failures="0"'| cut -d\" -f 4`
-
-if [ -z "$PASSING_DURATION" ]; then
-  echo The feature did not pass.  Skipping field updates.
-  exit
-fi
-
-echo duration: $DURATION
-exit
-
-
 # Load environment variables from .env file
 if [ -f .env ]; then
   source .env
@@ -39,6 +27,14 @@ $CURL -H "Accept: application/json" \
       -F "filename=$FILENAME" \
       -F "file=@\"$VIDEO_FILE\"" \
       $REDCAP_API_URL
+
+ID=`echo $VIDEO_FILE | rev | cut -d/ -f 1 | rev | cut -d' ' -f 1`
+PASSING_DURATION=`grep "file=\"redcap_rsvc.*$ID" ../coverage/test-results  -r --before-context=1 | grep 'tests="1" failures="0"'| cut -d\" -f 4`
+
+if [ -z "$PASSING_DURATION" ]; then
+  echo The feature did not pass.  Skipping field updates.
+  exit
+fi
 
 #Set a few fields in the REDCap project
 $CURL -X POST \
