@@ -108,14 +108,7 @@ class UploadVideosToREDCapProject {
                         for(const feature of passed_features){
                             const path = feature.split('/')
                             const filename = path[path.length - 1]
-
-                            /**
-                             * Cypress seems to remove the leading letter folders when storing videos only in the cloud now,
-                             * perhaps since the cypress update a few months ago.
-                             * While very odd, simply looking for the video path that exists seems to work.
-                             */
-                            path.splice(7, 1)
-                            const file_path = path.join('/')
+                            const file_path = feature
 
                             //This means we already have uploaded it
                             if(uploaded_feature_videos.find(r => r.name === filename)){
