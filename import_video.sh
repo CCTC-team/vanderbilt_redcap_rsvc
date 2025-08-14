@@ -24,3 +24,13 @@ $CURL -H "Accept: application/json" \
       -F "filename=$FILENAME" \
       -F "file=@\"$VIDEO_FILE\"" \
       $REDCAP_API_URL
+
+ID=`echo $VIDEO_FILE | rev | cut -d/ -f 1 | rev | cut -d' ' -f 1`
+PASSING_DURATION=`grep "file=\"redcap_rsvc.*$ID" test  -r --before-context=1 | grep 'tests="1" failures="0"'| cut -d\" -f 4`
+
+if [ -z "$PASSING_DURATION" ]; then
+  echo The feature did not pass.  Skipping field updates.
+  exit
+fi
+
+echo duration: $DURATION
