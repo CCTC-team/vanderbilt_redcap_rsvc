@@ -29,12 +29,14 @@ $CURL -H "Accept: application/json" \
       $REDCAP_API_URL
 
 ID=`echo $VIDEO_FILE | rev | cut -d/ -f 1 | rev | cut -d' ' -f 1`
-PASSING_DURATION=`grep "file=\"redcap_rsvc.*$ID" ../coverage/test-results  -r --before-context=1 | grep 'tests="1" failures="0"'| cut -d\" -f 4`
+PASSING_DURATION=`grep "file=\"redcap_rsvc.*$ID" ../coverage/test-results  -r --before-context=1 | grep 'Mocha Tests' |grep 'failures="0"'| cut -d\" -f 4`
 
 if [ -z "$PASSING_DURATION" ]; then
-  echo The feature did not pass.  Skipping field updates.
+  echo $ID did not pass.  Skipping field updates.
   exit
 fi
+
+echo Setting fields for $ID
 
 DURATION_MINUTES=`awk "BEGIN {printf \"%02d\", int($PASSING_DURATION / 60)}"`
 DURATION_SECONDS=`awk "BEGIN {printf \"%02d\", int($PASSING_DURATION % 60)}"`
