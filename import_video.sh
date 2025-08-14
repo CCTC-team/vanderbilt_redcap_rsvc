@@ -1,4 +1,7 @@
 #!/bin/sh
+
+set -e
+
 CURL=`which curl`
 
 VIDEO_FILE=$1
