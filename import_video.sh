@@ -18,6 +18,11 @@ if [ -z "$REDCAP_API_TOKEN" ]; then
   exit 1
 fi
 
+ID=`echo $VIDEO_FILE | rev | cut -d/ -f 1 | rev | cut -d' ' -f 1`
+PASSING_DURATION=`grep "file=\"redcap_rsvc.*$ID" ../coverage/test-results  -r --before-context=1 | grep 'Mocha Tests' |grep 'failures="0"'| cut -d\" -f 4`
+
+echo Uploading $ID
+
 #Upload the Video file to the REDCap project
 $CURL -H "Accept: application/json" \
       -F "token=$REDCAP_API_TOKEN" \
@@ -27,9 +32,6 @@ $CURL -H "Accept: application/json" \
       -F "filename=$FILENAME" \
       -F "file=@\"$VIDEO_FILE\"" \
       $REDCAP_API_URL
-
-ID=`echo $VIDEO_FILE | rev | cut -d/ -f 1 | rev | cut -d' ' -f 1`
-PASSING_DURATION=`grep "file=\"redcap_rsvc.*$ID" ../coverage/test-results  -r --before-context=1 | grep 'Mocha Tests' |grep 'failures="0"'| cut -d\" -f 4`
 
 if [ -z "$PASSING_DURATION" ]; then
   echo $ID did not pass.  Skipping field updates.
