@@ -81,7 +81,7 @@ Scenario: # C.3.30.1000.0200: The system shall assign the next available allocat
 Given I click on the link labeled "Setup"
 And I click on the button labeled "Set up randomization"
 And I click on the icon in the column labeled "Setup" and the row labeled "3"
-And I upload a "csv" format file located at "import_files/RandomizationAllocationTemplate.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload File" to upload the file
+And I upload a "csv" format file located at "import_files/AlloRand auto_randtextduplicate.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload File" to upload the file
 Then I should see "Success"
 
 # #Verify records randomized from same gender (stratification group) are assigned to the expected allocation (next sequential allocation for that strat group) - the first man should be in Group 1 (A) and the second man should also be in Group 1 (A)
