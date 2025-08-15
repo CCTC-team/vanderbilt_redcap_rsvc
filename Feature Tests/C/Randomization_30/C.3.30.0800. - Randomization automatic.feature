@@ -13,10 +13,14 @@ Scenario: #SETUP User Rights
   And I click on the button labeled "Assign to role" on the tooltip
   And I select "1_FullRights" on the dropdown field labeled "Select Role"
   And I click on the button labeled exactly "Assign"
-  And I enter "Test_User2" into the input field labeled "Assign new user to role"
-  And I select "5_NoRand" on the dropdown field labeled "Select Role"
-  And I click on the button labeled exactly "Assign"
-
+  
+    #Adding user Test_User2 (No randomization rights)
+  When I click on the link labeled "User Rights"
+  And I enter "Test_User2" into the field with the placeholder text of "Assign new user to role"
+  And I click on the button labeled "Assign to role"
+  And I select "5_NoRand" on the dropdown field labeled "Select Role" on the role selector dropdown
+  When I click on the button labeled exactly "Assign" on the role selector dropdown
+  Then I should see "Test User2" within the "5_NoRand" row of the column labeled "Username" of the User Rights table
 
   #SETUP randomization for 0100
   When I click on the link labeled "Project Setup"
@@ -217,7 +221,6 @@ Scenario: C.3.30.0800.0500 Modify trigger while in production
 
   #VERIFY Test_User2 can no longer randomize this record
   When I click on the link labeled "Demographics"
-  And I wait for 2 seconds
   And I select the dropdown option "Complete" for the Data Collection Instrument field labeled "Complete?"
   And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
   And I click the bubble for the row labeled "Survey" on the column labeled "Status"
