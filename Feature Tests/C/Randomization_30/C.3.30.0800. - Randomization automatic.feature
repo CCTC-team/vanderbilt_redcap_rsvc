@@ -13,6 +13,7 @@ Scenario: #SETUP User Rights
   And I click on the button labeled "Assign to role" on the tooltip
   And I select "1_FullRights" on the dropdown field labeled "Select Role"
   And I click on the button labeled exactly "Assign"
+  Then I should see "test_user1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
   
     #Adding user Test_User2 (No randomization rights)
   When I click on the link labeled "User Rights"
@@ -221,6 +222,7 @@ Scenario: C.3.30.0800.0500 Modify trigger while in production
 
   #VERIFY Test_User2 can no longer randomize this record
   When I click on the link labeled "Demographics"
+  And I wait for 2 seconds
   And I select the dropdown option "Complete" for the Data Collection Instrument field labeled "Complete?"
   And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
   And I click the bubble for the row labeled "Survey" on the column labeled "Status"
