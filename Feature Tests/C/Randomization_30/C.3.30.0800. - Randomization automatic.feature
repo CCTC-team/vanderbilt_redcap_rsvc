@@ -3,6 +3,7 @@ Feature: User Interface: The system shall ensure users with Randomization Setup 
   I want to see that Randomization is functioning as expected
 
 Scenario: #SETUP project with randomization enabled
+Given on automation only I get this feature working before removing this line
 Given I login to REDCap with the user "Test_User1"
 And I create a new project named "C.3.30.0800" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "C.3.30 TriggerRand.REDCap.xml", and clicking the "Create Project" button
 
