@@ -194,7 +194,7 @@ else
     END_DATE=$(git log -1 --format=%ad --date=short $CUR_TAG)
   fi
 
-  echo "DEFAULT MODE: Takes the most recent tag and compares it to the previous tag.\n"
+  echo -e "DEFAULT MODE: Takes the most recent tag and compares it to the previous tag.\n"
 
 fi
 
@@ -204,6 +204,6 @@ git log --since="$START_DATE" --until="$END_DATE" --pretty=tformat: --numstat --
 if [ -z $CUR_TAG ]; then
   echo ""
 else
-  echo "\nTAGS: \n CURRENT_TAG: $CUR_TAG \n COMPARISON_TAG: $COMP_TAG\n"
+  echo -e "\nTAGS: \n CURRENT_TAG: $CUR_TAG \n COMPARISON_TAG: $COMP_TAG\n"
 fi
-echo "DATES:\n START_DATE: $START_DATE \n END_DATE: $END_DATE\n"
+echo -e "DATES:\n START_DATE: $START_DATE \n END_DATE: $END_DATE\n"
