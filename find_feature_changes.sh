@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Load environment variables from .env file
 if [ -f .env ]; then
   source .env
@@ -145,7 +147,11 @@ END {
             file_added " " pure_added " " \
             file_deleted " " pure_deleted " " \
             file_total " " mod
-      system(cmd)
+      return_code = system(cmd)
+      if (return_code != 0) {
+        print "push_lines_changes.sh failed on " feature
+        exit 1
+      }
       printf "%10d %10d %10d   %s - UPLOADED\n", file_added, file_deleted, file_total, file
     } else {
       printf "%10d %10d %10d   %s\n", file_added, file_deleted, file_total, file
