@@ -7,13 +7,6 @@ if [ -f .env ]; then
   source .env
 fi
 
-if [ "$upload" = true ]; then
-  if [ -z "$REDCAP_API_TOKEN" ]; then
-    echo "Environment variable REDCAP_API_TOKEN is not set. Exiting."
-    exit 1
-  fi
-fi
-
 # Default values
 prompt_mode=false
 upload=false
@@ -202,6 +195,35 @@ else
 
   echo -e "DEFAULT MODE: Takes the most recent tag and compares it to the previous tag.\n"
 
+fi
+
+if [ "$upload" = true ]; then
+  if [ -z "$REDCAP_API_TOKEN" ]; then
+    echo "Environment variable REDCAP_API_TOKEN is not set. Exiting."
+    exit 1
+  fi
+
+  if [ -z $CUR_TAG ]; then
+    echo "Tags must be used when uploading to ensure we're uploading to the matching REDCap project."
+    exit
+  fi
+
+  CURL=`which curl`
+  if [ "$REDCAP_API_URL" == "https://redcap.loc/api/" ]; then
+    CURL="$CURL --ssl-revoke-best-effort"
+  fi
+
+  PROJECT_LTS_VERSION=`$CURL -X POST "$REDCAP_API_URL" \
+    -H "Content-Type: application/x-www-form-urlencoded" \
+    -d "token=$REDCAP_API_TOKEN" \
+    -d "content=project" \
+    -d "format=json" \
+    -d "returnFormat=json" |cut -d'"' -f 6|cut -d' ' -f 6`
+
+  if [[ "$CUR_TAG" != "V$PROJECT_LTS_VERSION-ABC" ]]; then
+    echo "Tag and project LTS version do not match ($CUR_TAG vs. $PROJECT_LTS_VERSION)"
+    exit
+  fi
 fi
 
 # Get the line changes for .feature files between the dates
