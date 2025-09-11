@@ -7,6 +7,7 @@ Feature: A.3.28.1300 Control Center: The system shall support e-Consent framewor
 #FUNCTIONAL_REQUIREMENT A.3.28.1300._NewManual 
 
   Scenario: ###ACTION: Setup in control center - admin only
+    Given I login to REDCap with the user "Test_Admin"
     When I click on the link labeled "Control Center"
     And I click on the link labeled "Security & Authentication"
     Then I should see " Security & Authentication "
