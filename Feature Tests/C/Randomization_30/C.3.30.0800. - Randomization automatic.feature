@@ -3,7 +3,6 @@ Feature: User Interface: The system shall ensure users with Randomization Setup 
   I want to see that Randomization is functioning as expected
 
 Scenario: #SETUP project with randomization enabled
-Given on automation only I get this feature working before removing this line
 Given I login to REDCap with the user "Test_User1"
 And I create a new project named "C.3.30.0800" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "C.3.30 TriggerRand.REDCap.xml", and clicking the "Create Project" button
 
@@ -70,7 +69,7 @@ Scenario: C.3.30.0800.0200. Trigger logic, for users with Randomize permissions 
 
   And I select "Demographics" on the dropdown field labeled "Instrument" on the tooltip
   And I click on "" in the textarea field labeled "Trigger logic"
-  And I wait for 1 second
+  And I wait for 2 seconds
   And I enter "[fname]<>'' and [lname]<>''" into the textarea field labeled "Logic Editor" in the dialog box
   And I click on the button labeled "Update & Close Editor" in the dialog box
   And I click on the button labeled "Save trigger option"
@@ -178,6 +177,7 @@ Scenario: C.3.30.0800.0400 Trigger logic, for all users based on survey
   And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
   And I click on the button labeled "YES, Move to Production Status" in the dialog box
   Then I should see Project status: "Production"
+  Then I should see an alert box with the following text: "WARNING: RANDOMIZATION FIELD'S DATA WILL BE DELETED"
   And I logout
   
 
@@ -204,7 +204,7 @@ Scenario: C.3.30.0800.0500 Modify trigger while in production
   And I select "Trigger logic, for users with Randomize permission only" on the dropdown field labeled "Trigger option" on the tooltip
   And I select "Demographics" on the dropdown field labeled "Instrument" on the tooltip
   And I click on "" in the textarea field labeled "Trigger logic"
-  And I wait for 1 second
+  And I wait for 2 seconds
   And I clear field and enter "[demographics_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
   And I click on the button labeled "Update & Close Editor"
   And I click on the button labeled "Save trigger option"
@@ -227,7 +227,8 @@ Scenario: C.3.30.0800.0500 Modify trigger while in production
   And I select the dropdown option "Complete" for the Data Collection Instrument field labeled "Complete?"
   And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
   And I click the bubble for the row labeled "Survey" on the column labeled "Status"
-  Then I should see a dialog containing the following text: "Not yet randomized" 
+  Then I should see "Not yet randomized" in the row labeled "Go to"
+  And I click on the button labeled "Cancel"
   And I logout 
 
   #VERIFY Test_User1 can randomize this record
@@ -239,6 +240,7 @@ Scenario: C.3.30.0800.0500 Modify trigger while in production
   And I click the bubble for the row labeled "Survey" on the column labeled "Status"
   Then I should see a button labeled "Randomize" 
   And I click on the "Randomize" button for the field labeled "Go to"
+  And I should see "Below you may perform randomization"
   And I click on the button labeled "Randomize"
   And I click on the button labeled "Close"
   And I should see the radio labeled "Go to" with option "Survey C" selected
