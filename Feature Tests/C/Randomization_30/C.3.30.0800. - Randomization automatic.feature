@@ -108,7 +108,7 @@ Scenario: C.3.30.0800.0200. Trigger logic, for users with Randomize permissions 
   And I select "Trigger logic, for all users (including survey respondents)" on the dropdown field labeled "Trigger option" on the tooltip 
   And I select "Survey" on the dropdown field labeled "Instrument" on the tooltip
   And I click on "" in the textarea field labeled "Trigger logic"
-  And I wait for 1 second
+  And I wait for 2 seconds
   And I enter "[survey_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
   And I click on the button labeled "Update & Close Editor"
   And I click on the button labeled "Save trigger option"
