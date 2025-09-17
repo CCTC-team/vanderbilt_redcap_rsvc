@@ -175,9 +175,10 @@ Scenario: C.3.30.0800.0400 Trigger logic, for all users based on survey
   And I click on the link labeled "C.3.30.0800"
   And I click on the button labeled "Move project to production"
   And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
+  And I wait for 3 seconds
   And I click on the button labeled "YES, Move to Production Status" in the dialog box
-  Then I should see Project status: "Production"
   Then I should see an alert box with the following text: "WARNING: RANDOMIZATION FIELD'S DATA WILL BE DELETED"
+  Then I should see Project status: "Production"
   And I logout
   
 
