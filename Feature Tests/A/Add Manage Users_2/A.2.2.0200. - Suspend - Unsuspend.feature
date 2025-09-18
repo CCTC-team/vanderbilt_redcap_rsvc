@@ -45,7 +45,7 @@ Feature: A.2.2.0200 Add/Manage users
     And I click on the button labeled "Search"
     Then I should see "Test_User1"
 
-    When I click on the button labeled "Suspend user account" and accept the confirmation window
+    When I click on the button labeled "Suspend user account"
     Then I should see a dialog containing the following text: "Success! The user has now been suspended from REDCap"
 
     Given I click on the button labeled "Close" in the dialog box
@@ -89,7 +89,7 @@ Feature: A.2.2.0200 Add/Manage users
     And I click on the button labeled "Search"
     Then I should see "Test_User1"
 
-    When I click on the link labeled "unsuspend user" and accept the confirmation window
+    When I click on the link labeled "unsuspend user"
     Then I should see a dialog containing the following text: "Success! The user has now been unsuspended and will now be able to access REDCap again"
 
     When I click on the button labeled "Close" in the dialog box

@@ -29,7 +29,7 @@ Scenario: #SETUP User Rights
   And I click on the button labeled "Add new randomization model"
   Then I should see "STEP 1: Define your randomization model"
   And I select "rand_group (Randomization group)" on the first dropdown field labeled "- select a field -"
-  And I click on the button labeled "Save randomization model" and accept the confirmation window
+  And I click on the button labeled "Save randomization model"
   When I upload a "csv" format file located at "import_files/AlloRand rand_group1.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
   When I upload a "csv" format file located at "import_files/AlloRand rand_group2.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
 
@@ -62,7 +62,7 @@ Scenario: C.3.30.0800.0200. Trigger logic, for users with Randomize permissions 
   And I click on the button labeled "Add new randomization model"
   Then I should see "STEP 1: Define your randomization model"
   And I select "auto_rand (Automatic Randomization)" on the first dropdown field labeled "- select a field -"
-  And I click on the button labeled "Save randomization model" and accept the confirmation window
+  And I click on the button labeled "Save randomization model"
   And I upload a "csv" format file located at "import_files/AlloRand rand_group1.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
   And I upload a "csv" format file located at "import_files/AlloRand rand_group2.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
   And I select "Trigger logic, for users with Randomize permission only" on the dropdown field labeled "Trigger option" on the tooltip
@@ -102,7 +102,7 @@ Scenario: C.3.30.0800.0200. Trigger logic, for users with Randomize permissions 
   And I click on the button labeled "Add new randomization model"
   Then I should see "STEP 1: Define your randomization model"
   And I select "rand_survey (Go to:)" on the first dropdown field labeled "- select a field -"
-  And I click on the button labeled "Save randomization model" and accept the confirmation window
+  And I click on the button labeled "Save randomization model"
   And I upload a "csv" format file located at "import_files/AlloRand rand_group1.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
   And I upload a "csv" format file located at "import_files/AlloRand rand_group2.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
   And I select "Trigger logic, for all users (including survey respondents)" on the dropdown field labeled "Trigger option" on the tooltip 

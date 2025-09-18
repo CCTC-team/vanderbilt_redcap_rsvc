@@ -127,7 +127,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         And I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
         Then I should see "You have partially completed this survey"
-        And I click on the button labeled "Start Over" and accept the confirmation window
+        And I click on the button labeled "Start Over"
 
         Then I should see "Participant Consent"
 
