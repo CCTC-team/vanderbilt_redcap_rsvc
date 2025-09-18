@@ -227,6 +227,7 @@ Scenario: C.3.30.0800.0500 Modify trigger while in production
   And I wait for 2 seconds
   And I select the dropdown option "Complete" for the Data Collection Instrument field labeled "Complete?"
   And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+  And I should see "The grid below displays the form-by-form progress"
   And I click the bubble for the row labeled "Survey" on the column labeled "Status"
   Then I should see "Not yet randomized" in the row labeled "Go to"
   And I click on the button labeled "Cancel"
