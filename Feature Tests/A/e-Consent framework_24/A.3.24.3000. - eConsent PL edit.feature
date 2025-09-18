@@ -127,7 +127,7 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     And I should see "IP Address"
     Then I should see a table header and rows containing the following values in a table:
       | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         | IP Address      | Version | Type                  |
-      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | 172.18.0.1      |         | e-Consent Participant |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |                 |         | e-Consent Participant |
 
   Scenario: #FUNCTIONAL_REQUIREMENT Do NOT capture IP Address
         ##ACTION: Do not capture the IP Address in the e-Consent Framework option
