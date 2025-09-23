@@ -8,6 +8,7 @@ Feature: A.3.28.1200. Control Center: The system shall support Record-level Lock
   Scenario: Setup in control center - admin only
 #FUNCTIONAL_REQUIREMENT A.2.19.1000._NewManual 
 ###ACTION: Setup in control center - admin only 
+    Given I login to REDCap with the user "Test_Admin"
     When I click on the link labeled "Control Center"
     And I click on the link labeled "Security & Authentication"
     Then I should see " Security & Authentication "

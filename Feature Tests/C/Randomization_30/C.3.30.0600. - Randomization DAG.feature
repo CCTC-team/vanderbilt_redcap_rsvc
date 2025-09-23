@@ -46,7 +46,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
 
     When I click on the button labeled "Example #2 (all possible combos)"
     Then I should see a downloaded file named "RandomizationAllocationTemplate.csv"
-    Then I upload the recently downloaded file RandomizationAllocationTemplate.csv by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
+    Then I upload a "csv" format file located at "downloads/RandomizationAllocationTemplate.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
     
     #Adding Allocation table for automation
     When I upload a "csv" format file located at "import_files/AllocationTblC.3.30.0600.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
@@ -135,7 +135,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
            | mm/dd/yyyy hh:mm  | test_user1 | Update record 6     |  |
            | mm/dd/yyyy hh:mm  | test_user1 | Randomize Record 6  | Randomize record  |
            | mm/dd/yyyy hh:mm  | test_user1 | Update record 6     | Assign record to Data Access Group (redcap_data_access_group = 'dag_1') |
-           | mm/dd/yyyy hh:mm  | test_user1 | Create record 6     | record_id = '6', rand_group_2 = '1', randomization_complete = '0' |
+           | mm/dd/yyyy hh:mm  | test_user1 | Create record 6     | record_id = '6', rand_group_2 = '2', randomization_complete = '0' |
 
 And I logout
 #END

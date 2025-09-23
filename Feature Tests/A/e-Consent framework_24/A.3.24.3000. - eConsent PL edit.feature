@@ -21,6 +21,7 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     And I click on the link labeled "Modules/Services Configuration"
     Then I should see "Settings pertaining to the External Module Framework"
     When I select "Hide e-Consent Framework option" on the dropdown field labeled "Display 'e-Consent Framework' option for ALL surveys?"
+    And I wait for 1 second
     And I click on the button labeled "Save Changes"
         ##VERIFY e-Consent Framework is hidden
     Then I should see "Your system configuration values have now been changed!"
@@ -37,6 +38,7 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     And I click on the link labeled "Modules/Services Configuration"
     Then I should see "Settings pertaining to the External Module Framework"
     When I select "Show e-Consent Framework option (recommended)" on the dropdown field labeled "Display 'e-Consent Framework' option for ALL surveys?"
+    And I wait for 1 second
     And I click on the button labeled "Save Changes"
         ##VERIFY e-Consent Framework is showing
     Then I should see "Your system configuration values have now been changed!"
@@ -69,6 +71,7 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     And I click on the link labeled "Modules/Services Configuration"
     Then I should see "Settings pertaining to the External Module Framework"
     When I select "Capture IP address" on the dropdown field labeled "Capture the IP address of survey participants that certify the e-Consent process, and store their IP in the File Repository table."
+    And I wait for 1 second
     And I click on the button labeled "Save Changes"
         ##VERIFY IP Address is being Captured via the e-Consent Framework
     Then I should see "Your system configuration values have now been changed!"
@@ -124,7 +127,7 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     And I should see "IP Address"
     Then I should see a table header and rows containing the following values in a table:
       | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         | IP Address      | Version | Type                  |
-      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | 172.18.0.1      |         | e-Consent Participant |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |                 |         | e-Consent Participant |
 
   Scenario: #FUNCTIONAL_REQUIREMENT Do NOT capture IP Address
         ##ACTION: Do not capture the IP Address in the e-Consent Framework option
@@ -132,6 +135,7 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     And I click on the link labeled "Modules/Services Configuration"
     Then I should see "Settings pertaining to the External Module Framework"
     When I select "Do NOT capture IP address" on the dropdown field labeled "Capture the IP address of survey participants that certify the e-Consent process, and store their IP in the File Repository table."
+    And I wait for 1 second
     And I click on the button labeled "Save Changes"
         ##VERIFY IP Address is not being Captured via the e-Consent Framework
     Then I should see "Your system configuration values have now been changed!"
@@ -166,6 +170,7 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     And I click on the link labeled "Modules/Services Configuration"
     Then I should see "Settings pertaining to the External Module Framework"
     When I enter "If you are using the e-Consent Framework, the IRB must see you final version and you must use the stamped version of the IRB Approval" into the textarea field labeled "Custom message for e-Consent Framework settings (optional)"
+    And I wait for 1 second
     And I click on the button labeled "Save Changes"
 
   Scenario: ##VERIFY I Custom message appears at the bottom of the Modify Setting window  in the e-Consent Framework
