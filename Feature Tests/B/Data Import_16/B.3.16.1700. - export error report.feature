@@ -47,6 +47,7 @@ Feature: User Interface: The system shall report background process data import 
         Then I click on the button labeled "Close" in the dialog box
         
         Given I click on the link labeled "Record Status Dashboard"
+        And I select "100" on the dropdown field labeled "records per page"
         Then I should see a table header and rows containing the following values in a table:
             | Record ID | Form 1 |
             | 1         |        |
