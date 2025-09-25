@@ -54,14 +54,14 @@ As a REDCap administrator
     Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
     Then I should see the following values in the last file downloaded
       | PID 13 - LastNameLocal |
-      | Type: Participant     |
+      | FirstName LastNameLocal, 2000-01-01, Version: 1.0, Participant     |
       #Manual: Close document 
 #VERIFY Confirm file exists in local server directory 
  # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
     # Assuming Baker likes this "latest file" language, we should be good.  If we switch to something different, we should consider whether we need to clear the edocs folder between test runs
     Then I should see the following values in the most recent file in the local storage path
       | PID 13 - LastNameLocal |
-      | Type: Participant      |
+      | FirstName LastNameLocal, 2000-01-01, Version: 1.0, Participant      |
 
   Scenario: A.3.28.0100.0200 – Configure Microsoft Azure Blob Storage
 # Requires Azure storage account name, key, container, and environment. Site must confirm that uploaded files are routed to the Azure container. 
@@ -105,14 +105,14 @@ As a REDCap administrator
     Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
     Then I should see the following values in the last file downloaded
       | PID 14 - LastNameAzure |
-      | Type: Participant     |
+      | FirstName LastNameAzure, 2000-01-01, Version: 1.0, Participant     |
       #Manual: Close document 
  #VERIFY Confirm file exists in Azure Blob Storage 
  # Site must verify that the PDF file was saved in the configured Microsoft Azure Blob Storage container 
    # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
     Then I should see the following values in the most recent file in the Azure Blob Storage container
       | PID 14 - LastNameAzure   |
-      | Type: Participant |
+      | FirstName LastNameAzure, 2000-01-01, Version: 1.0, Participant |
 
   Scenario: A.3.28.0100.0300 – Configure Amazon S3 Storage
 # Requires AWS access key, secret key, bucket name, and region. # Site must verify file appearance in the configured S3 bucket. 
@@ -156,13 +156,13 @@ As a REDCap administrator
     Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
     Then I should see the following values in the last file downloaded
       | PID 15 - LastNameS3 |
-      | Type: Participant     |
+      | FirstName LastNameS3, 2000-01-01, Version: 1.0, Participant     |
       #Manual: Close document 
 #VERIFY Confirm file exists in Amazon S3 Storage 
 # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
     Then I should see the following values in the most recent file in the Amazon S3 bucket
       | PID 15 - LastNameS3   |
-      | Type: Participant |
+      | FirstName LastNameS3, 2000-01-01, Version: 1.0, Participant |
 
   Scenario: A.3.28.0100.0400 – Configure Google Cloud Storage
 # Supports GCS via API or App Engine configuration. Site must confirm file appears in the correct Google Cloud bucket. 
@@ -205,13 +205,13 @@ As a REDCap administrator
     Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
     Then I should see the following values in the last file downloaded
       | PID 16 - LastNameGCS |
-      | Type: Participant     |
+      | FirstName LastNameGCS, 2000-01-01, Version: 1.0, Participant     |
       #Manual: Close document 
 #VERIFY Confirm file exists in Google Cloud Storage 
 # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
     Then I should see the following values in the most recent file in the Google Cloud Storage bucket
       | PID 16 - LastNameGCS   |
-      | Type: Participant |
+      | FirstName LastNameGCS, 2000-01-01, Version: 1.0, Participant |
 
   Scenario: A.3.28.0100.0500 – Configure WebDAV Storage
 # Uses a WebDAV-accessible path preconfigured on the REDCap server. Site must verify storage access and permissions. 
@@ -252,13 +252,13 @@ As a REDCap administrator
     Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
     Then I should see the following values in the last file downloaded
       | PID 17 - LastNameWebDAV |
-      | Type: Participant     |
+      | FirstName LastNameWebDAV, 2000-01-01, Version: 1.0, Participant     |
       #Manual: Close document 
 #VERIFY Confirm file exists in WebDAV storage location 
 # FUNCTIONAL_REQUIREMENT: Files uploaded via REDCap actually land in the configured location (local or external) 
     Then I should see the following values in the most recent file in the WebDAV server
       | PID 17 - LastNameWebDAV |
-      | Type: Participant |
+      | FirstName LastNameWebDAV, 2000-01-01, Version: 1.0, Participant |
 
   Scenario: Stop external storage services
     Then if running via automation, stop external storage services
