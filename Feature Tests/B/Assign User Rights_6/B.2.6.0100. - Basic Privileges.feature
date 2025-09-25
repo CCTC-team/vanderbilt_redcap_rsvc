@@ -102,7 +102,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         Then I should see a dialog containing the following text: "Editing existing user"
 
         And I check the radio labeled "Read Only" in the dialog box
-        And I save changes within the context of User Rights
+        And I click on the button labeled "Save Changes"
 
         ##VERIFY_LOG: Verify Update user rights
         And I click on the link labeled "Logging"
@@ -161,7 +161,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I check the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Locking / Unlocking"
         And I check the User Right named "Lock/Unlock *Entire* Records (record level)"
-        And I save changes within the context of User Rights
+        And I click on the button labeled "Save Changes"
 
         ##VERIFY_LOG: Verify Update user rights
         And I click on the link labeled "Logging"

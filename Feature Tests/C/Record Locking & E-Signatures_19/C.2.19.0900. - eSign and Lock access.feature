@@ -66,7 +66,7 @@ Feature: User Interface: The system shall support the ability to limit access to
         Then I should see a dialog containing the following text: "NOTICE"
         And I click on the button labeled "Close" in the dialog box
         Given I check the User Right named "Lock/Unlock *Entire* Records (record level)"
-        When I save changes within the context of User Rights
+        And I click on the button labeled "Save Changes"
         Then I should see 'User "test_user1" was successfully edited'
 
         ##ACTION - Assign users rights for Test_User2; Disable Lock/Unlock Records
@@ -75,7 +75,7 @@ Feature: User Interface: The system shall support the ability to limit access to
         Then I should see a dialog containing the following text: "Editing existing user"
         And I check the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Disabled"
-        When I save changes within the context of User Rights
+        And I click on the button labeled "Save Changes"
         Then I should see 'User "test_user2" was successfully edited'
 
         ##ACTION - Assign users rights for Test_User3; Enable Locking / Unlocking records
@@ -84,7 +84,7 @@ Feature: User Interface: The system shall support the ability to limit access to
         Then I should see a dialog containing the following text: "Editing existing user"
         And I uncheck the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Locking / Unlocking"
-        When I save changes within the context of User Rights
+        And I click on the button labeled "Save Changes"
         Then I should see 'User "test_user3" was successfully edited'
 
         ##ACTION - Assign users rights for Test_User4;  Disable Lock/Unlock Records
@@ -94,7 +94,7 @@ Feature: User Interface: The system shall support the ability to limit access to
         And I uncheck the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Disabled"
         When I set Data Viewing Rights to View & Edit for the instrument "Text Validation"
-        When I save changes within the context of User Rights
+        And I click on the button labeled "Save Changes"
         Then I should see 'User "test_user4" was successfully edited'
 
     Scenario: #VERIFY_LOG

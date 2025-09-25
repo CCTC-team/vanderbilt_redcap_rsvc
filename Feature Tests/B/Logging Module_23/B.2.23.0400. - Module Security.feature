@@ -19,7 +19,7 @@ Feature: User Interface: The logging module shall be secure, tamper-proof, and n
         And I enter "Test_User1" into the field with the placeholder text of "Add new user"
         And I click on the button labeled "Add with custom rights"
         And I uncheck the User Right named "Logging"
-        And I save changes within the context of User Rights
+        And I click on the button labeled "Save Changes"
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION: Logging Module – Admin unable to edit
