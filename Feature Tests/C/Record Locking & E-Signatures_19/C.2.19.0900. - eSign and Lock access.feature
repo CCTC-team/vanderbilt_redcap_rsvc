@@ -93,7 +93,7 @@ Feature: User Interface: The system shall support the ability to limit access to
         Then I should see a dialog containing the following text: "Editing existing user"
         And I uncheck the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Disabled"
-        When I set Data Viewing Rights to View & Edit for the instrument "Text Validation"
+        When I click on the radio in the column labeled "View & Edit" and the row labeled "Text Validation"
         And I click on the button labeled "Save Changes"
         Then I should see 'User "test_user4" was successfully edited'
 
