@@ -34,7 +34,7 @@ Feature: User Interface: General: The system shall support the ability to delete
     When I click on the button labeled "Delete the project"
     And I enter "DELETE" into the input field labeled 'TYPE "DELETE" BELOW' in the dialog box
     And I click on the button labeled "Delete the project" in the dialog box
-    And I click on the button labeled "Yes, delete the project" in the dialog box
+    And I click on the button labeled "CONFIRM DELETION" in the dialog box
     Then I should see "Project successfully deleted!"
     And I click on the button labeled "Close" in the dialog box
     Given I logout
