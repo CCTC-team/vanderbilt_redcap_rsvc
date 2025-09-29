@@ -30,7 +30,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     When I select "test_user2 (Test User2)" on the dropdown field labeled "Assign user"
     And I select "DAG 1" on the dropdown field labeled "to"
     And I click on the button labeled "Assign"
-    Then I should see a table header and rows containing the following values in data access groups table:
+    Then I should see a table header and rows containing the following values in a table:
       | Data Access Groups        | Users in group          |
       | DAG 1                     | test_user2 (Test User2) |
       | [Not assigned to a group] | test_user1 (Test User1) |
@@ -89,7 +89,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
       #M This record ID may be diferent with manual testing.
 
       #Verification that user does not have access to record 2. Ensuring they cannot view or randomize records outside their group is fully covered by B.2.10.0400. User Interface: The system shall provide the ability to restrict a user who has been assigned to a DAG.
-    And I should NOT see "2" 
+    And I should see "ALL (1)" 
     
       #VERIFY Record Randomization was added to the randomization dashboard.
     Given I logout
@@ -101,7 +101,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     And I click on the icon in the column labeled "Dashboard" and the row labeled "1"
     Then I should see a table header and rows containing the following values in a table:
                  | Used    | Not Used | Allocated records   | Data Access Group  redcap_data_access_group|Randomization group  rand_group_2|
-                 | 1       |     0    |     1-1             | Dag 1 (1)                                  | Drug A (1)        | 
+                 | 1       |     0    |     1-1             | DAG 1 (1)                                  | Drug A (1)        | 
       #M This record ID may be diferent with manual testing.
        	
       #VERIFY_log Randomization at project level enabled recorded in logging table
