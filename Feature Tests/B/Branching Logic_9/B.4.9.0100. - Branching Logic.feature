@@ -33,15 +33,12 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
 
-        #Manual: These confirmation windows are automatically accepted on automated side
-        Then I should see an alert box with the following text: 'ERASE THE VALUE OF THE FIELD "ptname" ?'
-        #And I click on the button labeled "OK" in the alert box
-        Then I should see an alert box with the following text: 'ERASE THE VALUE OF THE FIELD "textbox" ?'
-        #And I click on the button labeled "OK" in the alert box
-        Then I should see an alert box with the following text: 'ERASE THE VALUE OF THE FIELD "text2" ?'
-        #And I click on the button labeled "OK" in the alert box
-        Then I should see an alert box with the following text: 'ERASE THE VALUE OF THE FIELD "notesbox" ?'
-        #And I click on the button labeled "OK" in the alert box
+        Then I should see"The current field for which you just entered data requires that some fields be hidden from view"
+        And I should see a checkbox labeled "Name" that is checked
+        And I should see a checkbox labeled "Text box" that is checked
+        And I should see a checkbox labeled "Text2" that is checked
+        And I should see a checkbox labeled "Notes box" that is checked
+        And I click on the button labeled "Apply"
 
         Then I should NOT see the field labeled "Name"
         And I should NOT see the field labeled "Text2"

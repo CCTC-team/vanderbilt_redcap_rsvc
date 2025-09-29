@@ -40,7 +40,7 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
         And I enter "Test_User1" into the input field labeled "Add with custom rights"
         And I click on the button labeled "Add with custom rights"
         Then I should see a dialog containing the following text: "Adding new user"
-        And I save changes within the context of User Rights
+        And I click on the button labeled "Add user"
 
         ##ACTION: Assign User to DAG
         Given I click on the link labeled "DAGs"

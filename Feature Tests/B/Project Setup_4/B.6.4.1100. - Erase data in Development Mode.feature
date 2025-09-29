@@ -82,6 +82,8 @@ Feature: User Interface: General: The system shall support the ability to erase 
     #FUNCTIONAL REQUIREMENT
     ##ACTION Erase data
     When I click on the button labeled "Erase all data"
+    When I click on the button labeled "Erase all data"
+    And I enter "ERASE ALL DATA" into the input field labeled 'TYPE "ERASE ALL DATA" BELOW'
     And I click on the button labeled "Erase all data" in the dialog box
     Then I should see "SUCCESS!"
     And I click on the button labeled "Close" in the dialog box

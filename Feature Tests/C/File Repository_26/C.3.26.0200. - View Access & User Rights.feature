@@ -278,6 +278,7 @@ Feature: User Interface: The system shall support limiting file repository user 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Upload to Role folder
         When I click on the link labeled "File Repository"
+        And I wait for 3 seconds
         Then I should NOT see "All Files/TestGroup1_Folder" in the File Repository breadcrumb
         And I should see "All Files" in the File Repository breadcrumb
         Then I should see a table header and rows containing the following values in the file repository table:

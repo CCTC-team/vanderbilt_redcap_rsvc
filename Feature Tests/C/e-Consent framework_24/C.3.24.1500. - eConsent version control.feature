@@ -138,7 +138,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     When I enter "test 1" into the input field labeled "Consent form version:" in the dialog box
     And I click on the button labeled "Add new consent form" in the dialog box
         #Verify error
-    Then I should see "Error"
+    Then I should see "ERROR: You must provide your consent form"
 
   Scenario:
     When I click on the button labeled "Close" in the dialog box
@@ -152,7 +152,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     And I upload a "pdf" format file located at "import_files/consent.png", by clicking the button near "Upload your PDF consent form" to browse for the file, and clicking the button labeled "Add new consent form" to upload the file
 
   Scenario: Verify error
-    Then I should see "Error"
+    Then I should see "ERROR: Only PDF files are allowed"
 
   Scenario:
     When I click on the button labeled "OK" in the dialog box
@@ -360,7 +360,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
   Scenario:
     When I click on the link labeled "pid13_formParticipantConsent_id3_"
     Then I should see the following values in the last file downloaded
-      # Make sure the DOB is followed immediatly by "Type:", verifying that the consent "Version:" is omitted. 
-      | 2000-01-01, Type:  |
+      # Make sure the DOB is followed immediatly by "Participant", verifying that the consent "Version:" is omitted. 
+      | 2000-01-01, Participant |
 #Manual: Close document
 #END

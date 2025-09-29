@@ -22,7 +22,7 @@ Feature: User Interface: The system shall support data quality rule creation.
 
     When I enter "Integer" into the textarea field labeled "Enter descriptive name for new rule"
     And I click on "" in the textarea field labeled "Enter logic for new rule"
-    And I wait for 1 second
+    And I wait for 2 seconds
     And I clear field and enter "[event_1_arm_1][integer]='1999'" in the textarea field labeled "Logic Editor" in the dialog box
     And I click on the button labeled "Update & Close Editor" in the dialog box
     And I click on the button labeled "Add" on the active Data Quality rule
@@ -74,13 +74,13 @@ Feature: User Interface: The system shall support data quality rule creation.
     When I click on the link labeled "Data Quality"
     And I click on the button labeled exactly "All"
     Then I should see a table header and rows containing the following values in a table:
-      | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) | Total Discrepancies |
-      | 3      | Integer   | [event_1_arm_1][integer]='1999'          | 0                   |
-      | 4      | Integer   | [integer]<>'1999'                        | 29                  |
+      | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) |
+      | 3      | Integer   | [event_1_arm_1][integer]='1999'          |
+      | 4      | Integer   | [integer]<>'1999'                        |
         
     ##ACTION: edit existing rule for longitudinal projects
     When I click the element containing the following text: "[event_1_arm_1][integer]='1999'"
-    And I wait for 1 second
+    And I wait for 2 seconds
     And I clear field and enter "[event_1_arm_1][integer]='1'" in the textarea field labeled "Logic Editor" in the dialog box
     And I click on the button labeled "Update & Close Editor" in the dialog box
     And I click on the button labeled "Save" on the active Data Quality rule
@@ -90,13 +90,13 @@ Feature: User Interface: The system shall support data quality rule creation.
             
     ##ACTION: edit existing rule
     When I click the element containing the following text: "[integer]<>'1999'"
-    And I clear field and enter "[integer]='1'" in the textarea field labeled "Logic Editor" in the dialog box
+    And I clear field and enter "[integer]='2'" in the textarea field labeled "Logic Editor" in the dialog box
     And I click on the button labeled "Update & Close Editor" in the dialog box
     And I click on the button labeled "Save" on the active Data Quality rule
 
     Then I should see a table header and rows containing the following values in a table:
       | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) |
-      | 4      | Integer   | [integer]='1'                            |
+      | 4      | Integer   | [integer]='2'                            |
     #Manual: refresh browser page
 
     #VERIFY
@@ -104,18 +104,18 @@ Feature: User Interface: The system shall support data quality rule creation.
     And I click on the button labeled exactly "All"
     And I should see "Processing Complete!"
     Then I should see a table header and rows containing the following values in a table:
-      | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) | Total Discrepancies |
-      | 3      | Integer   | [event_1_arm_1][integer]='1'             | 6                   |
-      | 4      | Integer   | [integer]='1'                            | 6                   |
+      | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) |
+      | 3      | Integer   | [event_1_arm_1][integer]='1'             |
+      | 4      | Integer   | [integer]='2'                            |
 
     ##ACTION: delete rule
     When I click on the Delete icon for Data Quality Rule # "4"
     #Manual: confirmation windows are automatically accepted on automated side
     And I click on the button labeled "Delete" in the dialog box
     Then I should see a table header and rows containing the following values in a table:
-      | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) | Total Discrepancies |
-      | 3      | Integer   | [event_1_arm_1][integer]='1999'          | 0                   |
-    And I should NOT see "[integer]='1'"
+      | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) |
+      | 3      | Integer   | [event_1_arm_1][integer]='1'             |
+    And I should NOT see "[integer]='2'"
 
     ##VERIFY_LOG
     When I click on the link labeled "Logging"

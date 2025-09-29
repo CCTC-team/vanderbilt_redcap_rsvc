@@ -101,14 +101,14 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
             | test_user1 | Manage/Design | Event: Event 4, Arm: Arm 1, Days Offset: 4, Offset Range: -0/+0 |
 
         When I click on the link labeled "Record Status Dashboard"
-        Then I should see "Arm 3: Arm 3"
-        And I should see "Arm 2: Arm 2"
+        Then I should see "Arm 3:Arm 3"
+        And I should see "Arm 2:Arm 2"
 
         When I click on the link labeled "Arm 2"
         Then I should see "Event One"
 
         When I click on the link labeled "Arm 1"
-        Then I should see "Event 4"
+        Then I should see "Event Three"
 
         Given I click on the link labeled "Setup"
         When I click on the button labeled "Designate Instruments for My Events"
@@ -323,7 +323,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         Then I should see "Arm name:  Arm One"
 
         When I click on the link labeled "Record Status Dashboard"
-        Then I should see "Arm 1: Arm One"
+        Then I should see "Arm 1:Arm One"
 
         When I click on the link labeled "Logging"
         Then I should see table header and rows containing the following values in the logging table:

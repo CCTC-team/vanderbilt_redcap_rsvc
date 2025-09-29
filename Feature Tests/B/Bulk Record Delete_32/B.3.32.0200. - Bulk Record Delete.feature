@@ -52,13 +52,13 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Edit user privileges"
         Then I should see a dialog containing the following text: "Editing existing user"
         When I check the User Right named "Delete Records"
-        And I save changes within the context of User Rights
+        And I click on the button labeled "Save Changes"
 
         When I click on the link labeled "test_user2"
         And I click on the button labeled "Edit user privileges"
         Then I should see a dialog containing the following text: "Editing existing user"
         When I uncheck the User Right named "Delete Records"
-        And I save changes within the context of User Rights
+        And I click on the button labeled "Save Changes"
 
         ##ACTION Verify record exist ##VERIFY_RSD
         When I click on the link labeled "Record Status Dashboard"

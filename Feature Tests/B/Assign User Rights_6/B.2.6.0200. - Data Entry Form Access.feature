@@ -53,8 +53,8 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     #FUNCTIONAL REQUIREMENT
     ##ACTION: Set user access to No Access
 
-    When I set Data Viewing Rights to No Access for the instrument "Text Validation"
-    And I save changes within the context of User Rights
+    When I click on the radio in the column labeled "No Access" and the row labeled "Text Validation"
+    And I click on the button labeled "Save Changes"
 
     ##VERIFY_LOG: Verify Update user rights
     And I click on the link labeled "Logging"
@@ -84,8 +84,8 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     Then I should see a dialog containing the following text: "Editing existing user"
 
     ##ACTION: Set user access to Read Only
-    When I set Data Viewing Rights to Read Only for the instrument "Text Validation"
-    And I save changes within the context of User Rights
+    When I click on the radio in the column labeled "Read Only" and the row labeled "Text Validation"
+    And I click on the button labeled "Save Changes"
 
     Given I click on the link labeled "Add / Edit Records"
     And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
@@ -102,8 +102,8 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     Then I should see a dialog containing the following text: "Editing existing user"
 
     ##ACTION: Set user access to View & Edit + Edit survey responses
-    When I set Data Viewing Rights to View & Edit with Edit survey responses checked for the instrument "Survey"
-    And I save changes within the context of User Rights
+    When I check the checkbox in the column labeled "Edit Survey Responses" and the row labeled "Survey"
+    And I click on the button labeled "Save Changes"
 
     Given I click on the link labeled "Add / Edit Records"
     And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
@@ -142,8 +142,8 @@ Feature: Project Level:  The system shall allow data entry form user access to b
     Then I should see a dialog containing the following text: "Editing existing user"
 
     ##ACTION: Remove user access to Edit survey responses
-    When I set Data Viewing Rights to View & Edit with Edit survey responses unchecked for the instrument "Survey"
-    And I save changes within the context of User Rights
+    When I uncheck the checkbox in the column labeled "Edit Survey Responses" and the row labeled "Survey"
+    And I click on the button labeled "Save Changes"
 
     ##VERIFY: Not able to edit survey responses for the instrument
     Given I click on the link labeled "Add / Edit Records"
