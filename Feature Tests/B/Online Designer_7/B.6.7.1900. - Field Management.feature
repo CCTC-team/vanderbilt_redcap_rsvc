@@ -133,7 +133,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         And I should see 'notesbox_2 "Notes box"'
         And I should see 'add "Add Field"'
         And I should see "Fields to be DELETED:"
-        And I should see 'multiple_dropdown_manual "Multiple ... Manual" (8 records/events affected)'
+        And I should see 'multiple_dropdown_manual "Multiple ...  Manual" (8 records/events affected)'
         Then I should see a table row containing the following values in a table:
             | Variable Name       | Choices or Calculations |
             | radio_button_manual | 9..9, Choice99          |
