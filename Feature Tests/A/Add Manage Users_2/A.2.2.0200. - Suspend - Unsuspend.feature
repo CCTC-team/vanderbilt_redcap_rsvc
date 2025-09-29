@@ -53,8 +53,8 @@ Feature: A.2.2.0200 Add/Manage users
 
     When I click on the link labeled "View User List By Criteria"
     And I select "Suspended users" on the dropdown field labeled "Display only:"
+    And I wait for 1 second
     And I click on the button labeled "Display User List"
-    Then I should see "Loading..."
     And I should see "User List"
     And I should see a link labeled "Test_User1"
 

@@ -180,5 +180,5 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     When I click on the link labeled "Designer"
     And I click on the button labeled "e-Consent"
     And I click on the icon in the column labeled "Edit settings" and the row labeled "Participant Consent"
-    Then I should see " If you are using the e-Consent Framework, the IRB must see you final version and you must use the stamped version of the IRB Approval"
+    Then I should see "If you are using the e-Consent Framework, the IRB must see you final version and you must use the stamped version of the IRB Approval"
 #END

@@ -48,7 +48,7 @@ Feature: User Interface: The system shall require the repeating instrument and i
     And I upload a "csv" format file located at "import_files//B316800100_WOUT_REPEATS.csv", by clicking the button near "Select your CSV data file" to browse for the file, and clicking the button labeled "Upload File" to upload the file
     
     ##VERIFY
-    Then I should see "ERROR:"
+    Then I should see "Errors were detected in the import file"
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION: import with repeat instrument

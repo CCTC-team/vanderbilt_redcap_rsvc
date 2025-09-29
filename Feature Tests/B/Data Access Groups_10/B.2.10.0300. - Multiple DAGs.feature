@@ -124,7 +124,7 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
         #And I click on the button labeled "OK" in the dialog box
 
         ##VERIFY
-        Then I should see "Data Collection—TestGroup1"
+        Then I should see "Current Data Access Group:TestGroup1"
 
         ##VERIFY_RSD:
         Then I should see a table header and rows containing the following values in the record status dashboard table:
@@ -142,7 +142,7 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
         #This is problematic for ATS because this button AUTOMATICALLY disappears ...
         #And I click on the button labeled "OK" in the dialog box
 
-        Then I should see "Data Collection—TestGroup2"
+        Then I should see "Current Data Access Group:TestGroup2"
 
         ##VERIFY_RSD:
         Then I should see a table header and rows containing the following values in the record status dashboard table:
