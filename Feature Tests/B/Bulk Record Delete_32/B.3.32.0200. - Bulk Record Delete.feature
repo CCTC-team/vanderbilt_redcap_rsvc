@@ -58,6 +58,8 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the button labeled "Edit user privileges"
         Then I should see a dialog containing the following text: "Editing existing user"
         When I uncheck the User Right named "Delete Records"
+        And I should see "The Delete right has been cleared for all forms"
+        And I click on the button labeled "Close"
         And I click on the button labeled "Save Changes"
 
         ##ACTION Verify record exist ##VERIFY_RSD
