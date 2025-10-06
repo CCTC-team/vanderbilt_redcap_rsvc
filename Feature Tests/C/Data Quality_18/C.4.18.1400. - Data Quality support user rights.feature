@@ -50,7 +50,7 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
             | G      | Multiple choice fields with invalid values                                | -                                         | 1                   |
             | H      | Incorrect values for calculated fields                                    | -                                         | 0                   |
             | I      | Fields containing "missing data codes"                                    | -                                         | 4                   |
-            | 1      | [radio]=9.9                                                               | [radio]= '9.9'                            | 1                   |
+            | 1      | [radio]=9.9                                                               | [radio]= '9..9'                           | 1                   |
             | 2      | [ptname]<>[name]                                                          | [ptname]<>[name]                          | 8                   |
 
         #FUNCTIONAL_REQUIREMENT
@@ -86,7 +86,7 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
             | G      | Multiple choice fields with invalid values                                | -                                        | 1                   |
             | H      | Incorrect values for calculated fields                                    | -                                        | 0                   |
             | I      | Fields containing "missing data codes"                                    | -                                        | 4                   |
-            | 1      | [radio]=9.9                                                               | [radio]= '9.9'                           | ERROR               |
+            | 1      | [radio]=9.9                                                               | [radio]= '9..9'                          | ERROR               |
             | 2      | [ptname]<>[name]                                                          | [ptname]<>[name]                         | ERROR               |
 
         When I click on the "view" link for Data Quality Rule # "C"
