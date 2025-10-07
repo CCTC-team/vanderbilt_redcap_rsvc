@@ -85,16 +85,16 @@ Feature: User Interface: The system shall support the storage, organization, and
     ##ACTION Cancel Restore deleted file
         When I click on the link labeled "Recycle Bin"
         Then I should see a table header and rows containing the following values in the file repository table:
-            | | Name                     | Size | Time Uploaded    | Comments                |
-            | | testusers_bulkupload.csv |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
+            | Name                     | Size | Time Uploaded    | Comments                |
+            | testusers_bulkupload.csv |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
 
         When I click on the Restore icon for the File Repository file named "testusers_bulkupload.csv"
         Then I should see a dialog containing the following text: "File: testusers_bulkupload.csv"
         When I click on the button labeled "Cancel" in the dialog box
     ##VERIFY file still in recycle folder
         Then I should see a table header and rows containing the following values in the file repository table:
-            | | Name                     | Size | Time Uploaded    | Comments                |
-            | | testusers_bulkupload.csv |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
+            | Name                     | Size | Time Uploaded    | Comments                |
+            | testusers_bulkupload.csv |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Restore deleted file
@@ -141,15 +141,15 @@ Feature: User Interface: The system shall support the storage, organization, and
     ##ACTION Cancel Permanently deleted file
         When I click on the link labeled "Recycle Bin"
         Then I should see a table header and rows containing the following values in the file repository table:
-            | | Name                     | Size | Time Uploaded    | Comments                |
-            | | testusers_bulkupload.csv |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
+            | Name                     | Size | Time Uploaded    | Comments                |
+            | testusers_bulkupload.csv |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
         When I click on the Delete Permanently icon for the File Repository file named "testusers_bulkupload.csv"
         Then I should see a dialog containing the following text: "File: testusers_bulkupload.csv"
         When I click on the button labeled "Cancel" in the dialog box
     ##VERIFY file still in recycle folder
         Then I should see a table header and rows containing the following values in the file repository table:
-            | | Name                     | Size | Time Uploaded    | Comments                |
-            | | testusers_bulkupload.csv |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
+            | Name                     | Size | Time Uploaded    | Comments                |
+            | testusers_bulkupload.csv |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Permanently deleted file
