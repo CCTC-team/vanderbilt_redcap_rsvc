@@ -321,8 +321,8 @@ Feature: User Interface: The system shall support limiting file repository user 
 
         Given I click on the link labeled "PDF Snapshot Archive" in the File Repository table
         Then I should see a table header and rows containing the following values in the file repository table:
-            | Record         | Survey                           | File Storage Time | Type      |
-            | 1-1 TestGroup1 | Consent (Event 1 (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  | e-Consent |
+            | | | | Record         | Survey                           | File Storage Time | Type      |
+            | | | | 1-1 TestGroup1 | Consent (Event 1 (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  | e-Consent |
 
         And I logout
 
@@ -408,8 +408,8 @@ Feature: User Interface: The system shall support limiting file repository user 
     #Don't see consent created by testgroup1
 
         Then I should see a table header and rows containing the following values in the file repository table:
-            | Record         | Survey                           | File Storage Time | Type      |
-            | 2-1 TestGroup2 | Consent (Event 1 (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  | e-Consent |
+            | | | | Record         | Survey                           | File Storage Time | Type      |
+            | | | | 2-1 TestGroup2 | Consent (Event 1 (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  | e-Consent |
 
         But I should NOT see "TestGroup1"
         And I should NOT see "1-1"
@@ -461,8 +461,8 @@ Feature: User Interface: The system shall support limiting file repository user 
 
     #Don't see consent created by testgroup2
         Then I should see a table header and rows containing the following values in the file repository table:
-            | Record         | Survey                           | File Storage Time | Type      |
-            | 1-1 TestGroup1 | Consent (Event 1 (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  | e-Consent |
+            | | | | Record         | Survey                           | File Storage Time | Type      |
+            | | | | 1-1 TestGroup1 | Consent (Event 1 (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  | e-Consent |
 
         But I should NOT see "TestGroup2"
         And I should NOT see "2-1"
@@ -517,9 +517,9 @@ Feature: User Interface: The system shall support limiting file repository user 
         When I click on the link labeled "File Repository"
         And I click on the link labeled "PDF Snapshot Archive"
         Then I should see a table header and rows containing the following values in the file repository table:
-            | Record | Survey                           | File Storage Time | Type      |
-            | 1-1    | Consent (Event 1 (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  | e-Consent |
-            | 2-1    | Consent (Event 1 (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  | e-Consent |
+            | | | | Record | Survey                           | File Storage Time | Type      |
+            | | | | 1-1    | Consent (Event 1 (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  | e-Consent |
+            | | | | 2-1    | Consent (Event 1 (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  | e-Consent |
 
   Scenario: Delete folders - unable to delete with file in folder
 

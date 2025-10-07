@@ -201,8 +201,8 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         When I click on the link labeled "File Repository"
         And I click on the link labeled "PDF Snapshot Archive"
         Then I should see a table header and rows containing the following values in a table:
-            | Record         | Survey Completed                     | File Storage Time |
-            | 1-1 TestGroup1 | Consent (Event Three (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  |
+            | | | | Record         | Survey Completed                     | File Storage Time |
+            | | | | 1-1 TestGroup1 | Consent (Event Three (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  |
 
         And I logout
 
@@ -223,8 +223,8 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         And I click on the link labeled "PDF Snapshot Archive"
 
         Then I should see a table header and rows containing the following values in a table:
-            | Record         | Survey Completed                     | File Storage Time |
-            | 1-1 TestGroup1 | Consent (Event Three (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  |
+            | | | | Record         | Survey Completed                     | File Storage Time |
+            | | | | 1-1 TestGroup1 | Consent (Event Three (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  |
 
         And I logout
 
@@ -282,8 +282,8 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         When I click on the link labeled "File Repository"
         And I click on the link labeled "PDF Snapshot Archive"
         Then I should see a table header and rows containing the following values in a table:
-            | Record         | Survey Completed                     | File Storage Time |
-            | 2-1 TestGroup2 | Consent (Event Three (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  |
+            | | | | Record         | Survey Completed                     | File Storage Time |
+            | | | | 2-1 TestGroup2 | Consent (Event Three (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  |
 
         ##ACTION: User from different DAG cannot access another DAG records    
         And I should NOT see "1-1 TestGroup1"
@@ -309,8 +309,8 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         When I click on the link labeled "File Repository"
         And I click on the link labeled "PDF Snapshot Archive"
         Then I should see a table header and rows containing the following values in a table:
-            | Record         | Survey Completed             | File Storage Time |
-            | 2-1    | Consent (Event Three (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  |
+            | | | | Record         | Survey Completed             | File Storage Time |
+            | | | | 2-1    | Consent (Event Three (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  |
         
         ##ACTION: User from different DAG cannot access another DAG records    
         And I should NOT see "1-1 TestGroup1"
