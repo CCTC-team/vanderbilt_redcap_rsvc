@@ -336,6 +336,7 @@ Feature: The system shall support Bulk Delete functionality, allowing users to d
         And I click on the radio labeled exactly "Delete entire records"
         And I click on the radio labeled exactly "Enter a custom list of records"
         And I wait for 2 seconds
+        And I select "Arm 2: Arm Two" on the dropdown field labeled "Delete records from a specific arm:"
         And I enter "5,7" into the textarea field labeled "Step 3: Enter records to delete"
         # The following step is positioned here to ensure the record list becomes unfocused, which is required for "Valid list entered" to appear.
         And I select "Arm 2: Arm Two" on the dropdown field labeled "Delete records from a specific arm:"
