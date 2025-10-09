@@ -46,21 +46,21 @@ Feature: User Interface: The system shall support the storage, organization, and
     ##ACTION Upload to top tier file repo
         When I click on the link labeled "File Repository"
         Then I should see a table header and rows containing the following values in the file repository table:
-            | | Name                 | Size | Time Uploaded | Comments |
-            | | Data Export Files    |      |               |          |
-            | | PDF Snapshot Archive |      |               |          |
-            | | Recycle Bin          |      |               |          |
+            | Name                 | Time Uploaded | Comments |
+            | Data Export Files    |               |          |
+            | PDF Snapshot Archive |               |          |
+            | Recycle Bin          |               |          |
 
         Given I click the button labeled "Select files to upload" to select and upload the following file to the File Repository:
             | import_files/testusers_bulkupload.csv |
 
     ##VERIFY file uploaded in folder
         Then I should see a table header and rows containing the following values in the file repository table:
-            | | Name                     | Size | Time Uploaded    | Comments                |
-            | | Data Export Files        |      |                  |                         |
-            | | PDF Snapshot Archive     |      |                  |                         |
-            | | Recycle Bin              |      |                  |                         |
-            | | testusers_bulkupload.csv |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
+            | Name                     | Time Uploaded    | Comments                |
+            | Data Export Files        |                  |                         |
+            | PDF Snapshot Archive     |                  |                         |
+            | Recycle Bin              |                  |                         |
+            | testusers_bulkupload.csv | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Delete file
@@ -75,26 +75,26 @@ Feature: User Interface: The system shall support the storage, organization, and
         Then I should see a dialog containing the following text: "SUCCESS!"
         And I click on the button labeled "Close" in the dialog box
         Then I should see a table header and rows containing the following values in the file repository table:
-            | | Name                 | Size | Time Uploaded | Size    |
-            | | Data Export Files    |      |               | 0 Files |
-            | | PDF Snapshot Archive |      |               | 0 Files |
-            | | Recycle Bin          |      |               | 1 Files |
+            | Name                 | Time Uploaded | Size    |
+            | Data Export Files    |               | 0 Files |
+            | PDF Snapshot Archive |               | 0 Files |
+            | Recycle Bin          |               | 1 Files |
         And I should NOT see "testusers_bulkupload.csv"
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Cancel Restore deleted file
         When I click on the link labeled "Recycle Bin"
         Then I should see a table header and rows containing the following values in the file repository table:
-            | Name                     | Size | Time Uploaded    | Comments                |
-            | testusers_bulkupload.csv |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
+            | Name                     | Time Uploaded    | Comments                |
+            | testusers_bulkupload.csv | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
 
         When I click on the Restore icon for the File Repository file named "testusers_bulkupload.csv"
         Then I should see a dialog containing the following text: "File: testusers_bulkupload.csv"
         When I click on the button labeled "Cancel" in the dialog box
     ##VERIFY file still in recycle folder
         Then I should see a table header and rows containing the following values in the file repository table:
-            | Name                     | Size | Time Uploaded    | Comments                |
-            | testusers_bulkupload.csv |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
+            | Name                     | Time Uploaded    | Comments                |
+            | testusers_bulkupload.csv | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Restore deleted file
@@ -106,11 +106,11 @@ Feature: User Interface: The system shall support the storage, organization, and
     ##VERIFY file in File Repository
         When I click on the link labeled "File Repository"
         Then I should see a table header and rows containing the following values in the file repository table:
-            | | Name                     | Size | Time Uploaded    | Comments                |
-            | | Data Export Files        |      |                  |                         |
-            | | PDF Snapshot Archive     |      |                  |                         |
-            | | Recycle Bin              |      |                  |                         |
-            | | testusers_bulkupload.csv |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
+            | Name                     | Time Uploaded    | Comments                |
+            | Data Export Files        |                  |                         |
+            | PDF Snapshot Archive     |                  |                         |
+            | Recycle Bin              |                  |                         |
+            | testusers_bulkupload.csv | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
 
     ##VERIFY file not in recycle folder
         When I click on the link labeled "Recycle Bin"
@@ -131,25 +131,25 @@ Feature: User Interface: The system shall support the storage, organization, and
         And I click on the button labeled "Close" in the dialog box
         When I click on the link labeled "File Repository"
         Then I should see a table header and rows containing the following values in the file repository table:
-            | | Name                 | Size | Time Uploaded | Size    |
-            | | Data Export Files    |      |               | 0 Files |
-            | | PDF Snapshot Archive |      |               | 0 Files |
-            | | Recycle Bin          |      |               | 1 Files |
+            | Name                 | Time Uploaded | Size    |
+            | Data Export Files    |               | 0 Files |
+            | PDF Snapshot Archive |               | 0 Files |
+            | Recycle Bin          |               | 1 Files |
         And I should NOT see "testusers_bulkupload.csv"
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Cancel Permanently deleted file
         When I click on the link labeled "Recycle Bin"
         Then I should see a table header and rows containing the following values in the file repository table:
-            | Name                     | Size | Time Uploaded    | Comments                |
-            | testusers_bulkupload.csv |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
+            | Name                     | Time Uploaded    | Comments                |
+            | testusers_bulkupload.csv | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
         When I click on the Delete Permanently icon for the File Repository file named "testusers_bulkupload.csv"
         Then I should see a dialog containing the following text: "File: testusers_bulkupload.csv"
         When I click on the button labeled "Cancel" in the dialog box
     ##VERIFY file still in recycle folder
         Then I should see a table header and rows containing the following values in the file repository table:
-            | Name                     | Size | Time Uploaded    | Comments                |
-            | testusers_bulkupload.csv |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
+            | Name                     | Time Uploaded    | Comments                |
+            | testusers_bulkupload.csv | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Permanently deleted file
@@ -161,10 +161,10 @@ Feature: User Interface: The system shall support the storage, organization, and
         And I click on the button labeled "OK"
         When I click on the link labeled "File Repository"
         Then I should see a table header and rows containing the following values in the file repository table:
-            | | Name                 | Size | Time Uploaded | Size    |
-            | | Data Export Files    |      |               | 0 Files |
-            | | PDF Snapshot Archive |      |               | 0 Files |
-            | | Recycle Bin          |      |               | 0 Files |
+            | Name                 | Time Uploaded | Size    |
+            | Data Export Files    |               | 0 Files |
+            | PDF Snapshot Archive |               | 0 Files |
+            | Recycle Bin          |               | 0 Files |
         And I should NOT see "testusers_bulkupload.csv"
 
     ##VERIFY file deleted in recycle folder

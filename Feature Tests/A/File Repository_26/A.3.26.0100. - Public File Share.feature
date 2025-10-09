@@ -27,10 +27,10 @@ Feature: Control Center: The system shall provide the ability to enable/disable 
     When I click on the link labeled "File Repository"
     ##VERIFY file uploaded in folder
     Then I should see a table header and rows containing the following values in the file repository table:
-      | | Name                     | Size | Time Uploaded    | Comments                |
-      | | Data Export Files        |      |                  |                         |
-      | | Recycle Bin              |      |                  |                         |
-      | | testusers_bulkupload.csv |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
+      | Name                     | Time Uploaded    | Comments                |
+      | Data Export Files        |                  |                         |
+      | Recycle Bin              |                  |                         |
+      | testusers_bulkupload.csv | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION: Disable File Repository Module

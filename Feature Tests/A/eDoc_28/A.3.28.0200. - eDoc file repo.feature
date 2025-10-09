@@ -38,8 +38,8 @@ Feature: Control Center: The system shall allow administrators to configure the 
     When I click the button labeled "Select files to upload" to select and upload the following file to the File Repository:
       | /import_files/testusers_bulkupload.csv |
     Then I should see a table header and rows containing the following values in the file repository table:
-      | | Name                        | Size | Time Uploaded    | Comments                |
-      | | testusers_bulkupload.csv    |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
+      | Name                        | Time Uploaded    | Comments                |
+      | testusers_bulkupload.csv    | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
 
   Scenario: A.3.28.0200.300 Enforce max file size for uploads to File Repository
     #SETUP: Set small file size limit
@@ -60,8 +60,8 @@ Feature: Control Center: The system shall allow administrators to configure the 
     When I click the button labeled "Select files to upload" to select and upload the following file to the File Repository:
       | /import_files/testusers_bulkupload.csv |
     Then I should see a table header and rows containing the following values in the file repository table:
-      | | Name                         | Size | Time Uploaded    | Comments                |
-      | | testusers_bulkupload (1).csv |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
+      | Name                         | Time Uploaded    | Comments                |
+      | testusers_bulkupload (1).csv             | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
 
   Scenario: A.3.28.0200.400 Enforce per-project storage limit
     #SETUP: Set low project storage limit
@@ -78,13 +78,13 @@ Feature: Control Center: The system shall allow administrators to configure the 
     When I click the button labeled "Select files to upload" to select and upload the following file to the File Repository:
       | /import_files/BigDataTestProjectDATA2100.csv |
     Then I should see a table header and rows containing the following values in the file repository table:
-      | | Name                           | Size | Time Uploaded    | Comments                |
-      | | BigDataTestProjectDATA2100.csv |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
+      | Name                               | Time Uploaded    | Comments                |
+      | BigDataTestProjectDATA2100.csv     | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
     When I click the button labeled "Select files to upload" to select and upload the following file to the File Repository:
       | /import_files/BigDataTestProjectDATA2100.csv |
     Then I should see a table header and rows containing the following values in the file repository table:
-      | | Name                               | Size | Time Uploaded    | Comments                |
-      | | BigDataTestProjectDATA2100 (1).csv |      | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
+      | Name                               | Time Uploaded    | Comments                |
+      | BigDataTestProjectDATA2100 (1).csv | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
     
     #VERIFY: Upload blocked beyond limit
     When I click the button labeled "Select files to upload" to select and upload "/import_files/BigDataTestProjectDATA2100.csv" to File Repository and see that the upload failed
