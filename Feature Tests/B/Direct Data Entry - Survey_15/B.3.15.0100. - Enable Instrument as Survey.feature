@@ -83,7 +83,7 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
     And I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "1" and click on the bubble
 
     #VERIFY
-    Then I should NOT see "Survey options"
+    Then I should see a button labeled "Survey options" that is disabled
     And I should see "Survey response is read-only"
 
     #VERIFY_LOG
