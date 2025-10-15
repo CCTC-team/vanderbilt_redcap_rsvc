@@ -58,6 +58,9 @@ Feature: A.2.19.1000 PIN usage instead of password
 
     #Verify PIN is new method 
         When I click on the link labeled "My Projects"
+        And I click on the radio labeled "Send an email containing your verification code"
+        And I enter the code that was emailed to the current user into the input field labeled "Enter the verification code"
+        And I click on the button labeled "Submit"
         And I click on the link labeled "A.2.19.1000"
         And I click on the link labeled "Add / Edit Records"
         When I click on the button labeled "Add new record for the arm selected above"
