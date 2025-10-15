@@ -6,6 +6,10 @@ Feature: A.3.28.1300 Control Center: The system shall support e-Consent framewor
 #Later in the test, we enable When e-signing, allow users to provide their 6-digit PIN only once per session. (Requires the immediate setting above to be enabled.) 
 #FUNCTIONAL_REQUIREMENT A.3.28.1300._NewManual 
 
+  Scenario: Start external storage services
+    # Start these right away to give them plenty of time to spin up before we need them
+    Then if running via automation, start external storage services
+
   Scenario: ###ACTION: Setup in control center - admin only
     Given I login to REDCap with the user "Test_Admin"
     When I click on the link labeled "Control Center"
@@ -22,8 +26,10 @@ Feature: A.3.28.1300 Control Center: The system shall support e-Consent framewor
     And I click on the link labeled "File Upload Settings"
     Then I should see "Microsoft Azure Blob Storage"
 #M REDCap Administrators may need to work with their Azure Administrator to get the Account Name, Account Key, and Blob Container information    
+    And I select "Microsoft Azure Blob Storage" on the dropdown field labeled "STORAGE LOCATION OF UPLOADED FILES"
     When I enter "devstoreaccount1" into the input field labeled "Azure storage account name:"
     And I enter "Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==" into the input field labeled "Azure storage account key"
+    And I enter "mycontainer" into the input field labeled "Azure storage blob container"
     And I click on the button labeled "Save Changes"
     And I should see "Your system configuration values have now been changed"
 #FUNCTIONAL_REQUIREMENT   
@@ -107,5 +113,10 @@ Feature: A.3.28.1300 Control Center: The system shall support e-Consent framewor
     Then I should see a table header and rows containing the following values in the logging table:
       | Username            | Action                    | List of Data Changes OR Fields Exported                                                          |
       | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent" |
-    And I confirm with System Admin that the file is on the External Storage
+    And I should see the following values in the most recent file in the Azure Blob Storage container
+      | PID 13 - LastName   |
+      | Participant Consent |
+
+  Scenario: Stop external storage services
+    Then if running via automation, stop external storage services
 #END 
