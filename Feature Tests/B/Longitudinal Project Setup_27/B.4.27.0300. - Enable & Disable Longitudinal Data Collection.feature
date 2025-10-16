@@ -27,9 +27,9 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
         #FUNCTIONAL REQUIREMENT
         ##ACTION Disable longitudinal
         When I click on the link labeled "Setup"
-        And I click on the button labeled "Disable" in the "Use longitudinal data collection with defined events?" row in the "Main project settings" section
+        And I click on the button labeled "Disable" in the row labeled "Use longitudinal data collection with defined events?"
         And I click on the button labeled "Disable" in the dialog box
-        Then I should see the button labeled "Enable" in the "Use longitudinal data collection with defined events?" row in the "Main project settings" section
+        Then I should see the button labeled "Enable" in the row labeled "Use longitudinal data collection with defined events?"
 
         ##VERIFY_RSD
         When I click on the link labeled "Record Status Dashboard"
@@ -47,8 +47,8 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
         #FUNCTIONAL REQUIREMENT
         ##ACTION Enable longitudinal
         When I click on the link labeled "Setup"
-        And I click on the button labeled "Enable" in the "Use longitudinal data collection with defined events?" row in the "Main project settings" section
-        Then I should see the button labeled "Disable" in the "Use longitudinal data collection with defined events?" row in the "Main project settings" section
+        And I click on the button labeled "Enable" in the row labeled "Use longitudinal data collection with defined events?"
+        Then I should see the button labeled "Disable" in the row labeled "Use longitudinal data collection with defined events?"
 
         ##VERIFY_RSD
         When I click on the link labeled "Record Status Dashboard"
@@ -73,7 +73,7 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
         ##ACTION Verify longitudinal button is disabled in production mode for user
         When I click on the link labeled "Setup"
         ###VERIFY
-        Then I should see the button labeled "Disable" in the "Use longitudinal data collection with defined events?" row in the "Main project settings" section is disabled
+        Then I should see the button labeled "Disable" in the row labeled "Use longitudinal data collection with defined events?" that is disabled
         And I logout
 
         Given I login to REDCap with the user "Test_Admin"
@@ -89,9 +89,9 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
 
         ##ACTION Admin disable longitudinal while in production
         Given I click on the link labeled "Setup"
-        And I click on the button labeled "Disable" in the "Use longitudinal data collection with defined events?" row in the "Main project settings" section
+        And I click on the button labeled "Disable" in the row labeled "Use longitudinal data collection with defined events?"
         And I click on the button labeled "Disable" in the dialog box
-        Then I should see the button labeled "Enable" in the "Use longitudinal data collection with defined events?" row in the "Main project settings" section
+        Then I should see the button labeled "Enable" in the row labeled "Use longitudinal data collection with defined events?"
 
         ##VERIFY_RSD
         When I click on the link labeled "Record Status Dashboard"

@@ -11,7 +11,7 @@ Feature: User Interface: The system shall require the repeating instrument and i
 
     #SETUP_PROJECTSETUP
     When I click on the link labeled "Setup"
-    When I click on the button labeled "Modify" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
+    When I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
     And I select "-- not repeating --" on the dropdown field labeled "Event 1 (Arm 1: Arm 1)"
     And I select "-- not repeating --" on the dropdown field labeled "Event 2 (Arm 1: Arm 1)"
     And I click on the button labeled "Save"
@@ -36,7 +36,7 @@ Feature: User Interface: The system shall require the repeating instrument and i
 
     #SETUP_PROJECTSETUP
     When I click on the link labeled "Setup"
-    When I click on the button labeled "Enable" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
+    When I click on the button labeled "Enable" in the row labeled "Repeating instruments and events"
     And I select "Repeat Instruments (repeat independently of each other)" on the dropdown field labeled "Event 1 (Arm 1: Arm 1)"
     And for the Event Name "Event 1 (Arm 1: Arm 1)", I check the checkbox labeled "Text Validation" in the dialog box
     And for the Event Name "Event 1 (Arm 1: Arm 1)", I check the checkbox labeled "Data Types" in the dialog box

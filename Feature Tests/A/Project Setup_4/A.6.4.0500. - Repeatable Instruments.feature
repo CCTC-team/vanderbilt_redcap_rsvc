@@ -53,7 +53,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I click on the link labeled "Setup"
             Then I should see "Repeating instruments and events"
 
-            When I click on the button labeled "Modify" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
+            When I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
             Then I should see a dialog containing the following text: "WARNING"
 
             Given I click on the button labeled "Close" in the dialog box
@@ -99,7 +99,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             Given I click on the link labeled "Setup"
             Then I should see "Repeating instruments and events"
 
-            When I click on the button labeled "Modify" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
+            When I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
             Then I should see a dialog containing the following text: "WARNING"
 
             Given I click on the button labeled "Close" in the dialog box
@@ -135,7 +135,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I should NOT see "MyOtherName"
 
             When I click on the link labeled "Setup"
-            And I click on the button labeled "Modify" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
+            And I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
             Then I should see a dialog containing the following text: "WARNING"
 
             Given I click on the button labeled "Close" in the dialog box
@@ -170,7 +170,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I should see "My repeat event name"
 
             When I click on the link labeled "Setup"
-            And I click on the button labeled "Modify" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
+            And I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
             Then I should see a dialog containing the following text: "WARNING"
 
             Given I click on the button labeled "Close" in the dialog box

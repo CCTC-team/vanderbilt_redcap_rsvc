@@ -19,7 +19,7 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
     And I create a new project named "B.3.15.0100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     #PARENT #B.6.4.1300.100
-    Then I should see a button labeled "Disable" in the "Use surveys in this project?" row in the "Main project settings" section
+    Then I should see a button labeled "Disable" in the row labeled "Use surveys in this project?"
 
     #SETUP_PRODUCTION
     When I click on the button labeled "Move project to production"
