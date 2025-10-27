@@ -57,7 +57,7 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
     Given I click on the button labeled "Close" in the dialog box
     And I select "Repeat Instruments (repeat independently of each other)" on the dropdown field labeled "Event Three (Arm 1: Arm 1)"
     And for the Event Name "Event Three (Arm 1: Arm 1)", I check the checkbox labeled "Survey" in the dialog box
-    And I click on the button labeled "Save" on the dialog box for the Repeatable Instruments and Events module
+    And I click on the button labeled "Save"
 
     #VERIFY - OK for manual; since dialog box disappears, commented out for ATS
     #Then I should see "Successfully saved" in the dialog box
