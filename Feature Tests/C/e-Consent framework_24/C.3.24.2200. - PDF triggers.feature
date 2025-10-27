@@ -85,7 +85,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I enter "Edit trigger name" into the input field labeled "Name of trigger"
       And I select "--- select a survey ---" on the dropdown field labeled "Every time the following survey is completed:" in the dialog box
       And I click on "" in the textarea field labeled "When the following logic becomes true"
-      And I wait for 1 second
+      And I wait for 2 seconds
       And I clear field and enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" into the textarea field labeled "Logic Editor" in the dialog box
       And I click on the button labeled "Update & Close Editor" in the dialog box  
       And I click on the icon labeled '[All instruments]'

@@ -34,7 +34,7 @@ Feature: Field Creation: The system shall support marking a data entry field as 
     And I enter "Identifier 3" into the Field Label of the open "Add New Field" dialog box
     And I enter "identifier_3" into the Variable Name of the open "Add New Field" dialog box
     And I mark the field as an identifier
-    And I click on the button labeled "Save" in the "Add New Field" dialog box
+    And I click on the button labeled "Save"
 
     Then I should see the field labeled "Identifier 3"
 

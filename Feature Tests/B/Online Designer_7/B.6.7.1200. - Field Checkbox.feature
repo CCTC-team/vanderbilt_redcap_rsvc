@@ -36,7 +36,7 @@ Feature: Field Creation: The system shall support the creation of Checkboxes (mu
         And I enter Choices of "2, Checkbox2" into the open "Add New Field" dialog box
         And I enter Choices of "3, Checkbox3" into the open "Add New Field" dialog box
         And I enter Choices of "Abc123, Checkbox Abc123" into the open "Add New Field" dialog box
-        And I click on the button labeled "Save" in the "Add New Field" dialog box
+        And I click on the button labeled "Save"
         Then I should see the field labeled "Checkbox"
         And I should see the multiselect field labeled "checkbox" with the options below
             | Checkbox1       |

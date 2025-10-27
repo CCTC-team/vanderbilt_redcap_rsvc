@@ -18,7 +18,7 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
     Given I login to REDCap with the user "Test_User1"
     And I create a new project named "B.6.4.1400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
     #VERIFY_SETUP repeat instrument
-    Then I should see a button labeled "Modify" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
+    Then I should see a button labeled "Modify" in the row labeled "Repeating instruments and events"
 
     #SETUP_PRODUCTION
     When I click on the button labeled "Move project to production"
@@ -52,12 +52,12 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
 
     #SETUP modify repeat instrument
     Given I click on the link labeled "Setup"
-    When I click on the button labeled "Modify" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
+    When I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
     Then I should see a dialog containing the following text: "WARNING"
     Given I click on the button labeled "Close" in the dialog box
     And I select "Repeat Instruments (repeat independently of each other)" on the dropdown field labeled "Event Three (Arm 1: Arm 1)"
     And for the Event Name "Event Three (Arm 1: Arm 1)", I check the checkbox labeled "Survey" in the dialog box
-    And I click on the button labeled "Save" on the dialog box for the Repeatable Instruments and Events module
+    And I click on the button labeled "Save"
 
     #VERIFY - OK for manual; since dialog box disappears, commented out for ATS
     #Then I should see "Successfully saved" in the dialog box

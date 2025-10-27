@@ -41,7 +41,7 @@ Feature: Field Creation: The system shall support the creation of Begin New Sect
         When I select "Notes Box (Paragraph Text)" from the Field Type dropdown of the open "Add New Field" dialog box
         And I enter "Notes Box" into the Field Label of the open "Add New Field" dialog box
         And I enter "notesbox" into the Variable Name of the open "Add New Field" dialog box
-        And I click on the button labeled "Save" in the "Add New Field" dialog box
+        And I click on the button labeled "Save"
 
         #VERIFY
         Then I should see the field labeled "Notes Box"
@@ -49,7 +49,7 @@ Feature: Field Creation: The system shall support the creation of Begin New Sect
         When I click on the Add Field input button below the field named "Record ID"
         When I select "Begin New Section (with optional text)" from the Field Type dropdown of the open "Add New Field" dialog box
         And I enter "Section Break" into the Field Label of the open "Add New Field" dialog box
-        And I click on the button labeled "Save" in the "Add New Field" dialog box
+        And I click on the button labeled "Save"
         Then I should see "Section Break"
 
         ##SETUP_PRODUCTION

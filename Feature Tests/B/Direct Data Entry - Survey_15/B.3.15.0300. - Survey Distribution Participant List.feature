@@ -25,7 +25,7 @@ Feature: The system shall allow creation of a participant list automatically usi
 
     ##VERIFY_SETUP
     Given I click on the link labeled "Setup"
-    Then I should see a button labeled "Disable" in the "Designate an email field for communications (including survey invitations and alerts)" row in the "Enable optional modules and customizations" section
+    Then I should see a button labeled "Disable" in the row labeled "Designate an email field for communications (including survey invitations and alerts)"
     And I should see "Field currently designated: email"
 
     #SETUP_SURVEY enable survey in first position

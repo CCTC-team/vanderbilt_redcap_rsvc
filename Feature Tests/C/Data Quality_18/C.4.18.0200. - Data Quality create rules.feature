@@ -25,7 +25,7 @@ Feature: User Interface: The system shall support data quality rule creation.
     And I wait for 2 seconds
     And I clear field and enter "[event_1_arm_1][integer]='1999'" in the textarea field labeled "Logic Editor" in the dialog box
     And I click on the button labeled "Update & Close Editor" in the dialog box
-    And I click on the button labeled "Add" on the active Data Quality rule
+    And I click on the button labeled "Add"
     ##VERIFY
     Then I should see a table header and rows containing the following values in a table:
       | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
@@ -83,7 +83,7 @@ Feature: User Interface: The system shall support data quality rule creation.
     And I wait for 2 seconds
     And I clear field and enter "[event_1_arm_1][integer]='1'" in the textarea field labeled "Logic Editor" in the dialog box
     And I click on the button labeled "Update & Close Editor" in the dialog box
-    And I click on the button labeled "Save" on the active Data Quality rule
+    And I click on the button labeled "Save"
     Then I should see a table header and rows containing the following values in a table:
       | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |
       | 3      | Integer   | [event_1_arm_1][integer]='1'             |
@@ -92,7 +92,7 @@ Feature: User Interface: The system shall support data quality rule creation.
     When I click the element containing the following text: "[integer]<>'1999'"
     And I clear field and enter "[integer]='2'" in the textarea field labeled "Logic Editor" in the dialog box
     And I click on the button labeled "Update & Close Editor" in the dialog box
-    And I click on the button labeled "Save" on the active Data Quality rule
+    And I click on the button labeled "Save"
 
     Then I should see a table header and rows containing the following values in a table:
       | Rule # | Rule Name | Rule Logic  (Show discrepancy only if...) |

@@ -40,7 +40,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario:
     When I click on the link labeled "Setup"
-    And I click on the button labeled "Modify" in the "Repeating instruments and events" row in the "Enable optional modules and customizations" section
+    And I click on the button labeled "Modify" in the row labeled "Repeating instruments and events"
     And I select "Repeat Entire Event" on the dropdown field labeled "Event 1 (Arm 1: Arm 1)"
     And I select "Repeat Instruments" on the dropdown field labeled "Event Three (Arm 1: Arm 1)"
     And I check the second checkbox labeled "Participant Consent"

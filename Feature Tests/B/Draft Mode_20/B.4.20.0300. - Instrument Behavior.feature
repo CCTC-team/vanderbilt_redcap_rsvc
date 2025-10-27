@@ -34,7 +34,7 @@ Feature: User Interface: The system shall require changes made to data collectio
     When I click on the instrument labeled "Data Types"
     And I click on the Edit image for the field named "Radio Button Manual"
     And I enter Choices of "102, Choice102" into the open "Edit Field" dialog box
-    And I click on the button labeled "Save" in the "Edit Field" dialog box
+    And I click on the button labeled "Save"
 
     ##VERIFY INSTRUMENT
     Given I click on the link labeled "Record Status Dashboard"

@@ -40,7 +40,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         And I enter Choices of "101, Choice101" into the open "Add New Field" dialog box
         And I enter Choices of "Abc123, Choice Abc123" into the open "Add New Field" dialog box
         And I should see "Save"
-        And I click on the button labeled "Save" in the "Add New Field" dialog box
+        And I click on the button labeled "Save"
 
         #VERIFY
         Then I should see a field named "Radio Button Manual"

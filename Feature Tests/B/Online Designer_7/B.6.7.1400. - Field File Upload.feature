@@ -32,7 +32,7 @@ Feature: Field Creation: The system shall support the creation of File upload (f
         When I select "File Upload (for users to upload files)" from the Field Type dropdown of the open "Add New Field" dialog box
         And I enter "File Upload" into the Field Label of the open "Add New Field" dialog box
         And I enter "file_upload" into the Variable Name of the open "Add New Field" dialog box
-        And I click on the button labeled "Save" in the "Add New Field" dialog box
+        And I click on the button labeled "Save"
         Then I should see the field labeled "File Upload"
         And I should see the link labeled "Upload file"
 

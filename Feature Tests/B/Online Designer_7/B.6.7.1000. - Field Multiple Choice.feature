@@ -42,7 +42,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
     And I enter Choices of "5, DDChoice5" into the open "Add New Field" dialog box
     And I enter Choices of "7, DDChoice7" into the open "Add New Field" dialog box
     And I enter Choices of "6, DDChoice6" into the open "Add New Field" dialog box
-    And I click on the button labeled "Save" in the "Add New Field" dialog box
+    And I click on the button labeled "Save"
 
     #VERIFY
     Then I should see a field named "Multiple Choice Dropdown Manual"

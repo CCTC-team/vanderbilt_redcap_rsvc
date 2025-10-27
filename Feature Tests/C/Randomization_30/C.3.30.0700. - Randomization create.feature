@@ -131,8 +131,10 @@ Scenario: C.3.30.0700.1100. Erase randomization model.
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
+    And I wait for 1 second
     And I click on the button labeled "Erase randomization model"
-    Then I should see "Success! Your randomization setup and all allocations have now been erased."
+    And I should see an alert box with the following text: "Are you sure you wish to erase your randomization setup?"
+    Then I should see "Add new randomization model"
 
     #VERIFY_log Randomization at project level enabled recorded in logging table
     When I click on the link labeled "Logging"
@@ -450,38 +452,50 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
+    And I wait for 1 second
     And I click on the button labeled "Erase randomization model"
-    Then I should see "Success! Your randomization setup and all allocations have now been erased."
+    And I should see an alert box with the following text: "Are you sure you wish to erase your randomization setup?"
+    Then I should see "Add new randomization model"
 
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
+    And I wait for 1 second
     And I click on the button labeled "Erase randomization model"
-    Then I should see "Success! Your randomization setup and all allocations have now been erased."
+    And I should see an alert box with the following text: "Are you sure you wish to erase your randomization setup?"
+    Then I should see "Add new randomization model"
 
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
+    And I wait for 1 second
     And I click on the button labeled "Erase randomization model"
-    Then I should see "Success! Your randomization setup and all allocations have now been erased."
+    And I should see an alert box with the following text: "Are you sure you wish to erase your randomization setup?"
+    Then I should see "Add new randomization model"
     
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
+    And I wait for 1 second
     And I click on the button labeled "Erase randomization model"
-    Then I should see "Success! Your randomization setup and all allocations have now been erased."
+    And I should see an alert box with the following text: "Are you sure you wish to erase your randomization setup?"
+    Then I should see "Add new randomization model"
 
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
+    And I wait for 1 second
     And I click on the button labeled "Erase randomization model"
-    Then I should see "Success! Your randomization setup and all allocations have now been erased."
+    And I should see an alert box with the following text: "Are you sure you wish to erase your randomization setup?"
+    Then I should see "Add new randomization model"
 
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Setup" and the row labeled "1"
+    And I wait for 1 second
     And I click on the button labeled "Erase randomization model"
-    Then I should see "Success! Your randomization setup and all allocations have now been erased."
+    And I should see an alert box with the following text: "Are you sure you wish to erase your randomization setup?"
+    Then I should see "Add new randomization model"
 
   
     #SETUP_PRODUCTION (Re-adding allocation tables so the project can be moved to production)
