@@ -32,7 +32,7 @@ Feature: User Interface: The system shall provide detailed summary of all drafte
         When I click on the instrument labeled "Data Types"
         And I click on the Edit image for the field named "Radio Button Manual"
         And I enter Choices of "102, Choice102" into the open "Edit Field" dialog box
-        And I click on the button labeled "Save" in the "Edit Field" dialog box
+        And I click on the button labeled "Save"
         And I click on the Add Field input button below the field named "Radio Button Manual"
 
         Given I select "Notes Box (Paragraph Text)" on the dropdown field labeled "Field Type:"

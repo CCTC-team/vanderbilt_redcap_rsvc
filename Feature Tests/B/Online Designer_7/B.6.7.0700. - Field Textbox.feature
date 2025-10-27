@@ -43,7 +43,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
 
         Given I click on the button labeled "Close" in the dialog box
         And I enter "2ABC" into the Variable Name of the open "Edit Field" dialog box
-        And I click on the button labeled "Save" in the "Edit Field" dialog box
+        And I click on the button labeled "Save"
 
         #VERIFY
         Then I should see "Field Name: abc"
