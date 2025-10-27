@@ -38,7 +38,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
     And I select "Notes Box (Paragraph Text)" from the Field Type dropdown of the open "Add New Field" dialog box
     And I enter "Notes Box" into the Field Label of the open "Add New Field" dialog box
     And I enter "notesbox" into the Variable Name of the open "Add New Field" dialog box
-    And I click on the button labeled "Save" in the "Add New Field" dialog box
+    And I click on the button labeled "Save"
 
     #VERIFY
     Then I should see a field named "Notes Box"

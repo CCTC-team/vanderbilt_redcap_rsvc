@@ -56,7 +56,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         When I select "Text Box (Short Text, Number, Date/Time, ...)" from the Field Type dropdown of the open "Add New Field" dialog box
         And I enter "Add Field" into the Field Label of the open "Add New Field" dialog box
         And I enter "add" into the Variable Name of the open "Add New Field" dialog box
-        And I click on the button labeled "Save" in the "Add New Field" dialog box
+        And I click on the button labeled "Save"
 
         ##VERIFY
         Then I should see the field labeled "Add Field"

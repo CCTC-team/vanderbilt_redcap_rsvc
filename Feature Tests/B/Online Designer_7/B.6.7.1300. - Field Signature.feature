@@ -32,7 +32,7 @@ Feature: Field Creation: The system shall support the creation of Signature (dra
         When I select "Signature (draw signature with mouse or finger)" from the Field Type dropdown of the open "Add New Field" dialog box
         And I enter "Signature" into the Field Label of the open "Add New Field" dialog box
         And I enter "signature" into the Variable Name of the open "Add New Field" dialog box
-        And I click on the button labeled "Save" in the "Add New Field" dialog box
+        And I click on the button labeled "Save"
         Then I should see the field labeled "Signature"
         And I should see the link labeled "Add signature"
 
