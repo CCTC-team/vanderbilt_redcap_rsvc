@@ -30,7 +30,7 @@ Feature: User Interface: The system shall record all versions of the data dictio
         Then I should see "The project is now in Draft Mode"
 
         #ACTION
-        Given I click on the instrument labeled "Data Types"
+        Given I click on the link labeled "Data Types"
         And I click on the last button labeled "Add Field"
 
         And I select "Notes Box (Paragraph Text)" on the dropdown field labeled "Field Type:"

@@ -50,7 +50,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: add field
-        When I click on the instrument labeled "Data Types"
+        When I click on the link labeled "Data Types"
         #MANUAL NOTE: the last button is the one at the bottom of the instrument
         And I click on the last button labeled "Add Field"
         When I select "Text Box (Short Text, Number, Date/Time, ...)" from the Field Type dropdown of the open "Add New Field" dialog box
@@ -68,7 +68,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         # Note: REDCap requires user reload the Online Designer before MOVING a newly added field
         Given I click on the link labeled "Setup"
         When I click on the button labeled "Online Designer"
-        And I click on the instrument labeled "Data Types"
+        And I click on the link labeled "Data Types"
         ##VERIFY
         Then I should see the field named "Add Field" before field named "Identifier"
 
@@ -87,13 +87,13 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         #The following button is covering the "Return to list of instruments" button
         Given I click on the button labeled "Dismiss"
         When I click on the button labeled "Return to list of instruments"
-        And I click on the instrument labeled "Text Validation"
+        And I click on the link labeled "Text Validation"
         Then I should see the field labeled "Required"
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: edit field
         Given I click on the button labeled "Return to list of instruments"
-        And I click on the instrument labeled "Data Types"
+        And I click on the link labeled "Data Types"
         And I click on the Edit image for the field named "Radio Button Manual"
         And I clear field and enter Choices of "9..9, Choice99" into the open "Edit Field" dialog box
         And I enter Choices of "100, Choice100" into the open "Edit Field" dialog box

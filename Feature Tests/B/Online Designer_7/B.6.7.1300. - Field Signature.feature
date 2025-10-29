@@ -26,7 +26,7 @@ Feature: Field Creation: The system shall support the creation of Signature (dra
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: Signature field creation
-        Given I click on the instrument labeled "Form 1"
+        Given I click on the link labeled "Form 1"
         And I click on the Add Field input button below the field named "Record ID"
 
         When I select "Signature (draw signature with mouse or finger)" from the Field Type dropdown of the open "Add New Field" dialog box

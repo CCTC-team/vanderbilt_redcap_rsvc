@@ -29,7 +29,7 @@ Feature: User Interface: The system shall provide detailed summary of all drafte
         And I click on the button labeled "Enter Draft Mode"
         Then I should see "The project is now in Draft Mode"
 
-        When I click on the instrument labeled "Data Types"
+        When I click on the link labeled "Data Types"
         And I click on the Edit image for the field named "Radio Button Manual"
         And I enter Choices of "102, Choice102" into the open "Edit Field" dialog box
         And I click on the button labeled "Save"

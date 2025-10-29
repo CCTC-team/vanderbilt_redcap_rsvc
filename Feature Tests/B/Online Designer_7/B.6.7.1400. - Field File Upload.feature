@@ -26,7 +26,7 @@ Feature: Field Creation: The system shall support the creation of File upload (f
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: checkbox field creation
-        Given I click on the instrument labeled "Form 1"
+        Given I click on the link labeled "Form 1"
         And I click on the Add Field input button below the field named "Record ID"
 
         When I select "File Upload (for users to upload files)" from the Field Type dropdown of the open "Add New Field" dialog box

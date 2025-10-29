@@ -36,7 +36,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "The project is now in Draft Mode"
 
         ## ACTION:M date YMD validation
-        When I click on the instrument labeled "Data Types"
+        When I click on the link labeled "Data Types"
 
         And I click on the Edit image for the field named "date YMD"
         And I should see the dropdown field labeled "Validation?" with the option "Date (Y-M-D)" selected in the dialog box

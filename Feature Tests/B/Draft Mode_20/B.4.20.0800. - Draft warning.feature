@@ -37,7 +37,7 @@ Feature: User Interface: The system shall flag any changes that may negatively i
 
         ##ACTION
         When I click on the link labeled "Designer"
-        And I click on the instrument labeled "Data Types"
+        And I click on the link labeled "Data Types"
         And I click on the Edit image for the field named "Radio Button Manual"
 
         #DATA WILL BE LOST

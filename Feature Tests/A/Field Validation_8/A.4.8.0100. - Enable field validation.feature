@@ -53,7 +53,7 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
     And I click on the button labeled "Enter Draft Mode"
     And I click on the button labeled "Dismiss"
     Then I should see "The project is now in Draft Mode."
-    When I click on the instrument labeled "Data Types"
+    When I click on the link labeled "Data Types"
     And I click on the button labeled "Dismiss"
     And I click on the first button labeled "Add Field"
 
@@ -116,7 +116,7 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.4.8.0100.100"
     And I click on the link labeled "Designer"
-    And I click on the instrument labeled "Data Types"
+    And I click on the link labeled "Data Types"
     And I click on the first button labeled "Add Field"
 
     When I select "Text Box (Short Text, Number, Date/Time, ...)" on the dropdown field labeled "Field Type:" in the dialog box
