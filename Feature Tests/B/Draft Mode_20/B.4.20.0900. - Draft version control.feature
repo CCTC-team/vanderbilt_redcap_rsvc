@@ -46,7 +46,7 @@ Feature: User Interface: The system shall record all versions of the data dictio
         And I click on the button labeled "Close" in the dialog box
 
         #ACTION
-        When I click on the tab labeled "Project Home"
+        When I click on the link labeled "Project Home"
         And I click on the link labeled "Project Revision History"
         Then I should see "Project Revision History"
 

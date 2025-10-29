@@ -25,7 +25,7 @@ Feature: User Interface: Survey Project Settings: The system shall support track
 
     ##VERIFY_SDT
     Given I click on the link labeled "Survey Distribution Tools"
-    When I click on the tab labeled "Participant List"
+    When I click on the link labeled "Participant List"
     Then I should see the dropdown field labeled "Participant List" with the option '"Consent" - Event 1 (Arm 1: Arm 1)' selected
     And I should see a "gray bubble" within the "1)  email@test.edu" row of the column labeled "Responded?" of the Participant List table
     And I should see a "gray bubble" within the "2)  email@test.edu" row of the column labeled "Responded?" of the Participant List table
@@ -46,7 +46,7 @@ Feature: User Interface: Survey Project Settings: The system shall support track
     #Manual: Surveys open in the same window (by default) in automated tests (automated tests this in B.3.15.500 - Survey Alerts and Prompts)
     #And I click on the button labeled "Leave without saving changes" in the dialog box
     And I click on the link labeled "Survey Distribution Tools"
-    When I click on the tab labeled "Participant List"
+    When I click on the link labeled "Participant List"
     Then I should see the dropdown field labeled "Participant List" with the option '"Consent" - Event 1 (Arm 1: Arm 1)' selected
     And I should see a "green checkmark" within the "1)  email@test.edu" row of the column labeled "Responded?" of the Participant List table
     And I should see a "gray bubble" within the "2)  email@test.edu" row of the column labeled "Responded?" of the Participant List table

@@ -75,7 +75,7 @@ Feature: Project Interface Administrator Access: The system shall support the ad
     Then I should see a "3" within the "1" row of the column labeled "Target Field"
 
     #VERIFY that the change to the target is reflected in the randomization dashboard
-    When I click on the tab labeled "Dashboard"
+    When I click on the link labeled "Dashboard"
     Then I should see a table header and rows containing the following values in a table:
             |       | Used    | Not Used | Allocated records | Stratification 1 |Randomization group|
             |       | 0       |     1    |                   | No (0)           | Placebo (3)        |   
