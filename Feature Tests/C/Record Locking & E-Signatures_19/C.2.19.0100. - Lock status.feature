@@ -79,7 +79,7 @@ Feature: User Interface: The E-signature and Locking Management tool shall displ
             | [x]                                          | Survey                     | [ ]                                            | [text box]              |
             | [x]                                          | Consent                    | [ ]                                            | [text box]              |
 
-        And I click on the Delete icon within the Record Locking Customization table for the Data Collection Instrument named "Data Types"
+        And I click on the icon labeled "Remove" in the row labeled "Data Types"
 
         #Manual: confirmation windows are automatically accepted on automated side
         # And I click on the button labeled "OK" in the pop-up box

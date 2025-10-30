@@ -533,7 +533,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         And I should see a dialog containing the following text: "Sorry, but folders can't be deleted this way. They must instead be deleted individually by clicking the X on the right-hand side of each folder."
         When I click on the button labeled "Close" in the dialog box
         Then I should see "TestGroup1_Folder"
-        And I click on the Delete icon for the File Repository file named "TestGroup1_Folder"
+        And I click on the icon in the column labeled "Delete" and the row labeled "TestGroup1_Folder"
         Then I should see a dialog containing the following text: "Cannot delete folder!"
         And I should see a dialog containing the following text: "Sorry, but the folder below cannot be deleted because it still has files in it."
         When I click on the button labeled "Close" in the dialog box
@@ -575,7 +575,7 @@ Feature: User Interface: The system shall support limiting file repository user 
 
     ##ACTION C.3.26.500.100 Delete folders - Cancel deletion
         When I click on the link labeled "File Repository"
-        And I click on the Delete icon for the File Repository file named "TestGroup1_Folder"
+        And I click on the icon in the column labeled "Delete" and the row labeled "TestGroup1_Folder"
 
     ##VERIFY Cancel deletion
         Then I should see a dialog containing the following text: "Folder: TestGroup1_Folder"
@@ -590,7 +590,7 @@ Feature: User Interface: The system shall support limiting file repository user 
             | user list for project 1.csv | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
 
     ##ACTION C.3.26.500.100 Delete folders
-        And I click on the Delete icon for the File Repository file named "TestGroup1_Folder"
+        And I click on the icon in the column labeled "Delete" and the row labeled "TestGroup1_Folder"
     ##VERIFY Folder deleted
         Then I should see a dialog containing the following text: "Folder: TestGroup1_Folder"
         When I click on the button labeled "Delete" in the dialog box

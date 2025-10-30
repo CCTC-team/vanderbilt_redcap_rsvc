@@ -109,7 +109,7 @@ Feature: User Interface: The system shall support data quality rule creation.
       | 4      | Integer   | [integer]='2'                            |
 
     ##ACTION: delete rule
-    When I click on the Delete icon for Data Quality Rule # "4"
+    When I click on the icon in the column labeled "Delete rule" and the row labeled "4"
     #Manual: confirmation windows are automatically accepted on automated side
     And I click on the button labeled "Delete" in the dialog box
     Then I should see a table header and rows containing the following values in a table:
