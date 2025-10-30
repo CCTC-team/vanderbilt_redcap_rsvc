@@ -198,7 +198,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         Given I return to the REDCap page I opened the survey from
         When I click on the link labeled "Record Status Dashboard"
         Then I should see "Record Status Dashboard (all records)"
-        When I click on the link labeled exactly "1-1"
+        When I click on the link labeled "1-1"
         And I wait for 1 seconds
         Then I should see the "Completed Survey Response" icon for the "Consent" longitudinal instrument on event "Event 1"
         And I should see "TestGroup1"

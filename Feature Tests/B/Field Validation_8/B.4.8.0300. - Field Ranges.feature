@@ -128,7 +128,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 5 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                  | List of Data Changes OR Fields Exported   |
             | test_admin | Create record5 (Event 1 (Arm 1: Arm 1)) | date_ymd = '2023-08-02'                   |
@@ -170,7 +170,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 6 successfully added"
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                  | List of Data Changes OR Fields Exported |
             | test_admin | Create record6 (Event 1 (Arm 1: Arm 1)) | date_ymd = '2022-08-02'                 |
@@ -199,7 +199,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 7 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                  | List of Data Changes OR Fields Exported |
             | test_admin | Create record7 (Event 1 (Arm 1: Arm 1)) | datetime_ymd_hm = '2022-08-02 12:12'    |
@@ -227,7 +227,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 8 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                  | List of Data Changes OR Fields Exported   |
             | test_admin | Create record8 (Event 1 (Arm 1: Arm 1)) | datetime_ymd_hmss = '2022-08-02 12:12:12' |
@@ -255,7 +255,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 9 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                  | List of Data Changes OR Fields Exported |
             | test_admin | Create record9 (Event 1 (Arm 1: Arm 1)) | time_hhmm = '07:07'                     |
@@ -283,7 +283,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 10 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
             | test_admin | Create record10 (Event 1 (Arm 1: Arm 1)) | time_hhmmss = '07:07:07'                |
@@ -311,7 +311,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 11 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
             | test_admin | Create record11 (Event 1 (Arm 1: Arm 1)) | time_mm_ss = '01:00'                    |
@@ -339,7 +339,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 12 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
             | test_admin | Create record12 (Event 1 (Arm 1: Arm 1)) | integer = '0'                           |
@@ -367,7 +367,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 13 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
             | test_admin | Create record13 (Event 1 (Arm 1: Arm 1)) | number = '0'                            |
@@ -395,7 +395,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 14 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
             | test_admin | Create record14 (Event 1 (Arm 1: Arm 1)) | number_dec = '0.0'                      |
@@ -423,7 +423,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 15 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
             | test_admin | Create record15 (Event 1 (Arm 1: Arm 1)) | num_comma = '0,0'                       |
@@ -450,7 +450,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 16 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
             | test_admin | Create record16 (Event 1 (Arm 1: Arm 1)) | date_ymd = '2024-08-02'                 |
@@ -478,7 +478,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 17 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
             | test_admin | Create record17 (Event 1 (Arm 1: Arm 1)) | datetime_ymd_hm = '2024-08-02 12:12'    |
@@ -506,7 +506,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 18 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported   |
             | test_admin | Create record18 (Event 1 (Arm 1: Arm 1)) | datetime_ymd_hmss = '2024-08-02 12:12:12' |
@@ -534,7 +534,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 19 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
             | test_admin | Create record19 (Event 1 (Arm 1: Arm 1)) | time_hhmm = '23:07'                     |
@@ -562,7 +562,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 20 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
             | test_admin | Create record20 (Event 1 (Arm 1: Arm 1)) | time_hhmmss = '23:07:07'                |
@@ -590,7 +590,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 21 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
             | test_admin | Create record21 (Event 1 (Arm 1: Arm 1)) | time_mm_ss = '59:01'                    |
@@ -618,7 +618,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 22 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
             | test_admin | Create record22 (Event 1 (Arm 1: Arm 1)) | integer = '200'                         |
@@ -646,7 +646,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 23 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
             | test_admin | Create record23 (Event 1 (Arm 1: Arm 1)) | number = '10'                           |
@@ -674,7 +674,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 24 successfully added"
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
             | test_admin | Create record24 (Event 1 (Arm 1: Arm 1)) | number_dec = '6.0'                      |
@@ -702,7 +702,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see "Record ID 25 successfully added."
 
         ##VERIFY_LOG
-        When I click on the link labeled exactly "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                                   | List of Data Changes OR Fields Exported |
             | test_admin | Create record25 (Event 1 (Arm 1: Arm 1)) | num_comma = '3,0'                       |

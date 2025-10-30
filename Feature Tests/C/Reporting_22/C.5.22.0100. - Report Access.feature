@@ -71,7 +71,7 @@ Feature: User Interface: The system shall support the ability to assign the User
 
   Scenario: Assign record 2 to DAG2
         When I click on the link labeled "Record Status Dashboard"
-        And I click on the link labeled exactly "2"
+        And I click on the link labeled "2"
         And I click on the button labeled "Choose action for record"
         And I click on the link labeled "Assign to Data Access Group"
         When I select "TestGroup2" on the dropdown field labeled "Assign record" on the dialog box

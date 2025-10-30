@@ -32,7 +32,7 @@ Feature: User Interface: Survey Project Settings: The system shall support track
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION
-    When I click on the link labeled exactly "1"
+    When I click on the link labeled "1"
     And I click on the button labeled "Survey options"
     And I click on the survey option label containing "Open survey" label
     And I click on the button labeled "Next Page >>"
