@@ -44,7 +44,7 @@ Feature: Renaming a Record: The system shall allow users to rename a record.
 
         #FUNCTIONAL REQUIREMENT
         When I click on the link labeled "Record Status Dashboard"
-        And I click on the link labeled exactly "1"
+        And I click on the link labeled "1"
         ##ACTION Rename record
         When I click on the button labeled "Choose action for record"
         And I click on the link labeled "Rename record"

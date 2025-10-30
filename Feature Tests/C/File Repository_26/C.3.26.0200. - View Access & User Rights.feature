@@ -385,7 +385,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         And I download a file by clicking on the link labeled "instrument_designation.csv"
         Then I should see a downloaded file named "instrument_designation.csv"
 
-        Given I click on the link labeled "All Files" in the File Repository breadcrumb
+        Given I click on the link labeled "All Files"
         And I click on the link labeled "Role1_Folder"
         Then I should see "All Files/Role1_Folder" in the File Repository breadcrumb
 
