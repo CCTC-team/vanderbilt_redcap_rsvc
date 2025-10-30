@@ -54,7 +54,7 @@ Feature: User Interface: The tool shall only display forms that are designated t
     ##ACTION Edit / Remove Custom Text
     When I click on the link labeled "Customize & Manage Locking/E-signatures"
     And I click on the button labeled "I understand. Let me make changes" in the dialog box
-    And I click on the Edit icon within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
+    And I click on the icon labeled "Edit" in the row labeled "Text Validation"
     And I enter "New custom text" into the textarea field labeled "Text Validation"
     And I click on the first button labeled "Save"
     And I click on the icon labeled "Remove" in the row labeled "Data Types"

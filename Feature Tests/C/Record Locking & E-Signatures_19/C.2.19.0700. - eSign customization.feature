@@ -87,7 +87,7 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         And I click on the button labeled "I understand. Let me make changes" in the dialog box
         Then I should see "Record Locking Customization"
 
-        When I click on the Edit icon within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
+        When I click on the icon labeled "Edit" in the row labeled "Text Validation"
         And I clear field and enter "Edit Test custom text" into the textarea field within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
         And I click on the "Save" button within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
         Then I should see a table header and rows containing the following values in a table:
@@ -97,7 +97,7 @@ Feature: User Interface: The Record Locking Customization module shall allow the
             | [ ]                                          | Survey                     | [ ]                                            |                         |
             | [x]                                          | Consent                    | [ ]                                            |                         |
 
-        When I click on the Edit icon within the Record Locking Customization table for the Data Collection Instrument named "Data Types"
+        When I click on the icon labeled "Edit" in the row labeled "Data Types"
         And I clear field and enter "Edit Test custom text" into the textarea field within the Record Locking Customization table for the Data Collection Instrument named "Data Types"
         And I click on the "Save" button within the Record Locking Customization table for the Data Collection Instrument named "Data Types"
         Then I should see a table header and rows containing the following values in a table:

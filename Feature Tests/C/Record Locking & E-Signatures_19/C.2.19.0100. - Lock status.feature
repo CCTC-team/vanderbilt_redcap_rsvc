@@ -69,7 +69,7 @@ Feature: User Interface: The E-signature and Locking Management tool shall displ
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
         And I click on the button labeled "I understand. Let me make changes" in the dialog box
 
-        And I click on the Edit icon within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
+        And I click on the icon labeled "Edit" in the row labeled "Text Validation"
         And I clear field and enter "New custom text" into the textarea field labeled "Text Validation"
         And I click on the "Save" button within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
         Then I should see a table header and rows containing the following values in a table:
