@@ -42,7 +42,7 @@ Feature: User Interface: The system shall support excluding discrepancies found 
             | 5 (#1) | number_1_period = 4.2               | Out of range | exclude |
             | 5 (#1) | number = 10.000                     | Out of range | exclude |
 
-        When I click on the "exclude" link for the Discrepant field labeled "Integer"
+        When I click on the link labeled "exclude" in the row labeled "integer = 1111111111"
         Then I should see a table header and rows containing the following values in a table:
             | Record | Discrepant fields with their values | Status       | Exclude          |
             | 5 (#1) | integer = 1111111111                | Out of range | remove exclusion |
@@ -74,7 +74,7 @@ Feature: User Interface: The system shall support excluding discrepancies found 
             | 5 (#1) | number_1_period = 4.2               | Out of range | exclude          |
             | 5 (#1) | number = 10.000                     | Out of range | exclude          |
 
-        When I click on the "remove exclusion" link for the Discrepant field labeled "Integer"
+        When I click on the link labeled "remove exclusion" in the row labeled "integer = 1111111111"
         And I should see a table header and rows containing the following values in a table:
             | Record | Discrepant fields with their values | Status       | Exclude |
             | 5 (#1) | integer = 1111111111                | Out of range | exclude |
