@@ -79,7 +79,7 @@ Scenario: #C.3.30.1500.0100. For a blinded model, users without setup rights wil
     And I should see "01" in the data entry form field "Blinded randomization" 
     
     #Verify the user can only see a concealed allocation code in reports with no visible group assignment.  
-    When I click on the link "Data Exports, Reports, and Stats"
+    When I click on the link labeled "Data Exports, Reports, and Stats"
     And I click on the button labeled "View Report"
     Then I should see a table header and rows containing the following values in the report data table:
             | Record ID | Blinded randomization |
@@ -101,7 +101,7 @@ Scenario: #C.3.30.1500.0100. For a blinded model, users without setup rights wil
     And I should see a radio labeled "Placebo" in the row labeled "Already randomized" that is disabled
    
     #Verify the user can see the assigned group allocation code directly in reports
-    When I click on the link "Data Exports, Reports, and Stats"
+    When I click on the link labeled "Data Exports, Reports, and Stats"
     And I click on the button labeled "View Report"
     Then I should see a table header and rows containing the following values in the report data table:
             | Record ID | Stratification 1 |
@@ -112,7 +112,7 @@ Scenario: #C.3.30.1500.0100. For a blinded model, users without setup rights wil
             | 5         |                       |
 
 Scenario: #C.3.30.1500.0300. All users with export rights can export randomized records, seeing the allocation assigned to each record as displayed in the record view.  
-    Given I click on the link "Data Exports, Reports, and Stats"
+    Given I click on the link labeled "Data Exports, Reports, and Stats"
     And I click on the button labeled "View Report"
     Then I should see a table header and rows containing the following values in the report data table:
             | Record ID | Stratification 1 | Randomization group | Blinded randomization|

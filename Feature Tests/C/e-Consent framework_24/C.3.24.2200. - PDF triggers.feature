@@ -192,7 +192,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       Then I should see "Editing existing Record ID 2."
       Then I should see "Custom_" in the row labeled "Participant Consent file"
 
-      When I click on the link "Custom_"
+      When I click on the link labeled "Custom_"
       Then I should see the following values in the last file downloaded
         | Page 1\nParticipant Consent |
       #Manual: Close document
@@ -230,7 +230,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       Then I should see "Custom_" in the row labeled "Participant Consent file"
       And I should see "Custom_" in the row labeled "Combine both files together"
 
-      When I click on the link "Custom_" in the row labeled "Combine both files together"
+      When I click on the link labeled "Custom_" in the row labeled "Combine both files together"
       And I should see the following values in the last file downloaded
         | Page 1\nParticipant Consent |
         | Page 3\nCoordinator Signature |
