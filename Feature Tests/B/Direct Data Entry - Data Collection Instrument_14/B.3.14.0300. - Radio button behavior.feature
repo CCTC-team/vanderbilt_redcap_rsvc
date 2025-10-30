@@ -35,7 +35,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
         And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
         Then I should see "Record ID 7 successfully edited"
 
-        When I click the "reset" link for the field labeled "radio"
+        When I click on the link labeled "reset" in the row labeled "radio"
         And I click on the button labeled "Save & Exit Form"
         Then I should see "Record ID 7 successfully edited"
 

@@ -261,7 +261,7 @@ Feature: User Interface: The system shall support limiting file repository user 
             | testusers_bulkupload.csv    |
             | user_list_for_project_1.csv |
 
-        When I click on the link labeled "TestGroup1_Folder" in the File Repository table
+        When I click on the link labeled "TestGroup1_Folder"
         Then I should see "All Files/TestGroup1_Folder" in the File Repository breadcrumb
         And I should see "DAG-Restricted:TestGroup1" in the File Repository breadcrumb
         And I should see a table row containing the following values in the file repository table:
@@ -290,7 +290,7 @@ Feature: User Interface: The system shall support limiting file repository user 
             | Role1_Folder         |
 
         And I should see "Data Export Files"
-        And I click on the link labeled "Role1_Folder" in the File Repository table
+        And I click on the link labeled "Role1_Folder"
         Then I should see "All Files/Role1_Folder" in the File Repository breadcrumb
         And I should see a table row containing the following values in the file repository table:
             | No files or subfolders exist in this folder |
@@ -319,7 +319,7 @@ Feature: User Interface: The system shall support limiting file repository user 
             | TestGroup1_Folder    |
             | Role1_Folder         |
 
-        Given I click on the link labeled "PDF Snapshot Archive" in the File Repository table
+        Given I click on the link labeled "PDF Snapshot Archive"
         Then I should see a table header and rows containing the following values in the file repository table:
             | Record         | Survey                           | File Storage Time | Type      |
             | 1-1 TestGroup1 | Consent (Event 1 (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  | e-Consent |
@@ -374,7 +374,7 @@ Feature: User Interface: The system shall support limiting file repository user 
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Interact in Role folder
-        Given I click on the link labeled "Role1_Folder" in the File Repository table
+        Given I click on the link labeled "Role1_Folder"
         Then I should see "All Files/Role1_Folder" in the File Repository breadcrumb
         And I should see a table header and rows containing the following values in the file repository table:
             | Name                       | Time Uploaded    | Comments                |
@@ -386,7 +386,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         Then I should see a downloaded file named "instrument_designation.csv"
 
         Given I click on the link labeled "All Files" in the File Repository breadcrumb
-        And I click on the link labeled "Role1_Folder" in the File Repository table
+        And I click on the link labeled "Role1_Folder"
         Then I should see "All Files/Role1_Folder" in the File Repository breadcrumb
 
     ##ACTION Upload to Role folder
@@ -403,7 +403,7 @@ Feature: User Interface: The system shall support limiting file repository user 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Auto-archive file in DAG TestGroup2
         When I click on the link labeled "File Repository"
-        And I click on the link labeled "PDF Snapshot Archive" in the File Repository table
+        And I click on the link labeled "PDF Snapshot Archive"
     #See consent just created in testgroup2
     #Don't see consent created by testgroup1
 
@@ -445,7 +445,7 @@ Feature: User Interface: The system shall support limiting file repository user 
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Access DAG folder
-        When I click on the link labeled "TestGroup1_Folder" in the File Repository table
+        When I click on the link labeled "TestGroup1_Folder"
         Then I should see the link labeled "testusers_bulk_upload.csv"
 
         When I download a file by clicking on the link labeled "testusers_bulk_upload.csv"
@@ -457,7 +457,7 @@ Feature: User Interface: The system shall support limiting file repository user 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Auto-archive file in DAG TestGroup1
         When I click on the link labeled "File Repository"
-        And I click on the link labeled "PDF Snapshot Archive" in the File Repository table
+        And I click on the link labeled "PDF Snapshot Archive"
 
     #Don't see consent created by testgroup2
         Then I should see a table header and rows containing the following values in the file repository table:
@@ -501,7 +501,7 @@ Feature: User Interface: The system shall support limiting file repository user 
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Access DAG folder
-        Given I click on the link labeled "TestGroup1_Folder" in the File Repository table
+        Given I click on the link labeled "TestGroup1_Folder"
         Then I should see a table header and rows containing the following values in the file repository table:
             | Name                      | Time Uploaded    | Comments                |
             | testusers_bulk_upload.csv | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
@@ -547,7 +547,7 @@ Feature: User Interface: The system shall support limiting file repository user 
             | user list for project 1.csv | mm/dd/yyyy hh:mm | Uploaded by test_user1. |
 
     ##ACTION Cancel Remove files from folder
-        When I click on the link labeled "TestGroup1_Folder" in the File Repository table
+        When I click on the link labeled "TestGroup1_Folder"
         Then I should see "All Files/TestGroup1_Folder" in the File Repository breadcrumb
         And I should see a table header and rows containing the following values in the file repository table:
             | Name                      | Time Uploaded    | Comments                |

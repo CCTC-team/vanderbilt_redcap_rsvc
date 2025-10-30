@@ -16,7 +16,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: Download data dictionary
         When I click on the link labeled "Dictionary"
-        And I click on the button labeled "Download Data Dictionary" to download a file
+        And I click on the button labeled "Download Data Dictionary"
 
         ##VERIFY
         Then I should see the latest downloaded "csv" file containing the headings and rows below
