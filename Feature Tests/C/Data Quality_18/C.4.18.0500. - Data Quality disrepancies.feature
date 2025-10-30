@@ -30,8 +30,7 @@ Feature: User Interface: The system shall support viewing discrepancies found in
             | 1      | [radio]=9.9                                   | [radio]=9.9                              | 1                   |
             | 2      | [ptname]<>[name]                              | [ptname]<>[name]                         | 8                   |
 
-        When I click on the "view" link for Data Quality Rule # "C"
-        #When I click on the link labeled "view" for the Rule Name labeled "Field validation errors (incorrect data type)"
+        When I click on the link labeled "view" in the row labeled "C"
         Then I should see "Rule: Field validation errors (incorrect data type)" in the dialog box
         And I should see "Discrepancies found: 1" in the dialog box
         And I should see a table header and rows containing the following values in a table:

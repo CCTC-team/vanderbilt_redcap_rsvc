@@ -32,7 +32,7 @@ Feature: User Interface: The system shall support excluding discrepancies found 
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: verify ability to exclude a discrepancy
-        When I click on the "view" link for Data Quality Rule # "D"
+        When I click on the link labeled "view" in the row labeled "D"
         Then I should see "Rule: Field validation errors (out of range)" in the dialog box
         And I should see "Discrepancies found: 4" in the dialog box
         And I should see a table header and rows containing the following values in a table:
@@ -59,7 +59,7 @@ Feature: User Interface: The system shall support excluding discrepancies found 
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: verify ability to add back excluded discrepancy
-        When I click on the "view" link for Data Quality Rule # "D"
+        When I click on the link labeled "view" in the row labeled "D"
         Then I should see "Rule: Field validation errors (out of range)" in the dialog box
         And I should see "Discrepancies found: 3" in the dialog box
         And I should see a link labeled "view" in the dialog box

@@ -55,7 +55,7 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: verify ability to view discrepancies with access
-        When I click on the "view" link for Data Quality Rule # "C"
+        When I click on the link labeled "view" in the row labeled "C"
         Then I should see "Rule: Field validation errors (incorrect data type)" in the dialog box
         And I should see "Discrepancies found: 1" in the dialog box
         And I should see a table header and rows containing the following values in a table:
@@ -89,7 +89,7 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
             | 1      | [radio]=9.9                                                               | [radio]= '9..9'                          | ERROR               |
             | 2      | [ptname]<>[name]                                                          | [ptname]<>[name]                         | ERROR               |
 
-        When I click on the "view" link for Data Quality Rule # "C"
+        When I click on the link labeled "view" in the row labeled "C"
         Then I should see "Rule: Field validation errors (incorrect data type)" in the dialog box
         And I should see "Discrepancies found: 1" in the dialog box
         And I should see a table header and rows containing the following values in a table:
