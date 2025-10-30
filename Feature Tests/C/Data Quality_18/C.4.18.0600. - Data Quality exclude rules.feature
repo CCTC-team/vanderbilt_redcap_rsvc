@@ -64,7 +64,7 @@ Feature: User Interface: The system shall support excluding discrepancies found 
         And I should see "Discrepancies found: 3" in the dialog box
         And I should see a link labeled "view" in the dialog box
 
-        When I click on the link labeled "view" in the dialog box
+        When I click on the link labeled "view"
         Then I should see "Rule: Field validation errors (out of range)" in the dialog box
         And I should see "Discrepancies found: 4" in the dialog box
         And I should see a table header and rows containing the following values in a table:
