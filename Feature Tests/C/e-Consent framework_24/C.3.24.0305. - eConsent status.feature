@@ -166,10 +166,10 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
             | pid13_formParticipantConsent_id1_ |                                  | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         | e-Consent |
 
 
-        Given I download the PDF by clicking on the link for Record "1" and Survey "Participant Consent" in the File Repository table
+        Given I click on the link labeled "_formParticipantConsent_id1_"
         And I should see a signature for the "Participant signature field" field in the downloaded PDF for record "1" and survey "Participant Consent"
 
-        Given I download the PDF by clicking on the link for Record "2" and Survey "Participant Consent" in the File Repository table
+        Given I click on the link labeled "_formParticipantConsent_id2_"
         And I should see a signature for the "Participant signature field" field in the downloaded PDF for record "2" and survey "Participant Consent"
         #Manual: Close document
 
