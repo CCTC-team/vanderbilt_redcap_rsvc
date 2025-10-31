@@ -47,7 +47,7 @@ And I should see a checkbox labeled "B) Randomize by group/site?" that is in the
 
 
 #verify unable to change randomization field
-And I should see the dropdown labeled "rand_group (Randomization group)" is disabled
+And I should see the dropdown labeled "rand_group (Randomization group 1)" is disabled
 
 #verify unable to upload or download allocation table for use in Development
 And I should see a button labeled "Download table" in the row labeled "for use in DEVELOPMENT status" that is disabled
@@ -81,7 +81,7 @@ And I should see a checkbox labeled "A) Use stratified randomization?" that is c
 And I should see a checkbox labeled "B) Randomize by group/site?" that is in the disabled state
 
 #verify unable to change randomization field
-And I should see the dropdown labeled "rand_group (Randomization group)" is disabled
+And I should see the dropdown labeled "rand_group (Randomization group 1)" is disabled
 
 #verify unable to upload or download allocation table for use in Development
 And I should see a button labeled "Download table" that is disabled 

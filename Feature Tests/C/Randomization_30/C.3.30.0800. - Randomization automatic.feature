@@ -28,7 +28,7 @@ Scenario: #SETUP User Rights
   And I click on the button labeled "Set up randomization"
   And I click on the button labeled "Add new randomization model"
   Then I should see "STEP 1: Define your randomization model"
-  And I select "rand_group (Randomization group)" on the first dropdown field labeled "- select a field -"
+  And I select "rand_group (Randomization group 1)" on the first dropdown field labeled "- select a field -"
   And I click on the button labeled "Save randomization model"
   When I upload a "csv" format file located at "import_files/AlloRand rand_group1.csv", by clicking the button near "for use in DEVELOPMENT status" to browse for the file, and clicking the button labeled "Upload" to upload the file
   When I upload a "csv" format file located at "import_files/AlloRand rand_group2.csv", by clicking the button near "for use in PRODUCTION status" to browse for the file, and clicking the button labeled "Upload" to upload the file
@@ -37,13 +37,13 @@ Scenario: C.3.30.0800.0100. Manual only, using Randomize button (default)
   When I click on the link labeled "Add / Edit Records"
   And I select "1" on the dropdown field labeled "Choose an existing Record ID"
   And I click the bubble for the row labeled "Randomization" on the column labeled "Status"
-  Then I should see "Randomization group"
+  Then I should see "Randomization group 1"
 
   #VERIFY User can Randomize Manually, using Randomize Button
   When I click on a button labeled "Randomize"
-  Then I should see a dialog containing the following text: 'Below you may perform randomization for Record ID "1" on the field Randomization group (rand_group).'
+  Then I should see a dialog containing the following text: 'Below you may perform randomization for Record ID "1" on the field Randomization group 1 (rand_group).'
   And I click on the button labeled "Randomize"
-  Then I should see a dialog containing the following text: 'Record ID "1" was randomized for the field "Randomization group" and assigned the value "Drug A" (1).'
+  Then I should see a dialog containing the following text: 'Record ID "1" was randomized for the field "Randomization group 1" and assigned the value "Drug A" (1).'
   And I click on the button labeled "Close"
   And I click on the button labeled "Save & Exit Form"
 

@@ -40,7 +40,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     And I click on the button labeled "Add new randomization model"
     And I check the checkbox labeled "B) Randomize by group/site"
     And I click on the radio labeled "Use Data Access Groups"
-    And I select "rand_group_2 (Randomization group)" on the second dropdown field labeled "- select a field -"
+    And I select "rand_group_2 (Randomization group 2)" on the second dropdown field labeled "- select a field -"
     And I click on the button labeled "Save randomization model"
     Then I should see "Success! The randomization model has been saved!"
 
@@ -100,7 +100,7 @@ Feature: User Interface: The system shall restrict users to randomizing records 
     And I click on the button labeled "Set up randomization"
     And I click on the icon in the column labeled "Dashboard" and the row labeled "1"
     Then I should see a table header and rows containing the following values in a table:
-                 | Used    | Not Used | Allocated records   | Data Access Group  redcap_data_access_group|Randomization group  rand_group_2|
+                 | Used    | Not Used | Allocated records   | Data Access Group  redcap_data_access_group|Randomization group 2  rand_group_2|
                  | 1       |     0    |     1-1             | DAG 1 (1)                                  | Drug A (1)        | 
       #M This record ID may be diferent with manual testing.
        	
