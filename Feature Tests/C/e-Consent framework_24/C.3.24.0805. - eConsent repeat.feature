@@ -47,7 +47,6 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I select "Repeat Entire Event" on the dropdown field labeled "Event 1 (Arm 2: Arm Two)"
     And I click on the button labeled "Save"
     Then I should see "Successfully saved"
-    And I click on the button labeled "Close" in the dialog box
         #SETUP_PRODUCTION
 
   Scenario:
