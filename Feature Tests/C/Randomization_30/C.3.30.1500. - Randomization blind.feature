@@ -96,9 +96,9 @@ Scenario: #C.3.30.1500.0100. For a blinded model, users without setup rights wil
 
     #Verify the user can see the assigned group allocation code directly in the record
     Then I should see "Already randomized"
-    And I should see a radio labeled "Drug A" in the row labeled "Already randomized" that is disabled
-    And I should see a radio labeled "Drug B" in the row labeled "Already randomized" that is disabled
-    And I should see a radio labeled "Placebo" in the row labeled "Already randomized" that is disabled
+    And I should see a radio labeled "Drug A" in the row labeled "Randomization group 1" that is disabled
+    And I should see a radio labeled "Drug B" in the row labeled "Randomization group 1" that is disabled
+    And I should see a radio labeled "Placebo" in the row labeled "Randomization group 1" that is disabled
    
     #Verify the user can see the assigned group allocation code directly in reports
     When I click on the link labeled "Data Exports, Reports, and Stats"
