@@ -4,7 +4,7 @@ Feature: A.3.28.1300 Control Center: The system shall support e-Consent framewor
 #M This is being tested as a full part 11 test so that REDCap Admins learn how to use part 11 features 
 #M The test requires several things to be setup. First in Security and Authentication ensure that you enable "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN in place of their password." Also, The regular File Upload Storage is configure (eDocs) Then finally Configure the File Vault for Record Level Locking Enhancement in the Modules/Services Configuration. User will need access to lock records and E-Sign. 
 #Later in the test, we enable When e-signing, allow users to provide their 6-digit PIN only once per session. (Requires the immediate setting above to be enabled.) 
-#FUNCTIONAL_REQUIREMENT A.3.28.1300._NewManual 
+#FUNCTIONAL_REQUIREMENT A.3.28.1300. 
 
   Scenario: Start external storage services
     # Start these right away to give them plenty of time to spin up before we need them
@@ -18,7 +18,7 @@ Feature: A.3.28.1300 Control Center: The system shall support e-Consent framewor
     And I select "Enable" on the dropdown field labeled "Allow users to e-sign using their Two-Factor Authentication 6-digit PIN in place of their password."
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed!"
-#FUNCTIONAL_REQUIREMENT A.3.28.1100._NewManual 
+#FUNCTIONAL_REQUIREMENT A.3.28.1100. 
 #M this script assumes File Storage Methods is configured (File storage is needed for base REDCap file Storage) 
 
   Scenario: ##ACTION: Configure the External File Storage
