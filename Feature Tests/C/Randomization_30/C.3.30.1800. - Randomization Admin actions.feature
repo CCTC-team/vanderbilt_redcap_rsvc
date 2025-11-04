@@ -60,7 +60,7 @@ Feature: Project Interface Administrator Access: The system shall support the ad
             |       | Used    | Not Used | Allocated records | Stratification 1 |Randomization group|
             |       | 0       |     1    |                   | No (0)           | Drug B (2)        |   
 	          |       | 1       |     0    |     2             | Yes (1)          | Drug A (1)        | 
-    And I click on the icon in the column labeled "View" and the row labeled "1"
+    And I click on the icon in the column labeled "View" and the row labeled "Drug B"
     Then I should see "View Allocation Table"
 
     When I click on the icon labeled "Edit Target Field"
@@ -91,7 +91,7 @@ Scenario: #C.3.30.1800.0200. Admin can edit target alternative with reason.
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization" 
     And I click on the icon in the column labeled "Dashboard" and the row labeled "1"
-    And I click on the icon in the column labeled "View" and the row labeled "1"
+    And I click on the icon in the column labeled "View" and the row labeled "Placebo"
     Then I should see "View Allocation Table"
 
     When I click on the icon labeled "Edit Target Alternate"  
@@ -122,7 +122,7 @@ Scenario: #C.3.30.1800.0200. Admin can edit target alternative with reason.
 Scenario: #C.3.30.1800.0300. Admin can manually randomize a record with reason. 
     Given I click on the link labeled "Randomization"
     And I click on the icon in the column labeled "Dashboard" and the row labeled "1"
-    And I click on the icon in the column labeled "View" and the row labeled "1"
+    And I click on the icon in the column labeled "View" and the row labeled "Placebo"
     Then I should see "View Allocation Table"
 
     When I click on the icon labeled "Manual Randomization"  
@@ -153,7 +153,7 @@ Scenario: #C.3.30.1800.0600. Admin can remove randomization with reason.
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization" 
     And I click on the icon in the column labeled "Dashboard" and the row labeled "1"
-    And I click on the icon in the column labeled "View" and the row labeled "1"
+    And I click on the icon in the column labeled "View" and the row labeled "Drug A"
     Then I should see "View Allocation Table"
 
     When I click on the icon labeled "Remove Randomization"  
@@ -187,7 +187,7 @@ Scenario: #C.3.30.1800.0400. Admin can mark a sequence as unavailable with reaso
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization" 
     And I click on the icon in the column labeled "Dashboard" and the row labeled "1"
-    And I click on the icon in the column labeled "View" and the row labeled "1"
+    And I click on the icon in the column labeled "View" and the row labeled "Drug A"
     Then I should see "View Allocation Table"
 
     When I click on the icon labeled "Make Sequence Unavailable"
@@ -225,7 +225,7 @@ Scenario: #C.3.30.1800.0500. Admin can restore allocation with reason.
     Given I click on the link labeled "Setup"
     And I click on the button labeled "Set up randomization" 
     And I click on the icon in the column labeled "Dashboard" and the row labeled "1"
-    And I click on the icon in the column labeled "View" and the row labeled "1"
+    And I click on the icon in the column labeled "View" and the row labeled "Drug A"
     Then I should see "View Allocation Table"
 
     When I click on the icon labeled "Restore"
