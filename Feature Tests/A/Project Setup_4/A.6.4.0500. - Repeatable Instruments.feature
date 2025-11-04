@@ -188,7 +188,9 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
                   | A | All data (all records and fields) |
 
             Given I click on the button labeled "View Report"
-            Then I should see a "1" within the "Event 2 (Arm 1: Arm 1)" row of the column labeled "Repeat Instance" of the Reports table
+            Then I should see a table header and rows containing the following values in a table:
+                  | Record ID | Event Name                 | Repeat Instrument | Repeat Instance |
+                  | 1         | Event 2 (Arm 1: Arm 1)     |                   | 1               |
             And I should see "" within the "Event Three (Arm 1: Arm 1)" row of the column labeled "Repeat Instance" of the Reports table
             And I should NOT see "My repeat event name"
 
