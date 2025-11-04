@@ -166,7 +166,9 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             Given I see a table row containing the following values in the reports table:
                   | A | All data (all records and fields) |
             And I click on the button labeled "View Report"
-            And I should see a "1" within the "Event Three (Arm 1: Arm 1)" row of the column labeled "Repeat Instance" of the Reports table
+            And I should see a table header and rows containing the following values in a table:
+                  | Record ID | Event Name                 | Repeat Instrument | Repeat Instance |
+                  | 1         | Event Three (Arm 1: Arm 1) |                   | 1               |
             And I should see "My repeat event name"
 
             When I click on the link labeled "Setup"
