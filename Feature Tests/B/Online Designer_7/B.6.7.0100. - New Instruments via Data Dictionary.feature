@@ -24,7 +24,6 @@ Feature: Design forms Using Data Dictionary and Online Designer
             | record_id               | form_1      |                  | text         | "Record ID"   |                                           |              |                                              |                       |                       |             |                                           |                   |                    |                                  |                     |                   |                    |
 
         ##ACTION: Upload data dictionary
-        When I click on the link labeled "Dictionary"
         And I upload a "csv" format file located at "dictionaries/Project1xml_DataDictionary.csv", by clicking the button near "Upload your Data Dictionary file" to browse for the file, and clicking the button labeled "Upload" to upload the file
         Then I should see "Your document was uploaded successfully and awaits your confirmation below."
 
