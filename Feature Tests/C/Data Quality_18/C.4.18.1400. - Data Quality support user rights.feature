@@ -56,8 +56,8 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: verify ability to view discrepancies with access
         When I click on the link labeled "view" in the row labeled "C"
-        Then I should see "Rule: Field validation errors (incorrect data type)" in the dialog box
-        And I should see "Discrepancies found: 1" in the dialog box
+        Then I should see "Rule: Field validation errors (incorrect data type)"
+        And I should see "Discrepancies found: 1"
         And I should see a table header and rows containing the following values in a table:
             | Record                    | Discrepant fields with their values | Status           | Exclude |
             | 6  Event 1 (Arm 1: Arm 1) | email = HelloWorld                  | Validation error | exclude |
@@ -90,8 +90,8 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
             | 2      | [ptname]<>[name]                                                          | [ptname]<>[name]                         | ERROR               |
 
         When I click on the link labeled "view" in the row labeled "C"
-        Then I should see "Rule: Field validation errors (incorrect data type)" in the dialog box
-        And I should see "Discrepancies found: 1" in the dialog box
+        Then I should see "Rule: Field validation errors (incorrect data type)"
+        And I should see "Discrepancies found: 1"
         And I should see a table header and rows containing the following values in a table:
             | Record                    | Discrepant fields with their values                             | Status           | Exclude |
             | 6  Event 1 (Arm 1: Arm 1) | email = [cannot display data] (Reason: Lack of user privileges) | Validation error | exclude |

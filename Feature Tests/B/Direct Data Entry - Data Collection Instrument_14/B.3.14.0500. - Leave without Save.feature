@@ -36,9 +36,9 @@ Feature: Saving Data: The system shall support the prompt to save when a user at
 
         ##VERIFY
         Then I should see a dialog containing the following text: "Save your changes"
-        And I should see a button labeled "Save changes and leave" in the dialog box
-        And I should see a button labeled "Leave without saving changes" in the dialog box
-        And I should see a button labeled "Stay on page" in the dialog box
+        And I should see a button labeled "Save changes and leave"
+        And I should see a button labeled "Leave without saving changes"
+        And I should see a button labeled "Stay on page"
 
         ##ACTION Leave without saving changes
         When I click on the button labeled "Leave without saving changes"

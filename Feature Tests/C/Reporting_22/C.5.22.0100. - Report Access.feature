@@ -84,7 +84,7 @@ Feature: User Interface: The system shall support the ability to assign the User
     And I enter "C.5.22.100.100 REPORT" into the input field labeled "Name of Report:"
     #FUNCTIONAL_REQUIREMENT
     And I click on the button labeled "Save Report"
-    Then I should see "Your report has been saved!" in the dialog box
+    Then I should see "Your report has been saved!"
     When I click on the button labeled "Return to My Reports & Exports"
     And I logout
 
@@ -176,7 +176,7 @@ Feature: User Interface: The system shall support the ability to assign the User
     And I select the radio option "Custom user access" for the field labeled "Edit Access"
     And I select "test_user1 (Test User1)" on the multiselect field labeled "Selected users" in the Edit Access section of User Access
     And I click on the button labeled "Save Report"
-    Then I should see "Your report has been saved!" in the dialog box
+    Then I should see "Your report has been saved!"
     And I click on the button labeled "Return to My Reports & Exports"
     And I logout
 

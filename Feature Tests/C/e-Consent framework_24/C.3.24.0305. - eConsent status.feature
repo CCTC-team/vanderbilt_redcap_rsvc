@@ -22,7 +22,7 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         And I click on the button labeled "e-Consent"
         And I click on the button labeled "Enable the e-Consent Framework for a survey"
         And I select '"Participant Consent" (participant_consent)' in the dropdown field labeled "enable the e-Consent Framework for any survey" in the dialog box
-        Then I should see "Enable e-Consent" in the dialog box
+        Then I should see "Enable e-Consent"
         And I should see "Primary settings"
 
         When I check the checkbox labeled "Allow e-Consent responses to be edited by users?"

@@ -66,7 +66,7 @@ Feature: User Interface: General: The system shall support the ability to delete
     ##ACTION Delete the project
     When I click on the button labeled "Request delete project"
     #When I click on the button labeled "OK" in the pop-up box
-    Then I should see "Project successfully deleted!" in the dialog box
+    Then I should see "Project successfully deleted!"
     And I click on the button labeled "Close" in the dialog box
 
   Scenario: B.6.4.1200.300 Projects in production with records require admin

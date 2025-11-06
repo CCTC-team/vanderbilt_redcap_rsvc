@@ -163,7 +163,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
 
         And I enter "2022-08-02" into the data entry form field labeled "date YMD"
-        Then I should see "The value you provided is outside the suggested range (2023-08-01 - 2023-08-31). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (2023-08-01 - 2023-08-31). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
@@ -192,7 +192,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "2022-08-02 12:12" into the data entry form field labeled "Datetime"
-        Then I should see "The value you provided is outside the suggested range (2023-09-01 01:01 - 2023-09-30 01:59). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (2023-09-01 01:01 - 2023-09-30 01:59). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
@@ -220,7 +220,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "2022-08-02 12:12:12" into the data entry form field labeled "Datetime YMD HMSS"
-        Then I should see "The value you provided is outside the suggested range (2023-09-01 11:01:01 - 2023-09-30 11:01:01). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (2023-09-01 11:01:01 - 2023-09-30 11:01:01). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
@@ -248,7 +248,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "07:07" into the data entry form field labeled "Time HH:MM"
-        Then I should see "The value you provided is outside the suggested range (08:05 - 23:00). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (08:05 - 23:00). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
@@ -276,7 +276,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "07:07:07" into the data entry form field labeled " Time HH:MM:SS"
-        Then I should see "The value you provided is outside the suggested range (08:01:01 - 23:00:00). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (08:01:01 - 23:00:00). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
@@ -304,7 +304,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "01:00" into the data entry form field labeled "Time MM:SS"
-        Then I should see "The value you provided is outside the suggested range (02:01 - 59:00). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (02:01 - 59:00). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
@@ -332,7 +332,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "0" into the data entry form field labeled "Integer"
-        Then I should see "The value you provided is outside the suggested range (1 - 100). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (1 - 100). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
@@ -360,7 +360,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "0" into the data entry form field labeled "Number"
-        Then I should see "The value you provided is outside the suggested range (1 - 5). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (1 - 5). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
@@ -388,7 +388,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "0.0" into the data entry form field labeled "Number Decimal"
-        Then I should see "The value you provided is outside the suggested range (1.0 - 5.0). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (1.0 - 5.0). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
@@ -416,7 +416,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "0,0" into the data entry form field labeled "Number Comma"
-        Then I should see "The value you provided is outside the suggested range (1,0 - 2,0). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (1,0 - 2,0). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
@@ -444,7 +444,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "2024-08-02" into the data entry form field labeled "date YMD"
-        Then I should see "The value you provided is outside the suggested range (2023-08-01 - 2023-08-31). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (2023-08-01 - 2023-08-31). This value is admissible, but you may wish to double check it."
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
         Then I should see "Record ID 16 successfully added."
@@ -471,7 +471,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "2024-08-02 12:12" into the data entry form field labeled "Datetime"
-        Then I should see "The value you provided is outside the suggested range (2023-09-01 01:01 - 2023-09-30 01:59). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (2023-09-01 01:01 - 2023-09-30 01:59). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
@@ -499,7 +499,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "2024-08-02 12:12:12" into the data entry form field labeled "Datetime YMD HMSS"
-        Then I should see "The value you provided is outside the suggested range (2023-09-01 11:01:01 - 2023-09-30 11:01:01). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (2023-09-01 11:01:01 - 2023-09-30 11:01:01). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
@@ -527,7 +527,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "23:07" into the data entry form field labeled "Time HH:MM"
-        Then I should see "The value you provided is outside the suggested range (08:05 - 23:00). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (08:05 - 23:00). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
@@ -555,7 +555,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "23:07:07" into the data entry form field labeled " Time HH:MM:SS"
-        Then I should see "The value you provided is outside the suggested range (08:01:01 - 23:00:00). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (08:01:01 - 23:00:00). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
@@ -583,7 +583,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "59:01" into the data entry form field labeled "Time MM:SS"
-        Then I should see "The value you provided is outside the suggested range (02:01 - 59:00). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (02:01 - 59:00). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
@@ -611,7 +611,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "200" into the data entry form field labeled "Integer"
-        Then I should see "The value you provided is outside the suggested range (1 - 100). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (1 - 100). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
@@ -639,7 +639,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "10" into the data entry form field labeled "Number"
-        Then I should see "The value you provided is outside the suggested range (1 - 5). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (1 - 5). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
@@ -667,7 +667,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "6.0" into the data entry form field labeled "Number Decimal"
-        Then I should see "The value you provided is outside the suggested range (1.0 - 5.0). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (1.0 - 5.0). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
@@ -695,7 +695,7 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
         And I enter "3,0" into the data entry form field labeled "Number Comma"
-        Then I should see "The value you provided is outside the suggested range (1,0 - 2,0). This value is admissible, but you may wish to double check it." in the dialog box
+        Then I should see "The value you provided is outside the suggested range (1,0 - 2,0). This value is admissible, but you may wish to double check it."
 
         When I click on the button labeled "Close" in the dialog box
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument

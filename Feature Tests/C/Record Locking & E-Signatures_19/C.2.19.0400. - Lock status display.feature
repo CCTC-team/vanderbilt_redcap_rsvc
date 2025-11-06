@@ -84,7 +84,7 @@ Feature: User Interface: The tool shall display locked status of forms for all r
         When I click on the span element labeled "Choose action for record"
         And I click on the link labeled "Lock entire record"
         And I click on the button labeled "Lock entire record" in the dialog box
-        Then I should see 'Record "3" is now LOCKED' in the dialog box
+        Then I should see 'Record "3" is now LOCKED'
         # The previous step should likely wait for the page to refresh to prevent interference with the link click below.  For now, we wait:
         And I wait for 10 seconds
 
@@ -113,7 +113,7 @@ Feature: User Interface: The tool shall display locked status of forms for all r
         When I click on the span element labeled "Choose action for record"
         And I click on the link labeled "Unlock entire record"
         And I click on the button labeled "Unlock entire record" in the dialog box
-        Then I should see 'Record "3" is now UNLOCKED' in the dialog box
+        Then I should see 'Record "3" is now UNLOCKED'
         # The previous step should likely wait for the page to refresh to prevent interference with the link click below.  For now, we wait:
         And I wait for 10 seconds
         

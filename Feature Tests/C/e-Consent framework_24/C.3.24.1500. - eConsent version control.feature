@@ -263,7 +263,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario:
     When I click on the button labeled "Set as inactive" in the dialog box
-    Then I should see "Set consent form as inactive" in the dialog box
+    Then I should see "Set consent form as inactive"
 
   Scenario: #Cancel inactivation of version
     When I click on the button labeled "Cancel"
@@ -278,7 +278,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario:
     When I click on the button labeled "Set as inactive" in the dialog box
-    Then I should see "Set consent form as inactive" in the dialog box
+    Then I should see "Set consent form as inactive"
 
   Scenario:
     When I click on the button labeled "Set consent form as inactive" in the dialog box

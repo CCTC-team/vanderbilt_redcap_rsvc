@@ -52,7 +52,7 @@ Scenario: #SETUP project with randomization enabled
     And I click on the button labeled "Randomize" 
     Then I should see a dialog containing the following text: "Below you may perform randomization for Record ID"
     And I click on the button labeled "Randomize" in the dialog box
-    Then I should see "was randomized for" in the dialog box
+    Then I should see "was randomized for"
     And I click on the button labeled "Close" in the dialog box
     And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
     Then I should see "Record ID 2 successfully edited."

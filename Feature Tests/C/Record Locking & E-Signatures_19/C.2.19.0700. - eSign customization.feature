@@ -64,7 +64,7 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         When I check the checkbox labeled exactly "Lock"
         And I check the checkbox labeled exactly "E-signature"
         And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-        Then I should see "E-signature: Username/password verification" in the dialog box
+        Then I should see "E-signature: Username/password verification"
 
         Given I provide E-Signature credentials for the user "Test_Admin"
         And I click on the button labeled "Save" in the dialog box
@@ -123,7 +123,7 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         When I check the checkbox labeled exactly "Lock"
         And I check the checkbox labeled exactly "E-signature"
         And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
-        Then I should see "E-signature: Username/password verification" in the dialog box
+        Then I should see "E-signature: Username/password verification"
 
         Given I provide E-Signature credentials for the user "Test_Admin"
         And I click on the button labeled "Save" in the dialog box

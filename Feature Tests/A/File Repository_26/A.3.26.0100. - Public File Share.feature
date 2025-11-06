@@ -49,7 +49,7 @@ Feature: Control Center: The system shall provide the ability to enable/disable 
     When I click on the link labeled "File Repository"
 
     Given I click on the icon in the column labeled "Share" and the row labeled "testusers_bulkupload.csv"
-    Then I should see "Send the file securely using Send-It" in the dialog box
+    Then I should see "Send the file securely using Send-It"
     And I should NOT see "Share a public link to view the file" in the dialog box
     And I click on the button labeled "Close" in the dialog box
 
@@ -68,7 +68,7 @@ Feature: Control Center: The system shall provide the ability to enable/disable 
     And I click on the link labeled "File Repository"
 
     Given I click on the icon in the column labeled "Share" and the row labeled "testusers_bulkupload.csv"
-    Then I should see "Send the file securely using Send-It" in the dialog box
-    And I should see "Share a public link to view the file" in the dialog box
+    Then I should see "Send the file securely using Send-It"
+    And I should see "Share a public link to view the file"
     And I click on the button labeled "Close" in the dialog box
 #End

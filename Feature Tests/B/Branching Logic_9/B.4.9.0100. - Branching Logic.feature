@@ -107,7 +107,7 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         And I click on the link labeled "Data Types"
         And I click on the icon labeled "Branching Logic" in the row labeled "descriptive_text_file"
         And I click on the radio labeled exactly "Drag-N-Drop Logic Builder" in the dialog box
-        Then I should see "Displaying field choices for the following data collection instrument" in the dialog box
+        Then I should see "Displaying field choices for the following data collection instrument"
 
         Given I drag the field choice labeled "radio_button_manual = Choice101 (101)" to the box labeled "Show the field ONLY if..."
         And I click on the button labeled "Save" in the Add/Edit Branching Logic dialog box
@@ -115,7 +115,7 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
 
         Given I click on the icon labeled "Branching Logic" in the row labeled "required"
         And I click on the radio labeled exactly "Drag-N-Drop Logic Builder" in the dialog box
-        Then I should see "Displaying field choices for the following data collection instrument" in the dialog box
+        Then I should see "Displaying field choices for the following data collection instrument"
 
         Given I drag the field choice labeled "checkbox = Checkbox3 (3)" to the box labeled "Show the field ONLY if..."
         And I click on the button labeled "Save" in the Add/Edit Branching Logic dialog box

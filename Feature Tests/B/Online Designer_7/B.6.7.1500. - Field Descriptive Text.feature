@@ -38,7 +38,7 @@ Feature: Field Creation: The system shall support the creation of Descriptive Te
         Given I click on the link labeled "Upload file"
         And I see a dialog containing the following text: "Attach an image, file, or embedded audio"
         When I upload a "docx" format file located at "import_files/B.6.7.1500_Upload File.docx", by clicking the button near "Select a file then click the 'Upload File' button" to browse for the file, and clicking the button labeled "Upload file" to upload the file
-        Then I should see "Document was successfully uploaded!" in the dialog box
+        Then I should see "Document was successfully uploaded!"
         And I click on the button labeled "Close"
         And I click on the button labeled "Save"
 

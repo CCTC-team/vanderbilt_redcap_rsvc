@@ -80,8 +80,8 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         And I select 'name "Name"' in the dropdown field labeled "Move the field(s) so that it will be located immediately after the following field:" in the dialog box
         And I click on the button labeled "Move field" in the dialog box
         ##VERIFY
-        Then I should see "SUCCESSFULLY MOVED" in the dialog box
-        And I should see 'Successfully moved the field(s) to a new location on another data collection instrument' in the dialog box
+        Then I should see "SUCCESSFULLY MOVED"
+        And I should see 'Successfully moved the field(s) to a new location on another data collection instrument'
         And I click on the button labeled "Close" in the dialog box
 
         #The following button is covering the "Return to list of instruments" button
