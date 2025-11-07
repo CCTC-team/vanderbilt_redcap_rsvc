@@ -16,7 +16,7 @@ Feature: User Interface: The system shall support the ability to limit access to
     Scenario: #SETUP
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
         And I click on the button labeled "I understand. Let me make changes" in the dialog box
-        And for the Column Name "Also display E-signature option on instrument?", I check the checkbox within the Record Locking Customization table for the Data Collection Instrument named "Text Validation"
+        And I check the checkbox in the column labeled "Also display E-signature option on instrument?" and the row labeled "Text Validation"
         Then I should see a table header and rows containing the following values in a table:
             | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? | Lock Record Custom Text |
             | [x]                                          | Text Validation            | [x]                                            | [text box]              |
