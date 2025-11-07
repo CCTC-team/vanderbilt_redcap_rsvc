@@ -65,7 +65,7 @@ Feature: User Interface: Survey Project Settings: The system shall support surve
     #FUNCTIONAL REQUIREMENT
     ##ACTION Survey Offline
     Given I click on the link labeled "Designer"
-    And I click on the "Survey settings" button for the instrument row labeled "Text Validation"
+    And I click on the button labeled "Survey settings" in the row labeled "Text Validation"
     And I select "Survey Offline" on the dropdown field labeled "Survey Status"
     And I click on the button labeled "Save Changes"
     ##VERIFY

@@ -31,7 +31,7 @@ Feature: User Interface: Survey Project Settings: The system shall delete all su
     And I click on the button labeled "Save Changes"
     Then I should see the enabled survey icon link for the instrument row labeled "Text Validation"
 
-    Given I click on the "Survey settings" button for the instrument row labeled "Text Validation"
+    Given I click on the button labeled "Survey settings" in the row labeled "Text Validation"
     When I select "Yes" on the dropdown field labeled "Allow 'Save & Return Later' option for respondents?"
     And I click on the button labeled "Save Changes"
     Then I should see "Your survey settings were successfully saved"
@@ -85,7 +85,7 @@ Feature: User Interface: Survey Project Settings: The system shall delete all su
     #FUNCTIONAL REQUIREMENT
     ##ACTION
     When I click on the link labeled "Designer"
-    And I click on the "Survey settings" button for the instrument row labeled "Text Validation"
+    And I click on the button labeled "Survey settings" in the row labeled "Text Validation"
     And I click on the button labeled "Delete Survey Settings"
     And I click on the button labeled "Delete Survey Settings" in the dialog box
     Then I should see "Survey successfully deleted!"
