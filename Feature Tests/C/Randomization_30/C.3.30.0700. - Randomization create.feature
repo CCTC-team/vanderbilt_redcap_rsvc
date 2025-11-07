@@ -422,7 +422,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
     When I click on the link labeled "Delete allocation table?"
-    Then I should see a downloaded file named "Success! The allocation table has been deleted."
+    Then I should see "Success! The allocation table has been deleted."
     And I wait for 1 second
     #VERIFY_log Randomization deleted in logging table
     When I click on the link labeled "Logging"
