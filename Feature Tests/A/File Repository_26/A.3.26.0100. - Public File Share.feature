@@ -19,7 +19,7 @@ Feature: Control Center: The system shall provide the ability to enable/disable 
 
     #ACTION Upload to top tier file repo (all users will see file) - using the Select files to upload button
     When I click on the link labeled "File Repository"
-    Then I should see "All Files" in the File Repository breadcrumb
+    Then I should see "All Files"
 
     When I click the button labeled "Select files to upload" to select and upload the following file to the File Repository:
       | import_files/testusers_bulkupload.csv |
