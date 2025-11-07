@@ -28,7 +28,7 @@ Feature: User Interface: Survey Project Settings: The system shall support the a
 
     #VERIFY_DESIGNER
     When I click on the link labeled "Designer"
-    Then I should see the enabled survey icon link for the instrument row labeled "Survey"
+    Then I should see a button labeled "Survey settings" in the row labeled "Survey"
 
     #FUNCTIONAL REQUIREMENT
     Given I click on the link labeled "Record Status Dashboard"

@@ -32,7 +32,7 @@ Feature: The system shall allow creation of a participant list automatically usi
     When I click on the link labeled "Designer"
     And I click on the button labeled "Enable" in the column labeled "Enabled as" and the row labeled "Text Validation"
     And I click on the button labeled "Save Changes"
-    Then I should see the enabled survey icon link for the instrument row labeled "Text Validation"
+    Then I should see a button labeled "Survey settings" in the row labeled "Text Validation"
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Verify Survey Distribution Tool

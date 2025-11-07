@@ -29,7 +29,7 @@ Feature: User Interface: Survey Project Settings: The system shall delete all su
     Given I click on the link labeled "Designer"
     And I click on the button labeled "Enable" in the column labeled "Enabled as" and the row labeled "Text Validation"
     And I click on the button labeled "Save Changes"
-    Then I should see the enabled survey icon link for the instrument row labeled "Text Validation"
+    Then I should see a button labeled "Survey settings" in the row labeled "Text Validation"
 
     Given I click on the button labeled "Survey settings" in the row labeled "Text Validation"
     When I select "Yes" on the dropdown field labeled "Allow 'Save & Return Later' option for respondents?"
