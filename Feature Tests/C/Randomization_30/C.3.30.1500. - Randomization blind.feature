@@ -134,7 +134,7 @@ Scenario:#C.3.30.1500.0400. Only users with setup rights or admin privileges can
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
     When I click on the button labeled "Download table"
-    Then I should see a downloaded file named "RandomizationAllocationTemplate_DEV.csv"
+    Then I should see a downloaded file named "RandomizationAllocationTable_DEV.csv"
 
     #VERIFY_log Randomization saved in logging table
     When I click on the link labeled "Logging"
@@ -148,7 +148,7 @@ Scenario:#C.3.30.1500.0400. Only users with setup rights or admin privileges can
     And I click on the icon in the column labeled "Setup" and the row labeled "2" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
     When I click on the button labeled "Download table"
-    Then I should see a downloaded file named "RandomizationAllocationTemplate_DEV.csv"
+    Then I should see a downloaded file named "RandomizationAllocationTable_DEV.csv"
 
     #VERIFY_log Randomization saved in logging table
     When I click on the link labeled "Logging"
@@ -165,7 +165,7 @@ Scenario:#C.3.30.1500.0400. Only users with setup rights or admin privileges can
     And I click on the icon in the column labeled "Setup" and the row labeled "1" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
     When I click on the button labeled "Download table"
-    Then I should see a downloaded file named "RandomizationAllocationTemplate_DEV.csv"
+    Then I should see a downloaded file named "RandomizationAllocationTable_DEV.csv"
 
     #VERIFY_log Randomization saved in logging table
     When I click on the link labeled "Logging"
@@ -179,7 +179,7 @@ Scenario:#C.3.30.1500.0400. Only users with setup rights or admin privileges can
     And I click on the icon in the column labeled "Setup" and the row labeled "2" 
     Then I should see "STEP 3: Upload your allocation table (CSV file)"
     When I click on the button labeled "Download table"
-    Then I should see a downloaded file named "RandomizationAllocationTemplate_DEV.csv"
+    Then I should see a downloaded file named "RandomizationAllocationTable_DEV.csv"
 
     #VERIFY_log Randomization saved in logging table
     When I click on the link labeled "Logging"

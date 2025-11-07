@@ -93,7 +93,7 @@ And I should see a button labeled "Download table"
 And I should see "(only REDCap admins may download the allocation table while in production)"
 
 Given I click on the second button labeled "Download table"
-Then I should see a downloaded file named "RandomizationAllocationTemplate_Prod.csv"
+Then I should see a downloaded file named "RandomizationAllocationTable_Prod.csv"
 
 # Scenario: C.3.30.0900.0500. Admin cannot modify existing allocation table in production. 
 # #verify unable to delete or change allocation table for use in Production
