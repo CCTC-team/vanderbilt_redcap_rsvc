@@ -59,7 +59,7 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
         And I click on the button labeled "Close" in the dialog box
 
         ###VERIFY
-        Then I should see the "Enable" button for the instrument row labeled "Text Validation"
+        Then I should see a button labeled "Enable" in the column labeled "Enabled as" and the row labeled "Text Validation"
 
         #VERIFY_LOG
         When I click on the link labeled "Logging"
