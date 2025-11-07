@@ -30,7 +30,7 @@ Feature: The system shall allow creation of a participant list automatically usi
 
     #SETUP_SURVEY enable survey in first position
     When I click on the link labeled "Designer"
-    And I click on the "Enable" button for the instrument row labeled "Text Validation"
+    And I click on the button labeled "Enable" in the column labeled "Enabled as" and the row labeled "Text Validation"
     And I click on the button labeled "Save Changes"
     Then I should see the enabled survey icon link for the instrument row labeled "Text Validation"
 

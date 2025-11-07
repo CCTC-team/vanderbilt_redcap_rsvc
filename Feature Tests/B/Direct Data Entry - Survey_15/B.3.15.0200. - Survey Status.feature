@@ -27,7 +27,7 @@ Feature: User Interface: Survey Project Settings: The system shall support surve
     #FUNCTIONAL REQUIREMENT
     ##ACTION Enable survey in Online Designer
     Given I click on the link labeled "Designer"
-    Then I click on the "Enable" button for the instrument row labeled "Text Validation"
+    Then I click on the button labeled "Enable" in the column labeled "Enabled as" and the row labeled "Text Validation"
     And I select "Survey Active" on the dropdown field labeled "Survey Status"
     And I click on the button labeled "Save Changes"
     ##VERIFY
