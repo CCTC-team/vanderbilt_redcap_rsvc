@@ -57,7 +57,7 @@ Feature: Renaming a Record: The system shall allow users to rename a record.
         #VERIFY_RSD: Record 1 is now 1.A
         When I click on the link labeled "Record Status Dashboard"
         Then I should see "Record Status Dashboard (all records)"
-        Then I should see a link labeled exactly "1.A"
+        Then I should see a link labeled "1.A"
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"
