@@ -12,7 +12,7 @@ Feature: User Interface: The tool shall only display forms that are designated t
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
   Scenario: #SETUP form lock to display
         #FUNCTIONAL REQUIREMENT  C.2.19.200.100 

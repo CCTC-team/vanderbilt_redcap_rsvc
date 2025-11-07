@@ -12,7 +12,7 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION - Verify field validation Disable

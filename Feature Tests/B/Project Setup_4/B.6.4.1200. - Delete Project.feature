@@ -52,7 +52,7 @@ Feature: User Interface: General: The system shall support the ability to delete
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     ##ACTION Verify record do NOT exist ##VERIFY_RSD
     When I click on the link labeled "Record Status Dashboard"
@@ -77,7 +77,7 @@ Feature: User Interface: General: The system shall support the ability to delete
     And I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
     ##ACTION Verify record exist ##VERIFY_RSD
     When I click on the link labeled "Record Status Dashboard"

@@ -522,7 +522,7 @@ Scenario: C.3.30.0700.0500. Randomize by group/site enabled with DAG selected.
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
 
     #VERIFY
-    Then I should see Project status: "Production"
+    Then I should see "Project status:  Production"
 
  Scenario: C.3.30.0700.1900. Admin uploads an additional allocation table in PRODUCTION status.
     Given I click on the link labeled "Setup"
