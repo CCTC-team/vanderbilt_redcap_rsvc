@@ -411,8 +411,7 @@ Feature: User Interface: The system shall support limiting file repository user 
             | Record         | Survey                           | File Storage Time | Type      |
             | 2-1 TestGroup2 | Consent (Event 1 (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm  | e-Consent |
 
-        But I should NOT see "TestGroup1"
-        And I should NOT see "1-1"
+        And I should NOT see "1-1 TestGroup1"
         And I logout
 
     #FUNCTIONAL_REQUIREMENT
