@@ -200,7 +200,7 @@ Scenario: C.3.30.0800.0400 Trigger logic, for all users based on survey
 Scenario: C.3.30.0800.0500 Modify trigger while in production
   When I click on the link labeled "Setup"
   And I click on the button labeled "Set up randomization"
-  And I click on the icon in the column labeled "Setup" and the row labeled "3"
+  And I click on the icon in the column labeled "Setup" and the row labeled "rand_survey"
   And I select "Trigger logic, for users with Randomize permission only" on the dropdown field labeled "Trigger option" on the tooltip
   And I select "Demographics" on the dropdown field labeled "Instrument" on the tooltip
   And I click on "" in the textarea field labeled "Trigger logic"
@@ -255,7 +255,7 @@ Scenario: C.3.30.0800.0500 Modify trigger while in production
     | test_user1 | Randomize Record 7 | Randomize record |
     | test_user1 | Update record 7 | rand_survey = '3', survey_complete = '0' |
     | test_user2 | Update record 7  | demographics_complete = '2' |
-    | test_user1 | Manage/Design | Save randomization execute option (rid = 2) |
+    | test_user1 | Manage/Design | Save randomization execute option (rid = 4) |
     | test_admin | Manage/Design | Move project to Production status |
     | test_admin | Update record 8 | rand_survey = '' |
     | test_admin | Update record 7 | rand_survey = '' |
