@@ -53,7 +53,7 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         Then I should see "Move Project To Production Status"
 
         Given I click on the radio labeled "Keep ALL data saved so far." in the dialog box in the iframe
-        When I click on the button labeled "YES, Move to Production Status" in the dialog box in the iframe
+        When I click on the button labeled "YES, Move to Production Status"
         And I close the iframe window
         Then I should see the "Move to prod" request created for the project named "A.6.4.0200.100" within the "Completed & Archived Requests" table
 

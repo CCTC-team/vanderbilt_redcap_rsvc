@@ -112,8 +112,8 @@ Feature: User Interface: General: The system shall support the ability to delete
 
     ##ACTION Delete project
     Given I enter "DELETE" into the input field labeled 'TYPE "DELETE" BELOW' in the iframe
-    And I click on the button labeled "Delete the project" in the dialog box in the iframe
-    And I click on the button labeled "Yes, delete the project" in the dialog box in the iframe
+    And I click on the button labeled "Delete the project"
+    And I click on the button labeled "Yes, delete the project"
     Then I should see "Project successfully deleted!"
 
     ##VERIFY
