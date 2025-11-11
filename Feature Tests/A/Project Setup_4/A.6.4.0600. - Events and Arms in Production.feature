@@ -9,7 +9,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I create a new project named "A.6.4.0600.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0600.100"
-        Then I should see Project status: "Development"
+        Then I should see "Project status:  Development"
 
         When I click on the link labeled "User Rights"
         And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
@@ -173,7 +173,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         When I click on the link labeled "Control Center"
         And I click on the link labeled "User Settings"

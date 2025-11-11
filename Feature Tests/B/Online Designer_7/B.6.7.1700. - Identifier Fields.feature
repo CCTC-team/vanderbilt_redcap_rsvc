@@ -26,7 +26,7 @@ Feature: Field Creation: The system shall support marking a data entry field as 
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION: designate identifier through online designer
-    When I click on the instrument labeled "Data Types"
+    When I click on the link labeled "Data Types"
     #MANUAL NOTE: the last button is the one at the bottom of the instrument
     And I click on the last button labeled "Add Field"
 

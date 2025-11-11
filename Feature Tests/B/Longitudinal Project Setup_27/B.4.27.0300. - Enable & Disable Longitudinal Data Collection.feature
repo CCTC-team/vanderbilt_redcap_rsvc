@@ -20,7 +20,7 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
 
         ##ACTION Verify event exist ##VERIFY_RSD
         When I click on the link labeled "Record Status Dashboard"
-        And I click on the tab labeled "Arm 1"
+        And I click on the link labeled "Arm 1"
         Then I should see a table header containing the following values in the record status dashboard table:
             | Record ID | Event 1 | Event 2 | Event Three |
 
@@ -52,7 +52,7 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
 
         ##VERIFY_RSD
         When I click on the link labeled "Record Status Dashboard"
-        And I click on the tab labeled "Arm 1"
+        And I click on the link labeled "Arm 1"
         Then I should see a table header containing the following values in the record status dashboard table:
             | Record ID | Event 1 | Event 2 | Event Three |
 
@@ -67,7 +67,7 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see Project status: "Production"
+        Then I should see "Project status:  Production"
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION Verify longitudinal button is disabled in production mode for user
