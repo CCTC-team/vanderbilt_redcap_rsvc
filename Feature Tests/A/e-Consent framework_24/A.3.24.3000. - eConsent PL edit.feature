@@ -3,7 +3,6 @@ Feature: A.3.24.3000. The system shall support the ability for administrators to
     I want to see that the e-Consent Framework is functioning as expected
 
   Scenario: A.3.24.3000.100 Enable/disable edit ability for e-Consent framework
-
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
         And I create a new project named "A.3.24.3000.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
