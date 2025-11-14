@@ -44,16 +44,16 @@ Feature: D.106.800 Data Resolution Workflow
       Given I click on the link labeled "Record Status Dashboard"
       When I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "1" and click on the bubble
       And I click on the Comment icon for the field labeled "Name"
-      Then I should see "Field Comment Log" in the dialog box
+      Then I should see "Field Comment Log"
       And I should see a table header and row containing the following values in a table:
-            |              | Date / Time      | User       | Comments  | 
+            |              | Date/Time        | User       | Comments  |
             |[icon] [icon] | mm/dd/yyyy hh:mm | Test_User1 | Comment 1 |
 
-      When I click on the Edit icon for the Comment "Comment 1"
+      When I click on the "Edit" icon for the Comment "Comment 1"
       And I clear field and enter "Comment 10" in the comment box for the editted comment "Comment 1" in Field Comment Log
       And I click on the button labeled "Save" in the dialog box
       Then I should see a table header and row containing the following values in a table:
-            |              | Date / Time      | User       | Comments   | 
+            |              | Date/Time        | User       | Comments   |
             |[icon] [icon] | mm/dd/yyyy hh:mm | Test_User1 | Comment 10 |
 
       And I enter "Comment 2" in the comment box in Field Comment Log
@@ -63,20 +63,20 @@ Feature: D.106.800 Data Resolution Workflow
       Given I click on the link labeled "Record Status Dashboard"
       When I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "1" and click on the bubble
       And I click on the Comment icon for the field labeled "Name"
-      Then I should see "Field Comment Log" in the dialog box
+      Then I should see "Field Comment Log"
       And I should see a table header and row containing the following values in a table:
-            |              | Date / Time      | User       | Comments   |
+            |              | Date/Time        | User       | Comments   |
             |[icon] [icon] | mm/dd/yyyy hh:mm | Test_User1 | Comment 10 |
             |[icon] [icon] | mm/dd/yyyy hh:mm | Test_User1 | Comment 2  |
 
-      When I click on the Delete icon for the Comment "Comment 10"
-      Then I should see "Delete this Field Comment?" in the dialog box
+      When I click on the "Delete" icon for the Comment "Comment 10"
+      Then I should see "Delete this Field Comment?"
       And I click on the button labeled "Delete"
       Then I should see a table header and row containing the following values in a table:
-            |              | Date / Time      | User       | Comments  |
+            |              | Date/Time        | User       | Comments  |
             |[icon] [icon] | mm/dd/yyyy hh:mm | Test_User1 | Comment 2 |
 
-      And I should NOT see "Comment 10" in the dialog box
+      And I should NOT see "Comment 10"
       And I click on the button labeled "Cancel" in the dialog box
 
       #ACTION: Disable users to edit/delete Field Comments
@@ -89,8 +89,8 @@ Feature: D.106.800 Data Resolution Workflow
       Given I click on the link labeled "Record Status Dashboard"
       When I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "1" and click on the bubble
       And I click on the Comment icon for the field labeled "Name"
-      Then I should NOT see Edit icon for the Comment "Comment 2"
-      And I should NOT see Delete icon for the Comment "Comment 2"
+      Then I should NOT see "Edit" icon for the Comment "Comment 2"
+      And I should NOT see "Delete" icon for the Comment "Comment 2"
       And I click on the button labeled "Cancel" in the dialog box
       And I logout
 
@@ -100,9 +100,9 @@ Feature: D.106.800 Data Resolution Workflow
       And I click on the link labeled "Record Status Dashboard"
       When I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "1" and click on the bubble
       When I click on the Comment icon for the field labeled "Name"
-      Then I should see "Field Comment Log" in the dialog box
+      Then I should see "Field Comment Log"
       And I should see a table header and row containing the following values in a table:
-            | Date / Time      | User       | Comments  |
+            | Date/Time        | User       | Comments  |
             | mm/dd/yyyy hh:mm | Test_User1 | Comment 2 |
 
       And I enter "Comment 3" in the comment box in Field Comment Log
@@ -112,9 +112,9 @@ Feature: D.106.800 Data Resolution Workflow
       Given I click on the link labeled "Record Status Dashboard"
       When I locate the bubble for the "Text Validation" instrument on event "Event 1" for record ID "1" and click on the bubble
       And I click on the Comment icon for the field labeled "Name"
-      Then I should see "Field Comment Log" in the dialog box
+      Then I should see "Field Comment Log"
       And I should see a table header and row containing the following values in a table:
-            | Date / Time      | User       | Comments  |
+            | Date/Time        | User       | Comments  |
             | mm/dd/yyyy hh:mm | Test_User1 | Comment 2 |
             | mm/dd/yyyy hh:mm | Test_User2 | Comment 3 |
 
@@ -138,40 +138,40 @@ Feature: D.106.800 Data Resolution Workflow
       When I select the option "1" from the dropdown field for Record in Field Comment Log
       And I click on the button labeled "Apply filters"
       Then I should see a table rows containing the following values in a table:
-            | 1                      | email_v2     | Test_User2  | 
-            | Event 1 (Arm 1: Arm 1) | (Email)      | "Comment 4" | 
-            | 1                      | ptname_v2_v2 | Test_User1  | 
-            | Event 1 (Arm 1: Arm 1) | (Name)       | "Comment 2" | 
-            | Event 1 (Arm 1: Arm 1) | ptname_v2_v2 | Test_User2  | 
-            | Event 1 (Arm 1: Arm 1) | (Name)       | "Comment 3" | 
+            | 1                      | email_v2     | Test_User2  |
+            | Event 1 (Arm 1: Arm 1) | (Email)      | "Comment 4" |
+            | 1                      | ptname_v2_v2 | Test_User1  |
+            | Event 1 (Arm 1: Arm 1) | (Name)       | "Comment 2" |
+            | Event 1 (Arm 1: Arm 1) | ptname_v2_v2 | Test_User2  |
+            | Event 1 (Arm 1: Arm 1) | (Name)       | "Comment 3" |
 
 
       When I select the option "ptname_v2_v2" from the dropdown field for Field in Field Comment Log
       And I click on the button labeled "Apply filters"
       Then I should see a table header and row containing the following values in a table:
-            | 1                      | ptname_v2_v2 | Test_User1  | 
-            | Event 1 (Arm 1: Arm 1) | (Name)       | "Comment 2" | 
-            | Event 1 (Arm 1: Arm 1) | ptname_v2_v2 | Test_User2  | 
-            | Event 1 (Arm 1: Arm 1) | (Name)       | "Comment 3" | 
+            | 1                      | ptname_v2_v2 | Test_User1  |
+            | Event 1 (Arm 1: Arm 1) | (Name)       | "Comment 2" |
+            | Event 1 (Arm 1: Arm 1) | ptname_v2_v2 | Test_User2  |
+            | Event 1 (Arm 1: Arm 1) | (Name)       | "Comment 3" |
 
       When I select the option "All records" from the dropdown field for Record in Field Comment Log
       And I select the option "All fields" from the dropdown field for Field in Field Comment Log
       And I select the option "test_user2" from the dropdown field for User in Field Comment Log
       And I click on the button labeled "Apply filters"
       Then I should see a table header and row containing the following values in a table:
-            | 1                      | email_v2     | Test_User2  | 
-            | Event 1 (Arm 1: Arm 1) | (Email)      | "Comment 4" | 
-            | 1                      | ptname_v2_v2 | Test_User1  | 
-            | Event 1 (Arm 1: Arm 1) | (Name)       | "Comment 2" | 
-            | Event 1 (Arm 1: Arm 1) | ptname_v2_v2 | Test_User2  | 
+            | 1                      | email_v2     | Test_User2  |
+            | Event 1 (Arm 1: Arm 1) | (Email)      | "Comment 4" |
+            | 1                      | ptname_v2_v2 | Test_User1  |
+            | Event 1 (Arm 1: Arm 1) | (Name)       | "Comment 2" |
+            | Event 1 (Arm 1: Arm 1) | ptname_v2_v2 | Test_User2  |
             | Event 1 (Arm 1: Arm 1) | (Name)       | "Comment 3" |
-            | 2                      | email_v2     | Test_User2  | 
+            | 2                      | email_v2     | Test_User2  |
             | Event 1 (Arm 1: Arm 1) | (Email)      | "Comment 5" |
 
       And I enter '"Comment 5"' into the field with the placeholder text of "Keyword search"
       And I click on the button labeled "Apply filters"
       Then I should see a table header and row containing the following values in a table:
-            | 2                      | email_v2     | Test_User2  | 
+            | 2                      | email_v2     | Test_User2  |
             | Event 1 (Arm 1: Arm 1) | (Email)      | "Comment 5" |
 
       Given I clear field and enter "Comments" into the field with the placeholder text of "Keyword search"
