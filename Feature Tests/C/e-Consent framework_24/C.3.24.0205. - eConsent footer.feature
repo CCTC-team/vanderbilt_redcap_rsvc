@@ -42,6 +42,16 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
             | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
             | [x]               | "Participant Consent" (participant_consent) | File Repository Specified field:[event_1_arm_1][participant_file] | Participant         |       |
 
+        When I click on the link labeled "Add consent form" in the row labeled "Participant Consent"
+        And I enter "1.0" into the input field labeled "Consent form version:"
+        And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
+        And I click on the button labeled "Consent Form (Inline PDF)"
+        # Then I should see "ERROR: You must provide your consent form"
+        # When I click on the button labeled "Close" in the dialog box
+        And I upload a "pdf" format file located at "import_files/consent.pdf", by clicking the button near "Upload your PDF consent form" to browse for the file, and clicking the button labeled "Add new consent form" to upload the file
+        And I wait for 1 second
+        Then I should see "v1.0" in the row labeled "Participant Consent"
+
     Scenario: #SETUP_eConsent for coordinator signature (second signature) process
         #SETUP_eConsent for coordinator signature (second signature) process
         When I click on the button labeled "Enable the e-Consent Framework for a survey"
@@ -171,7 +181,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         Then I should see the following values in the last file downloaded
           | PID 13 - LastName   |
           | Participant Consent |
-          | FirstName LastName, 2000-01-01, Type: Participant |
+          | FirstName LastName, 2000-01-01, Version: 1.0, Type: Participant |
 
         When I click on the second link labeled "pid13_formCoordinatorSignature_id1_"
         And I wait for 1 second
