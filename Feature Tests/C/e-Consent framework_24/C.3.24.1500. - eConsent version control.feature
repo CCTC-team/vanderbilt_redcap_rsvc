@@ -111,8 +111,8 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see a table header and rows containing the following values in a table:
-      | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type |                       |
-      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         |      | e-Consent Participant |
+      | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         | Version | Type |                       |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | test 1  |      | e-Consent Participant |
 
   Scenario:
     When I click on the link labeled "pid13_formParticipantConsent_id1_"
@@ -143,7 +143,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
   Scenario:
     When I click on the button labeled "Close" in the dialog box
         #Add unique version
-    And I clear field and enter "test 2" into the input field labeled "Consent form version:" in the dialog box
+    And I clear field and enter "test 0" into the input field labeled "Consent form version:" in the dialog box
     And I select "Consent file" on the dropdown field labeled "Placement of consent form:" in the dialog box
     And I select "When record is not assigned to a DAG (default)" on the dropdown field labeled "Display for specific DAG" in the dialog box
     And I select "No languages defined on MLM page" on the dropdown field labeled "Display for specific language" in the dialog box
@@ -156,6 +156,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
 
   Scenario:
     When I click on the button labeled "OK" in the dialog box
+    And I clear field and enter "test 2" into the input field labeled "Consent form version:" in the dialog box
         #Adding a .pdf file will upload
     And I upload a "pdf" format file located at "import_files/consent.pdf", by clicking the button near "Upload your PDF consent form" to browse for the file, and clicking the button labeled "Add new consent form" to upload the file
     And I wait for 1 second
@@ -168,6 +169,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
       | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
       |            |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
       |            | test 1  |                    | Test_Admin (Admin User) |                           1 |                   |              | "This is my test 1 consent form"        |                              |
+      |            | test 0  |                    | Test_Admin (Admin User) |                           0 |                   |              | ""                                      |                              |
       |            | test 2  |                    | Test_Admin (Admin User) |                           0 |                   |              | consent.pdf                             |                              |
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 1"
@@ -232,9 +234,9 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see a table header and rows containing the following values in a table:
-      | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type |                       |
-      | .pdf |                                  |      2 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         |      | e-Consent Participant |
-      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         |      | e-Consent Participant |
+      | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         | Version | Type |                       |
+      | .pdf |                                  |      2 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | test 2  |      | e-Consent Participant |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | test 1  |      | e-Consent Participant |
 
   Scenario:
     When I click on the link labeled "pid13_formParticipantConsent_id2_"
@@ -256,9 +258,11 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
       | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
       |            |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
       |            | test 1  |                    | Test_Admin (Admin User) |                           1 |                   |              | "This is my test 1 consent form"        |                              |
+      |            | test 0  |                    | Test_Admin (Admin User) |                           0 |                   |              | ""                                      |                              |
       |            | test 2  |                    | Test_Admin (Admin User) |                           1 |                   |              | consent.pdf                             |                              |
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 1"
+    And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 0"
     And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 2"
 
   Scenario:
@@ -271,9 +275,11 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
       | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
       |            |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
       |            | test 1  |                    | Test_Admin (Admin User) |                           1 |                   |              | "This is my test 1 consent form"        |                              |
+      |            | test 0  |                    | Test_Admin (Admin User) |                           0 |                   |              | ""                                      |                              |
       |            | test 2  |                    | Test_Admin (Admin User) |                           1 |                   |              | consent.pdf                             |                              |
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 1"
+    And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 0"
     And I should see a button labeled "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 2"
 
   Scenario:
@@ -288,9 +294,11 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
       | Active?    | Version | Time added         | Uploaded by             | Number of records consented | Data Access Group | MLM Language | Consent form text or file               | Set consent form as inactive |
       |            |     1.0 |                    |                         |                           0 |                   |              | _Fake_Consent[311203].pdf               |                              |
       |            | test 1  |                    | Test_Admin (Admin User) |                           1 |                   |              | "This is my test 1 consent form"        |                              |
+      |            | test 0  |                    | Test_Admin (Admin User) |                           0 |                   |              | ""                                      |                              |
       |            | test 2  |                    | Test_Admin (Admin User) |                           1 |                   |              | consent.pdf                             |                              |
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "1.0"
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 1"
+    And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 0"
     And I should NOT see "Set as inactive" in the column labeled "Set consent form as inactive" and the row labeled "test 2"
 
   Scenario: C.3.24.1500.400 View historical version
@@ -352,15 +360,15 @@ Feature: User Interface: The system shall support the e-Consent Framework for ve
     When I click on the link labeled "File Repository"
     And I click on the link labeled "PDF Snapshot Archive"
     Then I should see a table header and rows containing the following values in a table:
-      | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type                  |
+      | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)         | Version | Type                  |
       | .pdf |                                  |      3 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
-      | .pdf |                                  |      2 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
-      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 |         | e-Consent Participant |
+      | .pdf |                                  |      2 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | test 2  | e-Consent Participant |
+      | .pdf |                                  |      1 | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LastName, 2000-01-01 | test 1  | e-Consent Participant |
 
   Scenario:
     When I click on the link labeled "pid13_formParticipantConsent_id3_"
     Then I should see the following values in the last file downloaded
       # Make sure the DOB is followed immediatly by "Participant", verifying that the consent "Version:" is omitted. 
-      | 2000-01-01, Participant |
+      | 2000-01-01, Type: Participant |
 #Manual: Close document
 #END
