@@ -171,6 +171,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         Then I should see the following values in the last file downloaded
           | PID 13 - LastName   |
           | Participant Consent |
+          | FirstName LastName, 2000-01-01, Type: Participant |
 
         When I click on the second link labeled "pid13_formCoordinatorSignature_id1_"
         And I wait for 1 second
@@ -184,6 +185,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
           | PID 13 - LastName   |
           | Participant Consent |
           | Coordinator Signature |
+          | Type: Coordinator |
 
         #Manual: Close document
 
