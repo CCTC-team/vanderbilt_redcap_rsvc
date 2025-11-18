@@ -237,7 +237,7 @@ Feature: User Interface: The system shall support the creation, modification, an
       When I click on the link labeled "CustomCombined_" in the row labeled "Combine both files together"
       And I should see the following values in the last file downloaded
         | Page 1\nParticipant Consent |
-        | Page 4\nCoordinator Signature |
+        | Page 5\nCoordinator Signature |
    #Manual: Close document
 
 
@@ -247,8 +247,8 @@ Feature: User Interface: The system shall support the creation, modification, an
       And I click on the link labeled "PDF Snapshot Archive"
       Then I should see a table header and rows containing the following values in a table:
          | Name               | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB) | Version | Type |
-         | CustomParticipant_ | -                                | 2      | (Event 1 (Arm 1: Arm 1))                     |                        |         |      |
-         | CustomCombined_    | -                                | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
+         | CustomCombined_    | -                                | 2      | (Event 1 (Arm 1: Arm 1))                     |                        |         |      |
+         | CustomParticipant_ | -                                | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                        |         |      |
 
       ##VERIFY_Logging
       ##e-Consent Framework not used, and PDF Snapshot is used
