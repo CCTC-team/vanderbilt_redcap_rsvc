@@ -106,7 +106,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
     And I wait for 1 second
     When I click on the button labeled "Add new"
-    And I click on the icon in the column labeled "NEW" and the row labeled "Participant Consent" 
+    And I click on the icon in the column labeled "(#2)" and the row labeled "Participant Consent"
 
   Scenario:
     When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
@@ -176,10 +176,8 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
 
   Scenario: add instance 2 for record with consent framework in Arm 1 Event Three  (repeatable instance)
         ##ACTION: add instance 2 for record with consent framework in Arm 1 Event Three  (repeatable instance)
-    Given I click on the link labeled "Add / Edit Records"
-    And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
-    And I wait for 1 second
-    When I click on the button labeled "Add new" in the row labeled "Participant Consent"
+    Given I click on the link labeled "Record Status Dashboard"
+    When I locate the bubble for the "Participant Consent" instrument on event "Event Three" for record ID "1" and click the new instance link
     And I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
@@ -263,7 +261,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     And I select record ID "2" from arm name "Arm 2: Arm Two" on the Add / Edit record page
     And I wait for 1 second
     When I click on the button labeled "Add new"
-    And I click on the icon in the column labeled "NEW" and the row labeled "Participant Consent"
+    And I click on the icon in the column labeled "(#2)" and the row labeled "Participant Consent"
     When I select the submit option labeled "Save & Stay" on the Data Collection Instrument
     And I click on the button labeled "Okay" in the dialog box
     And I click on the button labeled "Survey options"
